@@ -7,7 +7,7 @@ Yes:
 - You should neither use Nextclouds `Groupfolder` app nor use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two apps will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. 
 - You will need a different PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Home` edition is not enough)
 
-#### If those limitations are nothing you are willing to accept, this guide is unfortunately nothing for you.
+**If those limitations are nothing you are willing to accept, this guide is unfortunately nothing for you.**
 
 # Index
 TODO
@@ -25,12 +25,13 @@ You will need the following things:
 - One external SSD (or HDD) that will store your personal data with at least 250GB
 - Two additional external HDD's that will function as backup drives with at least the same size of the external personal data SSD each
 
-#### Please note: In order to complete this guide, you will need a different PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Home` edition is not enough) If you don't have one, this guide is unfortunately nothing for you.
+**Please note: In order to complete this guide, you will need a different PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Home` edition is not enough) If you don't have one, this guide is unfortunately nothing for you.**
 
 ## Do you have any Hardware recommendations?
 Yes! Since your server shall run 24/7, it makes sense to use laptop CPU's and hardware because those are still much more power efficient than any custom-built PC. Perfect because of the size and power for this usecase are Intel NUC's. Recommended are any recent Intel NUC's with 4 or more cores. Click on [this link](https://geizhals.eu/?cat=barepc&v=e&hloc=at&hloc=de&hloc=pl&hloc=uk&hloc=eu&sort=p&bl1_id=30&xf=15825_4%7E2257_Intel%7E3345_2018#gh_filterbox) to show recommended devices. Of yourse you are free to buy used devices, but again: Intel NUC's are prefered.
 
 After you have chosen your device, you will need to get compatible RAM and Storage for your NUC which depends on the model that you've chosen. So please choose wisely.
+
 #### Recommended is:
 - One Intel NUC from 2018 or later with 4 Cores or more
 - One SO-DIMM RAM latch with 8GB because 8GB should be enough for now and you will be able to upgrade the RAM with a second latch later on 
@@ -48,7 +49,9 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 
 ## Are there any preparations necessary before I can start?
 Yes, please make sure that you have all necessary Hardware requirements and please connect all necessary parts before continuing.
-#### For Intel NUC's, you need to put one SSD and one RAM latch into the device before continuing
+
+**For Intel NUC's, you need to put one SSD and one RAM latch into the device before continuing**
+
 How to do this in detail depends on the PC that you've chosen to function as your server
 
 ## How to configure the BIOS/UEFI?
@@ -74,7 +77,7 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. Use the already downloaded image to create a bootable USB-stick by following [this guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows)
 1. Connect a LAN-cable to your server
 1. Connect the USB-stick to your server and power it on. The server should then automatically boot from the USB-stick
-1. #### Since it is necessary that you configure certain things correctly, we have prepared a slideshow which makes it easier for you to configure Ubuntu correctly. Please click [here](TODO) to start the slideshow. Otherwise, just continue with the steps below
+1. **Since it is necessary that you configure certain things correctly, we have prepared a slideshow which makes it easier for you to configure Ubuntu correctly. Please click [here](TODO) to start the slideshow. Otherwise, just continue with the steps below**
 1. Select the correct `language` for the installer
 1. Choose to `Continue without updating` the installer
 1. Select the correct `Keyboard layout`. This is has great importance!
@@ -92,7 +95,8 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. Wait until you see `Reached target Cloud-init target.` and press `[ENTER]` to return to the login screen
 1. Now type in your `username` (e.g. `ncadmin`) and `pasword`
 1. If everything is correct, you will now see an overview of Ubuntu also containing the ip-address of your server at the right side. 
-#### You will need the ip-address in the next step!
+
+**You will need the ip-address in the next step!**
 
 Theoratically you could now disconnect the monitor, mouse and keyboard again.
 
@@ -124,7 +128,7 @@ In order to automaticly unlock the encrypted root partition, you need to setup T
 
 Now it should unlock the root partition during boot automatically. If not, something has failed.
 
-#### Please note: it is not recommended to proceed with this guide, if it doesn't unlock the root partition automatically at this point!
+**Please note: it is not recommended to proceed with this guide, if it doesn't unlock the root partition automatically at this point!**
 
 ## How to install Nextcloud?
 In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, since it is the most user-friendly way to setup Nextcloud as far as we know and has many features built-in.
@@ -132,7 +136,7 @@ In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, 
 1. Copy and paste the following command over CLI: <br>
 `wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh && sudo bash nextcloud_install_production.sh`<br>
 1. Enter your `password` again
-1. #### Since it is necessary that you answer certain questions correctly, we have prepared a slideshow which makes it easier for you to answer all questions correctly. Please click [here](TODO) to start the slideshow. Otherwise, just continue with the steps below
+1. **Since it is necessary that you answer certain questions correctly, we have prepared a slideshow which makes it easier for you to answer all questions correctly. Please click [here](TODO) to start the slideshow. Otherwise, just continue with the steps below**
 1. Choose that you `want` to use `LVM snapshots`, since it is a requirements for a good working backup solution and such.
 1.  Choose that you `don't` want to use `http://archive.ubuntu.com` as repository for your server since the best one was already set during the Ubuntu installation
 1. Select that you `don't` want to make all `free space` available to your root partition since it is always better to have some free space left that can be used for snapshots and such. You are of course free to shrink the free space later manually if needed
@@ -146,7 +150,7 @@ Now the initial Nextcloud setup should be done.
 ## How to startup Nextcloud?
 This is the second part of the Nextcloud installation that is prepared by the recently executed Nextcloud-VM script. You will need to run this to the end to be done with the Nextcloud setup.
 1. Connect from a PC in the same network to your server over SSH
-1. #### We have prepared a slideshow for you that you can use. Please click [here](TODO) to start the slideshow. Otherwise, just continue with the steps below
+1. **We have prepared a slideshow for you that you can use. Please click [here](TODO) to start the slideshow. Otherwise, just continue with the steps below**
 1. After login, you will be automatically redirected and asked a second time for your password. Enter your `password` and the script will start
 1. The first Menu you will see, will let you configure certain `Startup Configurations`. It should automatically choose options for you that are not yet configured, so just press [ENTER] to automatically start those chosen configurations. Most likely only `Timezone (Change the timezone from Etc/UTC` will be pre-selected
 1. Change the Timezone to match your location (choose the `Geographic area` and the `Time zone`)
@@ -161,7 +165,7 @@ This is the second part of the Nextcloud installation that is prepared by the re
 
 Now the Nextcloud configuration should be done. Next, you will configure recommended options.
 
-#### Please note: Since the server fingerprint was changed during this script, you will need to reset the server fingerprint the next time you connect to your server via SSH.
+**Please note: Since the server fingerprint was changed during this script, you will need to reset the server fingerprint the next time you connect to your server via SSH.**
 
 ## How to activate Let's Encrypt for your Domain?
 In order to access Nextcloud over https with a valid certificate, you will need to do the following things:
@@ -223,7 +227,7 @@ In order to automate as much things as possible, you should enable automatic upd
 1. Choose to enable automatic updates
 1. Choose to reboot your server after every update as recommended
 
-#### The update will be executed on saturdays at 18:00h.
+**The update will be executed on saturdays at 18:00h.**
 
 Please note: the update script will only update to minor Nextcloud versions. If new major Nextcloud version get released, you will need to update your server manually.
 
@@ -236,9 +240,12 @@ In order to improve security, you can allow access to your webserver only from s
 
 ## How to set up SMTP Mail to enable your server to send mails?
 In order to get notified by mail for backups, disk errors and such, you should configure your server to send mails.
-#### Before you can start, please get a mail account that your server will use to send mails.
+
+**Before you can start, please get a mail account that your server will use to send mails.**
+
 For german users is recommended: [mail.de](https://signup.mail.de/de/)
-#### Please inspect your mail providers documents how to connect over SMTP before continuing!
+
+**Please inspect your mail providers documents how to connect over SMTP before continuing!**
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `SMTP Mail`
 1. Choose to install/reinstall SMTP Mail
@@ -405,7 +412,8 @@ Now that the drives are prepared, you will mount the drives to your sever:
 1. You should get the message that the mount was successful.
 1. When asked if this is a backup drive, select `Yes`!
 1. You should see the message now, that the backup drive is ready.
-#### Now repeat this same procedure with the second drive! Start at point 4!
+
+**Now repeat this same procedure with the second drive! Start at point 4!**
 
 ## How to set up a daily backup?
 Now that everything is prepared, you should set up a daily backup.
