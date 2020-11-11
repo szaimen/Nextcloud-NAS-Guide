@@ -63,7 +63,7 @@ The idea concerning this guide is that you can read and work through the whole g
 - You will set up **TPM2 unlocking** which will automatically unlock your encrypted root partition during boot. This is a big convenience factor but would allow an attacker theoratically to break the encryption of this partition, if he/she steals the whole server. Encrypting the root partition makes sense nonetheless, since an attacker cannot just take out the internal drive, connect it to another PC and read out all the data in cleartext.
 - You will create an off-shore backup drive that needs to get connected to your server every **90 days** (this is configurable) in order to make a new backup. After creating one off-shore backup, the drive should get disconnected from your server and stored at a safe place outside your home. So you will need a place where to store it during this time and connect it manually every 90 days (or as configured).
 
-**If those points above are nothing you are willing to accept, this guide is unfortunately nothing for you. Otherwise please continue!**
+**If not all points above are acceptable for you, then will this guide be unfortunately not work for you. Otherwise please continue!**
 
 ## What are the minimal Hardware requirements?
 You will need the following things:
