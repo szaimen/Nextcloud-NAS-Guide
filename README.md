@@ -1,5 +1,5 @@
 # Nextcloud-NAS-Guide
-Instructions how to setup a Nextcloud NAS
+Instructions how to setup a home server
 
 This is my own approach how I think, you should setup a home server. It is a result of many different solutions I've come through the last years and is to this point the most complete and advanced solution. I call it `Nextcloud NAS` because it has features that go far beyond what any other Nextcloud solution offers, especially in terms of server and security features. Most NAS devices have features like a built-in backup solution, a built-in SMB-server and much more. And this is exactly what this solution provides. The best fact in my opinion is, that on your server only Open Source Software will be used.
 
