@@ -3,16 +3,10 @@ Instructions how to setup a Nextcloud NAS
 
 TODO: Add what this is, advantages over nextcloudpi, ideas, why do I call it nextcloud nas?
 
-### Are there any known limitations?
-- You should neither use Nextclouds `Groupfolder` app nor use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two apps will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. And don't despair! This guide covers how to do this.
-- You will need a PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough)
-- Most of this guide is based on scripts that are provided by the [Nextcloud-VM](https://github.com/nextcloud/vm) and will need to be executed in order to make everything work. This could theoratically set your server under risk but we made sure that all of them are well tested.
-
-**If those limitations are nothing you are willing to accept, this guide is unfortunately nothing for you.**
-
 # Index
 - [Basic setup](#basic-setup)
     - [How to use this guide?](#how-to-use-this-guide)
+    - [Considerations](#are-there-any-considerations-you-should-know-of)
     - [Minimal Hardware requirements](#what-are-the-minimal-hardware-requirements)
     - [Hardware recommendations](#do-you-have-any-hardware-recommendations)
     - [Preparations](#are-there-any-preparations-necessary-before-i-can-start)
@@ -60,9 +54,18 @@ TODO: Add what this is, advantages over nextcloudpi, ideas, why do I call it nex
 ## How to use this guide?
 The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-configured)). In the end you will have a working Nextcloud NAS.
 
+## Are there any considerations you should know of?
+- You should neither use Nextclouds `Groupfolder` app nor use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two apps will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. And don't despair! This guide covers how to do this.
+- You will need a PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough)
+- Most of this guide is based on scripts that are provided by the [Nextcloud-VM](https://github.com/nextcloud/vm) and will need to be executed in order to make everything work. This could theoratically set your server under risk but we made sure that all of them are well tested.
+- The internal root partition, the external data SSD and the backups will be encrypted for security. This could theoratically prevent you from accessing those if you loose the key/passphrase. So please always store the passwords/passphrases at a safe place!
+- The three external drives will be NTFS formatted at the end of the guide, which has the advantage that they can be read by almost any x86 OS. But it doesn't provide features like snapshots or integrity checking.
+
+**If those points above are nothing you are willing to accept, this guide is unfortunately nothing for you. Otherwise please continue!**
+
 ## What are the minimal Hardware requirements?
 You will need the following things:
-- A X86 PC that will function as your server with:
+- A x86 PC that will function as your server with:
 - At least 2 Cores
 - At least 4GB RAM
 - One internal SSD with at least 128GB
