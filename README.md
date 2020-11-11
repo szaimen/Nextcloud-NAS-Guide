@@ -9,6 +9,8 @@ Later, this guide will cover optional addons like: Plex Media Server as media se
 
 You could argue that it is comparable to the `NextcloudPi` project because it is comparable in terms of features but in opposite to NextcloudPi which currently still has limitations in terms of application/integrations support (because it is made to run on ARM hardware) and other shortcomings, you are not limited by using the Nextcloud-VM project on x86 hardware which is the basis for this guide.
 
+**If you are interested in this solution, please start reading [here](#basic-setup)**
+
 # Index
 - [Basic setup](#basic-setup)
     - [How to use this guide?](#how-to-use-this-guide)
