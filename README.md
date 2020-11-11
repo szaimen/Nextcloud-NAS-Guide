@@ -110,7 +110,7 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 
 
 ## Are there any preparations necessary before you can start?
-Yes, please make sure that you have all necessary Hardware requirements and please connect all necessary parts before continuing.
+Yes, please make sure that you have all necessary Hardware requirements and please connect all necessary parts before continuing. And please don't forget the USB-stick!
 
 **For Intel NUC's, you need to put one SSD and one RAM latch into the device before continuing**
 
