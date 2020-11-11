@@ -1,11 +1,14 @@
 # Nextcloud-NAS-Guide
 Instructions how to setup a Nextcloud NAS
-TODO: Add what this is, advantages vs nextcloudpi, ideas, 
+
+TODO: Add what this is, advantages over nextcloudpi, ideas, why do I call it nextcloud nas?
+
+The idea concerning this guide is that you can read through all points starting at [Basic setup](#basic-setup) from top to bottom. In the end you will have a working Nextcloud NAS.
 
 ### Are there any known limitations?
 Yes:
 - You should neither use Nextclouds `Groupfolder` app nor use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two apps will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. 
-- You will need a different PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Home` edition is not enough)
+- You will need a different PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough)
 
 **If those limitations are nothing you are willing to accept, this guide is unfortunately nothing for you.**
 
@@ -45,7 +48,7 @@ Yes:
         - [Mount](#how-to-mount-the-external-backup-hdds)
     - [Update](#how-to-update-your-server)
     - [Daily Backup](#how-to-set-up-a-daily-backup)
-    - [Off-Shore Backup](#offshore-backup-wizard)
+    - [Off-Shore Backup](#how-to-set-up-an-offshore-backup)
     - [SMB-server](#how-to-configure-a-smb-server)
         - [Run the SMB-server script](#how-to-run-the-smb-server-script)
         - [Create SMB-users and Nextcloud users](#how-to-create-smb-users-and-nextcloud-users-in-one-go)
@@ -80,7 +83,7 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 - One external SSD for storing the private data with at least 1TB
 - Two external HDD's for backups with at least the same size like the external SSD each
 
-#### Currently (10. Nov. 2020) the recommended configuration which should fit most people is:
+#### Currently (10. Nov. 2020) the recommended configuration which should fit for most people is:
 - [Intel NUC Kit NUC8i5BEK](https://geizhals.eu/intel-nuc-kit-nuc8i5beh-bean-canyon-boxnuc8i5beh-a1843166.html?hloc=at&hloc=de&hloc=eu&hloc=pl&hloc=uk) = ca. 250€
 - [Kingston A2000 NVMe PCIe SSD 250GB, M.2](https://geizhals.eu/kingston-a2000-nvme-pcie-ssd-250gb-sa2000m8-250g-a2112844.html) = ca. 33€
 - [G.Skill RipJaws SO-DIMM 8GB, DDR4-2400, CL16](https://geizhals.eu/g-skill-ripjaws-so-dimm-8gb-f4-2400c16s-8grs-a1353098.html) = ca. 30€
@@ -106,7 +109,7 @@ You will need to configure your BIOS/UEFI in order to harden security and to mak
 1. Set a Supervisor password by clicking on the **Security** tab In the **Passwords** section, click on **Set Supervisor Password** and type in a **password**. Store it at a safe place!
 1. Configure your server to boot automatically after a power failure by clicking on the **Power** tab In the **Secondary Power Settings** section, click on **After Power Failure** and choose **Power On**
 1. Enable UEFI Boot and disable Legacy Boot by clicking on the **Boot** tab. The **Boot Priority** tab is now automatically selected. In the **UEFI Boot Priority** section, **enable UEFI Boot** and **disable Legacy Boot**
-1. Only allow to boot from USB-sticks by clicking on the **Boot Configuration** tab. In the**UEFI Boot** section, disable everything and only **enable Boot Network Devices Last**. In the **Boot Devices** section, disable everything and only **enable USB**
+1. Only allow to boot from USB-sticks by clicking on the **Boot Configuration** tab. In the **UEFI Boot** section, disable everything and only **enable Boot Network Devices Last**. In the **Boot Devices** section, disable everything and only **enable USB**
 1. Configure Secure Boot by clicking on the **Secure Boot** tab. In the **Secure Boot Config** section, disable everything and only **enable Secure Boot**
 1. Now confirm your settings by pressing `[F10]` and `[ENTER]`
 
@@ -476,7 +479,7 @@ Now that everything is prepared, you should set up a daily backup for your serve
 
 It is located here: `/var/scripts/daily-borg-backup.sh` and will get executed at your chosen backup time, most likely `4.00 am`. You will get **notified** by mail if something fails and also if the backup was successful.
 
-## Offshore Backup Wizard
+## How to set up an offshore backup?
 Now that also the daily backup is prepared, you should set up an off-shore backup for your server.
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `Off-Shore Backup Wizard`
@@ -540,6 +543,7 @@ Here is how to work off this list technically:
 1. Choose if you want to enable **sharing** for this mount, which you should most likely answer `Yes`, too
 1. Now select any Nextcloud users and/or groups you would like to **share the mount with**. Here you should do the same like you did in **point 6**.
 1. Now everything should get set up automatically.
+1. Enabling Inotify is **not** recommended and normally not necessary
 
 **Now repeat that method for the whole list that you've made, starting at point 2.**
 
@@ -561,6 +565,7 @@ Here is how to do this:
 1. Choose that you want to disable **sharing** for this mount
 1. Now select all Nextcloud users and groups in order to **share the mount with everyone**.
 1. Now everything should get set up automatically.
+1. Enabling Inotify is **not** recommended and normally not necessary
 1. You should now remove the SMB-share again since it is not needed any longer:
 1. Choose to `Delete SMB-shares` from the same still open `SMB-share Menu`
 1. Select the just created share with name `root`
