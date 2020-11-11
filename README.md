@@ -7,7 +7,7 @@ Here is a not complete list of things that this guide covers: hardware recommend
 
 Later, this guide will cover optional addons like: Plex Media Server as media server, a way to easily manage your media collection directly on your server and ripping Blu-rays DVDs and CDs, Pi-hole as network wide ad-blocker, PiVPN as VPN-server, Bitwarden as open-source password server, different office solutions for Nextcloud, High-performance-backend for Nextcloud Talk, Fulltextsearch for Nextcloud and more.
 
-You could argue that it is comparable to the `NextcloudPi` project because it is comparable in terms of features but in opposite to NextcloudPi which currently still has limitations in terms of application/integrations support (because it is made to run on ARM hardware) and other shortcomings, you are not limited by using the Nextcloud-VM project on x86 hardware which is a requirement for this guide.
+You could argue that it is comparable to the `NextcloudPi` project because it is comparable in terms of features but in opposite to NextcloudPi which currently still has limitations in terms of application/integrations support (because it is made to run on ARM hardware) and other shortcomings, you are not limited by using the Nextcloud-VM project on x86 hardware which is the basis for this guide.
 
 # Index
 - [Basic setup](#basic-setup)
