@@ -68,4 +68,4 @@ Press [ENTER] to reboot
 ---
 
 ### The Nextcloud installation is now done.
-### Please click [here](TODO) to continue where you left off.
+### Please click [here](https://github.com/szaimen/Nextcloud-NAS-Guide#how-to-startup-nextcloud) to continue where you left off.
