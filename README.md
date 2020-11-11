@@ -3,8 +3,6 @@ Instructions how to setup a Nextcloud NAS
 
 TODO: Add what this is, advantages over nextcloudpi, ideas, why do I call it nextcloud nas?
 
-The idea concerning this guide is that you can read through all points starting at [Basic setup](#basic-setup) from top to bottom. In the end you will have a working Nextcloud NAS.
-
 ### Are there any known limitations?
 Yes:
 - You should neither use Nextclouds `Groupfolder` app nor use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two apps will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. 
@@ -14,6 +12,7 @@ Yes:
 
 # Index
 - [Basic setup](#basic-setup)
+    - [How to use this guide?](#how-to-use-this-guide)
     - [Minimal Hardware requirements](#what-are-the-minimal-hardware-requirements)
     - [Hardware recommendations](#do-you-have-any-hardware-recommendations)
     - [Preparations](#are-there-any-preparations-necessary-before-i-can-start)
@@ -46,7 +45,7 @@ Yes:
     - [External backup HDD's](#how-to-configure-the-external-backup-hdds)
         - [Format](#how-to-format-the-external-backup-hdds)
         - [Mount](#how-to-mount-the-external-backup-hdds)
-    - [Update](#how-to-update-your-server)
+    - [Update](#how-to-update-your-server-manually)
     - [Daily Backup](#how-to-set-up-a-daily-backup)
     - [Off-Shore Backup](#how-to-set-up-an-offshore-backup)
     - [SMB-server](#how-to-configure-a-smb-server)
@@ -57,6 +56,9 @@ Yes:
 - [Optional](#optional)
 
 # Basic setup
+
+## How to use this guide?
+The idea concerning this guide is that you can read and work through the whole guide starting here until the whole the basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-configured)). In the end you will have a working Nextcloud NAS.
 
 ## What are the minimal Hardware requirements?
 You will need the following things:
@@ -100,18 +102,18 @@ How to do this in detail depends on the PC that you've chosen to function as you
 
 ## How to configure the BIOS/UEFI?
 You will need to configure your BIOS/UEFI in order to harden security and to make things work. The following guide is especially written for Intel Visual Bios which is present on Intel NUC devices. If you use a different device as your server it is possible, that some things are different for you. Since BIOS/UEFI can be visually very different, this guide is only plain text.
-1. Connect a the power-cable, monitor, mouse and keyboard to your server
-1. Power on your server and open the BIOS/UEFI by pressing `[F2]`
-1. Load the **BIOS/UEFI defaults** by pressing `[F9]` and `[ENTER]` to confirm
-1. The server should now reboot and you should open the BIOS/UEFI by pressing `[F2]` again
-1. Open the Advanced Menu by clicking on the **Advanced** button in the top right corner
-1. Set the Fan Control Mode to quiet by clicking on the **Cooling** tab In the **CPU Fan Header** section, select **Fan Control Mode** and choose **Quiet**
-1. Set a Supervisor password by clicking on the **Security** tab In the **Passwords** section, click on **Set Supervisor Password** and type in a **password**. Store it at a safe place!
-1. Configure your server to boot automatically after a power failure by clicking on the **Power** tab In the **Secondary Power Settings** section, click on **After Power Failure** and choose **Power On**
-1. Enable UEFI Boot and disable Legacy Boot by clicking on the **Boot** tab. The **Boot Priority** tab is now automatically selected. In the **UEFI Boot Priority** section, **enable UEFI Boot** and **disable Legacy Boot**
-1. Only allow to boot from USB-sticks by clicking on the **Boot Configuration** tab. In the **UEFI Boot** section, disable everything and only **enable Boot Network Devices Last**. In the **Boot Devices** section, disable everything and only **enable USB**
-1. Configure Secure Boot by clicking on the **Secure Boot** tab. In the **Secure Boot Config** section, disable everything and only **enable Secure Boot**
-1. Now confirm your settings by pressing `[F10]` and `[ENTER]`
+1. **Connect** the power-cable, monitor, mouse and keyboard to your server
+1. **Power on** your server and **open the BIOS/UEFI** by pressing `[F2]`
+1. **Load the BIOS/UEFI defaults** by pressing `[F9]` and `[ENTER]` to confirm
+1. The server should now reboot and you should **open the BIOS/UEFI** by pressing `[F2]` again
+1. **Open the Advanced Menu** by clicking on the Advanced button in the top right corner
+1. **Set the Fan Control Mode to quiet** by clicking on the `Cooling` tab In the `CPU Fan Header` section, select `Fan Control Mode` and choose **Quiet**
+1. **Set a Supervisor password** by clicking on the `Security` tab In the `Passwords` section, click on `Set Supervisor Password` and type in a **password**. Store it at a safe place!
+1. Configure your server to **boot automatically after a power failure** by clicking on the `Power` tab In the `Secondary Power Settings` section, click on `After Power Failure` and choose **Power On**
+1. **Enable UEFI Boot** and **disable Legacy Boot** by clicking on the `Boot` tab. The `Boot Priority` tab is now automatically selected. In the `UEFI Boot Priority` section, **enable UEFI Boot** and **disable Legacy Boot**
+1. Only allow to **boot from USB-sticks** by clicking on the `Boot Configuration` tab. In the `UEFI Boot` section, disable everything and only **enable Boot Network Devices Last**. In the `Boot Devices` section, disable everything and only **enable USB**
+1. **Configure Secure Boot** by clicking on the `Secure Boot` tab. In the `Secure Boot Config` section, disable everything and only **enable Secure Boot**
+1. Now **confirm your settings** by pressing `[F10]` and `[ENTER]`
 
 The BIOS/UEFI should now be correctly configured.
 
@@ -267,7 +269,7 @@ In order to automate as much things as possible, you should enable automatic upd
 
 **The update will be executed on saturdays at 18:00h.**
 
-Please note: the update script will only update to minor Nextcloud versions. If new major Nextcloud version get released, you will need to update your server manually.
+Please note: the update script will only update to minor Nextcloud versions. If a new major Nextcloud version gets released, you will need to update your server manually by running the update script.
 
 ## How to enable geoblocking?
 In order to improve security, you can allow access to your webserver only from specific countries or continents.
@@ -456,7 +458,7 @@ Now that the drives are prepared, you will mount the drives to your sever:
 
 **Now repeat this same procedure with the second drive! Start at point 4!**
 
-## How to update your server?
+## How to update your server manually?
 Before you are able to create the backup scripts, you will need to run the update script one time.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Update Nextcloud`
@@ -477,7 +479,7 @@ Now that everything is prepared, you should set up a daily backup for your serve
 1. You should now receive the daily backup config file via mail. Please **save/archive** it
 1. Finally, you will see the message that the backup script was successfully created
 
-It is located here: `/var/scripts/daily-borg-backup.sh` and will get executed at your chosen backup time, most likely `4.00 am`. You will get **notified** by mail if something fails and also if the backup was successful.
+It is located here: `/var/scripts/daily-borg-backup.sh` and will get executed at your chosen backup time, most likely `4.00 am`. You will get **notified** by mail if something fails and also if the backup was successful. The script which will create the daily backup is based on a program called `borgbackup` which is used to make daily incremental, compressed and deduplicated backup archives from your root partition and external data SSD.
 
 ## How to set up an offshore backup?
 Now that also the daily backup is prepared, you should set up an off-shore backup for your server.
@@ -491,7 +493,7 @@ Now that also the daily backup is prepared, you should set up an off-shore backu
 1. Now everything will get set up
 1. Finally, you will see the message that the backup script was successfully created
 
-It is located here: `/var/scripts/off-shore-rsync-backup.sh` and will get executed every `90 days`. For now it will be executed every day at `20.00pm` until the first off-shore backup was successfully created. Please leave the drive **connected** for now. You will get notified by mail if something fails. If the backup was successful, you will be **notified** that you can disconnect the drive.
+It is located here: `/var/scripts/off-shore-rsync-backup.sh` and will get executed every `90 days`. For now it will be executed every day at `20.00pm` until the first off-shore backup was successfully created. Please leave the drive **connected** for now. You will get notified by mail if something fails. If the backup was successful, you will be **notified** that you can disconnect the drive. The script which will create the off-shore backup is based on a program called `rsync` which will sync the whole backup repository that was made by the daily backup script from your daily backup drive to your offshore backup drive.
 
 ## How to configure a SMB-server?
 Although a SMB-server might not be needed in any installation, it is recommended to configure it nonetheless, since you will be able to `create Nextcloud users` and configure the `Nextcloud external storage` app easily using the SMB-server script.
