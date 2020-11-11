@@ -5,7 +5,7 @@ TODO: Add what this is, advantages over nextcloudpi, ideas, why do I call it nex
 
 ### Are there any known limitations?
 - You should neither use Nextclouds `Groupfolder` app nor use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two apps will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. And don't despair! This guide covers how to do this.
-- You will need a different PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough)
+- You will need a PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough)
 - Most of this guide is based on scripts that are provided by the [Nextcloud-VM](https://github.com/nextcloud/vm) and will need to be executed in order to make everything work. This could theoratically set your server under risk but we made sure that all of them are well tested.
 
 **If those limitations are nothing you are willing to accept, this guide is unfortunately nothing for you.**
@@ -72,7 +72,7 @@ You will need the following things:
 - One external SSD (or HDD) that will store your personal data with at least 250GB
 - Two additional external HDD's that will function as backup drives with at least the same size of the external personal data SSD each
 
-**Please note: In order to complete this guide, you will need a different PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough) If you don't have one, this guide is unfortunately nothing for you.**
+**Please note: In order to complete this guide, you will need a PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough) If you don't have one, this guide is unfortunately nothing for you.**
 
 ## Do you have any Hardware recommendations?
 Yes! Since your server shall run 24/7, it makes sense to use laptop CPU's and hardware because those are still much more power efficient than any custom-built PC. Perfect because of the size and power for this usecase are Intel NUC's. Recommended are any recent Intel NUC's with 4 or more cores. Click on [this link](https://geizhals.eu/?cat=barepc&v=e&hloc=at&hloc=de&hloc=pl&hloc=uk&hloc=eu&sort=p&bl1_id=30&xf=15825_4%7E2257_Intel%7E3345_2018#gh_filterbox) to show recommended devices. Of yourse you are free to buy used devices, but again: Intel NUC's are prefered.
@@ -148,7 +148,7 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 Theoratically you could now disconnect the monitor, mouse and keyboard again.
 
 ## How to connect to your server over SSH?
-In order to connect to your server from a different PC in the same network, you should use SSH. You are then able to use copy and paste and more.
+In order to connect to your server from a PC in the same network, you should use SSH. You are then able to use copy and paste and more.
 1. Open a command prompt on Windows 10 or terminal on Linux
 1. Type in `ssh username@ip-address`<br>
 One example is: `ssh ncadmin@192.168.178.144`
