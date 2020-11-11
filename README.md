@@ -109,12 +109,6 @@ One example is: `ssh ncadmin@192.168.178.144`
 
 Please note: If you connect the first time to your server, you will be asked to confirm the server fingerprint which you should do by typing in `yes` and pressing `[ENTER]`
 
-## What is CLI?
-CLI means **Command Line Interface**. It is the Interface with which you control your server.
-
-## How to become root user over CLI?
-Type in: `sudo -i` and your **password** to become root
-
 ## How to set up automatic TPM2 unlocking?
 In order to automaticly unlock the encrypted root partition, you need to setup TPM2 unlocking during boot.
 1. Connect from a PC in the same network to your server over SSH
@@ -418,7 +412,7 @@ Now that the drives are prepared, you will mount the drives to your sever:
 
 **Now repeat this same procedure with the second drive! Start at point 4!**
 
-## How to update Nextcloud?
+## How to update your server?
 Before you are able to create the backup scripts, you will need to run the update script one time.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Update Nextcloud`
@@ -491,8 +485,8 @@ Your data folder should be now found in `/mnt/data/your data folder`. One of you
 **Based on the example above, you should now create a list how do you want to share your data with your users.**
 
 Here is how to work off this list technically:
-1. Go back to the **SMB-server Main Menu** and select **Open the SMB-share Menu**
-1. Choose **Create a SMB-share**
+1. Go back to the **SMB-server Main Menu** and select `Open the SMB-share Menu`
+1. Choose `Create a SMB-share`
 1. You will see now a list of valid directories you can type in
 1. Type in one **directory** that you want to share. Based on the example above, it could be e.g. `/mnt/data/your data folder/user1 folder` or `mnt/data/your data folder/Data exchange folder`
 1. Type in the **Share name** that you want to use. It should most likely have the same name like the folder that you want to share. Please note, that spaces are not supported. For e.g. `user1 folder` you would thus need to use `user1_folder` or `user1-folder` as name
@@ -510,4 +504,28 @@ Here is how to work off this list technically:
 
 Please note that you can always change the settings for your mounts in Nextcloud by opening `https://yourdomain-or-ipaddress/settings/admin/externalstorages` with your Nextcloud admin account afterwards.
 
+### How to make the root directory in Nextcloud read only for all users?
+In order to prevent user from creating any files outside their user folders, which are located on the external data SSD and now mounted to Nextcloud, you can make the Nextcloud root directory read only for all users.
+
+Here is how to do this:
+1. From the **SMB-server Main Menu** select `Open the SMB-share Menu`
+1. Type in an empty or not existing directory that you will share, like `mnt/data/your data folder/root` (based on the example above) and choose to create that directory
+1. Type in `root` as **Share name**
+1. Now **select at least one SMB-user** that will get **access** to the share for now
+1. Now select that the share shall be **read only**
+1. After restartin Samba, the SMB-share should be successfully created!
+1. Select that you **want to mount** the same directory to Nextcloud
+1. You can now change the mount name of your directory for the usage in Nextcloud. You should change the name to `/` (one forward-slash)
+1. Now choose that the mount shall be **read only** in Nextcloud
+1. Choose that you want to disable **sharing** for this mount
+1. Now select all Nextcloud users and groups in order to **share the mount with everyone**.
+1. Now everything should get set up automatically.
+1. You should now remove the SMB-share again since it is not needed any longer:
+1. Choose to `Delete SMB-shares` from the same still open `SMB-share Menu`
+1. Select the just created share with name `root`
+1. Press `[Enter]` to delete it
+
+### Congratulations, everything of the Basic Setup is now configured!
+
 # Optional
+TODO
