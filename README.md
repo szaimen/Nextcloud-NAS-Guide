@@ -9,7 +9,7 @@ TODO: Add what this is, advantages over nextcloudpi, ideas, why do I call it nex
     - [Considerations](#are-there-any-considerations-you-should-know-of)
     - [Minimal Hardware requirements](#what-are-the-minimal-hardware-requirements)
     - [Hardware recommendations](#do-you-have-any-hardware-recommendations)
-    - [Preparations](#are-there-any-preparations-necessary-before-i-can-start)
+    - [Preparations](#are-there-any-preparations-necessary-before-you-can-start)
     - [BIOS/UEFI](#how-to-configure-the-biosuefi)
     - [Ubuntu](#how-to-set-up-ubuntu)
     - [SSH](#how-to-connect-to-your-server-over-ssh)
@@ -97,7 +97,7 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 - [Silicon Power Armor A85 1TB](https://geizhals.eu/silicon-power-armor-a85-1tb-sp010tbphda85s3s-a1358555.html?hloc=at&hloc=de&hloc=eu&hloc=pl&hloc=uk) x2 = ca. 55€ x2 = ca. 110€
 
 
-## Are there any preparations necessary before I can start?
+## Are there any preparations necessary before you can start?
 Yes, please make sure that you have all necessary Hardware requirements and please connect all necessary parts before continuing.
 
 **For Intel NUC's, you need to put one SSD and one RAM latch into the device before continuing**
