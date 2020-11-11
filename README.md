@@ -6,6 +6,7 @@ TODO: Add what this is, advantages over nextcloudpi, ideas, why do I call it nex
 ### Are there any known limitations?
 - You should neither use Nextclouds `Groupfolder` app nor use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two apps will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. And don't despair! This guide covers how to do this.
 - You will need a different PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough)
+- Most of this guide is based on scripts that are provided by the Nextcloud-VM and will need to be executed in order to make everything work. This could theoratically set your server under risk but we made sure that all of them are well tested.
 
 **If those limitations are nothing you are willing to accept, this guide is unfortunately nothing for you.**
 
