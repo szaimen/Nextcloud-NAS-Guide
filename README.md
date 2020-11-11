@@ -127,8 +127,8 @@ You will need to configure your BIOS/UEFI in order to harden security and to mak
 1. **Set a Supervisor password** by clicking on the `Security` tab In the `Passwords` section, click on `Set Supervisor Password` and type in a **password**. Store it at a safe place!
 1. Configure your server to **boot automatically after a power failure** by clicking on the `Power` tab In the `Secondary Power Settings` section, click on `After Power Failure` and choose **Power On**
 1. **Enable UEFI Boot** and **disable Legacy Boot** by clicking on the `Boot` tab. The `Boot Priority` tab is now automatically selected. In the `UEFI Boot Priority` section, **enable UEFI Boot** and **disable Legacy Boot**
-1. Only allow to **boot from USB-sticks** by clicking on the `Boot Configuration` tab. In the `UEFI Boot` section, disable everything and only **enable Boot Network Devices Last**. In the `Boot Devices` section, disable everything and only **enable USB**
-1. **Configure Secure Boot** by clicking on the `Secure Boot` tab. In the `Secure Boot Config` section, disable everything and only **enable Secure Boot**
+1. Only allow to **boot from USB-sticks** by clicking on the `Boot Configuration` tab. In the `UEFI Boot` section, disable everything and **only enable Boot Network Devices Last**. In the `Boot Devices` section, disable everything and **only enable USB**
+1. **Configure Secure Boot** by clicking on the `Secure Boot` tab. In the `Secure Boot Config` section, disable everything and **only enable Secure Boot**
 1. Now **confirm your settings** by pressing `[F10]` and `[ENTER]`
 
 The BIOS/UEFI should now be correctly configured.
