@@ -58,7 +58,7 @@ Yes:
 # Basic setup
 
 ## How to use this guide?
-The idea concerning this guide is that you can read and work through the whole guide starting here until the whole the basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-configured)). In the end you will have a working Nextcloud NAS.
+The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-configured)). In the end you will have a working Nextcloud NAS.
 
 ## What are the minimal Hardware requirements?
 You will need the following things:
