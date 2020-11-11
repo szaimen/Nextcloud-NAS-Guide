@@ -67,6 +67,7 @@ You will need the following things:
 - One internal SSD with at least 128GB
 - Power Supply for your server (if not built-in)
 - TPM2 support
+- One USB-stick with at least 8GB
 - One external SSD (or HDD) that will store your personal data with at least 250GB
 - Two additional external HDD's that will function as backup drives with at least the same size of the external personal data SSD each
 
