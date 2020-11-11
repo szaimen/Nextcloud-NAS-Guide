@@ -76,7 +76,7 @@ You will need the following things:
 - Power Supply for your server (if not built-in)
 - TPM2 support
 - One USB-stick with at least 8GB
-- One external SSD (or HDD) that will store your personal data with at least 250GB
+- One external SSD (or HDD) that will store your personal data with at least 250GB (depending on how much data you are planning to store on your server)
 - Two additional external HDD's that will function as backup drives with at least the same size of the external personal data SSD each
 
 **Please note: In order to complete this guide, you will need a PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough) If you don't have one, this guide is unfortunately nothing for you.**
@@ -90,7 +90,7 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 - One Intel NUC from 2018 or later with 4 Cores or more
 - One SO-DIMM RAM latch with 8GB because 8GB should be enough for now and you will be able to upgrade the RAM with a second latch later on 
 - One internal SSD with 250 GB which should be plenty of storage for this usecase
-- One external SSD for storing the private data with at least 1TB
+- One external SSD for storing the private data with at least 1TB (depending on how much data you are planning to store on your server)
 - Two external HDD's for backups with at least the same size like the external SSD each
 
 #### Currently (10. Nov. 2020) the recommended configuration which should fit for most people is:
