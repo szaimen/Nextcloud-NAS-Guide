@@ -114,4 +114,4 @@ Here you can see the ip-address which you will need in the next step.
 ---
 
 ### The Ubuntu installation is now done.
-### Please click [here](https://github.com/szaimen/Nextcloud-NAS-Guide#how-to-connect-to-your-server-over-ssh) to continue.
+### Please click [here](https://github.com/szaimen/Nextcloud-NAS-Guide#how-to-connect-to-your-server-over-ssh) to return to the guide.

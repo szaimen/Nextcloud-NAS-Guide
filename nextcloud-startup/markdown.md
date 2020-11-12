@@ -162,4 +162,4 @@ Press [ENTER] to reboot
 ---
 
 ### The Nextcloud startup is now done.
-### Please click [here](https://github.com/szaimen/Nextcloud-NAS-Guide#how-to-activate-lets-encrypt-for-your-domain) to continue.
+### Please click [here](https://github.com/szaimen/Nextcloud-NAS-Guide#how-to-activate-lets-encrypt-for-your-domain) to return to the guide.
