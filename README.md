@@ -234,10 +234,10 @@ In order to access Nextcloud over https with a valid certificate, you will need 
 DDNS stands for Dynamic DNS and will be used in order to be able to run a webserver on your home network. On most home networks you have no static public IP address due to privacy reasons and will need to set up DDNS.
 ### Which DDNS-providers are currently supported?
 Currently (10. Nov. 2020) supported are:
-- [Cloudflare](cloudflare.com)
-- [deSEC](desec.io)
-- [Duck DNS](duckdns.org)
-- [Strato](strato.de) (recommended for german users)
+- [Cloudflare](https://cloudflare.com)
+- [deSEC](https://desec.io)
+- [Duck DNS](https://duckdns.org)
+- [Strato](https://strato.de) (recommended for german users)
 
 ### How to activate DDNS for your Domain
 For some DDNS-providers like Strato, you will need to activate DDNS for your Domain first before you can use it.
