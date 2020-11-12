@@ -18,8 +18,8 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Minimal Hardware requirements](#what-are-the-minimal-hardware-requirements)
     - [Hardware recommendations](#do-you-have-any-hardware-recommendations)
     - [Preparations](#are-there-any-preparations-necessary)
+- [How long will the initial setup take?](#how-long-will-the-initial-setup-take)
 - [Basic setup](#basic-setup)
-    - [How long will the initial setup take?](#how-long-will-the-initial-setup-take)
     - [BIOS/UEFI](#how-to-configure-the-biosuefi)
     - [Ubuntu](#how-to-set-up-ubuntu)
     - [SSH](#how-to-connect-to-your-server-over-ssh)
@@ -152,6 +152,13 @@ How to do this in detail depends on the PC that you've chosen to function as you
 
 ---
 
+# How long will the initial setup take?
+TODO: add how long it will take approx.
+
+Just so that you know: the initial setup ends [here](#congratulations-everything-of-the-initial-setup-is-now-done)
+
+---
+
 # Basic setup
 You will now configure your basic system.
 
@@ -161,10 +168,6 @@ This section covers:
 1. Connect over SSH
 1. Setup TPM2 unlocking
 1. Install Nextcloud and run the startup script
-
-## How long will the initial setup take?
-TODO: add how long it will take approx.
-Just so that you know: it ends [here](#congratulations-everything-of-the-initial-setup-is-now-done))
 
 ## How to configure the BIOS/UEFI?
 You will need to configure your BIOS/UEFI in order to harden security and to make things work. 
