@@ -68,9 +68,9 @@ The idea concerning this guide is that you can read and work through the whole g
 **Please note**: It is not recommended to skip sections until the whole basic setup section is done, because they partly build on each other. So simply read and work through everything starting here!
 
 ## Are there any considerations you should know of?
+Please read carefully through this list of considerations you should know of!
 <details><summary>Click here to expand</summary>
 
-Please read carefully through this list of considerations you should know of!
 - This guide is only meant for home servers, for nothing else.
 - It is provided as is and without warranty of any kind. (Read the [License](https://github.com/szaimen/Nextcloud-NAS-Guide/blob/main/LICENSE))
 - You should **neither** use Nextclouds `Groupfolder` app **nor** use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two storage providers will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. And don't despair! This guide covers how to do this. Please note that some Nextcloud apps have limitations when used together with the `external storage app`, though.
@@ -86,9 +86,9 @@ Please read carefully through this list of considerations you should know of!
 </details>
 
 ## What are the minimal Hardware requirements?
+You will need the following things:
 <details><summary>Click here to expand</summary>
 
-You will need the following things:
 - A x86 PC that will function as your server with:
 - At least 2 Cores
 - At least 4GB RAM
@@ -104,9 +104,10 @@ You will need the following things:
 </details>
 
 ## Do you have any Hardware recommendations?
+Since your server shall run 24/7, it makes sense to use laptop CPU's and hardware because those are still much more power efficient than any custom-built PC. Perfect because of the size and power for this usecase are Intel NUC's. 
 <details><summary>Click here to expand</summary>
 
-Yes! Since your server shall run 24/7, it makes sense to use laptop CPU's and hardware because those are still much more power efficient than any custom-built PC. Perfect because of the size and power for this usecase are Intel NUC's. Recommended are any recent Intel NUC's with 4 or more cores. Click on [this link](https://geizhals.eu/?cat=barepc&v=e&hloc=at&hloc=de&hloc=pl&hloc=uk&hloc=eu&sort=p&bl1_id=30&xf=15825_4%7E2257_Intel%7E3345_2018#gh_filterbox) to show recommended devices. Of yourse you are free to buy used devices, but again: Intel NUC's are prefered.
+Recommended are any recent Intel NUC's with 4 or more cores. Click on [this link](https://geizhals.eu/?cat=barepc&v=e&hloc=at&hloc=de&hloc=pl&hloc=uk&hloc=eu&sort=p&bl1_id=30&xf=15825_4%7E2257_Intel%7E3345_2018#gh_filterbox) to show recommended devices. Of yourse you are free to buy used devices, but again: Intel NUC's are prefered.
 
 After you have chosen your device, you will need to get compatible RAM and Storage for your NUC which depends on the model that you've chosen. So please choose wisely.
 
@@ -126,8 +127,8 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 </details>
 
 ## Are there any preparations necessary before you can start?
-<details><summary>Click here to expand</summary>
 Yes, please make sure that you have all necessary Hardware requirements and please connect all necessary parts before continuing. And please don't forget the USB-stick, -mouse, -keyboard and HDMI-display!
+<details><summary>Click here to expand</summary>
 
 **For Intel NUC's, you need to put one SSD and one RAM latch into the device before continuing**
 
@@ -135,9 +136,10 @@ How to do this in detail depends on the PC that you've chosen to function as you
 </details>
 
 ## How to configure the BIOS/UEFI?
+You will need to configure your BIOS/UEFI in order to harden security and to make things work. 
 <details><summary>Click here to expand</summary>
 
-You will need to configure your BIOS/UEFI in order to harden security and to make things work. The following guide is especially written for Intel Visual Bios which is present on Intel NUC devices. If you use a different device as your server it is possible, that some things are different for you. Since BIOS/UEFI can be visually very different, this guide is only plain text.
+The following guide is especially written for Intel Visual Bios which is present on Intel NUC devices. If you use a different device as your server it is possible, that some things are different for you. Since BIOS/UEFI can be visually very different, this guide is only plain text.
 1. **Connect** the power-cable, HDMI-display, USB-mouse and -keyboard to your server
 1. **Power on** your server and **open the BIOS/UEFI** by pressing `[F2]`
 1. **Load the BIOS/UEFI defaults** by pressing `[F9]` and `[ENTER]` to confirm
@@ -155,9 +157,9 @@ The BIOS/UEFI should now be correctly configured.
 </details>
 
 ## How to set up Ubuntu?
+You need an OS for you server and we've chosen the latest Ubuntu LTS release for you. Here is how it should get installed and configured.
 <details><summary>Click here to expand</summary>
 
-You need an OS for you server and we've chosen the latest Ubuntu LTS release for you. Here is how it should get installed and configured.
 1. **Download** the latest Ubuntu Server 20.04.1 LTS image by clicking [here](http://www.releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso)
 1. Use the already downloaded image to create a bootable USB-stick by following [this guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows)
 1. Connect a **LAN-cable** to your server
@@ -187,9 +189,9 @@ Theoratically you could now disconnect the monitor, mouse and keyboard again.
 </details>
 
 ## How to connect to your server over SSH?
+In order to connect to your server from a PC in the same network, you should use SSH. You are then able to use copy and paste and more.
 <details><summary>Click here to expand</summary>
 
-In order to connect to your server from a PC in the same network, you should use SSH. You are then able to use copy and paste and more.
 1. Open a command prompt on Windows 10 or terminal on Linux
 1. Type in `ssh username@ip-address`<br>
 One example is: `ssh ncadmin@192.168.178.144`
@@ -199,9 +201,9 @@ Please note: If you connect the first time to your server, you will be asked to 
 </details>
 
 ## How to set up automatic TPM2 unlocking?
+In order to automaticly unlock the encrypted root partition, you need to setup TPM2 unlocking during boot.
 <details><summary>Click here to expand</summary>
 
-In order to automaticly unlock the encrypted root partition, you need to setup TPM2 unlocking during boot.
 1. Connect from a PC in the same network to your server over SSH
 1. Copy and paste the following command over CLI: <br>
 `wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/tpm2-unlock.sh && sudo bash tpm2-unlock.sh`<br>
@@ -217,9 +219,9 @@ Now it should unlock the root partition during boot automatically. If not, somet
 </details>
 
 ## How to install Nextcloud?
+In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, since it is the most user-friendly way to setup Nextcloud as far as we know and has many features built-in.
 <details><summary>Click here to expand</summary>
 
-In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, since it is the most user-friendly way to setup Nextcloud as far as we know and has many features built-in.
 1. Connect from a PC in the same network to your server over SSH
 1. Copy and paste the following command over CLI: <br>
 `wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh && sudo bash nextcloud_install_production.sh`<br>
@@ -237,9 +239,10 @@ Now the initial Nextcloud setup should be done.
 </details>
 
 ## How to startup Nextcloud?
+This is the second part of the Nextcloud installation that is prepared by the recently executed Nextcloud-VM script. 
 <details><summary>Click here to expand</summary>
 
-This is the second part of the Nextcloud installation that is prepared by the recently executed Nextcloud-VM script. You will need to run this to the end to be done with the Nextcloud setup.
+You will need to run this to the end to be done with the Nextcloud setup.
 1. Connect from a PC in the same network to your server over SSH
 1. **We have prepared a slideshow for you that you can use. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/nextcloud-startup) to start the slideshow. Otherwise, just continue with the steps below**
 1. After login, you will be automatically redirected and asked a second time for your password. Enter your **password** and the script will start
@@ -260,9 +263,9 @@ Now the Nextcloud configuration should be done. Next, you will configure recomme
 </details>
 
 ## How to enable geoblocking?
+In order to improve security, you can allow access to your webserver only from specific countries or continents.
 <details><summary>Click here to expand</summary>
 
-In order to improve security, you can allow access to your webserver only from specific countries or continents.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `GeoBlock`
 1. Choose to install/reinstall Geoblock
@@ -270,9 +273,9 @@ In order to improve security, you can allow access to your webserver only from s
 </details>
 
 ## How to enable automatic updates?
+In order to automate as much things as possible, you should enable automatic updates.
 <details><summary>Click here to expand</summary>
 
-In order to automate as much things as possible, you should enable automatic updates.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `Automatic updates`
 1. Choose to enable automatic updates
@@ -284,9 +287,8 @@ Please note: the update script will only update to minor Nextcloud versions. If 
 </details>
 
 ## How to set up SMTP Mail to enable your server to send mails?
-<details><summary>Click here to expand</summary>
-
 In order to get notified by mail for backups, disk errors and such, you should configure your server to send mails.
+<details><summary>Click here to expand</summary>
 
 **Before you can start, please get a mail account that your server will use to send mails.**
 
@@ -309,9 +311,10 @@ If all settings were entered correctly, you should receive a testmail which prov
 </details>
 
 ## How to set up disk monitoring?
+Since disks can fail, you should get notified as soon as possible if a disk error is found, so you should set up disk monitoring. 
 <details><summary>Click here to expand</summary>
 
-Since disks can fail, you should get notified as soon as possible if a disk error is found, so you should set up disk monitoring. Please note: this is no alternative to a backup solution!
+Please note: this is no alternative to a backup solution!
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `Disk Monitoring`
 1. Choose to install/reinstall **S.M.A.R.T Monitoring**
@@ -319,25 +322,26 @@ Since disks can fail, you should get notified as soon as possible if a disk erro
 </details>
 
 ## How to set up Fail2Ban?
+In order to block too much failed login attempts for Nextcloud and SSH, you should configure Fail2Ban for your server.
 <details><summary>Click here to expand</summary>
 
-In order to block too much failed login attempts for Nextcloud and SSH, you should configure Fail2Ban for your server.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Additional Apps` -> `Fail2Ban` -> `Install-Fail2Ban`
 1. Choose to install/reinstall Fail2Ban
 </details>
 
 ## How to download the Not-supported Menu?
+The Not-supported Menu of the Nextcloud-VM features some exciting new scripts which provide a complete Backup solution, a script to manage a SMB-server and much more.
 <details><summary>Click here to expand</summary>
 
-The Not-supported Menu of the Nextcloud-VM features some exciting new scripts which provide a complete Backup solution, a script to manage a SMB-server and much more.
 #### Copy and paste into your CLI:
 `sudo wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/not-supported.sh -P /var/scripts`
 </details>
 
 ## How to install ClamAV?
-<details><summary>Click here to expand</summary>
 In order to protect your files from malware, you should set up ClamAV which will will detect malware and scan your files weekly for malware. You will get notified if something was found.
+<details><summary>Click here to expand</summary>
+
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `ClamAV`
 1. Choose to install/reinstall ClamAV
@@ -349,9 +353,9 @@ You've successfully made your server a bit more secure!
 </details>
 
 ## How to configure the external data SSD?
+The following steps are needed to configure the external data SSD.
 <details><summary>Click here to expand</summary>
 
-The following things are needed for this:
 1. **Reformat** the drive to NTFS, if not already done
 1. **Encrypt** the drive with Bitlocker
 1. **Copy** your private files to the drive if you have any and create a sensible folder structure
@@ -359,9 +363,9 @@ The following things are needed for this:
 </details>
 
 ### How to format the external data SSD?
+In order to prepare the SSD for your server, you should first format it to NTFS by doing the following things.
 <details><summary>Click here to expand</summary>
 
-In order to prepare the SSD for your server, you should first format it to NTFS by doing the following things:<br>
 (If it is already NTFS formatted, you can skip the formatting to NTFS)
 1. **Connect** the drive to your Windows 7/10 Professional (or higher) PC
 1. Open the **File Explorer**
@@ -373,9 +377,9 @@ In order to prepare the SSD for your server, you should first format it to NTFS 
 </details>
 
 ### How to encrypt the external data SSD?
+Now encrypt your external SSD using Bitlocker.
 <details><summary>Click here to expand</summary>
 
-Now encrypt your external SSD using Bitlocker:
 (You can also encrypt the drive if already some data is on it)
 1. **Connect** the drive to your Windows 7/10 Professional (or higher) PC
 1. Search in Windows for `Bitlocker` which should bring up a control panel option called **Manage Bitlocker** and open it
@@ -395,9 +399,9 @@ Now encrypt your external SSD using Bitlocker:
 </details>
 
 ### How to create a sensible folder structure on the external data SSD?
-<details><summary>Click here to expand</summary>
+Recommended is to create the folder structure on the external SSD like this.
 
-Recommended is to create the folder structure on the external SSD like this:
+<details><summary>Click here to expand</summary>
 
 Create a folder on the drive that contains all your files. Inside this folder, there will be the user folders and other folders that shall get shared between users in the future. Each user-folder should contain an `Archive`, `Sync` and `Backup folder` and you should strictly separate between them. The `Sync` folder should contain files and folders that are used or changed often and thus will get synchronized. `Archive` contains all files and folders that are not needed or changed often. `Backup` will contain folders in which e.g. photos from your smartphone will get automatically uploaded or e.g. you can sync your desktop from your laptop to a folder in the Backup folder.
 
@@ -427,9 +431,9 @@ Create a folder on the drive that contains all your files. Inside this folder, t
 </details>
 
 ### How to mount the external data SSD?
+After all private files are successfully copied to the external SSD or at least the folder structure was created, you should mount the drive to your server.
 <details><summary>Click here to expand</summary>
 
-After all private files are successfully copied to the external SSD or at least the folder structure was created, you should mount the drive to your server.
 1. **Connect** the external SSD to your server
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `Bitlocker Mount`
@@ -443,9 +447,8 @@ After all private files are successfully copied to the external SSD or at least 
 </details>
 
 ## How to configure the external backup HDD's?
-<details><summary>Click here to expand</summary>
-
 As you might already know, are those two additional external HDD's meant to be backup drives. One will be used as daily Backup drive which will be connected all the time and one as Off-shore backup drive, which should get stored somewhere else in a safe place outside your home.
+<details><summary>Click here to expand</summary>
 
 You will need to do the following steps:
 1. **Format** them to NTFS
@@ -453,9 +456,9 @@ You will need to do the following steps:
 </details>
 
 ### How to format the external backup HDD's?
+You will now reformat them to NTFS:
 <details><summary>Click here to expand</summary>
 
-You will now reformat them to NTFS:
 1. **Connect** the drives to your Windows 7/10 Professional (or higher) PC
 1. Open the File Explorer
 1. Click on **This PC**
@@ -471,9 +474,9 @@ You will now reformat them to NTFS:
 </details>
 
 ### How to mount the external backup HDD's?
+Now that the drives are prepared, you will mount the drives to your sever:
 <details><summary>Click here to expand</summary>
 
-Now that the drives are prepared, you will mount the drives to your sever:
 1. Please **don't** connect the drives to your server, yet!
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `NTFS Mount`
@@ -492,17 +495,17 @@ Now that the drives are prepared, you will mount the drives to your sever:
 </details>
 
 ## How to update your server manually?
+Before you are able to create the backup scripts, you will need to run the update script one time.
 <details><summary>Click here to expand</summary>
 
-Before you are able to create the backup scripts, you will need to run the update script one time.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Update Nextcloud`
 </details>
 
 ## How to set up a daily backup?
+Now that everything is prepared, you should set up a daily backup for your server.
 <details><summary>Click here to expand</summary>
 
-Now that everything is prepared, you should set up a daily backup for your server.
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `Daily Backup Wizard`
 1. Confirm that you want to **create** a daily backup script
@@ -521,9 +524,9 @@ It is located here: `/var/scripts/daily-borg-backup.sh` and will get executed at
 </details>
 
 ## How to set up an offshore backup?
+Now that also the daily backup is prepared, you should set up an off-shore backup for your server.
 <details><summary>Click here to expand</summary>
 
-Now that also the daily backup is prepared, you should set up an off-shore backup for your server.
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `Off-Shore Backup Wizard`
 1. Confirm that you want to **create** an off-shore backup script
@@ -538,10 +541,7 @@ It is located here: `/var/scripts/off-shore-rsync-backup.sh` and will get execut
 </details>
 
 ## How to configure a SMB-server?
-<details><summary>Click here to expand</summary>
-
 Although a SMB-server might not be needed in any installation, it is recommended to configure it nonetheless, since you will be able to `create Nextcloud users` and configure the `Nextcloud external storage` app easily using the SMB-server script.
-</details>
 
 ### How to run the SMB-server script?
 <details><summary>Click here to expand</summary>
@@ -553,9 +553,8 @@ Although a SMB-server might not be needed in any installation, it is recommended
 </details>
 
 ### How to create SMB-users and Nextcloud users in one go?
-<details><summary>Click here to expand</summary>
-
 The big advantage using this method is, that the Nextcloud and SMB-user will have the same credentials for now. Unfortunately if it gets changed in Nextcloud, it will differ from the old SMB-user password, since they are not synchronized.
+<details><summary>Click here to expand</summary>
 
 **First you should make a list which users you will need and create all of them using the following method:**
 1. From the `SMB-server Main Menu` select `Open the SMB-user Menu`
@@ -570,9 +569,8 @@ The big advantage using this method is, that the Nextcloud and SMB-user will hav
 </details>
 
 ### How to create SMB-shares and mount it to Nextcloud in one go?
+The big advantage is, that you can create a SMB-share and mount the same location to Nextcloud in one go.
 <details><summary>Click here to expand</summary>
-
-The big advantage is, that you can create a SMB-share and mount the same location to Nextcloud in one rush.
 
 If you have followed this guide, you should have set up a **sensible folder structure** on the external data SSD by now. Based on this structure, you should **share** the `user folders` with the corresponding user that you just created. The `data exchange` folders should get shared with the users that shall have access to those folders. 
 
@@ -606,9 +604,8 @@ Please note that you can always change the settings for your mounts in Nextcloud
 </details>
 
 ### How to make the root directory in Nextcloud read only for all users?
-<details><summary>Click here to expand</summary>
-
 In order to prevent user from creating any files outside their user folders, which are located on the external data SSD and now mounted to Nextcloud, you can make the Nextcloud root directory read only for all users.
+<details><summary>Click here to expand</summary>
 
 Here is how to do this:
 1. From the **SMB-server Main Menu** select `Open the SMB-share Menu`
@@ -633,9 +630,9 @@ Now, the root directory should be read only for all users!
 </details>
 
 ## How to install the Previewgenerator?
+In order to speed up preview loading and the general feel of Nextcloud while opening folders with many pictures, you should set up the previewgenerator, which will pre-generate previews to make preview-loading faster.
 <details><summary>Click here to expand</summary>
 
-In order to speed up preview loading and the general feel of Nextcloud while opening folders with many pictures, you should set up the previewgenerator, which will pre-generate previews to make preview-loading faster.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Additional Apps` -> `PreviewGenerator`
 1. Choose to install/reinstall the Preview Generator
@@ -647,16 +644,13 @@ In order to speed up preview loading and the general feel of Nextcloud while ope
 </details>
 
 ## How to customize Nextcloud?
-<details><summary>Click here to expand</summary>
-
 The following things are not really necessary for a basic setup but I think that those should be the default on any installation. Hence they are included in the Basic Setup section. You are free to skip this section.
-</details>
 
 ### How to configure the CookieLifetime?
+By changing this value, you can configure after how much time any user will forcefully get logged out from a browser session. 
 <details><summary>Click here to expand</summary>
 
-By changing this value, you can configure after how much time any user will forcefully get logged out from a browser session. Since you most likely don't want to log into Nextcloud on your devices again every half an hour, it is recommended to change it to a higher value.
-
+Since you most likely don't want to log into Nextcloud on your devices again every half an hour, it is recommended to change it to a higher value.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Nextcloud Configuration` -> `CookieLifetime`
 1. Select `2419200s 4 Weeks` (4 weeks are recommended and should be enough)
@@ -682,9 +676,8 @@ All Nextcloud internal shares will from now on visible in the `Shared` folder.
 </details>
 
 ### How to disable workspaces?
-<details><summary>Click here to expand</summary>
-
 Nextcloud 18 introduced the so-called `workspaces`. This shows a readme file on top of any folder in Nextcloud which will be disturbing for most users, so you should disable them if you have no usecase for them.
+<details><summary>Click here to expand</summary>
 
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Nextcloud Configuration` -> `Disable workspaces`
@@ -694,9 +687,8 @@ Rich workspaces are now disabled.
 </details>
 
 ### How to disable user flows?
-<details><summary>Click here to expand</summary>
-
 User flows are a feature which was introduces with Nextcloud 18. They can lead to performance issues if one user chooses to create many of them so they should get disabled, especially if you have no usecase for them.
+<details><summary>Click here to expand</summary>
 
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Nextcloud Configuration` -> `Disable user flows`
@@ -706,9 +698,9 @@ User flows are now disabled, admin flows still usable.
 </details>
 
 ## How to activate Let's Encrypt for your Domain?
+In order to access Nextcloud over https with a valid certificate, you will need to do the following things:
 <details><summary>Click here to expand</summary>
 
-In order to access Nextcloud over https with a valid certificate, you will need to do the following things:
 1. Get a Domain from a supported DDNS-provider and activate DDNS for your Domain
 1. Configure DDclient
 1. Enable Port Forwarding
@@ -716,15 +708,12 @@ In order to access Nextcloud over https with a valid certificate, you will need 
 </details>
 
 ### What is DDNS?
-<details><summary>Click here to expand</summary>
-
 DDNS stands for Dynamic DNS and will be used in order to be able to run a webserver on your home network. On most home networks you have no static public IP address due to privacy reasons and will need to set up DDNS.
-</details>
 
 ### Which DDNS-providers are currently supported?
+Currently (10. Nov. 2020) supported are:
 <details><summary>Click here to expand</summary>
 
-Currently (10. Nov. 2020) supported are:
 - [Cloudflare](https://cloudflare.com)
 - [deSEC](https://desec.io)
 - [Duck DNS](https://duckdns.org)
@@ -734,17 +723,17 @@ Click on one of them to get your domain!
 </details>
 
 ### How to activate DDNS for your Domain
+For some DDNS-providers like Strato, you will need to activate DDNS for your Domain first before you can use it.
 <details><summary>Click here to expand</summary>
 
-For some DDNS-providers like Strato, you will need to activate DDNS for your Domain first before you can use it.
 #### Here are some provider specific guides how to do this:
 - [Strato](https://www.strato.de/faq/domains/so-einfach-richten-sie-dyndns-fuer-ihre-domains-ein/#1) (only point 1 of this guide is needed)
 </details>
 
 ### How to configure DDclient?
+After you've got your domain from a supported provider and activated DDNS for your domain, you should now configure DDclient.
 <details><summary>Click here to expand</summary>
 
-After you've got your domain from a supported provider and activated DDNS for your domain, you should now configure DDclient.
 DDclient is an easy way to update your domain regularly with your new public ip-address and is the recommended way to set up Dynamic DNS for your server. Please inspect the documents of your DDNS-provider what exactly you need to enter here.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `DDclient Configuration`
@@ -755,9 +744,8 @@ DDclient is an easy way to update your domain regularly with your new public ip-
 </details>
 
 ### How to enable Port Forwarding?
-<details><summary>Click here to expand</summary>
-
 You will need to port forward some specific ports to your server in order to make it possible to run a public webserver on it.
+<details><summary>Click here to expand</summary>
 
 How to do port forwarding in detail, completely depends on your router. Thus, you should inspect your router's manual for that.
 #### Here are some guides for different router models:
@@ -770,9 +758,9 @@ How to do port forwarding in detail, completely depends on your router. Thus, yo
 </details>
 
 ### How to activate TLS?
+You will now activate TLS finally, if all points above are successfully set up.
 <details><summary>Click here to expand</summary>
 
-You will now activate TLS finally, if all points above are successfully set up.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `Activate TLS`
 1. Choose to install TLS
