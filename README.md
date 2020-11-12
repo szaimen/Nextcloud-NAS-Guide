@@ -24,8 +24,8 @@ You could argue that it is comparable to the `NextcloudPi` project because it is
     - [TPM2 unlocking](#how-to-set-up-automatic-tpm2-unlocking)
     - [Nextcloud installation](#how-to-install-nextcloud)
     - [Nextcloud startup script](#how-to-startup-nextcloud)
-    - [Automatic updates](#how-to-enable-automatic-updates)
     - [Geoblocking](#how-to-enable-geoblocking)
+    - [Automatic updates](#how-to-enable-automatic-updates)
     - [SMTP Mail](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails)
     - [Disk Monitoring](#how-to-set-up-disk-monitoring)
     - [Fail2Ban](#how-to-set-up-fail2ban)
@@ -223,6 +223,13 @@ Now the Nextcloud configuration should be done. Next, you will configure recomme
 
 **Please note: Since the server fingerprint was changed during this script, you will need to reset the server fingerprint the next time you connect to your server via SSH.**
 
+## How to enable geoblocking?
+In order to improve security, you can allow access to your webserver only from specific countries or continents.
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Server Configuration` -> `GeoBlock`
+1. Choose to install/reinstall Geoblock
+1. Select whatever countries/continents you would like to allow the access to your server. All other will be blocked, based on the ip-address. (At least your own country should get selected to make this work.)
+
 ## How to enable automatic updates?
 In order to automate as much things as possible, you should enable automatic updates.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
@@ -233,13 +240,6 @@ In order to automate as much things as possible, you should enable automatic upd
 **The update will be executed on saturdays at 18:00h.**
 
 Please note: the update script will only update to minor Nextcloud versions. If a new major Nextcloud version gets released, you will need to update your server manually by running the update script.
-
-## How to enable geoblocking?
-In order to improve security, you can allow access to your webserver only from specific countries or continents.
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
-1. Choose `Server Configuration` -> `GeoBlock`
-1. Choose to install/reinstall Geoblock
-1. Select whatever countries/continents you would like to allow the access to your server. All other will be blocked, based on the ip-address. (At least your own country should get selected to make this work.)
 
 ## How to set up SMTP Mail to enable your server to send mails?
 In order to get notified by mail for backups, disk errors and such, you should configure your server to send mails.
