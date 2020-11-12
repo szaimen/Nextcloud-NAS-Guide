@@ -109,9 +109,8 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 - [ADATA SE800 black 1TB](https://geizhals.eu/adata-se800-schwarz-1tb-ase800-1tu32g2-cbk-a2102946.html) = ca. 130€
 - [Silicon Power Armor A85 1TB](https://geizhals.eu/silicon-power-armor-a85-1tb-sp010tbphda85s3s-a1358555.html?hloc=at&hloc=de&hloc=eu&hloc=pl&hloc=uk) x2 = ca. 55€ x2 = ca. 110€
 
-
 ## Are there any preparations necessary before you can start?
-Yes, please make sure that you have all necessary Hardware requirements and please connect all necessary parts before continuing. And please don't forget the USB-stick!
+Yes, please make sure that you have all necessary Hardware requirements and please connect all necessary parts before continuing. And please don't forget the USB-stick, -mouse, -keyboard and HDMI-display!
 
 **For Intel NUC's, you need to put one SSD and one RAM latch into the device before continuing**
 
