@@ -83,9 +83,10 @@ You will need the following things:
 - One internal SSD with at least 128GB
 - Power Supply for your server (if not built-in)
 - TPM2 support
-- One USB-stick with at least 8GB
 - One external SSD (or HDD) that will store your personal data with at least 250GB (depending on how much data you are planning to store on your server)
 - Two additional external HDD's that will function as backup drives with at least the same size of the external personal data SSD each
+- One USB-stick with at least 8GB for installing Ubuntu
+- For the initial setup you will also need a HDMI-display (e.g. monitor/tv/beamer), USB-mouse and -keyboard. If you don't have one: you don't need to buy those. Borrowing or renting those should be enough. (You really only need them for the initial setup.)
 
 **Please note: In order to complete this guide, you will need a PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough) If you don't have one, this guide is unfortunately nothing for you.**
 
@@ -118,10 +119,10 @@ How to do this in detail depends on the PC that you've chosen to function as you
 
 ## How to configure the BIOS/UEFI?
 You will need to configure your BIOS/UEFI in order to harden security and to make things work. The following guide is especially written for Intel Visual Bios which is present on Intel NUC devices. If you use a different device as your server it is possible, that some things are different for you. Since BIOS/UEFI can be visually very different, this guide is only plain text.
-1. **Connect** the power-cable, monitor, mouse and keyboard to your server
+1. **Connect** the power-cable, HDMI-display, USB-mouse and -keyboard to your server
 1. **Power on** your server and **open the BIOS/UEFI** by pressing `[F2]`
 1. **Load the BIOS/UEFI defaults** by pressing `[F9]` and `[ENTER]` to confirm
-1. The server should now reboot and you should **open the BIOS/UEFI** by pressing `[F2]` again
+1. The server might reboot now and you should **open the BIOS/UEFI** by pressing `[F2]` again. If it doesn't reboot, just continue with the next steps.
 1. **Open the Advanced Menu** by clicking on the Advanced button in the top right corner
 1. **Set the Fan Control Mode to quiet** by clicking on the `Cooling` tab In the `CPU Fan Header` section, select `Fan Control Mode` and choose **Quiet**
 1. **Set a Supervisor password** by clicking on the `Security` tab In the `Passwords` section, click on `Set Supervisor Password` and type in a **password**. Store it at a safe place!
