@@ -48,6 +48,11 @@ You could argue that it is comparable to the `NextcloudPi` project because it is
         - [Create SMB-shares and mount it to Nextcloud](#how-to-create-smb-shares-and-mount-it-to-nextcloud-in-one-go)
         - [Read only root directory in Nextcloud](#how-to-make-the-root-directory-in-nextcloud-read-only-for-all-users)
     - [Previewgenerator](#how-to-install-the-previewgenerator)
+    - [Customize Nextcloud](#how-to-customize-nextcloud)
+        - [CookieLifetime](#how-to-configure-the-cookielifetime)
+        - [Share-folder](#how-to-define-a-share-folder-for-nextcloud-shares)
+        - [Workspaces](#how-to-disable-workspaces)
+        - [User Flows](#how-to-disable-user-flows)
     - [Activate Let's Encrypt](#how-to-activate-lets-encrypt-for-your-domain)
         - [DDNS](#what-is-ddns)
         - [DDNS-providers](#which-ddns-providers-are-currently-supported)
@@ -541,6 +546,50 @@ In order to speed up preview loading and the general feel of Nextcloud while ope
 1. Choose to **not** use a specific Nextcloud user for preview generation
 1. Wait until everything is scanned. This can take a long time, please be patient!
 
+## How to customize Nextcloud?
+The following things are not really necessary for a basic setup but I think that those should be the default on any installation. Hence they are included in the Basic Setup section. You are free to skip this section.
+
+### How to configure the CookieLifetime?
+By changing this value, you can configure after how much time any user will forcefully get logged out from a browser session. Since you most likely don't want to log into Nextcloud on your devices again every half an hour, it is recommended to change it to a higher value.
+
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Nextcloud Configuration` -> `CookieLifetime`
+1. Select `2419200s 4 Weeks` (4 weeks are recommended and should be enough)
+
+Now your users should no longer get logged out in browsers after half an hour.
+
+### How to define a Share-folder for Nextcloud shares?
+If you internally share documents, they will be always added to the users root directory in Nextcloud. Since this can quickly become confusing for your users if they share many files internally, it is recommended to set a `Share-folder`. All shared files will in this case not be visible in the users root directory but in a folder called `Shared`.
+
+If you have followed this guide and made the root directory in Nextcloud **read only** for all users, you will need to do something first, though: Please create a folder in the root folder by running a command like:<br>
+`sudo mkdir "mnt/data/your data folder/root/Shared"` over CLI<br>
+Please remember to adjust this command depending on the path you've chosen to be the root folder.
+
+Now you can configure this option:
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Nextcloud Configuration` -> `Share-folder`
+1. Choose that you want to enable this option
+
+All Nextcloud internal shares will from now on visible in the `Shared` folder.
+
+### How to disable workspaces?
+Nextcloud 18 introduced the so-called `workspaces`. This shows a readme file on top of any folder in Nextcloud which will be disturbing for most users, so you should disable them if you have no usecase for them.
+
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Nextcloud Configuration` -> `Disable workspaces`
+1. Choose to disable `rich workspaces`
+
+Rich workspaces are now disabled.
+
+### How to disable user flows?
+User flows are a feature which was introduces with Nextcloud 18. They can lead to performance reductions if one user chooses to create many of them so they should get disabled, especially if you have no usecase for them.
+
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Nextcloud Configuration` -> `Disable user flows`
+1. Choose to disable `user flows`
+
+User flows are now disabled, admin flows still usable.
+
 ## How to activate Let's Encrypt for your Domain?
 In order to access Nextcloud over https with a valid certificate, you will need to do the following things:
 1. Get a Domain from a supported DDNS-provider and activate DDNS for your Domain
@@ -600,6 +649,8 @@ You will now activate TLS finally, if all points above are successfully set up.
 Now you should be able to access your Nextcloud on any device by opening `yourdomain.com`!
 
 ### Congratulations, everything of the Basic Setup is now done!
+
+---
 
 # Optional
 TODO
