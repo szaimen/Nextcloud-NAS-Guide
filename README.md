@@ -18,7 +18,7 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Minimal Hardware requirements](#what-are-the-minimal-hardware-requirements)
     - [Hardware recommendations](#do-you-have-any-hardware-recommendations)
     - [Preparations](#are-there-any-preparations-necessary)
-- [How long will the initial setup take?](#how-long-will-the-initial-setup-take)
+    - [How long will the initial setup take?](#how-long-will-the-initial-setup-take)
 - [Basic setup](#basic-setup)
     - [BIOS/UEFI](#how-to-configure-the-biosuefi)
     - [Ubuntu](#how-to-set-up-ubuntu)
@@ -81,6 +81,7 @@ This section covers:
 1. Minimal hardware requirements
 1. Hardware recommendations
 1. Preparations
+1. How long the initial setup will take
 
 ## Are there any considerations you should know of?
 Please read carefully through this list of considerations you should know of!
@@ -150,9 +151,7 @@ Yes, please make sure that you have all necessary Hardware requirements and plea
 How to do this in detail depends on the PC that you've chosen to function as your server
 </details>
 
----
-
-# How long will the initial setup take?
+## How long will the initial setup take?
 TODO: add how long it will take approx.
 
 Just so that you know: the initial setup ends [here](#congratulations-everything-of-the-initial-setup-is-now-done)
