@@ -19,20 +19,22 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Hardware recommendations](#do-you-have-any-hardware-recommendations)
     - [Preparations](#are-there-any-preparations-necessary)
 - [Basic setup](#basic-setup)
-    - [How long will the Basic setup take?](#how-long-will-the-basic-setup-take)
+    - [How long will the initial setup take?](#how-long-will-the-initial-setup-take)
     - [BIOS/UEFI](#how-to-configure-the-biosuefi)
     - [Ubuntu](#how-to-set-up-ubuntu)
     - [SSH](#how-to-connect-to-your-server-over-ssh)
     - [TPM2 unlocking](#how-to-set-up-automatic-tpm2-unlocking)
     - [Nextcloud installation](#how-to-install-nextcloud)
     - [Nextcloud startup script](#how-to-startup-nextcloud)
+- [Security and Automation](#security-and-automation)
     - [Geoblocking](#how-to-enable-geoblocking)
-    - [Automatic updates](#how-to-enable-automatic-updates)
-    - [SMTP Mail](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails)
     - [Disk Monitoring](#how-to-set-up-disk-monitoring)
     - [Fail2Ban](#how-to-set-up-fail2ban)
     - [Not-supported Menu](#how-to-download-the-not-supported-menu)
     - [ClamAV (Antivirus)](#how-to-install-clamav)
+    - [Automatic updates](#how-to-enable-automatic-updates)
+- [Backup](#backup)
+    - [SMTP Mail](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails)
     - [External data SSD](#how-to-configure-the-external-data-ssd)
         - [Format](#how-to-format-the-external-data-ssd)
         - [Encrypt](#how-to-encrypt-the-external-data-ssd)
@@ -44,30 +46,30 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Update manually](#how-to-update-your-server-manually)
     - [Daily Backup](#how-to-set-up-a-daily-backup)
     - [Off-Shore Backup](#how-to-set-up-an-offshore-backup)
-    - [SMB-server](#how-to-configure-a-smb-server)
-        - [Run the SMB-server script](#how-to-run-the-smb-server-script)
-        - [Create SMB-users and Nextcloud users](#how-to-create-smb-users-and-nextcloud-users-in-one-go)
-        - [Create SMB-shares and mount it to Nextcloud](#how-to-create-smb-shares-and-mount-it-to-nextcloud-in-one-go)
-        - [Read only root directory in Nextcloud](#how-to-make-the-root-directory-in-nextcloud-read-only-for-all-users)
+- [SMB-server](#smb-server)
+    - [Run the SMB-server script](#how-to-run-the-smb-server-script)
+    - [Create SMB-users and Nextcloud users](#how-to-create-smb-users-and-nextcloud-users-in-one-go)
+    - [Create SMB-shares and mount it to Nextcloud](#how-to-create-smb-shares-and-mount-it-to-nextcloud-in-one-go)
+    - [Read only root directory in Nextcloud](#how-to-make-the-root-directory-in-nextcloud-read-only-for-all-users)
     - [Previewgenerator](#how-to-install-the-previewgenerator)
-    - [Customize Nextcloud](#how-to-customize-nextcloud)
-        - [CookieLifetime](#how-to-configure-the-cookielifetime)
-        - [Share-folder](#how-to-define-a-share-folder-for-nextcloud-shares)
-        - [Workspaces](#how-to-disable-workspaces)
-        - [User Flows](#how-to-disable-user-flows)
-    - [Activate Let's Encrypt](#how-to-activate-lets-encrypt-for-your-domain)
-        - [DDNS](#what-is-ddns)
-        - [DDNS-providers](#which-ddns-providers-are-currently-supported)
-        - [Activate DDNS](#how-to-activate-ddns-for-your-domain)
-        - [DDclient](#how-to-configure-ddclient)
-        - [Port Forwarding](#how-to-enable-port-forwarding)
-        - [Activate TLS](#how-to-activate-tls)
+- [Customize Nextcloud](#customize-nextcloud)
+    - [CookieLifetime](#how-to-configure-the-cookielifetime)
+    - [Share-folder](#how-to-define-a-share-folder-for-nextcloud-shares)
+    - [Workspaces](#how-to-disable-workspaces)
+    - [User Flows](#how-to-disable-user-flows)
+- [Activate Let's Encrypt](#activate-lets-encrypt)
+    - [DDNS](#what-is-ddns)
+    - [DDNS-providers](#which-ddns-providers-are-currently-supported)
+    - [Activate DDNS](#how-to-activate-ddns-for-your-domain)
+    - [DDclient](#how-to-configure-ddclient)
+    - [Port Forwarding](#how-to-enable-port-forwarding)
+    - [Activate TLS](#how-to-activate-tls)
 - [Optional](#optional)
 
 ---
 
 # How to use this guide?
-The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-done)). In the end you will have a working Nextcloud NAS. 
+The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-initial-setup-is-now-done)). In the end you will have a working Nextcloud NAS. 
 
 **Please note**: It is not recommended to skip sections until the whole basic setup section is done, because they partly build on each other. So simply read and work through everything starting here! You will also need to click on all `Click here to expand`!
 
@@ -144,9 +146,18 @@ How to do this in detail depends on the PC that you've chosen to function as you
 ---
 
 # Basic setup
+You will now configure your basic system.
 
-## How long will the Basic setup take?
+It covers:
+1. BIOS/UEFI configuration
+1. Ubuntu installation
+1. Connect over SSH
+1. Setup TPM2 unlocking
+1. Install Nextcloud and run the startup script
+
+## How long will the initial setup take?
 TODO: add how long it will take approx.
+Just so that you know: it ends [here](#congratulations-everything-of-the-initial-setup-is-now-done))
 
 ## How to configure the BIOS/UEFI?
 You will need to configure your BIOS/UEFI in order to harden security and to make things work. 
@@ -275,6 +286,18 @@ Now the Nextcloud configuration should be done. Next, you will configure recomme
 **Please note: Since the server fingerprint was changed during this script, you will need to reset the server fingerprint the next time you connect to your server via SSH.**
 </details>
 
+---
+
+# Security and Automation
+You should do the following steps to automate your server and make your server more secure:
+
+This section covers:
+1. Enable geoblocking
+1. Set up disk monitoring
+1. Set up Fail2Ban
+1. Install ClamAV Antivirus
+1. Enable Automatic Updates
+
 ## How to enable geoblocking?
 In order to improve security, you can allow access to your webserver only from specific countries or continents.
 <details><summary>Click here to expand</summary>
@@ -283,44 +306,6 @@ In order to improve security, you can allow access to your webserver only from s
 1. Choose `Server Configuration` -> `GeoBlock`
 1. Choose to install/reinstall Geoblock
 1. Select whatever countries/continents you would like to allow the access to your server. All other will be blocked, based on the ip-address. (At least your own country should get selected to make this work.)
-</details>
-
-## How to enable automatic updates?
-In order to automate as much things as possible, you should enable automatic updates.
-<details><summary>Click here to expand</summary>
-
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
-1. Choose `Server Configuration` -> `Automatic updates`
-1. Choose to enable automatic updates
-1. Choose to reboot your server after every update as recommended
-
-**The update will be executed on saturdays at 18:00h.**
-
-Please note: the update script will only update to minor Nextcloud versions. If a new major Nextcloud version gets released, you will need to update your server manually by running the update script.
-</details>
-
-## How to set up SMTP Mail to enable your server to send mails?
-In order to get notified by mail for backups, disk errors and such, you should configure your server to send mails.
-<details><summary>Click here to expand</summary>
-
-**Before you can start, please get a mail account that your server will use to send mails.**
-
-For german users is recommended: [mail.de](https://signup.mail.de/de/)
-
-**Please inspect your mail providers documents how to connect over SMTP before continuing!**
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
-1. Choose `Server Configuration` -> `SMTP Mail`
-1. Choose to install/reinstall SMTP Mail
-1. Enter the **SMTP URL** (e.g. `smtp.mail.de`)
-1. Choose the **encryption protocol** (e.g. `SSL`)
-1. Choose that you want to use the **default port** (the default port should be correct most of the time)
-1. Most mail servers need credentials, so answer that your mail server **needs credentials**
-1. Enter your **SMTP username** (the **mail account** that will be used to send mails e.g. `server@mail.de`)
-1. Enter the **password** for your mail account
-1. Enter the **recipient** mail-address that will receive all mails that are sent by the server (e.g. your main mail-address)
-1. Confirm your settings
-
-If all settings were entered correctly, you should receive a testmail which proves that it was setup correctly.
 </details>
 
 ## How to set up disk monitoring?
@@ -363,6 +348,55 @@ In order to protect your files from malware, you should set up ClamAV which will
 1. Choose what shall get done with found files. **Only log** is recommended.
 
 You've successfully made your server a bit more secure!
+</details>
+
+## How to enable automatic updates?
+In order to automate as much things as possible, you should enable automatic updates.
+<details><summary>Click here to expand</summary>
+
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Server Configuration` -> `Automatic updates`
+1. Choose to enable automatic updates
+1. Choose to reboot your server after every update as recommended
+
+**The update will be executed on saturdays at 18:00h.**
+
+Please note: the update script will only update to minor Nextcloud versions. If a new major Nextcloud version gets released, you will need to update your server manually by running the update script.
+</details>
+
+---
+
+# Backup
+The following steps will need to be set up so that you have a working backup solution.
+
+This section covers:
+1. SMTP-Mail will get configured
+1. The external data SSD and the external backup HDD's will get configured
+1. You will update your server one time manually
+1. You will create the daily and off-shore backups
+
+## How to set up SMTP Mail to enable your server to send mails?
+In order to get notified by mail for backups, disk errors and such, you should configure your server to send mails.
+<details><summary>Click here to expand</summary>
+
+**Before you can start, please get a mail account that your server will use to send mails.**
+
+For german users is recommended: [mail.de](https://signup.mail.de/de/)
+
+**Please inspect your mail providers documents how to connect over SMTP before continuing!**
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Server Configuration` -> `SMTP Mail`
+1. Choose to install/reinstall SMTP Mail
+1. Enter the **SMTP URL** (e.g. `smtp.mail.de`)
+1. Choose the **encryption protocol** (e.g. `SSL`)
+1. Choose that you want to use the **default port** (the default port should be correct most of the time)
+1. Most mail servers need credentials, so answer that your mail server **needs credentials**
+1. Enter your **SMTP username** (the **mail account** that will be used to send mails e.g. `server@mail.de`)
+1. Enter the **password** for your mail account
+1. Enter the **recipient** mail-address that will receive all mails that are sent by the server (e.g. your main mail-address)
+1. Confirm your settings
+
+If all settings were entered correctly, you should receive a testmail which proves that it was setup correctly.
 </details>
 
 ## How to configure the external data SSD?
@@ -553,8 +587,17 @@ Now that also the daily backup is prepared, you should set up an off-shore backu
 It is located here: `/var/scripts/off-shore-rsync-backup.sh` and will get executed every `90 days`. For now it will be executed every day at `20.00pm` until the first off-shore backup was successfully created. Please leave the drive **connected** for now. You will get notified by mail if something fails. If the backup was successful, you will be **notified** that you can disconnect the drive. The script which will create the off-shore backup is based on a program called `rsync` which will sync the whole backup repository that was made by the daily backup script from your daily backup drive to your offshore backup drive.
 </details>
 
-## How to configure a SMB-server?
+---
+
+## SMB-server
 Although a SMB-server might not be needed in any installation, it is recommended to configure it nonetheless, since you will be able to `create Nextcloud users` and configure the `Nextcloud external storage` app easily using the SMB-server script.
+
+This section covers:
+1. Run the smb-server script
+1. Create SMB-users and Nextcloud users
+1. Create SMB-shares and mount the locations to Nextcloud
+1. Make the root directory read only for all Nextcloud users
+1. Install previewgenerator
 
 ### How to run the SMB-server script?
 <details><summary>Click here to expand</summary>
@@ -656,8 +699,16 @@ In order to speed up preview loading and the general feel of Nextcloud while ope
 1. Wait until everything is scanned. This can take a long time, please be patient!
 </details>
 
-## How to customize Nextcloud?
+---
+
+## Customize Nextcloud
 The following things are not really necessary for a basic setup but I think that those should be the default on any installation. Hence they are included in the Basic Setup section. You are free to skip this section.
+
+This section covers:
+1. Configure the CookieLifetime
+1. Enable the Share-folder
+1. Disable Workspaces
+1. Disable User flows
 
 ### How to configure the CookieLifetime?
 By changing this value, you can configure after how much time any user will forcefully get logged out from a browser session. 
@@ -711,15 +762,16 @@ User flows are a feature which was introduces with Nextcloud 18. They can lead t
 User flows are now disabled, admin flows still usable.
 </details>
 
-## How to activate Let's Encrypt for your Domain?
-In order to access Nextcloud over https with a valid certificate, you will need to do the following things:
-<details><summary>Click here to expand</summary>
+---
 
+## Activate Let's Encrypt
+In order to access Nextcloud over https with a valid certificate, you will need to do the following things.
+
+This section covers:
 1. Get a Domain from a supported DDNS-provider and activate DDNS for your Domain
 1. Configure DDclient
 1. Enable Port Forwarding
 1. Activate TLS
-</details>
 
 ### What is DDNS?
 DDNS stands for Dynamic DNS and will be used in order to be able to run a webserver on your home network. On most home networks you have no static public IP address due to privacy reasons and will need to set up DDNS.
@@ -786,7 +838,7 @@ You will now activate TLS finally, if all points above are successfully set up.
 Now you should be able to access your Nextcloud on any device by opening `yourdomain.com`!
 </details>
 
-### Congratulations, everything of the Basic Setup is now done!
+### Congratulations, everything of the initial setup is now done!
 
 ---
 
