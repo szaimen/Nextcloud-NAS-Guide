@@ -154,7 +154,7 @@ How to do this in detail depends on the PC that you've chosen to function as you
 ## How long will the initial setup take?
 TODO: add how long it will take approx.
 
-Just so that you know: the initial setup ends [here](#congratulations-everything-of-the-initial-setup-is-now-done)
+Just as a reminder: It is not recommended to skip anything until the whole initial setup is done, because the sections partly build on each other. So simply read and work through everything starting here! You will also need to click on all `Click here to expand`! Just so that you know: the initial setup ends [here](#congratulations-everything-of-the-initial-setup-is-now-done)
 
 ---
 
