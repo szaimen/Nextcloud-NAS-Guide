@@ -155,7 +155,7 @@ How to do this in detail depends on the PC that you've chosen to function as you
 # Basic setup
 You will now configure your basic system.
 
-It covers:
+This section covers:
 1. BIOS/UEFI configuration
 1. Ubuntu installation
 1. Connect over SSH
@@ -377,10 +377,10 @@ Please note: the update script will only update to minor Nextcloud versions. If 
 The following steps will need to be set up so that you have a working backup solution.
 
 This section covers:
-1. SMTP-Mail will get configured
-1. The external data SSD and the external backup HDD's will get configured
-1. You will update your server one time manually
-1. You will create the daily and off-shore backups
+1. Configure SMTP-Mail
+1. Configure the external data SSD and the external backup HDD's
+1. Update your server one time manually
+1. Create the daily and off-shore backups
 
 ## How to set up SMTP Mail to enable your server to send mails?
 In order to get notified by mail for backups, disk errors and such, you should configure your server to send mails.
