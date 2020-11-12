@@ -73,6 +73,8 @@ The idea concerning this guide is that you can read and work through the whole g
 
 **Please note**: It is not recommended to skip sections until the whole basic setup section is done, because they partly build on each other. So simply read and work through everything starting here! You will also need to click on all `Click here to expand`!
 
+---
+
 # Before you start
 
 ## Are there any considerations you should know of?
