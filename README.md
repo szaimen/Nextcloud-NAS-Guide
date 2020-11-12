@@ -7,15 +7,19 @@ Here is a not complete list of things that this guide covers: hardware recommend
 
 In the future, this guide will cover optional addons like: a media server, a way to easily manage your media collection directly on your server, Pi-hole as network wide ad-blocker, PiVPN as VPN-server, Bitwarden as open-source password server, different office integrations for Nextcloud, High-performance-backend for Nextcloud Talk, Fulltextsearch for Nextcloud and more.
 
-**If you are interested in this solution, please start reading [here](#basic-setup)**
+**If you are interested in this solution, please start reading [here](#how-to-use-this-guide)**
+
+---
 
 # Index
-- [Basic setup](#basic-setup)
-    - [How to use this guide?](#how-to-use-this-guide)
+- [How to use this guide?](#how-to-use-this-guide)
+- [Before you start](#before-you-start)
     - [Considerations](#are-there-any-considerations-you-should-know-of)
     - [Minimal Hardware requirements](#what-are-the-minimal-hardware-requirements)
     - [Hardware recommendations](#do-you-have-any-hardware-recommendations)
-    - [Preparations](#are-there-any-preparations-necessary-before-you-can-start)
+    - [Preparations](#are-there-any-preparations-necessary)
+- [Basic setup](#basic-setup)
+    - [How long will the Basic setup take?](#how-long-will-the-basic-setup-take)
     - [BIOS/UEFI](#how-to-configure-the-biosuefi)
     - [Ubuntu](#how-to-set-up-ubuntu)
     - [SSH](#how-to-connect-to-your-server-over-ssh)
@@ -60,12 +64,14 @@ In the future, this guide will cover optional addons like: a media server, a way
         - [Activate TLS](#how-to-activate-tls)
 - [Optional](#optional)
 
-# Basic setup
+---
 
-## How to use this guide?
+# How to use this guide?
 The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-done)). In the end you will have a working Nextcloud NAS. 
 
-**Please note**: It is not recommended to skip sections until the whole basic setup section is done, because they partly build on each other. So simply read and work through everything starting here!
+**Please note**: It is not recommended to skip sections until the whole basic setup section is done, because they partly build on each other. So simply read and work through everything starting here! You will also need to click on all `Click here to expand`!
+
+# Before you start
 
 ## Are there any considerations you should know of?
 Please read carefully through this list of considerations you should know of!
@@ -126,7 +132,7 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 - [Silicon Power Armor A85 1TB](https://geizhals.eu/silicon-power-armor-a85-1tb-sp010tbphda85s3s-a1358555.html?hloc=at&hloc=de&hloc=eu&hloc=pl&hloc=uk) x2 = ca. 55€ x2 = ca. 110€
 </details>
 
-## Are there any preparations necessary before you can start?
+## Are there any preparations necessary?
 Yes, please make sure that you have all necessary Hardware requirements and please connect all necessary parts before continuing. And please don't forget the USB-stick, -mouse, -keyboard and HDMI-display!
 <details><summary>Click here to expand</summary>
 
@@ -134,6 +140,13 @@ Yes, please make sure that you have all necessary Hardware requirements and plea
 
 How to do this in detail depends on the PC that you've chosen to function as your server
 </details>
+
+---
+
+# Basic setup
+
+## How long will the Basic setup take?
+TODO: add how long it will take approx.
 
 ## How to configure the BIOS/UEFI?
 You will need to configure your BIOS/UEFI in order to harden security and to make things work. 
@@ -659,9 +672,10 @@ Now your users should no longer get logged out in browsers after half an hour.
 </details>
 
 ### How to define a Share-folder for Nextcloud shares?
+If you internally share documents, they will be always added to the users root directory in Nextcloud. Since this can quickly become confusing for your users if they share many files internally, it is recommended to set a `Share-folder`. 
 <details><summary>Click here to expand</summary>
 
-If you internally share documents, they will be always added to the users root directory in Nextcloud. Since this can quickly become confusing for your users if they share many files internally, it is recommended to set a `Share-folder`. All shared files will in this case not be visible in the users root directory but in a folder called `Shared`.
+All shared files will in this case not be visible in the users root directory but in a folder called `Shared`.
 
 If you have followed this guide and made the root directory in Nextcloud **read only** for all users, you will need to do something first, though: Please create a folder in the root folder by running a command like:<br>
 `sudo mkdir "mnt/data/your data folder/root/Shared"` over CLI<br>
