@@ -63,7 +63,9 @@ In the future, this guide will cover optional addons like: a media server, a way
 # Basic setup
 
 ## How to use this guide?
-The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-done)). In the end you will have a working Nextcloud NAS.
+The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-done)). In the end you will have a working Nextcloud NAS. 
+
+**Please note**: It is not recommended to skip sections until the whole basic setup section is done, because they partly build on each other.
 
 ## Are there any considerations you should know of?
 Please read carefully through this list of considerations you should know of!
