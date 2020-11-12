@@ -63,7 +63,7 @@ You could argue that it is comparable to the `NextcloudPi` project because it is
 The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-done)). In the end you will have a working Nextcloud NAS.
 
 ## Are there any considerations you should know of?
-Please read carefully through this list before doing anything else!
+Please read carefully through this list!
 - This guide is only meant for home servers, for nothing else.
 - It is provided as is and without warranty of any kind. (Read the [License](https://github.com/szaimen/Nextcloud-NAS-Guide/blob/main/LICENSE))
 - You should neither use Nextclouds `Groupfolder` app nor use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two storage providers will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. And don't despair! This guide covers how to do this. Please note that some Nextcloud apps have limitations when used together with the `external storage app`, though.
