@@ -146,7 +146,7 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. Use the already downloaded image to create a bootable USB-stick by following [this guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows)
 1. Connect a **LAN-cable** to your server
 1. Connect the **USB-stick** to your server and power it on. The server should then automatically boot from the USB-stick
-1. **Since it is necessary that you configure certain things correctly, we have prepared a slideshow which makes it easier for you to configure Ubuntu correctly. Please click [here](TODO) to start the slideshow. Otherwise, just continue with the steps below**
+1. **Since it is necessary that you configure certain things correctly, we have prepared a slideshow which makes it easier for you to configure Ubuntu correctly. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/ubuntu) to start the slideshow. Otherwise, just continue with the steps below**
 1. Select the correct **language** for the installer
 1. Choose to **Continue without updating** the installer
 1. Select the correct **Keyboard layout**. This is has great importance!
@@ -199,7 +199,7 @@ In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, 
 1. Copy and paste the following command over CLI: <br>
 `wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh && sudo bash nextcloud_install_production.sh`<br>
 1. Enter your **password** again
-1. **Since it is necessary that you answer certain questions correctly, we have prepared a slideshow which makes it easier for you to answer all questions correctly. Please click [here](TODO) to start the slideshow. Otherwise, just continue with the steps below**
+1. **Since it is necessary that you answer certain questions correctly, we have prepared a slideshow which makes it easier for you to answer all questions correctly. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/nextcloud-installation) to start the slideshow. Otherwise, just continue with the steps below**
 1. Choose that you **want** to use **LVM snapshots**, since it is a requirements for a good working backup solution and such.
 1.  Choose that you **don't** want to use `http://archive.ubuntu.com` as **repository** for your server since the best one was already set during the Ubuntu installation
 1. Select that you **don't** want to make all **free space** available to your **root partition** since it is always better to have some free space left that can be used for snapshots and such. You are of course free to shrink the free space later manually if needed
@@ -213,7 +213,7 @@ Now the initial Nextcloud setup should be done.
 ## How to startup Nextcloud?
 This is the second part of the Nextcloud installation that is prepared by the recently executed Nextcloud-VM script. You will need to run this to the end to be done with the Nextcloud setup.
 1. Connect from a PC in the same network to your server over SSH
-1. **We have prepared a slideshow for you that you can use. Please click [here](TODO) to start the slideshow. Otherwise, just continue with the steps below**
+1. **We have prepared a slideshow for you that you can use. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/nextcloud-startup) to start the slideshow. Otherwise, just continue with the steps below**
 1. After login, you will be automatically redirected and asked a second time for your password. Enter your **password** and the script will start
 1. The first Menu you will see, will let you configure certain **Startup Configurations**. It should automatically choose options for you that are not yet configured, so just press `[ENTER]` to automatically start those chosen configurations. Most likely only **Timezone (Change the timezone from Etc/UTC** will be pre-selected
 1. Change the Timezone to match your location (choose the **Geographic area** and the **Time zone**)
