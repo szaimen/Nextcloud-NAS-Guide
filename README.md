@@ -325,13 +325,13 @@ Since disks can fail, you should get notified as soon as possible if a disk erro
 ## How to set up Fail2Ban?
 In order to block too much failed login attempts for Nextcloud and SSH, you should configure Fail2Ban for your server.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
-1. Choose `Server Configuration` -> `Fail2Ban` -> `Install-Fail2Ban`
+1. Choose `Additional Apps` -> `Fail2Ban` -> `Install-Fail2Ban`
 1. Choose to install/reinstall Fail2Ban
 
 ## How to install the Previewgenerator?
 In order to speed up preview loading and the general feel of Nextcloud while opening folders with many pictures, you should set up the previewgenerator, which will pre-generate previews to make preview-loading faster.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
-1. Choose `Server Configuration` -> `PreviewGenerator`
+1. Choose `Additional Apps` -> `PreviewGenerator`
 1. Choose to install/reinstall the Preview Generator
 1. Choose to **not** install imagick
 1. Deselect any format you don't want to have previews for (Recommended is to **deselect MarkDown & TXT**)
