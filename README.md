@@ -76,6 +76,11 @@ The idea concerning this guide is that you can read and work through the whole g
 ---
 
 # Before you start
+This section covers:
+1. Considerations you should know of
+1. Minimal hardware requirements
+1. Hardware recommendations
+1. Preparations
 
 ## Are there any considerations you should know of?
 Please read carefully through this list of considerations you should know of!
@@ -842,6 +847,8 @@ Now you should be able to access your Nextcloud on any device by opening `yourdo
 
 ### Congratulations, everything of the initial setup is now done!
 
+---
+---
 ---
 
 # Optional
