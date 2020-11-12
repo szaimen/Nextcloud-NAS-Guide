@@ -163,3 +163,4 @@ Press [ENTER] to reboot
 
 ### The Nextcloud startup is now done.
 ### Please click [here](https://github.com/szaimen/Nextcloud-NAS-Guide#how-to-enable-geoblocking) to return to the guide.
+### You should continue with the point `How to enable geoblocking?`
