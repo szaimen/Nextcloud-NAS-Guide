@@ -230,7 +230,6 @@ In order to access Nextcloud over https with a valid certificate, you will need 
 1. Enable Port Forwarding
 1. Activate TLS
 
-All those points will be covered if you read further.
 ### What is DDNS?
 DDNS stands for Dynamic DNS and will be used in order to be able to run a webserver on your home network. On most home networks you have no static public IP address due to privacy reasons and will need to set up DDNS.
 ### Which DDNS-providers are currently supported?
