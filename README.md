@@ -24,21 +24,13 @@ You could argue that it is comparable to the `NextcloudPi` project because it is
     - [TPM2 unlocking](#how-to-set-up-automatic-tpm2-unlocking)
     - [Nextcloud installation](#how-to-install-nextcloud)
     - [Nextcloud startup script](#how-to-startup-nextcloud)
-    - [Activate Let's Encrypt](#how-to-activate-lets-encrypt-for-your-domain)
-        - [DDNS](#what-is-ddns)
-        - [DDNS-providers](#which-ddns-providers-are-currently-supported)
-        - [Activate DDNS](#how-to-activate-ddns-for-your-domain)
-        - [DDclient](#how-to-configure-ddclient)
-        - [Port Forwarding](#how-to-enable-port-forwarding)
-        - [Activate TLS](#how-to-activate-tls)
     - [Automatic updates](#how-to-enable-automatic-updates)
     - [Geoblocking](#how-to-enable-geoblocking)
     - [SMTP Mail](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails)
     - [Disk Monitoring](#how-to-set-up-disk-monitoring)
     - [Fail2Ban](#how-to-set-up-fail2ban)
-    - [Previewgenerator](#how-to-install-the-previewgenerator)
     - [Not-supported Menu](#how-to-download-the-not-supported-menu)
-    - [ClamAV](#how-to-install-clamav)
+    - [ClamAV (Antivirus)](#how-to-install-clamav)
     - [External data SSD](#how-to-configure-the-external-data-ssd)
         - [Format](#how-to-format-the-external-data-ssd)
         - [Encrypt](#how-to-encrypt-the-external-data-ssd)
@@ -47,7 +39,7 @@ You could argue that it is comparable to the `NextcloudPi` project because it is
     - [External backup HDD's](#how-to-configure-the-external-backup-hdds)
         - [Format](#how-to-format-the-external-backup-hdds)
         - [Mount](#how-to-mount-the-external-backup-hdds)
-    - [Update](#how-to-update-your-server-manually)
+    - [Update manually](#how-to-update-your-server-manually)
     - [Daily Backup](#how-to-set-up-a-daily-backup)
     - [Off-Shore Backup](#how-to-set-up-an-offshore-backup)
     - [SMB-server](#how-to-configure-a-smb-server)
@@ -55,6 +47,14 @@ You could argue that it is comparable to the `NextcloudPi` project because it is
         - [Create SMB-users and Nextcloud users](#how-to-create-smb-users-and-nextcloud-users-in-one-go)
         - [Create SMB-shares and mount it to Nextcloud](#how-to-create-smb-shares-and-mount-it-to-nextcloud-in-one-go)
         - [Read only root directory in Nextcloud](#how-to-make-the-root-directory-in-nextcloud-read-only-for-all-users)
+    - [Previewgenerator](#how-to-install-the-previewgenerator)
+    - [Activate Let's Encrypt](#how-to-activate-lets-encrypt-for-your-domain)
+        - [DDNS](#what-is-ddns)
+        - [DDNS-providers](#which-ddns-providers-are-currently-supported)
+        - [Activate DDNS](#how-to-activate-ddns-for-your-domain)
+        - [DDclient](#how-to-configure-ddclient)
+        - [Port Forwarding](#how-to-enable-port-forwarding)
+        - [Activate TLS](#how-to-activate-tls)
 - [Optional](#optional)
 
 # Basic setup
@@ -223,61 +223,6 @@ Now the Nextcloud configuration should be done. Next, you will configure recomme
 
 **Please note: Since the server fingerprint was changed during this script, you will need to reset the server fingerprint the next time you connect to your server via SSH.**
 
-## How to activate Let's Encrypt for your Domain?
-In order to access Nextcloud over https with a valid certificate, you will need to do the following things:
-1. Get a Domain from a supported DDNS-provider and activate DDNS for your Domain
-1. Configure DDclient
-1. Enable Port Forwarding
-1. Activate TLS
-
-### What is DDNS?
-DDNS stands for Dynamic DNS and will be used in order to be able to run a webserver on your home network. On most home networks you have no static public IP address due to privacy reasons and will need to set up DDNS.
-### Which DDNS-providers are currently supported?
-Currently (10. Nov. 2020) supported are:
-- [Cloudflare](https://cloudflare.com)
-- [deSEC](https://desec.io)
-- [Duck DNS](https://duckdns.org)
-- [Strato](https://strato.de) (recommended for german users)
-
-Click on one of them to get your domain!
-
-### How to activate DDNS for your Domain
-For some DDNS-providers like Strato, you will need to activate DDNS for your Domain first before you can use it.
-#### Here are some provider specific guides how to do this:
-- [Strato](https://www.strato.de/faq/domains/so-einfach-richten-sie-dyndns-fuer-ihre-domains-ein/#1) (only point 1 of this guide is needed)
-
-### How to configure DDclient?
-After you've got your domain from a supported provider and activated DDNS for your domain, you should now configure DDclient.
-DDclient is an easy way to update your domain regularly with your new public ip-address and is the recommended way to set up Dynamic DNS for your server. Please inspect the documents of your DDNS-provider what exactly you need to enter here.
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
-1. Choose `Server Configuration` -> `DDclient Configuration`
-1. Choose to install/reinstall DDclient
-1. Select your **DDNS-provider** (e.g. `Strato`), enter the **Host/Domain** (e.g. `yourdomain.com`), the **Login/Domain** (e.g. `yourdomain.com`) and the **Password or API-key** (e.g. `your-ddns-password`)
-1. Confirm your settings 
-1. Make sure that the initial test looks good
-
-### How to enable Port Forwarding?
-You will need to port forward some specific ports to your server in order to make it possible to run a public webserver on it.
-
-How to do port forwarding in detail, completely depends on your router. Thus, you should inspect your router's manual for that.
-#### Here are some guides for different router models:
-- [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/893_Setting-up-static-port-sharing/)
-#### You will need to port forward at least the following two ports to your server:
-- Port 80 TCP
-- Port 443 TCP
-#### Alternatively you could activate automatic port forwarding for your server and use UPnP later to open those ports:
-- [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/894_Setting-up-automatic-port-sharing/)
-
-### How to activate TLS?
-You will now activate TLS finally, if all points above are successfully set up.
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
-1. Choose `Server Configuration` -> `Activate TLS`
-1. Choose to install TLS
-1. Confirm that you have set up all necessary requirements
-1. Enter your **Domain** (e.g. `yourdomain.com`)
-1. Use UPnP or not depending on if you have enabled automatic port forwarding in your router for your server. If you opened Port 80 and 443 manually, you can skip UPnP
-1. Wait until everything is set up
-
 ## How to enable automatic updates?
 In order to automate as much things as possible, you should enable automatic updates.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
@@ -330,16 +275,6 @@ In order to block too much failed login attempts for Nextcloud and SSH, you shou
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Additional Apps` -> `Fail2Ban` -> `Install-Fail2Ban`
 1. Choose to install/reinstall Fail2Ban
-
-## How to install the Previewgenerator?
-In order to speed up preview loading and the general feel of Nextcloud while opening folders with many pictures, you should set up the previewgenerator, which will pre-generate previews to make preview-loading faster.
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
-1. Choose `Additional Apps` -> `PreviewGenerator`
-1. Choose to install/reinstall the Preview Generator
-1. Choose to **not** install imagick
-1. Deselect any format you don't want to have previews for (Recommended is to **deselect MarkDown & TXT**)
-1. Wait until everything is set up
-1. Choose to **not** use a specific Nextcloud user for preview generation
 
 ## How to download the Not-supported Menu?
 The Not-supported Menu of the Nextcloud-VM features some exciting new scripts which provide a complete Backup solution, a script to manage a SMB-server and much more.
@@ -590,6 +525,77 @@ Here is how to do this:
 1. Choose to `Delete SMB-shares` from the same still open `SMB-share Menu`
 1. Select the just created share with name `root`
 1. Press `[Enter]` to delete it
+
+Now, the root directory should be read only for all users!
+
+## How to install the Previewgenerator?
+In order to speed up preview loading and the general feel of Nextcloud while opening folders with many pictures, you should set up the previewgenerator, which will pre-generate previews to make preview-loading faster.
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Additional Apps` -> `PreviewGenerator`
+1. Choose to install/reinstall the Preview Generator
+1. Choose to **not** install imagick
+1. Deselect any format you don't want to have previews for (Recommended is to **deselect MarkDown & TXT**)
+1. Wait until everything is set up
+1. Choose to **not** use a specific Nextcloud user for preview generation
+1. Wait until everything is scanned. This can take a long time, please be patient!
+
+## How to activate Let's Encrypt for your Domain?
+In order to access Nextcloud over https with a valid certificate, you will need to do the following things:
+1. Get a Domain from a supported DDNS-provider and activate DDNS for your Domain
+1. Configure DDclient
+1. Enable Port Forwarding
+1. Activate TLS
+
+### What is DDNS?
+DDNS stands for Dynamic DNS and will be used in order to be able to run a webserver on your home network. On most home networks you have no static public IP address due to privacy reasons and will need to set up DDNS.
+
+### Which DDNS-providers are currently supported?
+Currently (10. Nov. 2020) supported are:
+- [Cloudflare](https://cloudflare.com)
+- [deSEC](https://desec.io)
+- [Duck DNS](https://duckdns.org)
+- [Strato](https://strato.de) (recommended for german users)
+
+Click on one of them to get your domain!
+
+### How to activate DDNS for your Domain
+For some DDNS-providers like Strato, you will need to activate DDNS for your Domain first before you can use it.
+#### Here are some provider specific guides how to do this:
+- [Strato](https://www.strato.de/faq/domains/so-einfach-richten-sie-dyndns-fuer-ihre-domains-ein/#1) (only point 1 of this guide is needed)
+
+### How to configure DDclient?
+After you've got your domain from a supported provider and activated DDNS for your domain, you should now configure DDclient.
+DDclient is an easy way to update your domain regularly with your new public ip-address and is the recommended way to set up Dynamic DNS for your server. Please inspect the documents of your DDNS-provider what exactly you need to enter here.
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Server Configuration` -> `DDclient Configuration`
+1. Choose to install/reinstall DDclient
+1. Select your **DDNS-provider** (e.g. `Strato`), enter the **Host/Domain** (e.g. `yourdomain.com`), the **Login/Domain** (e.g. `yourdomain.com`) and the **Password or API-key** (e.g. `your-ddns-password`)
+1. Confirm your settings 
+1. Make sure that the initial test looks good
+
+### How to enable Port Forwarding?
+You will need to port forward some specific ports to your server in order to make it possible to run a public webserver on it.
+
+How to do port forwarding in detail, completely depends on your router. Thus, you should inspect your router's manual for that.
+#### Here are some guides for different router models:
+- [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/893_Setting-up-static-port-sharing/)
+#### You will need to port forward at least the following two ports to your server:
+- Port 80 TCP
+- Port 443 TCP
+#### Alternatively you could activate automatic port forwarding for your server and use UPnP later to open those ports:
+- [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/894_Setting-up-automatic-port-sharing/)
+
+### How to activate TLS?
+You will now activate TLS finally, if all points above are successfully set up.
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Server Configuration` -> `Activate TLS`
+1. Choose to install TLS
+1. Confirm that you have set up all necessary requirements
+1. Enter your **Domain** (e.g. `yourdomain.com`)
+1. Use UPnP or not depending on if you have enabled automatic port forwarding in your router for your server. If you opened Port 80 and 443 manually, you can skip UPnP
+1. Wait until everything is set up
+
+Now you should be able to access your Nextcloud on any device by opening `yourdomain.com`!
 
 ### Congratulations, everything of the Basic Setup is now configured!
 
