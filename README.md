@@ -76,11 +76,12 @@ The idea concerning this guide is that you can read and work through the whole g
 ---
 
 # Before you start
-This section covers:
-1. Considerations you should know of
-1. Minimal hardware requirements
-1. Hardware recommendations
-1. Preparations
+This section covers: |
+--- |
+Considerations you should know of |
+Minimal hardware requirements |
+Hardware recommendations |
+Preparations |
 
 ## Are there any considerations you should know of?
 Please read carefully through this list of considerations you should know of!
@@ -155,12 +156,13 @@ How to do this in detail depends on the PC that you've chosen to function as you
 # Basic setup
 You will now configure your basic system.
 
-It covers:
-1. BIOS/UEFI configuration
-1. Ubuntu installation
-1. Connect over SSH
-1. Setup TPM2 unlocking
-1. Install Nextcloud and run the startup script
+This section covers: |
+--- |
+BIOS/UEFI configuration |
+Ubuntu installation |
+Connect over SSH |
+Setup TPM2 unlocking |
+Install Nextcloud and run the startup script |
 
 ## How long will the initial setup take?
 TODO: add how long it will take approx.
@@ -298,12 +300,13 @@ Now the Nextcloud configuration should be done. Next, you will configure recomme
 # Security and Automation
 You should do the following steps to automate your server and make your server more secure:
 
-This section covers:
-1. Enable geoblocking
-1. Set up disk monitoring
-1. Set up Fail2Ban
-1. Install ClamAV Antivirus
-1. Enable Automatic Updates
+This section covers: |
+--- |
+Enable geoblocking |
+Set up disk monitoring |
+Set up Fail2Ban |
+Install ClamAV Antivirus |
+Enable Automatic Updates |
 
 ## How to enable geoblocking?
 In order to improve security, you can allow access to your webserver only from specific countries or continents.
@@ -376,11 +379,12 @@ Please note: the update script will only update to minor Nextcloud versions. If 
 # Backup
 The following steps will need to be set up so that you have a working backup solution.
 
-This section covers:
-1. SMTP-Mail will get configured
-1. The external data SSD and the external backup HDD's will get configured
-1. You will update your server one time manually
-1. You will create the daily and off-shore backups
+This section covers: |
+--- |
+Configure SMTP-Mail |
+Configure the external data SSD and the external backup HDD's |
+Update your server one time manually |
+Create the daily and off-shore backups |
 
 ## How to set up SMTP Mail to enable your server to send mails?
 In order to get notified by mail for backups, disk errors and such, you should configure your server to send mails.
@@ -599,12 +603,13 @@ It is located here: `/var/scripts/off-shore-rsync-backup.sh` and will get execut
 ## SMB-server
 Although a SMB-server might not be needed in any installation, it is recommended to configure it nonetheless, since you will be able to `create Nextcloud users` and configure the `Nextcloud external storage` app easily using the SMB-server script.
 
-This section covers:
-1. Run the smb-server script
-1. Create SMB-users and Nextcloud users
-1. Create SMB-shares and mount the locations to Nextcloud
-1. Make the root directory read only for all Nextcloud users
-1. Install previewgenerator
+This section covers: |
+--- |
+Run the smb-server script |
+Create SMB-users and Nextcloud users |
+Create SMB-shares and mount the locations to Nextcloud |
+Make the root directory read only for all Nextcloud users |
+Install previewgenerator |
 
 ### How to run the SMB-server script?
 <details><summary>Click here to expand</summary>
@@ -711,11 +716,12 @@ In order to speed up preview loading and the general feel of Nextcloud while ope
 ## Customize Nextcloud
 The following things are not really necessary for a basic setup but I think that those should be the default on any installation. Hence they are included in the Basic Setup section. You are free to skip this section.
 
-This section covers:
-1. Configure the CookieLifetime
-1. Enable the Share-folder
-1. Disable Workspaces
-1. Disable User flows
+This section covers: |
+--- |
+Configure the CookieLifetime |
+Enable the Share-folder |
+Disable Workspaces |
+Disable User flows |
 
 ### How to configure the CookieLifetime?
 By changing this value, you can configure after how much time any user will forcefully get logged out from a browser session. 
@@ -774,11 +780,12 @@ User flows are now disabled, admin flows still usable.
 ## Activate Let's Encrypt
 In order to access Nextcloud over https with a valid certificate, you will need to do the following things.
 
-This section covers:
-1. Get a Domain from a supported DDNS-provider and activate DDNS for your Domain
-1. Configure DDclient
-1. Enable Port Forwarding
-1. Activate TLS
+This section covers: |
+--- |
+Get a Domain from a supported DDNS-provider and activate DDNS for your Domain |
+Configure DDclient |
+Enable Port Forwarding |
+Activate TLS |
 
 ### What is DDNS?
 DDNS stands for Dynamic DNS and will be used in order to be able to run a webserver on your home network. On most home networks you have no static public IP address due to privacy reasons and will need to set up DDNS.
