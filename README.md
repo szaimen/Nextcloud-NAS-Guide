@@ -245,6 +245,7 @@ For some DDNS-providers like Strato, you will need to activate DDNS for your Dom
 - [Strato](https://www.strato.de/faq/domains/so-einfach-richten-sie-dyndns-fuer-ihre-domains-ein/#1) (only point 1 of those instructions are needed)
 
 ### How to configure DDclient?
+After you've got your domain from a supported provider and activated DDNS for your domain, you should now configure DDclient.
 DDclient is an easy way to update your domain regularly with your new public ip-address and is the recommended way to set up Dynamic DNS for your server. Please inspect the documents of your DDNS-provider what exactly you need to enter here.
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `DDclient Configuration`
