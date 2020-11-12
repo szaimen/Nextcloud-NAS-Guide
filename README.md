@@ -239,6 +239,8 @@ Currently (10. Nov. 2020) supported are:
 - [Duck DNS](https://duckdns.org)
 - [Strato](https://strato.de) (recommended for german users)
 
+Click on one of them to get your domain!
+
 ### How to activate DDNS for your Domain
 For some DDNS-providers like Strato, you will need to activate DDNS for your Domain first before you can use it.
 #### Here are some provider specific guides how to do this:
