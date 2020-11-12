@@ -196,7 +196,7 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. **Download** the latest Ubuntu Server 20.04.1 LTS image by clicking [here](http://www.releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso)
 1. Use the already downloaded image to create a bootable USB-stick by following [this guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows)
 1. Connect a **LAN-cable** to your server
-1. Connect the **USB-stick** to your server and power it on. The server should then automatically boot from the USB-stick
+1. Connect the **USB-stick** to your server and **power it on**. The server should then automatically boot from the USB-stick
 1. **Since it is necessary that you configure certain things correctly, we have prepared a slideshow which makes it easier for you to configure Ubuntu correctly. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/ubuntu) to start the slideshow. Otherwise, just continue with the steps below**
 1. Select the correct **language** for the installer
 1. Choose to **Continue without updating** the installer
