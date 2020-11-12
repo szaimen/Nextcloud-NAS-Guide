@@ -60,7 +60,7 @@ You could argue that it is comparable to the `NextcloudPi` project because it is
 # Basic setup
 
 ## How to use this guide?
-The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-configured)). In the end you will have a working Nextcloud NAS.
+The idea concerning this guide is that you can read and work through the whole guide starting here until the whole basic setup is done (it ends [here](#congratulations-everything-of-the-Basic-Setup-is-now-done)). In the end you will have a working Nextcloud NAS.
 
 ## Are there any considerations you should know of?
 Please read carefully through this list before doing anything else!
@@ -597,7 +597,7 @@ You will now activate TLS finally, if all points above are successfully set up.
 
 Now you should be able to access your Nextcloud on any device by opening `yourdomain.com`!
 
-### Congratulations, everything of the Basic Setup is now configured!
+### Congratulations, everything of the Basic Setup is now done!
 
 # Optional
 TODO
