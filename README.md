@@ -242,7 +242,7 @@ Currently (10. Nov. 2020) supported are:
 ### How to activate DDNS for your Domain
 For some DDNS-providers like Strato, you will need to activate DDNS for your Domain first before you can use it.
 #### Here are some provider specific guides how to do this:
-- [Strato](https://www.strato.de/faq/domains/so-einfach-richten-sie-dyndns-fuer-ihre-domains-ein/) (only point 1 of those instructions are needed)
+- [Strato](https://www.strato.de/faq/domains/so-einfach-richten-sie-dyndns-fuer-ihre-domains-ein/#1) (only point 1 of those instructions are needed)
 
 ### How to configure DDclient?
 DDclient is an easy way to update your domain regularly with your new public ip-address and is the recommended way to set up Dynamic DNS for your server. Please inspect the documents of your DDNS-provider what exactly you need to enter here.
