@@ -112,7 +112,7 @@ You will need the following things:
 - One internal SSD with at least 128GB
 - Power Supply for your server (if not built-in)
 - TPM2 support
-- One external SSD (or HDD) that will store your personal data with at least 250GB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be twice as big as your current private data)
+- One external SSD (or HDD) that will store your personal data with at least 250GB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
 - Two additional external HDD's that will function as backup drives with at least the same size of the external personal data SSD each
 - One USB-stick with at least 8GB for installing Ubuntu
 - For the initial setup you will also need a HDMI-display (e.g. monitor/tv/beamer), USB-mouse and -keyboard. If you don't have one: you don't need to buy those. Borrowing or renting those should be enough. (You really only need them for the initial setup.)
@@ -132,7 +132,7 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 - One Intel NUC from 2018 or later with 4 Cores or more
 - One SO-DIMM RAM latch with 8GB because 8GB should be enough for now and you will be able to upgrade the RAM with a second latch later on 
 - One internal SSD with 250 GB which should be plenty of storage for this usecase
-- One external SSD for storing the private data with at least 1TB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be twice as big as your current private data)
+- One external SSD for storing the private data with at least 1TB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
 - Two external HDD's for backups with at least the same size like the external SSD each
 
 #### Currently (10. Nov. 2020) the recommended configuration which should fit for most people is:
