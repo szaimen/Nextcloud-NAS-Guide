@@ -132,7 +132,7 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 - One Intel NUC from 2018 or later with 4 Cores or more
 - One SO-DIMM RAM latch with 8GB because 8GB should be enough for now and you will be able to upgrade the RAM with a second latch later on 
 - One internal SSD with 250 GB which should be plenty of storage for this usecase
-- One external SSD for storing the private data with at least 1TB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
+- One external SSD (or HDD) for storing the private data with at least 1TB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
 - Two external HDD's for backups with at least the same size like the external data SSD/HDD, each
 
 #### Currently (10. Nov. 2020) the recommended configuration which should fit for most people is:
