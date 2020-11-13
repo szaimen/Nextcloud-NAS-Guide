@@ -135,7 +135,7 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 - Two external HDD's for backups with at least the same size like the external SSD each
 
 #### Currently (10. Nov. 2020) the recommended configuration which should fit for most people is:
-- [Intel NUC Kit NUC8i5BEK](https://geizhals.eu/intel-nuc-kit-nuc8i5beh-bean-canyon-boxnuc8i5beh-a1843166.html?hloc=at&hloc=de&hloc=eu&hloc=pl&hloc=uk) = ca. 250€
+- [Intel NUC Kit NUC8i5BEH](https://geizhals.eu/intel-nuc-kit-nuc8i5beh-bean-canyon-boxnuc8i5beh-a1843166.html?hloc=at&hloc=de&hloc=eu&hloc=pl&hloc=uk) = ca. 250€
 - [Kingston A2000 NVMe PCIe SSD 250GB, M.2](https://geizhals.eu/kingston-a2000-nvme-pcie-ssd-250gb-sa2000m8-250g-a2112844.html) = ca. 33€
 - [G.Skill RipJaws SO-DIMM 8GB, DDR4-2400, CL16](https://geizhals.eu/g-skill-ripjaws-so-dimm-8gb-f4-2400c16s-8grs-a1353098.html) = ca. 30€
 - [ADATA SE800 black 1TB](https://geizhals.eu/adata-se800-schwarz-1tb-ase800-1tu32g2-cbk-a2102946.html) = ca. 130€
