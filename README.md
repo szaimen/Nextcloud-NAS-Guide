@@ -669,7 +669,7 @@ Please note that you can always change the settings for your mounts in Nextcloud
 </details>
 
 ### How to make the root directory in Nextcloud read only for all users?
-In order to prevent user from creating any files outside their user folders, which are located on the external data SSD and now mounted to Nextcloud, you can make the Nextcloud root directory read only for all users.
+In order to prevent user from creating any files outside their user folders, which are located on the external data SSD and now mounted to Nextcloud, you should make the Nextcloud root directory read only for all users.
 <details><summary>Click here to expand</summary>
 
 Here is how to do this:
