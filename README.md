@@ -824,12 +824,12 @@ You will need to port forward some specific ports to your server in order to mak
 
 How to do port forwarding in detail, completely depends on your router. Thus, you should inspect your router's manual for that.
 #### Here are some guides for different router models:
-- [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/893_Setting-up-static-port-sharing/)
+- [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/893_Setting-up-static-port-sharing/) (only point 2 of this guide is needed)
 #### You will need to port forward at least the following two ports to your server:
 - Port 80 TCP
 - Port 443 TCP
 #### Alternatively you could activate automatic port forwarding for your server and use UPnP later to open those ports:
-- [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/894_Setting-up-automatic-port-sharing/)
+- [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/894_Setting-up-automatic-port-sharing/) (only point 1 of this guide is needed)
 </details>
 
 ### How to activate TLS?
