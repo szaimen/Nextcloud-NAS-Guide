@@ -35,11 +35,11 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Automatic updates](#how-to-enable-automatic-updates)
 - [Backup](#backup)
     - [SMTP Mail](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails)
-    - [External data SSD](#how-to-configure-the-external-data-ssd)
-        - [Format](#how-to-format-the-external-data-ssd)
-        - [Encrypt](#how-to-encrypt-the-external-data-ssd)
-        - [Sensible folder structure](#how-to-create-a-sensible-folder-structure-on-the-external-data-ssd)
-        - [Mount](#how-to-mount-the-external-data-ssd)
+    - [External data SSD/HDD](#how-to-configure-the-external-data-ssdhdd)
+        - [Format](#how-to-format-the-external-data-ssdhdd)
+        - [Encrypt](#how-to-encrypt-the-external-data-ssdhdd)
+        - [Sensible folder structure](#how-to-create-a-sensible-folder-structure-on-the-external-data-ssdhdd)
+        - [Mount](#how-to-mount-the-external-data-ssdhdd)
     - [External backup HDD's](#how-to-configure-the-external-backup-hdds)
         - [Format](#how-to-format-the-external-backup-hdds)
         - [Mount](#how-to-mount-the-external-backup-hdds)
@@ -91,8 +91,9 @@ Please read carefully through this list of considerations you should know of!
 - It is provided as is and without warranty of any kind. (Read the [License](https://github.com/szaimen/Nextcloud-NAS-Guide/blob/main/LICENSE))
 - You should **neither** use Nextclouds `Groupfolder` app **nor** use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two storage providers will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. And don't despair! This guide covers how to do this. Please note that some Nextcloud apps have limitations when used together with the `external storage app`, though.
 - You shoud **not** use any encryption that is offered by Nextcloud e.g. `Server side encryption` or `End to end encryption` if you want to access you data over SMB or other services since the files that are encrypted like this will only be readable through Nextcloud which also introduces problems regarding backups and such. Also it is not necessary since you will use disk encryption for your data. On the other hand: if you only want to encrypt very less files (e.g. only your most important) which don't need to be readable over SMB or other services, `End to end encryption` is the encryption to choose. Using `E2E` will make sure that not even the server admin can decrypt the files so be warned!
+- Currently, only one encrypted external data SSD/HDD is supported. That means, that all your data needs to fit on that one external data SSD/HDD. We could make it possible to use more than one encrypted external data SSD/HDD in the future, though. Please let us know if you need it.
 - Most of this guide is based on scripts that are provided by the [**Nextcloud-VM**](https://github.com/nextcloud/vm) and will need to be executed in order to make everything work. This could theoratically set your server under risk but we made sure that all of them are secure.
-- The internal root partition, the external data SSD and the backups will be **encrypted** for security. This could theoratically prevent you from accessing those if you loose the key/passphrase. So please always store the passwords/passphrases at a safe place!
+- The internal root partition, the external data SSD/HDD and the backups will be **encrypted** for security. This could theoratically prevent you from accessing those if you loose the key/passphrase. So please always store the passwords/passphrases at a safe place!
 - The three external drives will be **NTFS** formatted, which has the advantage that they can be read by almost any x86 OS. But it doesn't provide features like snapshots or integrity checking.
 - You will need a PC running **Windows 7/10 Professional** or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough)
 - You will set up **TPM2 unlocking** which will automatically unlock your encrypted root partition during boot. This is a big convenience factor but would allow an attacker theoratically to break the encryption of this partition, if he/she steals the whole server. Encrypting the root partition makes sense nonetheless, since an attacker cannot simply take out the internal drive, connect it to another PC and read out all the data in cleartext.
@@ -380,7 +381,7 @@ The following steps will need to be set up so that you have a working backup sol
 
 This section covers:
 1. Configure SMTP-Mail
-1. Configure the external data SSD and the external backup HDD's
+1. Configure the external data SSD/HDD and the external backup HDD's
 1. Update your server one time manually
 1. Create the daily and off-shore backups
 
@@ -408,8 +409,8 @@ For german users is recommended: [mail.de](https://signup.mail.de/de/)
 If all settings were entered correctly, you should receive a testmail which proves that it was setup correctly.
 </details>
 
-## How to configure the external data SSD?
-The following steps are needed to configure the external data SSD.
+## How to configure the external data SSD/HDD?
+The following steps are needed to configure the external data SSD/HDD.
 <details><summary>Click here to expand</summary>
 
 1. **Reformat** the drive to NTFS, if not already done
@@ -418,7 +419,7 @@ The following steps are needed to configure the external data SSD.
 1. **Mount** the external SSD to your server
 </details>
 
-### How to format the external data SSD?
+### How to format the external data SSD/HDD?
 In order to prepare the SSD for your server, you should first format it to NTFS by doing the following things.
 <details><summary>Click here to expand</summary>
 
@@ -432,7 +433,7 @@ In order to prepare the SSD for your server, you should first format it to NTFS 
 1. Click on **Start** to start the formatting which should only take a few seconds
 </details>
 
-### How to encrypt the external data SSD?
+### How to encrypt the external data SSD/HDD?
 Now encrypt your external SSD using Bitlocker.
 <details><summary>Click here to expand</summary>
 
@@ -454,7 +455,7 @@ Now encrypt your external SSD using Bitlocker.
 **Now you can start to copy your private files onto the drive if you have any.**
 </details>
 
-### How to create a sensible folder structure on the external data SSD?
+### How to create a sensible folder structure on the external data SSD/HDD?
 Recommended is to create the folder structure on the external SSD like this.
 
 <details><summary>Click here to expand</summary>
@@ -486,7 +487,7 @@ Create a folder on the drive that contains all your files. Inside this folder, t
 (The exact foldernames and order can be different)
 </details>
 
-### How to mount the external data SSD?
+### How to mount the external data SSD/HDD?
 After all private files are successfully copied to the external SSD or at least the folder structure was created, you should mount the drive to your server.
 <details><summary>Click here to expand</summary>
 
@@ -566,8 +567,8 @@ Now that everything is prepared, you should set up a daily backup for your serve
 1. Choose `Daily Backup Wizard`
 1. Confirm that you want to **create** a daily backup script
 1. Confirm that you will leave the backup drive connected
-1. Select your external data SSD to be **included** in backups
-1. Choose that you want to backup the **whole** external data SSD
+1. Select your external data SSD/HDD to be **included** in backups
+1. Choose that you want to backup the **whole** external data SSD/HDD
 1. Select the **daily backup drive** as backup target
 1. Choose to use the recommended backup directory
 1. Enter a difficult **encryption key** for your backup and store it at a safe place
@@ -576,7 +577,7 @@ Now that everything is prepared, you should set up a daily backup for your serve
 1. You should now receive the daily backup config file via mail. Please **save/archive** it
 1. Finally, you will see the message that the backup script was successfully created
 
-It is located here: `/var/scripts/daily-borg-backup.sh` and will get executed at your chosen backup time, most likely `4.00 am`. You will get **notified** by mail if something fails and also if the backup was successful. The script which will create the daily backup is based on a program called `borgbackup` which is used to make daily incremental, compressed and deduplicated backup archives from your root partition and external data SSD.
+It is located here: `/var/scripts/daily-borg-backup.sh` and will get executed at your chosen backup time, most likely `4.00 am`. You will get **notified** by mail if something fails and also if the backup was successful. The script which will create the daily backup is based on a program called `borgbackup` which is used to make daily incremental, compressed and deduplicated backup archives from your root partition and external data SSD/HDD.
 </details>
 
 ## How to set up an offshore backup?
@@ -637,12 +638,12 @@ The big advantage using this method is, that the Nextcloud and SMB-user will hav
 The big advantage is, that you can create a SMB-share and mount the same location to Nextcloud in one go.
 <details><summary>Click here to expand</summary>
 
-If you have followed this guide, you should have set up a **sensible folder structure** on the external data SSD by now. Based on this structure, you should **share** the `user folders` with the corresponding user that you just created. The `data exchange` folders should get shared with the users that shall have access to those folders. 
+If you have followed this guide, you should have set up a **sensible folder structure** on the external data SSD/HDD by now. Based on this structure, you should **share** the `user folders` with the corresponding user that you just created. The `data exchange` folders should get shared with the users that shall have access to those folders. 
 
-If you have mounted the external data SSD in `/mnt/data` as recommended, is here one example:
-Your data folder should be now found in `/mnt/data/your data folder`. One of your user folders and data exchange folders might be `/mnt/data/your data folder/user1 folder` and `/mnt/data/your data folder/Data exchange folder` now. You should then **share** the `/mnt/data/your data folder/user1 folder` with `user1` and the `mnt/data/your data folder/Data exchange folder` with all users that shall get access to this folder. As you now see, best case is, if the user folders on your external data SSD match exactly the user count of newly created users.
+If you have mounted the external data SSD/HDD in `/mnt/data` as recommended, is here one example:
+Your data folder should be now found in `/mnt/data/your data folder`. One of your user folders and data exchange folders might be `/mnt/data/your data folder/user1 folder` and `/mnt/data/your data folder/Data exchange folder` now. You should then **share** the `/mnt/data/your data folder/user1 folder` with `user1` and the `mnt/data/your data folder/Data exchange folder` with all users that shall get access to this folder. As you now see, best case is, if the user folders on your external data SSD/HDD match exactly the user count of newly created users.
 
-**BTW**: you can at this point still shutdown your server, disconnect the external data SSD, connect it to your Windows PC and change the folder structure there (of course you will need to enter the Bitlocker password). Afterwards you can connect the drive to your server again and power it back on.
+**BTW**: you can at this point still shutdown your server, disconnect the external data SSD/HDD, connect it to your Windows PC and change the folder structure there (of course you will need to enter the Bitlocker password). Afterwards you can connect the drive to your server again and power it back on.
 
 **Based on the example above, you should now create a list how do you want to share your data with your users.**
 
@@ -669,7 +670,7 @@ Please note that you can always change the settings for your mounts in Nextcloud
 </details>
 
 ### How to make the root directory in Nextcloud read only for all users?
-In order to prevent user from creating any files outside their user folders, which are located on the external data SSD and now mounted to Nextcloud, you should make the Nextcloud root directory read only for all users.
+In order to prevent user from creating any files outside their user folders, which are located on the external data SSD/HDD and now mounted to Nextcloud, you should make the Nextcloud root directory read only for all users.
 <details><summary>Click here to expand</summary>
 
 Here is how to do this:
