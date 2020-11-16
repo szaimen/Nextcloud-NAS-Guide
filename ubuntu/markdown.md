@@ -109,7 +109,7 @@ Type in your [username and password](#profile)
 ---
 
 .center[![ip-address](./ip-address.png)]
-Here you can see the ip-address which you will need in the next step.
+Here you can see the IPv4-address which you will need in the next step.
 
 ---
 

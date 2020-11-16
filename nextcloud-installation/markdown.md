@@ -46,12 +46,14 @@ Press [ENTER] to continue
 ---
 
 .center[![disk-chooser](./disk-chooser.png)]
-Select "1 Disk" and press [ENTER] to confirm
+Select "1 Disk" and press [ENTER] to confirm<br>
+and wait until everything is installed
 
 ---
 
 .center[![dns](./dns.png)]
-Select "Local" and press [ENTER] to confirm
+Select "Local" and press [ENTER] to confirm<br>
+and wait until everything is installed
 
 ---
 

@@ -153,7 +153,7 @@ How to do this in detail depends on the PC that you've chosen to function as you
 </details>
 
 ## How long will the initial setup take?
-TODO: add how long it will take approx.
+The whole initial setup should take around 2.5h, excluding things that are not influenceable by this guide. E.g. how much files you need to copy, how slow the Ubuntu download is, how long the previegeneration takes, how long it takes to get a new domain, etc.
 
 Just as a reminder: It is not recommended to skip anything until the whole initial setup is done, because the sections partly build on each other. So simply read and work through everything starting here! You will also need to click on all `Click here to expand`! Just so that you know: the initial setup ends [here](#congratulations-everything-of-the-initial-setup-is-now-done)
 
@@ -162,7 +162,7 @@ Just as a reminder: It is not recommended to skip anything until the whole initi
 # Basic setup
 You will now configure your basic system.
 
-This section covers:
+This section should take around 1h, excluding the Ubuntu download time. It covers:
 1. BIOS/UEFI configuration
 1. Ubuntu installation
 1. Connect over SSH
@@ -184,7 +184,7 @@ The following guide is especially written for Intel Visual Bios which is present
 1. Configure your server to **boot automatically after a power failure** by clicking on the `Power` tab. In the `Secondary Power Settings` section, click on `After Power Failure` and choose **Power On**
 1. **Enable UEFI Boot** and **disable Legacy Boot** by clicking on the `Boot` tab. The `Boot Priority` tab is now automatically selected. In the `UEFI Boot Priority` section, **enable UEFI Boot** and **disable Legacy Boot**
 1. Only allow to **boot from USB-sticks** by clicking on the `Boot Configuration` tab. In the `UEFI Boot` section, disable everything and **only enable Boot Network Devices Last**. In the `Boot Devices` section, disable everything and **only enable USB**
-1. **Configure Secure Boot** by clicking on the `Secure Boot` tab. In the `Secure Boot Config` section, disable everything and **only enable Secure Boot**
+1. **Configure Secure Boot** by clicking on the `Secure Boot` tab. In the `Secure Boot Config` section, disable everything and **only enable Secure Boot** (`Install Intel Platform Key` might not deactivatable)
 1. Now **confirm your settings** by pressing `[F10]` and `[ENTER]`
 
 The BIOS/UEFI should now be correctly configured.
@@ -194,7 +194,7 @@ The BIOS/UEFI should now be correctly configured.
 You need an OS for you server and we've chosen the latest Ubuntu LTS release for you. Here is how it should get installed and configured.
 <details><summary>Click here to expand</summary>
 
-1. **Download** the latest Ubuntu Server 20.04.1 LTS image by clicking [here](http://www.releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso)
+1. **Download** the latest Ubuntu Server 20.04.1 LTS image by clicking [here](http://www.releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso) (This might take 30min because of slow download servers.)
 1. Use the already downloaded image to create a bootable USB-stick by following [this guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows)
 1. Connect a **LAN-cable** to your server
 1. Connect the **USB-stick** to your server and **power it on**. The server should then automatically boot from the USB-stick
@@ -215,7 +215,7 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. During the boot process, type in your **LUKS passphares** and press `[Enter]` to confirm
 1. Wait until you see **Reached target Cloud-init target.** and press `[ENTER]` to return to the login screen
 1. Now type in your **username** (e.g. `ncadmin`) and **pasword**
-1. If everything is correct, you will now see an overview of Ubuntu also containing the ip-address of your server at the right side. 
+1. If everything is correct, you will now see an overview of Ubuntu also containing the IPv4-address of your server.
 
 **You will need the ip-address in the next step!**
 
@@ -226,19 +226,20 @@ Theoratically you could now disconnect the monitor, mouse and keyboard again.
 In order to connect to your server from a PC in the same network, you should use SSH. You are then able to use copy and paste and more.
 <details><summary>Click here to expand</summary>
 
+1. Find out the IPv4-address of your server (if not already done): Either login to your server to show it or it will be presented on the login screen after installing Nextcloud
 1. Open a command prompt on Windows 10 or terminal on Linux
 1. Type in `ssh username@ip-address`<br>
-One example is: `ssh ncadmin@192.168.178.144`
+One example is: `ssh ncadmin@192.168.178.144`<br>
+(If it times out although your server is running, the IPv4-address might be wrong. Then please look at step 1 how to find out the IPv4-address)
+1. If you connect the first time to your server, you will be asked to confirm the server fingerprint which you should do by typing in `yes` and pressing `[ENTER]`. If your server fingerprint changed, you will be guided to reset it if you want to connect again.
 1. Now type in your CLI Ubuntu user **password**
-
-Please note: If you connect the first time to your server, you will be asked to confirm the server fingerprint which you should do by typing in `yes` and pressing `[ENTER]`
 </details>
 
 ## How to set up automatic TPM2 unlocking?
 In order to automaticly unlock the encrypted root partition, you need to setup TPM2 unlocking during boot.
 <details><summary>Click here to expand</summary>
 
-1. Connect from a PC in the same network to your server over SSH
+1. Connect from a PC in the same network to your server over SSH (if not already done)
 1. Copy and paste the following command over CLI: <br>
 `wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/tpm2-unlock.sh && sudo bash tpm2-unlock.sh`<br>
 1. Enter your **password** again
@@ -265,7 +266,9 @@ In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, 
 1.  Choose that you **don't** want to use `http://archive.ubuntu.com` as **repository** for your server since the best one was already set during the Ubuntu installation
 1. Select that you **don't** want to make all **free space** available to your **root partition** since it is always better to have some free space left that can be used for snapshots and such. You are of course free to shrink the free space later manually if needed
 1. Choose **1 Disk (Only use one disk /mnt/ncdata - NO ZFS!** since 2 Disks is currently not supported by the backup scripts since it complicates things by a lot and doesn't support disk encryption. Additionally you would need one dedicated disk only for that directory.
+1. Wait until everything is installed
 1. Choose **Local (DNS on gateway)**, because then you can choose the DNS server in your router in one place for all your devices
+1. Wait until everything is installed
 1. Deselect any apps that you don't want to install. (It is recommended to **deselect IssueTemplate, Mail & Group-Folders**)
 1. Click `OK` to **reboot** your server
 
@@ -299,9 +302,9 @@ Now the Nextcloud configuration should be done. Next, you will configure recomme
 ---
 
 # Security and Automation
-You should do the following steps to automate your server and make your server more secure:
+You should do the following steps to automate your server and make your server more secure.
 
-This section covers:
+This section should take around 10min. It covers:
 1. Enable geoblocking
 1. Set up disk monitoring
 1. Set up Fail2Ban
@@ -312,6 +315,8 @@ This section covers:
 In order to improve security, you can allow access to your webserver only from specific countries or continents.
 <details><summary>Click here to expand</summary>
 
+1. Connect from a PC in the same network to your server over SSH (if not already done)
+1. Run `sudo rm /var/scripts/activate-tls.sh` to delete the activate-tls script (you will run it at the end via a Menu, so the local script isn't needed)
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `GeoBlock`
 1. Choose to install/reinstall Geoblock
@@ -379,7 +384,7 @@ Please note: the update script will only update to minor Nextcloud versions. If 
 # Backup
 The following steps will need to be set up so that you have a working backup solution.
 
-This section covers:
+This section should take around 30min excluding copying files. It covers:
 1. Configure SMTP-Mail
 1. Configure the external data SSD/HDD and the external backup HDD's
 1. Update your server one time manually
@@ -416,7 +421,7 @@ The following steps are needed to configure the external data SSD/HDD.
 1. **Reformat** the drive to NTFS, if not already done
 1. **Encrypt** the drive with Bitlocker
 1. **Copy** your private files to the drive if you have any and create a sensible folder structure
-1. **Mount** the external SSD to your server
+1. **Mount** the external data SSD/HDD to your server
 </details>
 
 ### How to format the external data SSD/HDD?
@@ -434,14 +439,14 @@ In order to prepare the SSD for your server, you should first format it to NTFS 
 </details>
 
 ### How to encrypt the external data SSD/HDD?
-Now encrypt your external SSD using Bitlocker.
+Now encrypt your external data SSD/HDD using Bitlocker.
 <details><summary>Click here to expand</summary>
 
 (You can also encrypt the drive if already some data is on it)
 1. **Connect** the drive to your Windows 7/10 Professional (or higher) PC
 1. Search in Windows for `Bitlocker` which should bring up a control panel option called **Manage Bitlocker** and open it
 1. Resize the newly opened window and make it big
-1. Below your `C:` drive, in the **Bitlocker To Go** section, you should see the external SSD. Click on **Activate Bitlocker** for this drive
+1. Below your `C:` drive, in the **Bitlocker To Go** section, you should see the external data SSD/HDD. Click on **Activate Bitlocker** for this drive
 1. Use a difficult password to encrypt the drive and store it at a safe place.
 1. Choose to store the **Recovery Code** for your drive **in a file** and select any valid location.
 1. Click on **Continue** to proceed with setting up bitlocker
@@ -456,7 +461,7 @@ Now encrypt your external SSD using Bitlocker.
 </details>
 
 ### How to create a sensible folder structure on the external data SSD/HDD?
-Recommended is to create the folder structure on the external SSD like this.
+Recommended is to create the folder structure on the external data SSD/HDD like this.
 
 <details><summary>Click here to expand</summary>
 
@@ -488,10 +493,10 @@ Create a folder on the drive that contains all your files. Inside this folder, t
 </details>
 
 ### How to mount the external data SSD/HDD?
-After all private files are successfully copied to the external SSD or at least the folder structure was created, you should mount the drive to your server.
+After all private files are successfully copied to the external data SSD/HDD or at least the folder structure was created, you should mount the drive to your server.
 <details><summary>Click here to expand</summary>
 
-1. **Connect** the external SSD to your server
+1. **Connect** the external data SSD/HDD to your server
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `Bitlocker Mount`
 1. Choose to install Bitlocker Mount
@@ -547,8 +552,9 @@ Now that the drives are prepared, you will mount the drives to your sever:
 1. You should get the message that the mount was successful.
 1. When asked if this is a backup drive, select `Yes`!
 1. You should see the message now, that the backup drive is ready.
+1. **Now repeat this same procedure with the second drive! Start at point 4!**
+1. If you are done, just choose `Exit` to exit this script.
 
-**Now repeat this same procedure with the second drive! Start at point 4!**
 </details>
 
 ## How to update your server manually?
@@ -557,6 +563,8 @@ Before you are able to create the backup scripts, you will need to run the updat
 
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Update Nextcloud`
+1. Wait until the update has run
+1. Run `sudo shutdown -c` over CLI to cancel the shutdown, since it is not necessary now
 </details>
 
 ## How to set up a daily backup?
@@ -602,7 +610,7 @@ It is located here: `/var/scripts/off-shore-rsync-backup.sh` and will get execut
 ## SMB-server
 Although a SMB-server might not be needed in any installation, it is recommended to configure it nonetheless, since you will be able to `create Nextcloud users` and configure the `Nextcloud external storage` app easily using the SMB-server script.
 
-This section covers:
+This section should take around 20min if you just create a few users and shares, excluding the previewgeneration. It covers:
 1. Run the smb-server script
 1. Create SMB-users and Nextcloud users
 1. Create SMB-shares and mount the locations to Nextcloud
@@ -675,8 +683,9 @@ In order to prevent user from creating any files outside their user folders, whi
 
 Here is how to do this:
 1. From the **SMB-server Main Menu** select `Open the SMB-share Menu`
+1. Choose `Create a SMB-share`
 1. Type in an empty or not existing directory that you will share, like `mnt/data/your data folder/root` (based on the example above) and choose to create that directory
-1. Type in `root` as **Share name**
+1. Type in `temporary` as **Share name**
 1. Now **select at least one SMB-user** that will get **access** to the share for now
 1. Now select that the share shall be **read only**
 1. After restartin Samba, the SMB-share should be successfully created!
@@ -684,13 +693,15 @@ Here is how to do this:
 1. You can now change the mount name of your directory for the usage in Nextcloud. You should change the name to `/` (one forward-slash)
 1. Now choose that the mount shall be **read only** in Nextcloud
 1. Choose that you want to disable **sharing** for this mount
-1. Now select all Nextcloud users and groups in order to **share the mount with everyone**.
+1. Now deselect all Nextcloud users and groups in order to **share the mount with everyone**.
+1. Confirm that you want to **share the mount with everyone** (select `Yes`)
 1. Now everything should get set up automatically.
-1. Enabling Inotify is **not** recommended and normally not necessary
+1. **Don't** enable Inotify
 1. You should now remove the SMB-share again since it is not needed any longer:
 1. Choose to `Delete SMB-shares` from the same still open `SMB-share Menu`
-1. Select the just created share with name `root`
+1. Select the just created share with name `temporary`
 1. Press `[Enter]` to delete it
+1. exit the SMB-server script by selecting `Return` -> `Exit`
 
 Now, the root directory should be read only for all users!
 </details>
@@ -706,7 +717,7 @@ In order to speed up preview loading and the general feel of Nextcloud while ope
 1. Deselect any format you don't want to have previews for (Recommended is to **deselect MarkDown & TXT**)
 1. Wait until everything is set up
 1. Choose to **not** use a specific Nextcloud user for preview generation
-1. Wait until everything is scanned. This can take a long time, please be patient!
+1. Wait until everything is scanned. This can take a long time, please be patient! (If it just takes too long and doesn't finish, you can cancel by pressing `ctrl + c`. You could then run this script after the initial setup is done.)
 </details>
 
 ---
@@ -714,7 +725,7 @@ In order to speed up preview loading and the general feel of Nextcloud while ope
 ## Customize Nextcloud
 The following things are not really necessary for a basic setup but I think that those should be the default on any installation. Hence they are included in the Basic Setup section. You are free to skip this section.
 
-This section covers:
+This section should take around 5min. It covers:
 1. Configure the CookieLifetime
 1. Enable the Share-folder
 1. Disable Workspaces
@@ -739,7 +750,7 @@ If you internally share documents, they will be always added to the users root d
 All shared files will in this case not be visible in the users root directory but in a folder called `Shared`.
 
 If you have followed this guide and made the root directory in Nextcloud **read only** for all users, you will need to do something first, though: Please create a folder in the root folder by running a command like:<br>
-`sudo mkdir "mnt/data/your data folder/root/Shared"` over CLI<br>
+`sudo mkdir "/mnt/data/your data folder/root/Shared"` over CLI<br>
 Please remember to adjust this command depending on the path you've chosen to be the root folder.
 
 Now you can configure this option:
@@ -777,7 +788,7 @@ User flows are now disabled, admin flows still usable.
 ## Activate Let's Encrypt
 In order to access Nextcloud over https with a valid certificate, you will need to do the following things.
 
-This section covers:
+This section should take around 15min, excluding the time it could take getting a new domain. It covers:
 1. Get a Domain from a supported DDNS-provider and activate DDNS for your Domain
 1. Configure DDclient
 1. Enable Port Forwarding
@@ -843,9 +854,11 @@ You will now activate TLS finally, if all points above are successfully set up.
 1. Confirm that you have set up all necessary requirements
 1. Enter your **Domain** (e.g. `yourdomain.com`)
 1. Use UPnP or not depending on if you have enabled automatic port forwarding in your router for your server. If you opened Port 80 and 443 manually, you can skip UPnP
-1. Wait until everything is set up
+1. Wait until everything is set up and enter your mail-address during this step (Your mail-address is needed for contacting you, if a certificate expires)
 
-Now you should be able to access your Nextcloud on any device by opening `yourdomain.com`!
+**Now you should be able to access your Nextcloud on any device by opening `yourdomain.com`!**
+
+Advice: You should first visit `yourdomain.com/settings/user` with your admin user and type in your admin mail-address. Next, you should visit `yourdomain.com/settings/admin` and use the same mail-account for the Mail-server settings that you used [here](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails) (This is needed so that Nextcloud can send mails e.g. for sending reset password mails and such.)
 </details>
 
 ### Congratulations, everything of the initial setup is now done!

@@ -127,6 +127,17 @@ Press [ENTER] to confirm
 
 ---
 
+.center[![nextcloud-password-change](./nextcloud-password-change.png)]
+Type in a new password for your Nextcloud admin user.<br>
+Press [ENTER] to confirm
+
+---
+
+.center[![nextcloud-password-confirm](./nextcloud-password-confirm.png)]
+Press [ENTER] to confirm
+
+---
+
 .center[![nextcloud-login](./nextcloud-login.png)]
 Press [ENTER] to continue
 
@@ -147,13 +158,13 @@ Press [ENTER] to continue
 
 ---
 
-.center[![congratulations](./congratulations.png)]
-Press [ENTER] to continue
+.center[![support-bugs](./support-bugs.png)]
+Press [ENTER] to reboot
 
 ---
 
-.center[![support-bugs](./support-bugs.png)]
-Press [ENTER] to reboot
+.center[![congratulations](./congratulations.png)]
+Press [ENTER] to continue
 
 ---
 
@@ -162,5 +173,5 @@ Press [ENTER] to reboot
 ---
 
 ### The Nextcloud startup is now done.
-### Please click [here](https://github.com/szaimen/Nextcloud-NAS-Guide#how-to-enable-geoblocking) to return to the guide.
+### Please click [here](https://github.com/szaimen/Nextcloud-NAS-Guide#security-and-automation) to return to the guide.
 ### You should continue with the point `How to enable geoblocking?`
