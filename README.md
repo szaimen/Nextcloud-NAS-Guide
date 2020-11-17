@@ -153,7 +153,7 @@ How to do this in detail depends on the PC that you've chosen to function as you
 </details>
 
 ## How long will the initial setup take?
-The whole initial setup should take around 2.5h, excluding things that are not influenceable by this guide. E.g. how much files you need to copy, how slow the Ubuntu download is, how long the previegeneration takes, how long it takes to get a new domain, etc.
+The whole initial setup should take around **2.5h**, excluding things that are not influenceable by this guide. E.g. how much files you need to copy, how slow the Ubuntu download is, how long the previegeneration takes, how long it takes to get a domain, etc.
 
 Just as a reminder: It is not recommended to skip anything until the whole initial setup is done, because the sections partly build on each other. So simply read and work through everything starting here! You will also need to click on all `Click here to expand`! Just so that you know: the initial setup ends [here](#congratulations-everything-of-the-initial-setup-is-now-done)
 
@@ -162,7 +162,7 @@ Just as a reminder: It is not recommended to skip anything until the whole initi
 # Basic setup
 You will now configure your basic system.
 
-This section should take around 1h, excluding the Ubuntu download time. It covers:
+This section should take around **1h**, excluding the Ubuntu download time. It covers:
 1. BIOS/UEFI configuration
 1. Ubuntu installation
 1. Connect over SSH
@@ -304,7 +304,7 @@ Now the Nextcloud configuration should be done. Next, you will configure recomme
 # Security and Automation
 You should do the following steps to automate your server and make your server more secure.
 
-This section should take around 10min. It covers:
+This section should take around **10min**. It covers:
 1. Enable geoblocking
 1. Set up disk monitoring
 1. Set up Fail2Ban
@@ -316,7 +316,7 @@ In order to improve security, you can allow access to your webserver only from s
 <details><summary>Click here to expand</summary>
 
 1. Connect from a PC in the same network to your server over SSH (if not already done)
-1. Run `sudo rm /var/scripts/activate-tls.sh` to delete the activate-tls script (you will run it at the end via a Menu, so the local script isn't needed)
+1. Run `sudo rm /var/scripts/activate-tls.sh` over CLI to delete the activate-tls script (you will run it at the end via a Menu, so the local script isn't needed)
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `GeoBlock`
 1. Choose to install/reinstall Geoblock
@@ -384,7 +384,7 @@ Please note: the update script will only update to minor Nextcloud versions. If 
 # Backup
 The following steps will need to be set up so that you have a working backup solution.
 
-This section should take around 30min excluding copying files. It covers:
+This section should take around **30min** excluding copying files. It covers:
 1. Configure SMTP-Mail
 1. Configure the external data SSD/HDD and the external backup HDD's
 1. Update your server one time manually
@@ -610,7 +610,7 @@ It is located here: `/var/scripts/off-shore-rsync-backup.sh` and will get execut
 ## SMB-server
 Although a SMB-server might not be needed in any installation, it is recommended to configure it nonetheless, since you will be able to `create Nextcloud users` and configure the `Nextcloud external storage` app easily using the SMB-server script.
 
-This section should take around 20min if you just create a few users and shares, excluding the previewgeneration. It covers:
+This section should take around **20min** if you just create a few users and shares, excluding the previewgeneration. It covers:
 1. Run the smb-server script
 1. Create SMB-users and Nextcloud users
 1. Create SMB-shares and mount the locations to Nextcloud
@@ -725,7 +725,7 @@ In order to speed up preview loading and the general feel of Nextcloud while ope
 ## Customize Nextcloud
 The following things are not really necessary for a basic setup but I think that those should be the default on any installation. Hence they are included in the Basic Setup section. You are free to skip this section.
 
-This section should take around 5min. It covers:
+This section should take around **5min**. It covers:
 1. Configure the CookieLifetime
 1. Enable the Share-folder
 1. Disable Workspaces
@@ -788,7 +788,7 @@ User flows are now disabled, admin flows still usable.
 ## Activate Let's Encrypt
 In order to access Nextcloud over https with a valid certificate, you will need to do the following things.
 
-This section should take around 15min, excluding the time it could take getting a new domain. It covers:
+This section should take around **15min**, excluding the time it could take getting a new domain. It covers:
 1. Get a Domain from a supported DDNS-provider and activate DDNS for your Domain
 1. Configure DDclient
 1. Enable Port Forwarding
