@@ -521,7 +521,7 @@ You will now reformat them to NTFS. You can skip this step, if they are already 
 1. Now **connect** one of your backup HDD's to your server (you have 1 minute)
 1. You should get the message that the drive was found
 1. Select the drive that you want to format to NTFS
-1. Type in the label that this partition shall get. It should be a recognizable label like `Daily Backup` for the daily backup drive and `Off-shore Backup` for the off-shore backup drive 
+1. Type in the **label** that this partition shall get. It should be a recognizable label like `Daily Backup` for the daily backup drive and `Off-shore Backup` for the off-shore backup drive 
 1. Confirm that you are sure to format the drive to NTFS by selecting `Yes`
 1. Now the drive should be successfully formatted
 
