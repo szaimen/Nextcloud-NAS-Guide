@@ -456,7 +456,7 @@ Next, you should open the encrypted drive on a different PC to be able to copy f
 1. **Disconnect** the external data SSD/HDD
 1. **Don`t** connect the drive to your PC, yet
 1. **Download** Veracrypt from [here](https://www.veracrypt.fr/en/Downloads.html) and **install** it on your PC (if needed, **restart** your PC)
-1. Now, **connect** the drive to your PC (**don't** reformat the drive, if you get a popup, that it must get reformatted)
+1. Now, **connect** the drive to your PC (choose to **not** reformat the drive if you get a popup, that it must get reformatted)
 1. Open `Veracrypt`, select the drive, type in the **password** and wait until it is mounted to your system
 
 Now you should be able to access the encrypted drive.
