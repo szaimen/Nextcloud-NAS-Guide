@@ -36,10 +36,9 @@ In the future, this guide will cover optional addons like: a media server, a way
 - [Backup](#backup)
     - [SMTP Mail](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails)
     - [External data SSD/HDD](#how-to-configure-the-external-data-ssdhdd)
-        - [Format](#how-to-format-the-external-data-ssdhdd)
-        - [Encrypt](#how-to-encrypt-the-external-data-ssdhdd)
+        - [Format, encrypt & mount](#how-to-format-encrypt-and-mount-the-external-data-ssdhdd)
+        - [PC access](#how-to-access-the-encrypted-external-data-ssdhdd-on-any-pc)
         - [Sensible folder structure](#how-to-create-a-sensible-folder-structure-on-the-external-data-ssdhdd)
-        - [Mount](#how-to-mount-the-external-data-ssdhdd)
     - [External backup HDD's](#how-to-configure-the-external-backup-hdds)
         - [Format](#how-to-format-the-external-backup-hdds)
         - [Mount](#how-to-mount-the-external-backup-hdds)
@@ -91,11 +90,10 @@ Please read carefully through this list of considerations you should know of!
 - It is provided as is and without warranty of any kind. (Read the [License](https://github.com/szaimen/Nextcloud-NAS-Guide/blob/main/LICENSE))
 - You should **neither** use Nextclouds `Groupfolder` app **nor** use `normal Nextcloud storage` since those have issues with external changes that are made via SMB, and other shortcomings. Also all files that are created via those two storage providers will be located on your root disk which is limitated in its size and you won't be able to use SMB with this location. The only Nextcloud storage app that should get used is the `External Storage app` since you can use it to mount your files from external drives into your Nextcloud which is the recommended way to mount files in Nextcloud. And don't despair! This guide covers how to do this. Please note that some Nextcloud apps have limitations when used together with the `external storage app`, though.
 - You shoud **not** use any encryption that is offered by Nextcloud e.g. `Server side encryption` or `End to end encryption` if you want to access you data over SMB or other services since the files that are encrypted like this will only be readable through Nextcloud which also introduces problems regarding backups and such. Also it is not necessary since you will use disk encryption for your data. On the other hand: if you only want to encrypt very less files (e.g. only your most important) which don't need to be readable over SMB or other services, `End to end encryption` is the encryption to choose. Using `E2E` will make sure that not even the server admin can decrypt the files so be warned!
-- Currently, only one encrypted external data SSD/HDD is supported. That means, that all your data needs to fit on that one external data SSD/HDD. We could make it possible to use more than one encrypted external data SSD/HDD in the future, though so that you can share your data between those. Please let us know if you need it.
 - Most of this guide is based on scripts that are provided by the [**Nextcloud-VM**](https://github.com/nextcloud/vm) and will need to be executed in order to make everything work. This could theoratically set your server under risk but we made sure that all of them are secure.
 - The internal root partition, the external data SSD/HDD and the backups will be **encrypted** for security. This could theoratically prevent you from accessing those if you loose the key/passphrase. So please always store the passwords/passphrases at a safe place!
 - The three external drives will be **NTFS** formatted, which has the advantage that they can be read by almost any x86 OS. But it doesn't provide features like snapshots or integrity checking.
-- You will need a PC running **Windows 7/10 Professional** or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough)
+- You will use an Open Source program called `Veracrypt` for encrypting and formatting the external data SSD/HDD which has the advantage that this tool is compatible with almost any OS but the program needs to get installed before you can decrypt the drive and access the data.
 - You will set up **TPM2 unlocking** which will automatically unlock your encrypted root partition during boot. This is a big convenience factor but would allow an attacker theoratically to break the encryption of this partition, if he/she steals the whole server. Encrypting the root partition makes sense nonetheless, since an attacker cannot simply take out the internal drive, connect it to another PC and read out all the data in cleartext.
 - You will create an off-shore backup drive that needs to get connected to your server every **90 days** (this is configurable) in order to make a new backup. After creating one off-shore backup, the drive should get disconnected from your server and stored at a safe place outside your home. So you will need a place where to store it during this time and connect it manually every 90 days (or as configured).
 
@@ -112,19 +110,17 @@ You will need the following things:
 - One internal SSD with at least 128GB
 - Power Supply for your server (if not built-in)
 - TPM2 support
-- One external SSD (or HDD) that will store your personal data with at least 250GB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
+- One (or more) external SSD (or HDD) that will store your personal data with at least 250GB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
 - Two additional external HDD's that will function as backup drives with at least the same size like the external data SSD/HDD, each
 - One USB-stick with at least 8GB for installing Ubuntu
 - For the initial setup you will also need a HDMI-display (e.g. monitor/tv/beamer), USB-mouse and -keyboard. If you don't have one: you don't need to buy those. Borrowing or renting those should be enough. (You really only need them for the initial setup.)
-
-**Please note: In order to complete this guide, you will need a PC running Windows 7/10 Professional or higher for encrypting and formatting the external drives. (The `Windows 10/7 Home Edition` is not enough) If you don't have one, this guide is unfortunately nothing for you.**
 </details>
 
 ## Do you have any Hardware recommendations?
 Since your server shall run 24/7, it makes sense to use laptop CPU's and hardware because those are still much more power efficient than any custom-built PC. Perfect because of the size and power for this usecase are Intel NUC's. 
 <details><summary>Click here to expand</summary>
 
-Recommended are any recent Intel NUC's with 4 or more cores. Click on [this link](https://geizhals.eu/?cat=barepc&v=e&hloc=at&hloc=de&hloc=pl&hloc=uk&hloc=eu&sort=p&bl1_id=30&xf=15825_4%7E2257_Intel%7E3345_2018#gh_filterbox) to show recommended devices. Of yourse you are free to buy used devices, but again: Intel NUC's are prefered.
+Recommended are any recent Intel NUC's with 4 or more cores. Click on [this link](https://geizhals.eu/?cat=barepc&v=e&hloc=at&hloc=de&hloc=pl&hloc=uk&hloc=eu&sort=p&bl1_id=30&xf=15825_4%7E2257_Intel%7E3345_2018#gh_filterbox) to show recommended devices. Of course you are free to buy used devices, but again: Intel NUC's are prefered.
 
 After you have chosen your device, you will need to get compatible RAM and Storage for your NUC which depends on the model that you've chosen. So please choose wisely.
 
@@ -132,7 +128,7 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 - One Intel NUC from 2018 or later with 4 Cores or more
 - One SO-DIMM RAM latch with 8GB because 8GB should be enough for now and you will be able to upgrade the RAM with a second latch later on 
 - One internal SSD with 250 GB which should be plenty of storage for this usecase
-- One external SSD (or HDD) for storing the private data with at least 1TB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
+- One (or more) external SSD (or HDD) for storing the private data with at least 1TB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
 - Two external HDD's for backups with at least the same size like the external data SSD/HDD, each
 
 #### Currently (10. Nov. 2020) the recommended configuration which should fit for most people is:
@@ -194,10 +190,10 @@ The BIOS/UEFI should now be correctly configured.
 You need an OS for you server and we've chosen the latest Ubuntu LTS release for you. Here is how it should get installed and configured.
 <details><summary>Click here to expand</summary>
 
-1. **Download** the latest Ubuntu Server 20.04.1 LTS image by clicking [here](http://www.releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso) (This might take 30min because of slow download servers.)
+1. **Download** the latest Ubuntu Server 20.04.1 LTS image by clicking [here](http://www.releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso) (this might take 30min because of slow download servers)
 1. Use the already downloaded image to create a bootable USB-stick by following [this guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows) (the guide is for Windows, but guides for macOS and Ubuntu are referenced there)
 1. Connect a **LAN-cable** to your server
-1. Connect the **USB-stick** to your server and **power it on**. The server should then automatically boot from the USB-stick
+1. Connect the **USB-stick** to your server and **power the server on**. The server should then automatically boot from the USB-stick
 1. **Since it is necessary that you configure certain things correctly, we have prepared a slideshow which makes it easier for you to configure Ubuntu correctly. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/ubuntu) to start the slideshow. Otherwise, just continue with the steps below**
 1. Select the correct **language** for the installer
 1. Choose to **Continue without updating** the installer
@@ -382,9 +378,9 @@ Please note: the update script will only update to minor Nextcloud versions. If 
 ---
 
 # Backup
-The following steps will need to be set up so that you have a working backup solution.
+The following steps will need to get done so that you have a working backup solution.
 
-This section should take around **30min** excluding copying files. It covers:
+This section should take around **30min** if you just create a few user folders, excluding copying files. It covers:
 1. Configure SMTP-Mail
 1. Configure the external data SSD/HDD and the external backup HDD's
 1. Update your server one time manually
@@ -418,46 +414,50 @@ If all settings were entered correctly, you should receive a testmail which prov
 The following steps are needed to configure the external data SSD/HDD.
 <details><summary>Click here to expand</summary>
 
-1. **Reformat** the drive to NTFS, if not already done
-1. **Encrypt** the drive with Bitlocker
+1. **Format, encrypt and mount** the drive with `Veracrypt`
+1. **Open** the drive on a PC
 1. **Copy** your private files to the drive if you have any and create a sensible folder structure
-1. **Mount** the external data SSD/HDD to your server
 </details>
 
-### How to format the external data SSD/HDD?
-In order to prepare the SSD for your server, you should first format it to NTFS by doing the following things.
+### How to format, encrypt and mount the external data SSD/HDD?
+In order to prepare the external data SSD/HDD for your server, you should first format and encrypt it using `Veracrypt`.
 <details><summary>Click here to expand</summary>
 
-(If it is already NTFS formatted, you can skip the formatting to NTFS)
-1. **Connect** the drive to your Windows 7/10 Professional (or higher) PC
-1. Open the **File Explorer**
-1. Click on **This PC**
-1. **Right-click** on your SSD in this overview and select **Format...**
-1. Click on **Restore device defaults**
-1. Give it a meaningful **Volume designation** like `Data`
-1. Click on **Start** to start the formatting which should only take a few seconds
+**Warning: this will delete any data on this drive!**
+1. Please **don't** connect the drive to your server, yet!
+1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Choose `Veracrypt`
+1. Select that you want to **install** veracrypt
+1. Select that you want to continue
+1. Wait until it is installed
+1. After pressing `OK`, **connect** the drive to your server
+1. It should get found after a few seconds
+1. Select the drive that you want to format and encrypt
+1. Enter a **password** and store it at a safe place.
+1. Confirm the password
+1. Confirm that you are sure to format and encrypt the drive by selecting `Yes`
+1. Now the drive should be successfully formatted and encrypted
+1. Choose to **mount** the drive to your server
+1. Type in the **mountpath** that you want to use, recommended is `/mnt/data`
+1. Wait until everything is configured
+
+**Now, the drive should be ready.**
+
+**BTW**: You could run this script a second time now to format, encrypt and mount a second drive, if you want to use more than one external data SSD/HDD.
 </details>
 
-### How to encrypt the external data SSD/HDD?
-Now encrypt your external data SSD/HDD using Bitlocker.
+### How to access the encrypted external data SSD/HDD on any PC?
+Next, you should open the encrypted drive on a different PC to be able to copy files or create the sensible folder structure.
 <details><summary>Click here to expand</summary>
 
-(You can also encrypt the drive if already some data is on it)
-1. **Connect** the drive to your Windows 7/10 Professional (or higher) PC
-1. Search in Windows for `Bitlocker` which should bring up a control panel option called **Manage Bitlocker** and open it
-1. Resize the newly opened window and make it big
-1. Below your `C:` drive, in the **Bitlocker To Go** section, you should see the external data SSD/HDD. Click on **Activate Bitlocker** for this drive
-1. Use a difficult password to encrypt the drive and store it at a safe place.
-1. Choose to store the **Recovery Code** for your drive **in a file** and select any valid location.
-1. Click on **Continue** to proceed with setting up bitlocker
-1. Choose **only encrypt used storage**
-1. Choose **New encryption mode**
-1. Click on **Start encryption** to start the encryption
-1. Now wait until the drive is completely encrypted
-1. You should store the **Bitlocker Recovery Code** and drive identifier at a safe place and delete the file again
-1. After the drive is completely encrypted, **eject the drive**, disconnect it and connect it again. Then you should see a popup where you can test if the password works and the drive gets correctly decrypted with this password.
+1. **Power off** your server by pressing the `power button`
+1. **Disconnect** the external data SSD/HDD
+1. **Don`t** connect the drive to your PC, yet
+1. **Download** Veracrypt from [here](https://www.veracrypt.fr/en/Downloads.html) and **install** it on your PC (if needed, **restart** your PC)
+1. Now, **connect** the drive to your PC (**don't** reformat the drive, if you get a popup, that it must get reformatted)
+1. Open `Veracrypt`, select the drive, type in the **password** and wait until it is mounted to your system
 
-**Now you can start to copy your private files onto the drive if you have any.**
+Now you should be able to access the encrypted drive.
 </details>
 
 ### How to create a sensible folder structure on the external data SSD/HDD?
@@ -489,23 +489,13 @@ Create a folder on the drive that contains all your files. Inside this folder, t
             - Archive
     - Some other folder
 
-(The exact foldernames and order can be different)
-</details>
+(The exact foldernames and order can be different)<br>
 
-### How to mount the external data SSD/HDD?
-After all private files are successfully copied to the external data SSD/HDD or at least the folder structure was created, you should mount the drive to your server.
-<details><summary>Click here to expand</summary>
+**BTW**: you can also spread your files over more than one external data SSD/HDD using the same system. Of course each `User folder` and `data exchange folder` will need to be completely on one disk but you could manually add some different user folders or data exchange folders on a second drive. (this might also be useful if you run out of space on your external data SSD/HDD someday in the future)
 
-1. **Connect** the external data SSD/HDD to your server
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
-1. Choose `Bitlocker Mount`
-1. Choose to install Bitlocker Mount
-1. Wait until everything is installed
-1. The drive should get found immediately
-1. After it was found, enter your **Bitlocker password** for that drive
-1. You should get the messsage that it is correct
-1. Enter the **mountpoint** where it shall get mounted. Recommended is `/mnt/data`
-1. You should now get the message that the mount was succesful
+**Now copy all private files to the external data SSD/HDD or at least create the folder structure.**
+
+If you are done, **eject** the drive from your PC, **connect** the external data SSD/HDD to your server again and **power the server on** by pressing the `power button`
 </details>
 
 ## How to configure the external backup HDD's?
@@ -518,28 +508,31 @@ You will need to do the following steps:
 </details>
 
 ### How to format the external backup HDD's?
-You will now reformat them to NTFS:
+You will now reformat them to NTFS. You can skip this step, if they are already NTFS formatted!
 <details><summary>Click here to expand</summary>
 
-1. **Connect** the drives to your Windows 7/10 Professional (or higher) PC
-1. Open the File Explorer
-1. Click on **This PC**
-1. **Right-click** on one HDD in this overview and select **Format...**
-1. Click on **Restore device defaults**
-1. Give it a meaningful **Volume designation** like `Daily Backup`
-1. Click on **Start** to start the formatting which should only take a few seconds
-1. **Right-click** on the second HDD in this overview and select **Format...**
-1. Click on **Restore device defaults**
-1. Give it a meaningful **Volume designation** like `Off-Shore Backup`
-1. Click on **Start** to start the formatting which should only take a few seconds
-1. **Eject** both drives
+**Warning: this will delete any data on this drive!**
+1. **Power on** your server by pressing the `power button` (if not already done)
+1. Please **don't** connect the drives to your server, yet!
+1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Choose `NTFS Format`
+1. Select to `Format a drive`
+1. Press `OK` to start searching for new drives
+1. Now **connect** one of your backup HDD's to your server (you have 1 minute)
+1. You should get the message that the drive was found
+1. Select the drive that you want to format to NTFS
+1. Type in the label that this partition shall get. It should be a recognizable label like `Daily Backup` for the daily backup drive and `Off-shore Backup` for the off-shore backup drive 
+1. Confirm that you are sure to format the drive to NTFS by selecting `Yes`
+1. Now the drive should be successfully formatted
+
+**Now proceed the same procedure for the second backup drive. Start at point 5.**
 </details>
 
 ### How to mount the external backup HDD's?
 Now that the drives are prepared, you will mount the drives to your sever:
 <details><summary>Click here to expand</summary>
 
-1. Please **don't** connect the drives to your server, yet!
+1. Please **don't** connect the drives to your server, yet or **disconnect** the drives from your server!
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `NTFS Mount`
 1. Select to `Mount a drive`
@@ -554,7 +547,6 @@ Now that the drives are prepared, you will mount the drives to your sever:
 1. You should see the message now, that the backup drive is ready.
 1. **Now repeat this same procedure with the second drive! Start at point 4!**
 1. If you are done, just choose `Exit` to exit this script.
-
 </details>
 
 ## How to update your server manually?
@@ -651,7 +643,7 @@ If you have followed this guide, you should have set up a **sensible folder stru
 If you have mounted the external data SSD/HDD in `/mnt/data` as recommended, is here one example:
 Your data folder should be now found in `/mnt/data/your data folder`. One of your user folders and data exchange folders might be `/mnt/data/your data folder/user1 folder` and `/mnt/data/your data folder/Data exchange folder` now. You should then **share** the `/mnt/data/your data folder/user1 folder` with `user1` and the `mnt/data/your data folder/Data exchange folder` with all users that shall get access to this folder. As you now see, best case is, if the user folders on your external data SSD/HDD match exactly the user count of newly created users.
 
-**BTW**: you can at this point still shutdown your server, disconnect the external data SSD/HDD, connect it to your Windows PC and change the folder structure there (of course you will need to enter the Bitlocker password). Afterwards you can connect the drive to your server again and power it back on.
+**BTW**: you can at this point still shutdown your server, disconnect the external data SSD/HDD, connect it to your PC, open it with `Veracrypt` and change the folder structure there. Afterwards you can connect the drive to your server again and power it back on.
 
 **Based on the example above, you should now create a list how do you want to share your data with your users.**
 
