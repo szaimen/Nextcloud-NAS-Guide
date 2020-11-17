@@ -35,6 +35,7 @@ Select "No" and press [ENTER] to confirm
 
 ---
 
+### Attention! This is especially important!
 .center[![free-space](./free-space.png)]
 Select "No" and press [ENTER] to confirm
 
