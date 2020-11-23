@@ -163,7 +163,7 @@ This section should take around **1h**, excluding the Ubuntu download time. It c
 1. BIOS/UEFI configuration
 1. Ubuntu installation
 1. Connect over SSH
-1. Setup TPM2 unlocking
+1. Set up TPM2 unlocking
 1. Install Nextcloud and run the startup script
 
 ## How to configure the BIOS/UEFI?
@@ -257,7 +257,7 @@ In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, 
 
 1. Connect from a PC in the same network to your server over SSH
 1. Copy and paste the following command over CLI: <br>
-`wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh && sudo bash nextcloud_install_production.sh`<br>
+`sudo lvcreate --size 30G --name "NcVM-reserved" ubuntu-vg && wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh && sudo bash nextcloud_install_production.sh`
 1. Enter your **password** again
 1. **Since it is necessary that you answer certain questions correctly, we have prepared a slideshow which makes it easier for you to answer all questions correctly. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/nextcloud-installation) to start the slideshow. Otherwise, just continue with the steps below**
 1. Choose that you **want** to use **LVM snapshots**, since it is a requirements for a good working backup solution and such.
