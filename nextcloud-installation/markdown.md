@@ -20,11 +20,6 @@ Press [ENTER] to continue
 
 ---
 
-.center[![snapshot](./snapshot.png)]
-Select "Yes" and press [ENTER] to confirm
-
----
-
 .center[![repository-show](./repository-show.png)]
 Press [ENTER] to continue
 
@@ -35,9 +30,8 @@ Select "No" and press [ENTER] to confirm
 
 ---
 
-### Attention! This is especially important!
 .center[![free-space](./free-space.png)]
-Select "No" and press [ENTER] to confirm
+Select "Yes" and press [ENTER] to confirm
 
 ---
 
