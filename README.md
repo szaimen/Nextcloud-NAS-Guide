@@ -27,6 +27,7 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Nextcloud installation](#how-to-install-nextcloud)
     - [Nextcloud startup script](#how-to-startup-nextcloud)
 - [Security and Automation](#security-and-automation)
+    - [Disable USB-boot](#how-to-disable-usb-boot)
     - [Geoblocking](#how-to-enable-geoblocking)
     - [Disk Monitoring](#how-to-set-up-disk-monitoring)
     - [Fail2Ban](#how-to-set-up-fail2ban)
@@ -174,8 +175,7 @@ The following guide is especially written for Intel Visual Bios which is present
 1. **Connect** the power-cable, HDMI-display, USB-mouse and -keyboard to your server
 1. **Power on** your server and **open the BIOS/UEFI** by pressing `[F2]`
 1. **Load the BIOS/UEFI defaults** by pressing `[F9]` and `[ENTER]` to confirm
-1. The server might reboot now and you should **open the BIOS/UEFI** by pressing `[F2]` again. If it doesn't reboot, just continue with the next steps.
-1. **Open the Advanced Menu** by clicking on the Advanced button in the top right corner
+1. **Now open the Advanced Menu** by clicking on the Advanced button in the top right corner
 1. **Set the Fan Control Mode to quiet** by clicking on the `Cooling` tab. In the `CPU Fan Header` section, select `Fan Control Mode` and choose **Quiet**
 1. **Set a Supervisor password** by clicking on the `Security` tab. In the `Passwords` section, click on `Set Supervisor Password` and type in a **password**. Store it at a safe place!
 1. Configure your server to **boot automatically after a power failure** by clicking on the `Power` tab. In the `Secondary Power Settings` section, click on `After Power Failure` and choose **Power On**
@@ -183,7 +183,7 @@ The following guide is especially written for Intel Visual Bios which is present
 1. Only allow to **boot from USB-sticks** by clicking on the `Boot Configuration` tab. In the `UEFI Boot` section, disable everything and **only enable Boot Network Devices Last**. In the `Boot Devices` section, disable everything and **only enable USB**
 1. **Configure Secure Boot** by clicking on the `Secure Boot` tab. In the `Secure Boot Config` section, disable everything and **only enable Secure Boot** (`Install Intel Platform Key` might not deactivatable)
 1. Now **confirm your settings** by pressing `[F10]` and `[ENTER]`
-1. Your server might start now automatically, **pres the power button** to shut it down again.
+1. Your server might start now automatically, **press the power button** to shut it down again.
 
 The BIOS/UEFI should now be correctly configured.
 </details>
@@ -216,8 +216,6 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. If everything is correct, you will now see an overview of Ubuntu also containing the IPv4-address of your server.
 
 **You will need the ip-address in the next step!**
-
-Theoretically you could now disconnect the monitor, mouse and keyboard again.
 </details>
 
 ## How to connect to your server over SSH?
@@ -301,17 +299,34 @@ Now the Nextcloud configuration should be done. Next, you will configure recomme
 # Security and Automation
 You should do the following steps to automate your server and make your server more secure.
 
-This section should take around **10min**. It covers:
+This section should take around **15min**. It covers:
+1. Disable USB-boot
 1. Enable geoblocking
 1. Set up disk monitoring
 1. Set up Fail2Ban
 1. Install ClamAV Antivirus
 1. Enable Automatic Updates
 
+## How to disable USB-boot?
+In order to improve security, you should disable booting from USB devices.
+<details><summary>Click here to expand</summary>
+
+1. Shutdown the server by pressing the `Power button`
+1. **Power on** your server and **open the BIOS/UEFI** by pressing `[F2]`
+1. **Type in your Supervisor password** to open the BIOS/UEFI
+1. **Open the Advanced Menu** by clicking on the Advanced button in the top right corner
+1. **Disable all boot options** by clicking on the `Boot` tab. Now click on the `Boot Configuration` tab below. In the `Boot Devices` section, **disable everything** (also USB devices).
+1. Now **confirm your settings** by pressing `[F10]` and `[ENTER]`
+1. Your server should reboot and boot automatically.
+
+#### Now, you can disconnect the mouse, the keyboard and the display from your server since they are not needed anymore.
+</details>
+
 ## How to enable geoblocking?
 In order to improve security, you can allow access to your webserver only from specific countries or continents.
 <details><summary>Click here to expand</summary>
 
+1. **Power On** your server (if not already done)
 1. Connect from a PC in the same network to your server over SSH (if not already done)
 1. Run `sudo rm /var/scripts/activate-tls.sh` over CLI to delete the activate-tls script (you will run it at the end via a Menu, so the local script isn't needed)
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
