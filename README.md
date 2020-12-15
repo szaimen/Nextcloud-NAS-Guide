@@ -355,6 +355,8 @@ In order to block too much failed login attempts for Nextcloud and SSH, you shou
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Additional Apps` -> `Fail2Ban` -> `Install-Fail2Ban`
 1. Choose to install/reinstall Fail2Ban
+1. Wait until everything is installed
+1. Choose to get a daily Fail2Ban report by selecting `Yes`
 </details>
 
 ## How to download the Not-supported Menu?
