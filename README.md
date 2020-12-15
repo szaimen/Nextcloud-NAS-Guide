@@ -920,8 +920,8 @@ It can happen, that you need to restore some files from a backup. This is the ea
 <details><summary>Click here to expand</summary>
 
 #### Preparations
-1. Install Midnight Commander (instructions are above)
-1. Install Remotedesktop (instructions are above)
+1. Install Midnight Commander ([instructions](#how-to-install-midnight-commander))
+1. Install Remotedesktop ([instructions](#how-to-install-remotedesktop))
 
 #### Execution
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
