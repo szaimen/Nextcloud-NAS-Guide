@@ -872,7 +872,10 @@ You will now activate TLS finally, if all points above are successfully set up.
 
 **Now you should be able to access your Nextcloud on any device by opening `yourdomain.com`!**
 
-**Advice**: You should first visit `yourdomain.com/settings/user` with your admin user and type in your admin mail-address. Next, you should visit `yourdomain.com/settings/admin` and use the same mail-account for the Mail-server settings that you used [here](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails) (This is needed so that Nextcloud can send mails e.g. for sending reset password mails and such.)
+#### Advices what to do now: 
+- You should first visit `yourdomain.com/settings/user` with your admin user and type in your admin mail-address.<br>
+- Next, you should visit `yourdomain.com/settings/admin` and use the same mail-account for the Mail-server settings that you used [here](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails) (This is needed so that Nextcloud can send mails e.g. for sending reset password mails and such.)<br>
+- Afterwards, it is recommended to activate 2-factor autentification for all Nextcloud accounts to further secure them. Here is a guide how to do that: [klick here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/two_factor-auth.html)
 </details>
 
 ### Congratulations, everything of the initial setup is now done!
