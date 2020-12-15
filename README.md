@@ -65,7 +65,9 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Port Forwarding](#how-to-enable-port-forwarding)
     - [Activate TLS](#how-to-activate-tls)
 - [Optional](#optional)
-
+    - [Midnight Commander](#how-to-install-midnight-commander)
+    - [Remotedesktop](#how-to-install-remotedesktop)
+    - [Restore files](#how-to-restore-files-from-backup)
 ---
 
 # How to use this guide?
@@ -880,4 +882,59 @@ You will now activate TLS finally, if all points above are successfully set up.
 ---
 
 # Optional
-TODO
+
+## How to install Midnight Commander?
+Midnight Commander is a CLI file explorer.
+<details><summary>Click here to expand</summary>
+
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Additional Apps` -> `Midnight Commander`
+1. Choose to install/reinstall Midnight Commander
+1. Choose to install the dark theme for Midnight Commander (recommended)
+</details>
+
+---
+
+## How to install Remotedesktop?
+Remotedesktop allows you to connect to a graphical UI hosted on your server.<br>
+It allows to use graphical tools directly on your server like viewing files from the backup and also restoring them by copy and paste.
+<details><summary>Click here to expand</summary>
+
+1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Choose `Remotedesktop`
+1. Choose to install Remotedesktop
+1. Choose to install the `Gnome Desktop`
+1. Wait until everything is installed
+1. Now, you should see a menu with available recommended programs. Just press `[ENTER]` to **install all** of them.
+1. **Confirm** for every program that you want to install it
+1. At last, you should get asked if you want to **reboot** your server and press `[ENTER]` to do so.
+</details>
+
+---
+
+## How to restore files from backup?
+It can happen, that you need to restore some files from a backup. This is the easiest way to do this.
+<details><summary>Click here to expand</summary>
+
+#### Preparations
+1. Install Midnight Commander (instructions are above)
+1. Install Remotedesktop (instructions are above)
+
+#### Execution
+1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Choose `Backup Viewer`
+1. Confirm that you want to view the content of your backups
+1. If both backup drives are connected, **select the backup drive** that you want to view backups from (most likely the daily backup drive)
+1. Read through the rules that are necessary to know about and **confirm** them
+1. Now, you should see Midnight Commander and all available backup archives. **Just leave Midnight Commander as it is!**
+1. Open a **Remotedesktop program** on your client PC in the same network as your server and connect to your server using the IP-address of your server and type the credentials of your ncadmin account into the login-mask
+1. When you are connected, open a `terminal` in the Remotedesktop session 
+1. **Copy and paste** or type into the terminal: `xhost +si:localuser:root && sudo nautilus /tmp/borg`
+1. Now, you should see the file explorer with all available backup archives
+1. You are now free to navigate through them, **open files and restore** them from the backup to the original directory
+1. After you are done, **close** the file explorer
+1. The last step is to **close Midnight Commander** by pressing `[F10]`
+1. It should now report, that the backup and drive was successfully unmounted.
+</details>
+
+---
