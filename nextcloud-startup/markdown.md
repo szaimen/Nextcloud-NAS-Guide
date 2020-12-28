@@ -170,6 +170,11 @@ Press [ENTER] to continue
 
 ### Please note: Since the server fingerprint was changed during this script, you will need to reset the server fingerprint the next time you connect to your server via SSH.
 
+To do that, just type in your Console/Terminal on your client PC:<br>
+**ssh-keygen -R ip-address**<br>
+so e.g.<br>
+**ssh-keygen -R 192.168.178.144**
+
 ---
 
 ### The Nextcloud startup is now done.

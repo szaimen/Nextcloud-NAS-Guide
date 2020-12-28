@@ -179,7 +179,7 @@ The following guide is especially written for Intel Visual Bios which is present
 1. **Load the BIOS/UEFI defaults** by pressing `[F9]` and `[ENTER]` to confirm
 1. **Now open the Advanced Menu** by clicking on the Advanced button in the top right corner
 1. **Set the Fan Control Mode to quiet** by clicking on the `Cooling` tab. In the `CPU Fan Header` section, select `Fan Control Mode` and choose **Quiet** (this will make the server operate as quiet as possible)
-1. **Set a Supervisor password** by clicking on the `Security` tab. In the `Passwords` section, click on `Set Supervisor Password` and type in a **password**. Store it at a safe place!
+1. **Set a Supervisor password** by clicking on the `Security` tab. In the `Passwords` section, click on `Set Supervisor Password` and type in a **password**. Store it at a safe place! (The password should be random, at least 8 characters long and no special characters needed)
 1. Configure your server to **boot automatically after a power failure** by clicking on the `Power` tab. In the `Secondary Power Settings` section, click on `After Power Failure` and choose **Power On**
 1. **Enable UEFI Boot** and **disable Legacy Boot** by clicking on the `Boot` tab. The `Boot Priority` tab is now automatically selected. In the `UEFI Boot Priority` section, **enable UEFI Boot** and **disable Legacy Boot**
 1. Only allow to **boot from USB-sticks** by clicking on the `Boot Configuration` tab. In the `UEFI Boot` section, disable everything and **only enable Boot Network Devices Last**. In the `Boot Devices` section, disable everything and **only enable USB**
@@ -206,6 +206,7 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. Don't configure any **Proxy address**
 1. Use the default **Mirror address**
 1. During **Storage configuration**, activate the option to **Encrypt the LVM group with LUKS**, enter a difficult **Passphrase**, confirm it and store it at a safe place.<br>
+(Difficult passphrase means at least 16 characters long, containing small and tall letters, digits and special characters)<br>
 (**Please note**: The installer doesn't check if the passwords are equal so please make sure yourself. Alsoy you should only use a password with characters that are the same on a `QWERTY` keyboard layout because of a bug in Ubuntu. Here is a link to one: [click here](https://en.wikipedia.org/wiki/QWERTY#/media/File:KB_United_States.svg)
 )
 1. Confirm your **Storage configuration**
@@ -241,19 +242,19 @@ One example is: `ssh ncadmin@192.168.178.144`<br>
 In order to automatically unlock the encrypted root partition, you need to setup TPM2 unlocking during boot.
 <details><summary>Click here to expand</summary>
 
-The abbrevation `CLI` will be used from now on in this guide (as synonym for controlling your server over SSH) and stands for `Command Line Interface`.
+The abbreviation `CLI` will be used from now on in this guide (as synonym for controlling your server over SSH) and stands for `Command Line Interface`.
 
 1. Connect from a PC in the same network to your server over SSH (if not already done)
 1. Copy and paste the following command over `CLI`: <br>
 `wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/tpm2-unlock.sh && sudo bash tpm2-unlock.sh`<br>
-(**Hint**: On Windows, pasting works by pressing the right mouse-key)
+(**Hint**: On Windows 10, pasting works by pressing the right mouse-key)
 1. Enter your **password** again
 1. Choose to install TPM2 Unlock
 1. Wait until it has configured some small things
 1. Type in your **LUKS password** for your root partition
 1. Wait until it shows that the setup was successfull and press `[ENTER]` to reboot your server
 
-Now it should unlock the root partition during boot automatically. If not, something has failed.
+Now it should unlock the root partition during boot automatically (so that you don't have to enter the LUKS passphrase). If not, something has failed.
 
 **Please note: it is not recommended to proceed with this guide, if it doesn't unlock the root partition automatically at this point!**
 </details>
@@ -273,7 +274,7 @@ In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, 
 1. Wait until everything is installed
 1. Choose **Local (DNS on gateway)**, because then you can choose the DNS server in your router in one place for all your devices
 1. Wait until everything is installed
-1. Deselect any apps that you don't want to install. (It is recommended to **deselect IssueTemplate, Mail & Group-Folders**)
+1. Deselect any apps that you don't want to install. (It is recommended to **deselect IssueTemplate, Mail & Group-Folders**. If you wonder: you will be able to install all those apps manually directly over the Nextcloud GUI if you should ever need them in the future.)
 1. Click `OK` to **reboot** your server
 
 Now the initial Nextcloud setup should be done.
@@ -289,18 +290,20 @@ You will need to run this to the end to be done with the Nextcloud setup.
 1. After login, you will be automatically redirected and asked a second time for your password. Enter your **password** and the script will start
 1. The first Menu you will see, will let you configure certain **Startup Configurations**. It should automatically choose options for you that are not yet configured, so just press `[ENTER]` to automatically start those chosen configurations. Most likely only **Timezone (Change the timezone from Etc/UTC** will be pre-selected
 1. Change the Timezone to match your location (choose the **Geographic area** and the **Time zone**)
-1. Now read carefully through all information that will be presented to you
+1. Now read carefully through all information that will be presented to you (those are just a few popups until you see the next Menu)
 1. The next Menu will be the **Server Configuration Menu**. Here just **deselect all options**, since you will configure all recommended options later
 1. The next Menu will be the **Nextcloud Configuration Menu**. Since no option is necessary for now, here just press `[Enter]` to continue the setup and skip the Menu.
 1. The last Menu will be the **Additional Apps Menu**. Here also **deselect all options**, since you will configure all recommended options later
-1. Now **change the password** of your CLI Ubuntu user ncadmin. It should be a difficult password and store it at a safe place.
-1. Next **change the username and password** of the **Nextcloud admin user** and store it at a safe place, too.
+1. Now **change the password** of your CLI Ubuntu user ncadmin. It should be a difficult password and store it at a safe place.<br>
+(Difficult password means at least 16 characters long, containing small and tall letters, digits and special characters)
+1. Next **change the username and password** of the **Nextcloud admin user** and store it at a safe place, too. This password should be difficult, too.
 1. Wait until everything is configured
 1. Read through all information that will be presented to you and finally press `[ENTER]` to reboot your server
 
 Now the Nextcloud configuration should be done. Next, you will configure recommended options.
 
 **Please note: Since the server fingerprint was changed during this script, you will need to reset the server fingerprint the next time you connect to your server via SSH.**
+To do that, just type in your Console/Terminal on your client PC: `ssh-keygen -R ip-address` so e.g. `ssh-keygen -R 192.168.178.144`
 </details>
 
 ---
@@ -322,7 +325,7 @@ In order to improve security, you should disable booting from USB devices.
 
 1. Shutdown the server by pressing the `Power button`
 1. **Power on** your server and **open the BIOS/UEFI** by pressing `[F2]`
-1. **Type in your Supervisor password** to open the BIOS/UEFI
+1. **Type in your Supervisor password** to open the BIOS/UEFI (the password that you've set for your BIOS/UEFI)
 1. **Open the Advanced Menu** by clicking on the Advanced button in the top right corner
 1. **Disable all boot options** by clicking on the `Boot` tab. Now click on the `Boot Configuration` tab below. In the `Boot Devices` section, **disable everything** (also USB devices).
 1. Now **confirm your settings** by pressing `[F10]` and `[ENTER]`
@@ -336,7 +339,7 @@ In order to improve security, you can allow access to your webserver only from s
 <details><summary>Click here to expand</summary>
 
 1. **Power On** your server (if not already done)
-1. Connect from a PC in the same network to your server over SSH (if not already done)
+1. Connect from a PC in the same network to your server over SSH (if not already done; if you cannot connect because the SSH fingerprint changed, type in `ssh-keygen -R ip-address` so e.g. `ssh-keygen -R 192.168.178.144` to remove the old fingerprint and try again to connect to your server over SSH.)
 1. Run `sudo rm /var/scripts/activate-tls.sh` over CLI to delete the activate-tls script (you will run it at the end via a Menu, so the local script isn't needed)
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `GeoBlock`
@@ -377,14 +380,14 @@ Although it says in the Menu that the offered scripts in this Menu are not ready
 </details>
 
 ## How to install ClamAV?
-In order to protect your files from malware, you should set up ClamAV which will will detect malware and scan your files weekly for malware. You will get notified if something was found.
+In order to protect your files from malware, you should set up ClamAV which will detect malware and scan your files weekly for malware. You will get notified if something was found.
 <details><summary>Click here to expand</summary>
 
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `ClamAV`
 1. Choose to install/reinstall ClamAV
 1. Wait until it is installed and the service was started
-1. Choose to set up a **weekly full scan** of all your files
+1. Choose to set up a **weekly full scan** of all your files (the scan will run on sundays starting at 10:00 and for 12h max)
 1. Choose what shall get done with found files. **Only log** is recommended.
 
 You've successfully made your server a bit more secure!
@@ -397,7 +400,8 @@ In order to automate as much things as possible, you should enable automatic upd
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `Automatic updates`
 1. Choose to enable automatic updates
-1. Choose to reboot your server after every update as recommended
+1. Choose to reboot your server after every update as recommended<br>
+(the reboot will happen right after every time the script runs, also if no Nextcloud update was installed because it not only updates Nextcloud but everything like Ubuntu packets, etc.)
 
 **The update will be executed on saturdays at 18:00h.**
 
@@ -421,7 +425,7 @@ In order to get notified by mail for backups, disk errors and such, you should c
 
 **Before you can start, please get a mail account that your server will use to send mails.**
 
-For german users is recommended: [mail.de](https://signup.mail.de/de/)
+For german users is recommended: [mail.de](https://signup.mail.de/de/) and [posteo.org](https://posteo.de/registrierung)
 
 **Please inspect your mail providers documents how to connect over SMTP before continuing!**
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
@@ -440,20 +444,17 @@ If all settings were entered correctly, you should receive a testmail which prov
 </details>
 
 ## How to configure the external data SSD/HDD?
-The following steps are needed to configure the external data SSD/HDD.
-<details><summary>Click here to expand</summary>
-
+The following steps are needed to configure the external data SSD/HDD. (This only applies to the one **external data SSD/HDD**. The two **external backup HDDs** will get configured afterwards.)
 1. **Format, encrypt and mount** the drive with `Veracrypt`
 1. **Open** the drive on a PC
 1. **Copy** your private files to the drive if you have any and create a sensible folder structure
-</details>
 
 ### How to format, encrypt and mount the external data SSD/HDD?
 In order to prepare the external data SSD/HDD for your server, you should first format and encrypt it using `Veracrypt`.
 <details><summary>Click here to expand</summary>
 
 **Warning: this will delete any data on this drive!**
-1. Please **don't** connect the drive to your server, yet!
+1. Please **don't** connect the external data SSD/HDD to your server, yet!
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `Veracrypt`
 1. Select that you want to **install** veracrypt
@@ -462,7 +463,8 @@ In order to prepare the external data SSD/HDD for your server, you should first 
 1. After pressing `OK`, **connect** the drive to your server
 1. It should get found after a few seconds
 1. Select the drive that you want to format and encrypt
-1. Enter a **password** and store it at a safe place.
+1. Enter a difficult **password** and store it at a safe place.<br>
+(Difficult password means at least 20 characters long, containing small and tall letters, digits and special characters)
 1. Confirm the password
 1. Confirm that you are sure to format and encrypt the drive by selecting `Yes`
 1. Now the drive should be successfully formatted and encrypted
@@ -472,11 +474,11 @@ In order to prepare the external data SSD/HDD for your server, you should first 
 
 **Now, the drive should be ready.**
 
-**BTW**: You could run this script a second time now to format, encrypt and mount a second drive, if you want to use more than one external data SSD/HDD.
+**BTW**: You could run this script a second time now to format, encrypt and mount a second drive, if you want to use more than one external data SSD/HDD. (The two backup HDDs will get configured below.)
 </details>
 
 ### How to access the encrypted external data SSD/HDD on any PC?
-Next, you should open the encrypted drive on a different PC to be able to copy files or create the sensible folder structure.
+Next, you should open the encrypted external data SSD/HDD on a different PC to be able to copy files or create the sensible folder structure.
 <details><summary>Click here to expand</summary>
 
 1. **Power off** your server by pressing the `power button`
@@ -494,7 +496,7 @@ Recommended is to create the folder structure on the external data SSD/HDD like 
 
 <details><summary>Click here to expand</summary>
 
-Create a folder on the drive that contains all your files. Inside this folder, there will be the user folders and other folders that shall get shared between users in the future. Every user-folder should contain an `Archive`, `Sync` and `Backup folder` and you should strictly separate between them. The `Sync` folder should contain files and folders that are used or changed often and thus will get synchronized. `Archive` contains all files and folders that are not needed or changed often. `Backup` will contain folders in which e.g. photos from your smartphone will get automatically uploaded or e.g. you can sync your desktop from your laptop to a folder in the Backup folder.
+Create a folder on the drive that contains all your files. Inside this folder, there will be the user folders and other folders that shall get shared between users in the future. Every user-folder should contain an `Archive`, `Sync` and `Backup folder` and you should strictly separate between them. The `Sync` folder should contain files and folders that are used or changed often and thus will get synchronized via the Nextcloud Desktop client. `Archive` contains all files and folders that are not needed or changed often. `Backup` will contain folders in which e.g. photos from your smartphone will get automatically uploaded or e.g. you can sync your desktop from your laptop to a folder in the Backup folder. (Just so that you know: the backup folder is meant to be a backup folder for data from client devices but isn't the server backup.)
 
 **Here is an example how it could look like:**
 - external-SSD
@@ -510,8 +512,8 @@ Create a folder on the drive that contains all your files. Inside this folder, t
         - Data exchange folder
             - Folder that gets shared between users
             - Some other folder that gets shared between the same users
-            - a file that gets shared between those same users
         - Some other data exchange folder
+            - And some folder inside
         - user5 folder
             - Backup
             - Sync
@@ -529,12 +531,10 @@ If you are done, **eject** the drive from your PC, **connect** the external data
 
 ## How to configure the external backup HDD's?
 As you might already know, are those two additional external HDD's meant to be backup drives. One will be used as daily Backup drive which will be connected all the time and one as Off-shore backup drive, which should get stored somewhere else in a safe place outside your home.
-<details><summary>Click here to expand</summary>
 
 You will need to do the following steps:
 1. **Format** them to NTFS
 1. **Mount** them to your server
-</details>
 
 ### How to format the external backup HDD's?
 You will now reformat them to NTFS. You can skip this step, if they are already NTFS formatted!
@@ -542,7 +542,8 @@ You will now reformat them to NTFS. You can skip this step, if they are already 
 
 **Warning: this will delete any data on this drive!**
 1. **Power on** your server by pressing the `power button` (if not already done)
-1. Please **don't** connect the drives to your server, yet!
+1. Please **don't** connect the backup HDDs to your server, yet!<br>
+(The already with Veracrypt encrypted and mounted external data SSD/HDD must stay connected; disconnecting and connecting one backup HDD that you want to format is just so that the system is able to understand which drive you want to format.)
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `NTFS Format`
 1. Select to `Format a drive`
@@ -554,14 +555,18 @@ You will now reformat them to NTFS. You can skip this step, if they are already 
 1. Confirm that you are sure to format the drive to NTFS by selecting `Yes`
 1. Now the drive should be successfully formatted
 
-**Now proceed the same procedure for the second backup drive. Start at point 5.**
+**Now repeat the same procedure for the second backup drive. Start at point 5.**
+(The with Veracrypt encrypted data SSD/HDD must stay connected to the server!)
+
+If you are done, just choose `Exit` to exit this script.
 </details>
 
 ### How to mount the external backup HDD's?
 Now that the drives are prepared, you will mount the drives to your sever:
 <details><summary>Click here to expand</summary>
 
-1. Please **don't** connect the drives to your server, yet or **disconnect** the drives from your server!
+1. Please **don't** connect the backup HDDs to your server, yet or **disconnect** the backup HDDs from your server!
+(The already with Veracrypt encrypted and mounted external data SSD/HDD must stay connected; disconnecting and connecting one backup HDD that you want to mount is just so that the system is able to understand which drive you want to mount.)
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `NTFS Mount`
 1. Select to `Mount a drive`
@@ -570,12 +575,15 @@ Now that the drives are prepared, you will mount the drives to your sever:
 1. You should get the message that the drive was found
 1. Wait until the drive has spin up
 1. Choose the **NTFS partition** that shall get mounted
-1. Type in the mountpath that you would like to use. The easiest way is to just type in the **recommended mountpath**.
+1. Type in the mountpath that you would like to use. The easiest way is to just type in the **recommended mountpath**. (The recommended mountpath is proposed to you in the popup)
 1. You should get the message that the mount was successful.
 1. When asked if this is a backup drive, select `Yes`!
 1. You should see the message now, that the backup drive is ready.
-1. **Now repeat this same procedure with the second drive! Start at point 4!**
-1. If you are done, just choose `Exit` to exit this script.
+
+**Now repeat this same procedure with the second drive! Start at point 4!**<br>
+(The already mounted backup HDD and the with Veracrypt encrypted data SSD/HDD must stay connected to the server!)
+
+If you are done, just choose `Exit` to exit this script.
 </details>
 
 ## How to update your server manually?
@@ -600,7 +608,8 @@ Now that everything is prepared, you should set up a daily backup for your serve
 1. Choose that you want to backup the **whole** external data SSD/HDD
 1. Select the **daily backup drive** as backup target
 1. Choose to use the recommended backup directory
-1. Enter a difficult **encryption key** for your backup and store it at a safe place
+1. Enter a difficult **encryption key** for your backup and store it at a safe place<br>
+(Difficult encryption key means at least 20 characters long, containing small and tall letters, digits and special characters)
 1. Choose to run the backup at the recommended time at `4.00 am`
 1. Now everything will get set up
 1. You should now receive the daily backup config file via mail. Please **save/archive** it
@@ -623,7 +632,7 @@ Now that also the daily backup is prepared, you should set up an off-shore backu
 1. Now everything will get set up
 1. Finally, you will see the message that the backup script was successfully created
 
-It is located here: `/var/scripts/off-shore-rsync-backup.sh` and will get executed every `90 days`. For now it will be executed every day at `20.00pm` until the first off-shore backup was successfully created. Please leave the drive **connected** for now. You will get notified by mail if something fails. If the backup was successful, you will be **notified** that you can disconnect the drive. The script which will create the off-shore backup is based on a program called `rsync` which will sync the whole backup repository that was made by the daily backup script from your daily backup drive to your offshore backup drive.
+It is located here: `/var/scripts/off-shore-rsync-backup.sh` and will get executed every `90 days`. For now it will be executed every day at `20:00` until the first off-shore backup was successfully created. Please leave the drive **connected** for now. You will get notified by mail if something fails. If the backup was successful, you will be **notified** that you can disconnect the drive. The script which will create the off-shore backup is based on a program called `rsync` which will sync the whole backup repository that was made by the daily backup script from your daily backup drive to your offshore backup drive.
 </details>
 
 ---
@@ -655,12 +664,14 @@ The big advantage using this method is, that the Nextcloud and SMB-user will hav
 1. From the `SMB-server Main Menu` select `Open the SMB-user Menu`
 1. Choose `Add a SMB-user`
 1. Enter the **name** of the user that you want to create. Recommended is to just use the forename of that person.
-1. Type in a difficult **password** for that user and store it at a safe place
+1. Type in a difficult **password** for that user and store it at a safe place<br>
+(Difficult password means at least 16 characters long, containing small and tall letters, digits and special characters)
 1. The user should be successful created now
 1. Choose to **create** a Nextcloud user with the **same credentials**
 1. A Nextcloud user should be successfully created now
 
 **Now repeat that procedure until all users from your list are created**
+(If you are done, please don't close the script! You will need it again in the next step!)
 </details>
 
 ### How to create SMB-shares and mount it to Nextcloud in one go?
@@ -670,7 +681,7 @@ The big advantage is, that you can create a SMB-share and mount the same locatio
 If you have followed this guide, you should have set up a **sensible folder structure** on the external data SSD/HDD by now. Based on this structure, you should **share** the `user folders` with the corresponding user that you just created. The `data exchange` folders should get shared with the users that shall have access to those folders. 
 
 If you have mounted the external data SSD/HDD in `/mnt/data` as recommended, is here one example:
-Your data folder should be now found in `/mnt/data/your data folder`. One of your user folders and data exchange folders might be `/mnt/data/your data folder/user1 folder` and `/mnt/data/your data folder/Data exchange folder` now. You should then **share** the `/mnt/data/your data folder/user1 folder` with `user1` and the `mnt/data/your data folder/Data exchange folder` with all users that shall get access to this folder. As you now see, best case is, if the user folders on your external data SSD/HDD match exactly the user count of newly created users.
+Your data folder should be now found in `/mnt/data/your data folder`. One of your user folders and data exchange folders might be `/mnt/data/your data folder/user1 folder` and `/mnt/data/your data folder/Data exchange folder` now. You should then **share** the `/mnt/data/your data folder/user1 folder` with `user1` and the `/mnt/data/your data folder/Data exchange folder` with all users that shall get access to this folder. As you now see, best case is, if the user folders on your external data SSD/HDD match exactly the user count of newly created users.
 
 **BTW**: you can at this point still shutdown your server, disconnect the external data SSD/HDD, connect it to your PC, open it with `Veracrypt` and change the folder structure there. Afterwards you can connect the drive to your server again and power it back on.
 
@@ -680,12 +691,12 @@ Here is how to work off this list technically:
 1. Go back to the **SMB-server Main Menu** and select `Open the SMB-share Menu`
 1. Choose `Create a SMB-share`
 1. You will see now a list of valid directories you can type in
-1. Type in one **directory** that you want to share. Based on the example above, it could be e.g. `/mnt/data/your data folder/user1 folder` or `mnt/data/your data folder/Data exchange folder`
+1. Type in one **directory** that you want to share. Based on the example above, it could be e.g. `/mnt/data/your data folder/user1 folder` or `/mnt/data/your data folder/Data exchange folder`
 1. Type in the **Share name** that you want to use. It should most likely have the same name like the folder that you want to share. Please note, that spaces are not supported. For e.g. `user1 folder` you would thus need to use `user1_folder` or `user1-folder` as name
 1. Now **select the SMB-users** that shall get **access** to the share. If it is a `user folder`, you should only share it with the corresponding user. If it is a `Data exchange folder`, you should share it with all users that shall get access to the folder.
 1. Now select if the share shall be **writeable**, which you should most likely answer with `Yes`
-1. After restartin Samba, the SMB-share should be successfully created!
-1. Select that you **want to mount** the same directory to Nextcloud
+1. After restarting Samba, the SMB-share should be successfully created!
+1. Select that you **want to mount** the same directory to Nextcloud as local storage (you are making the path that you've chosen in the beginning accessible in Nextcloud this way)
 1. You can now change the mount name of your directory for the usage in Nextcloud. Recommended is to just use the already chosen name.
 1. Now choose if the mount shall be **writeable** in Nextcloud, which you should most likely answer with `Yes`, too
 1. Choose if you want to enable **sharing** for this mount, which you should most likely answer `Yes`, too
@@ -694,6 +705,7 @@ Here is how to work off this list technically:
 1. Enabling Inotify is **not** recommended and normally not necessary
 
 **Now repeat that method for the whole list that you've made, starting at point 2.**
+(If you are done, please don't close the script! You will need it again in the next step!)
 
 Please note that you can always change the settings for your mounts in Nextcloud by opening `https://yourdomain-or-ipaddress/settings/admin/externalstorages` with your Nextcloud admin account afterwards.
 
@@ -707,16 +719,16 @@ In order to prevent user from creating any files outside their user folders, whi
 Here is how to do this:
 1. From the **SMB-server Main Menu** select `Open the SMB-share Menu`
 1. Choose `Create a SMB-share`
-1. Type in an empty or not existing directory that you will share, like `mnt/data/your data folder/root` (based on the example above) and choose to create that directory
+1. Type in an empty or not existing directory that you will share, like `/mnt/data/your data folder/root` (based on the example above) and choose to create that directory
 1. Type in `temporary` as **Share name**
 1. Now **select at least one SMB-user** that will get **access** to the share for now
 1. Now select that the share shall be **read only**
 1. After restartin Samba, the SMB-share should be successfully created!
 1. Select that you **want to mount** the same directory to Nextcloud
-1. You can now change the mount name of your directory for the usage in Nextcloud. You should change the name to `/` (one forward-slash)
-1. Now choose that the mount shall be **read only** in Nextcloud
+1. **You can now change the mount name of your directory for the usage in Nextcloud. You should change the name to `/`** (one forward-slash)
+1. Now choose that the mount shall be **not writeable** in Nextcloud
 1. Choose that you want to disable **sharing** for this mount
-1. Now deselect all Nextcloud users and groups in order to **share the mount with everyone**.
+1. Now deselect all Nextcloud users and groups in order to **mount the local storage to everyone**.
 1. Confirm that you want to **share the mount with everyone** (select `Yes`)
 1. Now everything should get set up automatically.
 1. **Don't** enable Inotify
@@ -850,11 +862,12 @@ DDclient is an easy way to update your domain regularly with your new public ip-
 1. Choose to install/reinstall DDclient
 1. Select your **DDNS-provider** (e.g. `Strato`), enter the **Host/Domain** (e.g. `yourdomain.com`), the **Login/Domain** (e.g. `yourdomain.com`) and the **Password or API-key** (e.g. `your-ddns-password`)
 1. Confirm your settings 
-1. Make sure that the initial test looks good
+1. It should now report that the initial DNS update was successful.
 </details>
 
 ### How to enable Port Forwarding?
-You will need to port forward some specific ports to your server in order to make it possible to run a public webserver on it.
+You will need to port forward some specific ports to your server in order to make it possible to run a public webserver on it.<br>
+(**Hint**: Most likely is your server internally called `nextcloud`; Otherwise you can identify your server by its internal IP-address e.g. `192.168.178.144`)
 <details><summary>Click here to expand</summary>
 
 How to do port forwarding in detail, completely depends on your router. Thus, you should inspect your router's manual for that.
@@ -862,13 +875,12 @@ How to do port forwarding in detail, completely depends on your router. Thus, yo
 - [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/893_Setting-up-static-port-sharing/) (only point 2 of this guide is needed)
 #### You will need to port forward at least the following two ports to your server:
 - Port 80 TCP
-- Port 443 TCP
-#### Alternatively you could activate automatic port forwarding for your server and use UPnP later to open those ports:
-- [FRITZ!Box 7590](https://en.avm.de/service/fritzbox/fritzbox-7590/knowledge-base/publication/show/894_Setting-up-automatic-port-sharing/) (only point 1 of this guide is needed)
+- Port 443 TCP<br>
+(**Hint**: Most likely is your server internally called `nextcloud`; Otherwise you can identify your server by its internal IP-address e.g. `192.168.178.144`)
 </details>
 
 ### How to activate TLS?
-You will now activate TLS finally, if all points above are successfully set up.
+You will now activate TLS finally, if all points above are successfully set up. TLS is the protocol that encrypts all traffic to and from your Nextcloud.
 <details><summary>Click here to expand</summary>
 
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
@@ -876,14 +888,15 @@ You will now activate TLS finally, if all points above are successfully set up.
 1. Choose to install TLS
 1. Confirm that you have set up all necessary requirements
 1. Enter your **Domain** (e.g. `yourdomain.com`)
-1. Use UPnP or not depending on if you have enabled automatic port forwarding in your router for your server. If you opened Port 80 and 443 manually, you can skip UPnP
+1. Since you've opened Port 80 and 443 manually, you should skip `UPnP` (automatic port forwarding)
 1. Wait until everything is set up and enter your mail-address during this step (Your mail-address is needed for contacting you, if a certificate expires)
 
 **Now you should be able to access your Nextcloud on any device by opening `yourdomain.com`!**
 
 #### Advices what to do now: 
-- You should first visit `yourdomain.com/settings/user` with your admin user and type in your admin mail-address.<br>
-- Next, you should visit `yourdomain.com/settings/admin` and use the same mail-account for the Mail-server settings that you used [here](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails) (This is needed so that Nextcloud can send mails e.g. for sending reset password mails and such.)<br>
+- You should first visit `yourdomain.com/settings/user` with your admin user and fill in the mail-address that shall receive all admin mails into the `Email` input field.
+- Next, you should visit `yourdomain.com/settings/admin` and enable Nextcloud to send mails by filling in the mail-account settings that you've used [here](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails)<br>
+(Here is the official documentation on this: [click here](https://docs.nextcloud.com/server/20/admin_manual/configuration_server/email_configuration.html))
 - Afterwards, it is recommended to activate 2-factor autentification for all Nextcloud accounts to further secure them. Here is a guide how to do that: [klick here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/two_factor-auth.html)
 </details>
 
