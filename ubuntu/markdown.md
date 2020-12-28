@@ -50,7 +50,14 @@ Press [ENTER] to use the default settings
 name: luks
 .center[![storage-set](./storage-set.png)]
 Activate "Encrypt the LVM group with LUKS" and type in a difficult passphrase.<br>
+Afterwards confirm by selecting "Done" and pressing [ENTER]
+
+---
+
 Please note: The installer doesn't check if the passphrases are equal!
+
+Also, because of a bug in Ubuntu, you should only use characters for that passphrase that are the same on QWERTY keyboard layouts! You can find a example of a QWERTY layout here: [click here](https://en.wikipedia.org/wiki/QWERTY#/media/File:KB_United_States.svg)<br>
+Additionally, please make sure, that `Capslock` isn't activated.
 
 ---
 
@@ -94,7 +101,12 @@ Afterwards select "Reboot" and press [ENTER] to continue.
 ---
 
 .center[![unlock-root](./unlock-root.png)]
-During the boot process, type in your [LUKS passphrase](#luks) and press [ENTER] to confirm.
+During the boot process, type in your [LUKS passphrase](#luks) and press [ENTER] to confirm.<br>
+(If you experience trouble, please have a look at the next page.)
+
+---
+
+If it doesn't accept your [LUKS passphrase](#luks) and you are sure that you enterd it correctly, most likely you experienced an Ubuntu bug. In this case, try to enter your password as if you had an `QWERTY` keyboard. Here is one example [click here](https://en.wikipedia.org/wiki/QWERTY#/media/File:KB_United_States.svg).
 
 ---
 

@@ -98,7 +98,7 @@ Please read carefully through this list of considerations you should know of!
 - The three external drives will be **NTFS** formatted, which has the advantage that they can be read by almost any x86 OS. But it doesn't provide features like snapshots or integrity checking. 
 - Also please note that while formatting, those drives will not be completely erased because that could take hours depending on the drive size. So if you already had data on one of those drives, please make sure to wipe them manually if you want that security. (otherwise an attacker could theoretically be able to restore some of your private data if it was stored unencrypted on one of those drives before.)
 - You will use an Open Source program called `Veracrypt` for encrypting and formatting the external data SSD/HDD which has the advantage that this tool is compatible with almost any OS but the program needs to get installed before you can decrypt the drive and access the data. Also, the program on your server needs to get installed from a 3rd party repository in order to be always up-to-date but this could theoretically set your server under risk.
-- You will set up **TPM2 unlocking** which will automatically unlock your encrypted root partition during boot. This is a big convenience factor but would allow an attacker theoretically to break the encryption of this partition, if he/she steals the whole server. Encrypting the root partition makes sense nonetheless, since an attacker cannot simply take out the internal drive, connect it to another PC and read out all the data in cleartext.
+- You will set up **TPM2 unlocking** which will automatically unlock your encrypted root partition during boot. This is a big convenience factor but would allow an attacker theoretically to break the encryption of this partition (only with much effort), if he/she steals the whole server. Encrypting the root partition makes sense nonetheless, since an attacker cannot simply take out the internal drive, connect it to another PC and read out all the data in cleartext.
 - You will create an off-shore backup drive that needs to get connected to your server every **90 days** (this is configurable) in order to make a new backup. After creating one off-shore backup, the drive should get disconnected from your server and stored at a safe place outside your home. So you will need a place where to store it during this time and connect it manually every 90 days (or as configured).
 
 **If not all points above are acceptable for you, you will need to look for a different solution. Otherwise please continue!**
@@ -109,15 +109,15 @@ You will need the following things:
 <details><summary>Click here to expand</summary>
 
 - A x86 PC that will function as your server with:
-- At least 2 Cores
-- At least 4GB RAM
-- One internal SSD with at least 128GB
+- At least 2 Cores (because most scripts need at least as much)
+- At least 4GB RAM (because most scripts need at least as much)
+- One internal SSD with at least 128GB (because some space will get reserved and you don't want to run into space issues)
 - Power Supply for your server (if not built-in)
-- TPM2 support
+- TPM2 support (you need to Google if the PC has built-in TPM2 support if it is not a NUC. It is needed for automatically unlocking the encrypted root partition while booting.)
 - One (or more) external SSD (or HDD) that will store your personal data with at least 250GB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
-- Two additional external HDD's that will function as backup drives with at least the same size like the external data SSD/HDD, each
-- One USB-stick with at least 8GB for installing Ubuntu
-- For the initial setup you will also need a HDMI-display (e.g. monitor/tv/beamer), USB-mouse and -keyboard. If you don't have one: you don't need to buy those. Borrowing or renting those should be enough. (You really only need them for the initial setup.)
+- Two additional external HDD's that will function as backup drives with at least the same size like the external data SSD/HDD, respectively (because one will be used for daily backups and one for off-shore backups)
+- One USB-stick with at least 8GB (for installing Ubuntu)
+- For the initial setup you will also need a HDMI-display (e.g. monitor/tv/beamer), USB-mouse and -keyboard. If you don't have one: you don't need to buy those. Borrowing or renting those should be enough. (You really only need them for the initial setup, because you will access your server over SSH afterwards.)
 </details>
 
 ## Do you have any Hardware recommendations?
@@ -130,10 +130,10 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 
 #### Recommended is:
 - One Intel NUC from 2018 or later with 4 Cores or more
-- One SO-DIMM RAM latch with 8GB because 8GB should be enough for now and you will be able to upgrade the RAM with a second latch later on 
+- One SO-DIMM RAM bar with 8GB because 8GB should be enough for now and you will be able to upgrade the RAM with a second bar later on 
 - One internal SSD with 250 GB which should be plenty of storage for this usecase
 - One (or more) external SSD (or HDD) for storing the private data with at least 1TB (depending on how much data you are planning to store on your server. Rule of thumb: this drive should be at least twice as big as your current private data)
-- Two external HDD's for backups with at least the same size like the external data SSD/HDD, each
+- Two external HDD's for backups with at least the same size like the external data SSD/HDD, respectively
 
 #### Currently (10. Nov. 2020) the recommended configuration which should fit for most people is:
 - [Intel NUC Kit NUC8i5BEH](https://geizhals.eu/intel-nuc-kit-nuc8i5beh-bean-canyon-boxnuc8i5beh-a1843166.html?hloc=at&hloc=de&hloc=eu&hloc=pl&hloc=uk) = ca. 250€
@@ -147,13 +147,13 @@ After you have chosen your device, you will need to get compatible RAM and Stora
 Yes, please make sure that you have all necessary Hardware requirements and please connect all necessary parts before continuing. And please don't forget the USB-stick, -mouse, -keyboard and HDMI-display!
 <details><summary>Click here to expand</summary>
 
-**For Intel NUC's, you need to put one SSD and one RAM latch into the device before continuing**
+**For Intel NUC's, you need to put one SSD and one RAM bar into the device before continuing**
 
 How to do this in detail depends on the PC that you've chosen to function as your server
 </details>
 
 ## How long will the initial setup take?
-The whole initial setup should take around **2.5h**, excluding things that are not influenceable by this guide. E.g. how much files you need to copy, how slow the Ubuntu download is, how long the previegeneration takes, how long it takes to get a domain, etc.
+The whole initial setup should take around **2.5h**, excluding things that are not influenceable by this guide. E.g. how much files you need to copy, how slow the Ubuntu download is, how long the previewgeneration takes, how long it takes to get a domain, etc.
 
 Just as a reminder: It is not recommended to skip anything until the whole initial setup is done, because the sections partly build on each other. So simply read and work through everything starting here! You will also need to click on all `Click here to expand`! Just so that you know: the initial setup ends [here](#congratulations-everything-of-the-initial-setup-is-now-done)
 
@@ -178,7 +178,7 @@ The following guide is especially written for Intel Visual Bios which is present
 1. **Power on** your server and **open the BIOS/UEFI** by pressing `[F2]`
 1. **Load the BIOS/UEFI defaults** by pressing `[F9]` and `[ENTER]` to confirm
 1. **Now open the Advanced Menu** by clicking on the Advanced button in the top right corner
-1. **Set the Fan Control Mode to quiet** by clicking on the `Cooling` tab. In the `CPU Fan Header` section, select `Fan Control Mode` and choose **Quiet**
+1. **Set the Fan Control Mode to quiet** by clicking on the `Cooling` tab. In the `CPU Fan Header` section, select `Fan Control Mode` and choose **Quiet** (this will make the server operate as quiet as possible)
 1. **Set a Supervisor password** by clicking on the `Security` tab. In the `Passwords` section, click on `Set Supervisor Password` and type in a **password**. Store it at a safe place!
 1. Configure your server to **boot automatically after a power failure** by clicking on the `Power` tab. In the `Secondary Power Settings` section, click on `After Power Failure` and choose **Power On**
 1. **Enable UEFI Boot** and **disable Legacy Boot** by clicking on the `Boot` tab. The `Boot Priority` tab is now automatically selected. In the `UEFI Boot Priority` section, **enable UEFI Boot** and **disable Legacy Boot**
@@ -205,14 +205,18 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. Just use the defaults in **network connections**
 1. Don't configure any **Proxy address**
 1. Use the default **Mirror address**
-1. During **Storage configuration**, activate the option to **Encrypt the LVM group with LUKS**, enter a difficult **Passphrase**, confirm it and store it at a safe place. Please note: The installer doesn't check if the passwords are equal so please make sure yourself!
+1. During **Storage configuration**, activate the option to **Encrypt the LVM group with LUKS**, enter a difficult **Passphrase**, confirm it and store it at a safe place.<br>
+(**Please note**: The installer doesn't check if the passwords are equal so please make sure yourself. Alsoy you should only use a password with characters that are the same on a `QWERTY` keyboard layout because of a bug in Ubuntu. Here is a link to one: [click here](https://en.wikipedia.org/wiki/QWERTY#/media/File:KB_United_States.svg)
+)
 1. Confirm your **Storage configuration**
 1. Setup your **Profile**: recommended as **name** and **username** is `ncadmin`. Recommended as **Your server's name** is `nextcloud`. Also type in a **password**. This can be simple because you will change it later on, again, but remember it! Please note: The installer doesn't check if the passwords are equal so please make sure yourself!
 1. Choose to **Install OpenSSH server**
 1. Do **not** install any of **Featured Server Snaps**
 1. Now wait until Ubuntu is installed and you see the button to **Reboot**. Press it to reboot.
 1. You should now remove the Ubuntu USB-stick if not already done and press `[ENTER]` to continue.
-1. During the boot process, type in your **LUKS passphares** and press `[Enter]` to confirm
+1. During the boot process, type in your **LUKS passphrase** and press `[Enter]` to confirm.<br>
+(If it doesn't accept your **LUKS passphrase** and you are sure that you enterd it correctly, most likely you experienced an Ubuntu bug. In this case, try to enter your password as if you had an `QWERTY` keyboard. Here is one example [click here](https://en.wikipedia.org/wiki/QWERTY#/media/File:KB_United_States.svg)<br>
+Additionally, please make sure, that `Capslock` isn't activated.)
 1. Wait until you see **Reached target Cloud-init target.** and press `[ENTER]` to return to the login screen
 1. Now type in your **username** (e.g. `ncadmin`) and **pasword**
 1. If everything is correct, you will now see an overview of Ubuntu also containing the IPv4-address of your server.
@@ -221,7 +225,7 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 </details>
 
 ## How to connect to your server over SSH?
-In order to connect to your server from a PC in the same network, you should use SSH. You are then able to use copy and paste and more.
+In order to connect to your server from a PC in the same network, you should use SSH. You are then able to control your server, use copy and paste and more.
 <details><summary>Click here to expand</summary>
 
 1. Find out the IPv4-address of your server (if not already done): Either login to your server to show it or it will be presented on the login screen after installing Nextcloud
@@ -230,16 +234,19 @@ In order to connect to your server from a PC in the same network, you should use
 One example is: `ssh ncadmin@192.168.178.144`<br>
 (If it times out although your server is running, the IPv4-address might be wrong. Then please look at step 1 how to find out the IPv4-address)
 1. If you connect the first time to your server, you will be asked to confirm the server fingerprint which you should do by typing in `yes` and pressing `[ENTER]`. If your server fingerprint changed, you will be guided to reset it if you want to connect again.
-1. Now type in your CLI Ubuntu user **password**
+1. Now type in your Ubuntu user **password**
 </details>
 
 ## How to set up automatic TPM2 unlocking?
-In order to automaticly unlock the encrypted root partition, you need to setup TPM2 unlocking during boot.
+In order to automatically unlock the encrypted root partition, you need to setup TPM2 unlocking during boot.
 <details><summary>Click here to expand</summary>
 
+The abbrevation `CLI` will be used from now on in this guide (as synonym for controlling your server over SSH) and stands for `Command Line Interface`.
+
 1. Connect from a PC in the same network to your server over SSH (if not already done)
-1. Copy and paste the following command over CLI: <br>
+1. Copy and paste the following command over `CLI`: <br>
 `wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/tpm2-unlock.sh && sudo bash tpm2-unlock.sh`<br>
+(**Hint**: On Windows, pasting works by pressing the right mouse-key)
 1. Enter your **password** again
 1. Choose to install TPM2 Unlock
 1. Wait until it has configured some small things
@@ -487,7 +494,7 @@ Recommended is to create the folder structure on the external data SSD/HDD like 
 
 <details><summary>Click here to expand</summary>
 
-Create a folder on the drive that contains all your files. Inside this folder, there will be the user folders and other folders that shall get shared between users in the future. Each user-folder should contain an `Archive`, `Sync` and `Backup folder` and you should strictly separate between them. The `Sync` folder should contain files and folders that are used or changed often and thus will get synchronized. `Archive` contains all files and folders that are not needed or changed often. `Backup` will contain folders in which e.g. photos from your smartphone will get automatically uploaded or e.g. you can sync your desktop from your laptop to a folder in the Backup folder.
+Create a folder on the drive that contains all your files. Inside this folder, there will be the user folders and other folders that shall get shared between users in the future. Every user-folder should contain an `Archive`, `Sync` and `Backup folder` and you should strictly separate between them. The `Sync` folder should contain files and folders that are used or changed often and thus will get synchronized. `Archive` contains all files and folders that are not needed or changed often. `Backup` will contain folders in which e.g. photos from your smartphone will get automatically uploaded or e.g. you can sync your desktop from your laptop to a folder in the Backup folder.
 
 **Here is an example how it could look like:**
 - external-SSD
@@ -513,7 +520,7 @@ Create a folder on the drive that contains all your files. Inside this folder, t
 
 (The exact foldernames and order can be different)<br>
 
-**BTW**: you can also spread your files over more than one external data SSD/HDD using the same system. Of course each `User folder` and `data exchange folder` will need to be completely on one disk but you could manually add some different user folders or data exchange folders on a second drive. (this might also be useful if you run out of space on your external data SSD/HDD someday in the future)
+**BTW**: you can also spread your files over more than one external data SSD/HDD using the same system. Of course every `User folder` and `data exchange folder` will need to be completely on one disk but you could manually add some different user folders or data exchange folders on a second drive. (this might also be useful if you run out of space on your external data SSD/HDD someday in the future)
 
 **Now copy all private files to the external data SSD/HDD or at least create the folder structure.**
 
