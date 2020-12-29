@@ -699,11 +699,8 @@ Here is how to work off this list technically:
 1. Now select if the share shall be **writeable**, which you should most likely answer with `Yes`
 1. After restarting Samba, the SMB-share should be successfully created!
 1. Select that you **want to mount** the same directory to Nextcloud as local storage (you are making the path that you've chosen in the beginning accessible in Nextcloud this way)
-1. You can now change the mount name of your directory for the usage in Nextcloud. Recommended is to just use the already chosen name.
-1. Now choose if the mount shall be **writeable** in Nextcloud, which you should most likely answer with `Yes`, too
-1. Choose if you want to enable **sharing** for this mount, which you should most likely answer `Yes`, too
-1. Now select any Nextcloud users and/or groups you would like to **share the mount with**. Here you should do the same like you did in **point 6**.
-1. Now everything should get set up automatically.
+1. You can now change the name of your directory for the usage in Nextcloud. Recommended is to just use the already chosen name.
+1. Now everything should get set up automatically
 1. Enabling Inotify is **not** recommended and normally not necessary
 
 **Now repeat that method for the whole list that you've made, starting at point 2.**
@@ -725,16 +722,13 @@ Here is how to do this:
 1. Type in `temporary` as **Share name**
 1. Now **select at least one SMB-user** that will get **access** to the share for now
 1. Now select that the share shall be **read only**
-1. After restartin Samba, the SMB-share should be successfully created!
+1. After restarting Samba, the SMB-share should be successfully created!
 1. Select that you **want to mount** the same directory to Nextcloud
-1. **You should now change the mount name of your directory for the usage in Nextcloud. You should change it to `/`** (one forward-slash)
-1. Now choose that the mount shall be **not writeable** in Nextcloud
-1. Choose that you want to disable **sharing** for this mount
-1. Now deselect all Nextcloud users and groups in order to **mount the local storage to everyone**.
-1. Confirm that you want to **share the mount with everyone** (select `Yes`)
-1. Now everything should get set up automatically.
-1. **Don't** enable Inotify
-1. You should now remove the SMB-share again since it is not needed any longer:
+1. **You should now change the name of your directory for the usage in Nextcloud. You should change it to `/`** (one forward-slash)
+1. Now everything should get set up automatically
+1. **Don't** enable Inotify (and don't exit the script afterwards!)
+
+#### You should now remove the SMB-share again since it is not needed any longer:
 1. Choose to `Delete SMB-shares` from the same still open `SMB-share Menu`
 1. Select the just created share with name `temporary`
 1. Press `[Enter]` to delete it
