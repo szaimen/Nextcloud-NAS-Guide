@@ -727,7 +727,7 @@ Here is how to do this:
 1. Now select that the share shall be **read only**
 1. After restartin Samba, the SMB-share should be successfully created!
 1. Select that you **want to mount** the same directory to Nextcloud
-1. **You can now change the mount name of your directory for the usage in Nextcloud. You should change the name to `/`** (one forward-slash)
+1. **You should now change the mount name of your directory for the usage in Nextcloud. You should change it to `/`** (one forward-slash)
 1. Now choose that the mount shall be **not writeable** in Nextcloud
 1. Choose that you want to disable **sharing** for this mount
 1. Now deselect all Nextcloud users and groups in order to **mount the local storage to everyone**.
