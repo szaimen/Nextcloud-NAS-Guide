@@ -67,6 +67,7 @@ In the future, this guide will cover optional addons like: a media server, a way
 - [Optional](#optional)
     - [Midnight Commander](#how-to-install-midnight-commander)
     - [Remotedesktop](#how-to-install-remotedesktop)
+- [FAQ](#faq)
     - [Restore files](#how-to-restore-files-from-backup)
 ---
 
@@ -486,7 +487,8 @@ Next, you should open the encrypted external data SSD/HDD on a different PC to b
 1. **Don`t** connect the drive to your PC, yet
 1. **Download** Veracrypt from [here](https://www.veracrypt.fr/en/Downloads.html) and **install** it on your PC (if needed, **restart** your PC)
 1. Now, **connect** the drive to your PC (choose to **not** reformat the drive if you get a popup, that it must get reformatted)
-1. Open `Veracrypt`, select the drive, type in the **password** and wait until it is mounted to your system
+1. Open `Veracrypt`, select the drive, type in the **password** and wait until it is mounted to your system<br>
+(Here is a guide how to do that in detail: [click here](https://tdicomputing.dartmouth.edu/veracrypt-mounting-encrypted-volumes-containers/#windows))
 
 Now you should be able to access the encrypted drive.
 </details>
@@ -936,6 +938,8 @@ It allows to use graphical tools directly on your server like viewing files from
 </details>
 
 ---
+
+# FAQ
 
 ## How to restore files from backup?
 It can happen, that you need to restore some files from a backup. This is the easiest way to do this.
