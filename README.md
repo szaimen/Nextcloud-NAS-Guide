@@ -933,7 +933,7 @@ It allows to use graphical tools directly on your server like viewing files from
 1. Choose to install the `Gnome Desktop`
 1. Wait until everything is installed
 1. Now, you should see a menu with available recommended programs. Just press `[ENTER]` to **install all** of them.
-1. **Confirm** for every program that you want to install it
+1. Wait until everything is installed (you need to confirm that you want to install `MakeMKV` manually)
 1. At last, you should get asked if you want to **reboot** your server and press `[ENTER]` to do so.
 </details>
 
