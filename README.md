@@ -69,6 +69,7 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Remotedesktop](#how-to-install-remotedesktop)
 - [FAQ](#faq)
     - [Restore files](#how-to-restore-files-from-backup)
+    - [Restore system](#how-to-restore-the-system-from-backup)
 ---
 
 # How to use this guide?
@@ -936,7 +937,7 @@ It allows to use graphical tools directly on your server like viewing files from
 # FAQ
 
 ## How to restore files from backup?
-It can happen, that you need to restore some files from a backup. This is the easiest way to do this.
+It can happen that you need to restore some files from a backup. This is especially useful if you want to restore some private files. Hint: if your system is broken and something doesn't work correctly, you should follow [How to restore the system from a backup](#how-to-restore-the-system-from-backup)
 <details><summary>Click here to expand</summary>
 
 #### Preparations
@@ -958,6 +959,26 @@ It can happen, that you need to restore some files from a backup. This is the ea
 1. After you are done, **close** the file explorer
 1. The last step is to **close Midnight Commander** by pressing `[F10]`
 1. It should now report, that the backup and drive was successfully unmounted.
+</details>
+
+---
+
+## How to restore the system from backup?
+It could happen that something (e.g. Nextcloud) fails and you need to restore the system to an earlier state. It will automatically restore the whole root partition from the backup that you choose but will leave the external drives untouched. Hint: if you only want to restore some private files manually, you should follow [How to restore files from backup?](#how-to-restore-files-from-backup)
+<details><summary>Click here to expand</summary>
+
+1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Choose `System Restore`
+1. **Confirm** that you want to restore your system to a previous state
+1. If both backup drives are connected, **select the backup drive** that you want to view backups from (most likely the daily backup drive)
+1. Select a **backup archive** that you want to restore to (you will see the date and time when it was made)
+1. Read through and **confirm** the next two popups
+1. **Wait** until you see the next Menu! (**This is crutial!**)
+1. Now you should see a Menu that states that the dry-run was successful. You can now show all files/folders that will get changed/deleted. After you are done, just select `Continue` and press `[ENTER]` to continue.
+1. Now you will see a popup with stats from the dry-run. This is an overview about the operation.
+1. You will be asked next if you really want to restore your system to this state. Now select `Yes` and press `[ENTER]` if you are sure. (This is the last chance to cancel the operation!)
+1. Wait until it has restored the system and you see a popup that the restore process was successful.
+1. Finally, press `[ENTER]` to **reboot** your server.
 </details>
 
 ---
