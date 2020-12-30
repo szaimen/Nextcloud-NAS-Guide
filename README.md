@@ -31,11 +31,11 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Geoblocking](#how-to-enable-geoblocking)
     - [Disk Monitoring](#how-to-set-up-disk-monitoring)
     - [Fail2Ban](#how-to-set-up-fail2ban)
-    - [Not-supported Menu](#how-to-download-the-not-supported-menu)
     - [ClamAV (Antivirus)](#how-to-install-clamav)
     - [Automatic updates](#how-to-enable-automatic-updates)
 - [Backup](#backup)
     - [SMTP Mail](#how-to-set-up-smtp-mail-to-enable-your-server-to-send-mails)
+    - [Not-supported Menu](#how-to-download-the-not-supported-menu)
     - [External data SSD/HDD](#how-to-configure-the-external-data-ssdhdd)
         - [Format, encrypt & mount](#how-to-format-encrypt-and-mount-the-external-data-ssdhdd)
         - [PC access](#how-to-access-the-encrypted-external-data-ssdhdd-on-any-pc)
@@ -370,21 +370,11 @@ In order to block too much failed login attempts for Nextcloud and SSH, you shou
 1. Choose to get a daily Fail2Ban report by selecting `Yes`
 </details>
 
-## How to download the Not-supported Menu?
-The Not-supported Menu of the Nextcloud-VM features some exciting new scripts which provide a complete Backup solution, a script to manage a SMB-server and much more.
-<details><summary>Click here to expand</summary>
-
-#### Copy and paste into your CLI:
-`sudo wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/not-supported.sh -P /var/scripts`
-
-Although it says in the Menu that the offered scripts in this Menu are not ready yet, they are successfully tested!
-</details>
-
 ## How to install ClamAV?
 In order to protect your files from malware, you should set up ClamAV which will detect malware and scan your files weekly for malware. You will get notified if something was found.
 <details><summary>Click here to expand</summary>
 
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `ClamAV`
 1. Choose to install/reinstall ClamAV
 1. Wait until it is installed and the service was started
@@ -442,6 +432,16 @@ For german users is recommended: [mail.de](https://signup.mail.de/de/) and [post
 1. Confirm your settings
 
 If all settings were entered correctly, you should receive a testmail which proves that it was setup correctly.
+</details>
+
+## How to download the Not-supported Menu?
+The Not-supported Menu of the Nextcloud-VM features some exciting new scripts which provide a complete Backup solution, a script to manage a SMB-server and much more.
+<details><summary>Click here to expand</summary>
+
+#### Copy and paste into your CLI:
+`sudo wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/not-supported.sh -P /var/scripts`
+
+Although it says in the Menu that the offered scripts in this Menu are not ready yet, they are successfully tested!
 </details>
 
 ## How to configure the external data SSD/HDD?
