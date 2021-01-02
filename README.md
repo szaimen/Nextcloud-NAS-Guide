@@ -65,11 +65,13 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Port Forwarding](#how-to-enable-port-forwarding)
     - [Activate TLS](#how-to-activate-tls)
 - [Optional](#optional)
+    - [OnlyOffice Documentserver](#how-to-install-onlyoffice-documentserver)
     - [Midnight Commander](#how-to-install-midnight-commander)
     - [Remotedesktop](#how-to-install-remotedesktop)
 - [FAQ](#faq)
     - [Restore files](#how-to-restore-files-from-backup)
     - [Restore system](#how-to-restore-the-system-from-backup)
+    - [Create subdomain and edit CNAME entry](#how-to-create-a-subdomain-and-point-with-cname-to-your-nextcloud-domain)
 ---
 
 # How to use this guide?
@@ -905,6 +907,28 @@ You will now activate TLS finally, if all points above are successfully set up. 
 
 # Optional
 
+## How to install OnlyOffice Documentserver?
+OnlyOffice Documentserver is a Nextcloud integration that features real-time CO-editing of Office files in your Nextcloud in the Browser. Although Collabora Online is also an option, OnlyOffice is recommended because it features a UI similar to Microsoft Office and has better compatibility with Microsoft Office files. It also doesn't need as much ressources as Collabora Online.
+<details><summary>Click here to expand</summary>
+
+#### Preparation
+1. Create a subdomain like `office.yourdomain.com` and edit the DNS settings for this subdomain to point to your Nextcloud Domain. ([instructions](#how-to-create-a-subdomain-and-point-with-cname-to-your-nextcloud-domain))
+
+#### Installation
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Additional Apps` -> `Documentserver` -> `OnlyOffice (Docker)`
+1. Choose to install `OnlyOffice (Docker)`
+1. Type in the **subdomain** that you've created and that points to your Nextcloud domain like `office.yourdomain.com` and confirm it
+1. **Don't** use `UPNP` to open the required ports (since you've already done this for your Nextcloud)
+1. Wait until everything is installed and it reports a successful installation
+
+Now, you should be able to create, open and edit Office files in Nextcloud in the Browser using OnlyOffice!
+
+You should open `https://yourdomain.com/settings/admin/onlyoffice` with your Nextcloud admin account to adjust some OnlyOffice settings. E.g. it is recommended to enable the option to `Keep intermediate versions when editing` but also you can choose to make OnlyOffice the default for many file extensions and more.
+</details>
+
+---
+
 ## How to install Midnight Commander?
 Midnight Commander is a CLI file explorer.
 <details><summary>Click here to expand</summary>
@@ -979,6 +1003,19 @@ It could happen that something (e.g. Nextcloud) fails and you need to restore th
 1. You will be asked next if you really want to restore your system to this state. Now select `Yes` and press `[ENTER]` if you are sure. (This is the last chance to cancel the operation!)
 1. Wait until it has restored the system and you see a popup that the restore process was successful.
 1. Finally, press `[ENTER]` to **reboot** your server.
+</details>
+
+---
+
+# How to create a subdomain and point with CNAME to your Nextcloud Domain?
+In order to install OnlyOffice Documentserver or Talk High-performance backend, you need to create a subdomain and point with a CNAME-entry to your Nextcloud Domain.
+<details><summary>Click here to expand</summary>
+
+How to do this highly depends on your service provider.
+Here is the documentation for some pre-chosen providers:
+### Strato
+1. [Create a subdomain](https://www.strato.de/faq/domains/subdomains-anlegen-und-loeschen/#subdomain_anlegen)
+1. [Edit the CNAME entry for subdomains](https://www.strato.com/faq/en_us/domain/this-is-how-you-can-change-the-cname-entry-for-your-subdomain/) and type in your Nextcloud Domain.
 </details>
 
 ---
