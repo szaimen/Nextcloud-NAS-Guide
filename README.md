@@ -67,8 +67,8 @@ In the future, this guide will cover optional addons like: a media server, a way
 - [Optional](#optional)
     - [OnlyOffice Documentserver](#how-to-install-onlyoffice-documentserver)
     - [High-Performance backend for Nextcloud Talk](#how-to-install-the-high-performance-backend-for-nextcloud-talk)
-    - [Midnight Commander](#how-to-install-midnight-commander)
     - [Remotedesktop](#how-to-install-remotedesktop)
+    - [Midnight Commander](#how-to-install-midnight-commander)
 - [FAQ](#faq)
     - [Restore files](#how-to-restore-files-from-backup)
     - [Restore system](#how-to-restore-the-system-from-backup)
@@ -956,21 +956,9 @@ Now you should be able to make videocalls in Nextcloud Talk with a lot of people
 
 ---
 
-## How to install Midnight Commander?
-Midnight Commander is a CLI file explorer.
-<details><summary>Click here to expand</summary>
-
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
-1. Choose `Additional Apps` -> `Midnight Commander`
-1. Choose to install/reinstall Midnight Commander
-1. Choose to install the dark theme for Midnight Commander (recommended)
-</details>
-
----
-
 ## How to install Remotedesktop?
 Remotedesktop allows you to connect to a graphical UI hosted on your server.<br>
-It allows to use graphical tools directly on your server like viewing files from the backup and also restoring them by copy and paste.
+It allows to use graphical tools directly on your server like viewing files from the backup and also restoring them by copy and paste and more.
 <details><summary>Click here to expand</summary>
 
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
@@ -981,6 +969,18 @@ It allows to use graphical tools directly on your server like viewing files from
 1. Now, you should see a menu with available recommended programs. Just press `[ENTER]` to **install all** of them.
 1. Wait until everything is installed (you need to confirm that you want to install `MakeMKV` and `OnlyOffice` manually)
 1. At last, you should get asked if you want to **reboot** your server and press `[ENTER]` to do so.
+</details>
+
+---
+
+## How to install Midnight Commander?
+Midnight Commander is a CLI file explorer. It is a requirements for viewing Backups.
+<details><summary>Click here to expand</summary>
+
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Additional Apps` -> `Midnight Commander`
+1. Choose to install/reinstall Midnight Commander
+1. Choose to install the dark theme for Midnight Commander (recommended)
 </details>
 
 ---
