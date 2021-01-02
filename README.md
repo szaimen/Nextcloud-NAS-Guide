@@ -1035,7 +1035,7 @@ It could happen that something (e.g. Nextcloud) fails and you need to restore th
 
 ---
 
-# How to create a subdomain and point with CNAME to your Nextcloud Domain?
+## How to create a subdomain and point with CNAME to your Nextcloud Domain?
 In order to install OnlyOffice Documentserver or Talk High-performance backend, you need to create a subdomain and point with a CNAME-entry to your Nextcloud Domain.
 <details><summary>Click here to expand</summary>
 
