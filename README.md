@@ -66,6 +66,7 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [Activate TLS](#how-to-activate-tls)
 - [Optional](#optional)
     - [OnlyOffice Documentserver](#how-to-install-onlyoffice-documentserver)
+    - [High-Performance backend for Nextcloud Talk](#how-to-install-the-high-performance-backend-for-nextcloud-talk)
     - [Midnight Commander](#how-to-install-midnight-commander)
     - [Remotedesktop](#how-to-install-remotedesktop)
 - [FAQ](#faq)
@@ -925,6 +926,32 @@ OnlyOffice Documentserver is a Nextcloud integration that features real-time CO-
 Now, you should be able to create, open and edit Office files in Nextcloud in the Browser using OnlyOffice!
 
 You should open `https://yourdomain.com/settings/admin/onlyoffice` with your Nextcloud admin account to adjust some OnlyOffice settings. E.g. it is recommended to enable the option to `Keep intermediate versions when editing` but also you can choose to make OnlyOffice the default for many file extensions and more.
+</details>
+
+---
+
+## How to install the High-Performance backend for Nextcloud Talk?
+In order to be able to make bigger videocalls in Nextcloud Talk and to reduce the load on paticipating clients, you should install the High-Performance backend for Nextcloud Talk.
+<details><summary>Click here to expand</summary>
+
+#### Preparation
+1. Create a subdomain like `talk.yourdomain.com` and edit the DNS settings for this subdomain to point to your Nextcloud Domain. ([instructions](#how-to-create-a-subdomain-and-point-with-cname-to-your-nextcloud-domain))
+1. Port-forward port 3478 TCP and 3478 UDP to your server ([instructions](#how-to-enable-port-forwarding))
+
+#### Installation
+1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Choose `Additional Apps` -> `Talk`
+1. Choose to install `Nextcloud Talk`
+1. Use the standard port 3478 (don't choose to change the port)
+1. Wait until coturn is installed
+1. **Don't** use `UPNP` to open the required port since you've already done this manually
+1.  Wait until spreed (old name for Nextcloud Talk) is installed
+1. Choose to install the `Talk Signaling Server`
+1. Type in the subdomain that you've created and that points to your Nextcloud domain (e.g. `talk.yourdomain.com`)
+1. **Don't** use `UPNP` to open the required ports (since you've already done this for your Nextcloud)
+1. Wait until everything is installed and it reports that everything is working as intended.
+
+Now you should be able to make videocalls in Nextcloud Talk with a lot of people and the load on paticipating clients should be reduced!
 </details>
 
 ---
