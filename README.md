@@ -986,7 +986,7 @@ Bitwarden RS should be successfully installed by now.
     - Choose `Additional Apps` -> `Bitwarden` -> `Bitwarden-RS Admin-panel`
     - Choose `Yes (Disable the admin-panel)`
     - Wait until it reports that the admin panel was disabled
-- After creating the Bitwarden accounts, you should activate two-factor authentication by visiting `https://bw.lindnercloud.com/#/settings/two-factor` with each account.
+- After creating the Bitwarden accounts, you should activate two-factor authentication by visiting `https://bw.yourdomain.com/#/settings/two-factor` with each account.
 
 Now, Bitwarden RS is finally ready and secured as good as possible!
 </details>
