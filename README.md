@@ -1062,6 +1062,7 @@ Now your server should automatically boot again.
 - After you've added all needed profiles, you can show them by running `sudo pivpn -qr` and follow the instructions. You should finally see a **QR code**, that you can scan with the **Wireguard mobile app** that you can download in the `Play Store` on Android and `App Store` on iOS
 - After scanning the QR-code, the VPN-profile should be added to the Wireguard app and you should be able to connect to your home network from anywhere.
 </details>
+
 ---
 
 ## How to install Remotedesktop?
