@@ -69,6 +69,7 @@ In the future, this guide will cover optional addons like: a media server, a way
     - [High-Performance backend for Nextcloud Talk](#how-to-install-the-high-performance-backend-for-nextcloud-talk)
     - [Bitwarden RS](#how-to-install-bitwarden-rs)
     - [Pi-hole](#how-to-install-pi-hole)
+    - [PiVPN](#how-to-install-pivpn)
     - [Remotedesktop](#how-to-install-remotedesktop)
     - [Midnight Commander](#how-to-install-midnight-commander)
 - [FAQ](#faq)
@@ -1005,7 +1006,7 @@ The Pi-hole is a DNS sinkhole that blocks ads, tracker and other unwanted conten
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `Pi-hole`
 1. Choose to install Pi-hole
-1. **Confirm** that you have created a Backup and wait a bit
+1. **Select** that you have created a Backup and wait a bit
 1. Click through the next popups until you have to choose the `Upstream DNS provider`. **Choose anyone** that you prefer.
 1. Confirm the `Blacklists`
 1. Confirm the IP-`Protocols` (IPv4 and IPv6 are automatically selected if available; if only IPv4 is available, this popup might not be shown to you)
@@ -1023,6 +1024,44 @@ Pi-hole should be successfully installed by now.
 - You can now either configure your router to use the Pi-hole as DNS-server which will block DNS requests for all devices in your network ([instructions](https://github.com/RPiList/specials/tree/master/RouterKonfiguration)) or you can configure your devices manually to use the Pi-hole as DNS server in your home network. (E.g. on Android by using Blokada)
 </details>
 
+---
+
+## How to install PiVPN?
+PiVPN is an easy way to create a VPN server that lets you access your home network from away and also lets you use the Pi-hole when connected via VPN as DNS-server so that you get ads- and tracker-blocking also when you are not at home.
+<details><summary>Click here to expand</summary>
+
+#### Preparation
+1. Install Pi-hole (else, you will not be able to use Pi-hole as DNS-server when connected over VPN) ([instructions](#how-to-install-pi-hole))
+1. Port-forward port 51820 UDP to your server ([instructions](#how-to-enable-port-forwarding))
+1. Create a Backup by running `sudo bash /var/scripts/daily-borg-backup.sh` (better to be prepared, since we use the scripts provided by the PiVPN project and something could go wrong. You never now!)
+
+#### Installation
+1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Choose `PiVPN`
+1. Choose to install PiVPN
+1. **Selected** that you have created a Backup
+1. **Don't** use `UPNP` to open the required port since you've already done this manually
+1. Wait until a few things are installed
+1. Select the **interface** for PiVPN (should be called `eno1` or something like that)
+1. Wait until a few more things are installed (and create an UEFI password, if you are asked to do so)
+1. **Confirm** that you want to use Pi-hole as DNS-server for PiVPN
+1. Wait until it reports that PiVPN was set up correctly and read through the information
+1. **Confirm** that you want to reboot now
+
+It can happen that your server won't startup automatically at this point, if you had to create an UEFI password during the installation. If this happens, do the following steps:
+1. On the server startup, you should see the `MOK-management-console`
+1. Select `Enroll MOK`
+1. Select `Yes` when asked `Enroll the Key(s)?`
+1. Enter the UEFI password, that you've created
+1. reboot
+
+Now your server should automatically boot again.
+
+#### What to do now?
+- As suggested, to add a new VPN-profile, you should run `sudo pivpn -a` over CLI and follow the instructions. 
+- After you've added all needed profiles, you can show them by running `sudo pivpn -qr` and follow the instructions. You should finally see a **QR code**, that you can scan with the **Wireguard mobile app** that you can download in the `Play Store` on Android and `App Store` on iOS
+- After scanning the QR-code, the VPN-profile should be added to the Wireguard app and you should be able to connect to your home network from anywhere.
+</details>
 ---
 
 ## How to install Remotedesktop?
