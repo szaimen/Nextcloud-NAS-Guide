@@ -67,6 +67,7 @@ In the future, this guide will cover optional addons like: a media server, a way
 - [Optional](#optional)
     - [OnlyOffice Documentserver](#how-to-install-onlyoffice-documentserver)
     - [High-Performance backend for Nextcloud Talk](#how-to-install-the-high-performance-backend-for-nextcloud-talk)
+    - [Bitwarden RS](#how-to-install-bitwarden-rs)
     - [Remotedesktop](#how-to-install-remotedesktop)
     - [Midnight Commander](#how-to-install-midnight-commander)
 - [FAQ](#faq)
