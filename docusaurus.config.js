@@ -10,7 +10,7 @@ module.exports = {
   projectName: 'Nextcloud-NAS-Guide', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Nextcloud-NAS-Guide',
+      title: 'Nextcloud-NAS',
       logo: {
         alt: 'My Site Logo',
         src: 'img/favicon.webp',
