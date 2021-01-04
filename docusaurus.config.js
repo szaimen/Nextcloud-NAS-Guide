@@ -1,19 +1,19 @@
 module.exports = {
   title: 'Nextcloud-NAS-Guide',
-  tagline: 'The tagline of my site',
+  tagline: 'Instructions how to set up a home server',
   url: 'https://szaimen.github.io',
   baseUrl: '/Nextcloud-NAS-Guide/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.webp',
   organizationName: 'szaimen', // Usually your GitHub org/user name.
   projectName: 'Nextcloud-NAS-Guide', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Nextcloud-NAS-Guide',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/favicon.webp',
       },
       items: [
         {
@@ -22,18 +22,18 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        //{to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/szaimen',
+          href: 'https://github.com/szaimen/Nextcloud-NAS-Guide/',
           label: 'GitHub',
-          position: 'right',
+          position: 'left',
         },
       ],
     },
     footer: {
       style: 'dark',
       links: [
-        {
+        /*{
           title: 'Docs',
           items: [
             {
@@ -72,12 +72,12 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/szaimen/Nextcloud-NAS-Guide',
             },
           ],
-        },
+        },*/
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a href='https://github.com/szaimen'>szaimen</a> - Built with Docusaurus.`,
     },
   },
   presets: [
@@ -88,13 +88,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/szaimen/Nextcloud-NAS-Guide/edit/main/docs/',
+            'https://github.com/szaimen/Nextcloud-NAS-Guide/edit/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/szaimen/Nextcloud-NAS-Guide/edit/main/blog/',
+            'https://github.com/szaimen/Nextcloud-NAS-Guide/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
