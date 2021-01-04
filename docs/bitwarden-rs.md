@@ -7,7 +7,7 @@ sidebar_label: Bitwarden RS
 Bitwarden RS is an open Source but unofficial Bitwarden Server Password Manager implementation in Rust. It is much more lightweight than the official Bitwarden Server and runs nearly on any Hardware. Mostly because of this, it is recommended over the official Bitwarden Server. Of course you will need to trust the maintainer Dani Garcia when using Bitwarden RS. Installing Bitwarden RS enables you to manage all your passwords in the Browser on a website and will let you use all Bitwarden applications which exist for almost any platform.
 
 #### Preparation
-1. Create a subdomain like `bw.yourdomain.com` and edit the DNS settings for this subdomain to point to your Nextcloud Domain. ([instructions](#how-to-create-a-subdomain-and-point-with-cname-to-your-nextcloud-domain))
+1. Create a subdomain like `bw.yourdomain.com` and edit the DNS settings for this subdomain to point to your Nextcloud Domain. ([instructions](./subdomain-cname))
 
 #### Installation
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
