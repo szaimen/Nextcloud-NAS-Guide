@@ -178,5 +178,5 @@ so e.g.<br>
 ---
 
 ### The Nextcloud startup is now done.
-### Please click [here](https://github.com/szaimen/Nextcloud-NAS-Guide#security-and-automation) to return to the guide.
+### Please click [here](../docs/security-automation) to return to the guide.
 ### You should continue with the point `How to enable geoblocking?`
