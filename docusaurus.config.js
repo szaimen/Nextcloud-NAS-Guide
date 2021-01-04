@@ -1,8 +1,8 @@
 module.exports = {
-  title: 'My Site',
+  title: 'Nextcloud-NAS-Guide',
   tagline: 'The tagline of my site',
-  url: 'https://szaimen.github.io/Nextcloud-NAS-Guide',
-  baseUrl: '/',
+  url: 'https://szaimen.github.io',
+  baseUrl: '/Nextcloud-NAS-Guide/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
