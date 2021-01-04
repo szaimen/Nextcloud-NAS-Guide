@@ -9,8 +9,8 @@ In order to automatically unlock the encrypted root partition, you need to setup
 The abbreviation `CLI` will be used from now on in this guide (as synonym for controlling your server over SSH) and stands for `Command Line Interface`.
 
 1. Connect from a PC in the same network to your server over SSH (if not already done)
-1. Copy and paste the following command over `CLI`:
-`wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/tpm2-unlock.sh && sudo bash tpm2-unlock.sh`
+1. Copy and paste the following command over `CLI`:<br/>
+`wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/tpm2-unlock.sh && sudo bash tpm2-unlock.sh`<br/>
 (**Hint**: On Windows 10, pasting works by pressing the right mouse-key)
 1. Enter your **password** again
 1. Choose to install TPM2 Unlock

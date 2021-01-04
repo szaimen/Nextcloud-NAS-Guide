@@ -16,7 +16,7 @@ In order to prepare the external data SSD/HDD for your server, you should first 
 1. After pressing `OK`, **connect** the drive to your server
 1. It should get found after a few seconds
 1. Select the drive that you want to format and encrypt
-1. Enter a difficult **password** and store it at a safe place.
+1. Enter a difficult **password** and store it at a safe place.<br/>
 (Difficult password means at least 20 characters long, containing small and tall letters, digits and special characters)
 1. Confirm the password
 1. Confirm that you are sure to format and encrypt the drive by selecting `Yes`

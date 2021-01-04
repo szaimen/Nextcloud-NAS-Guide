@@ -14,7 +14,7 @@ Now that everything is prepared, you should set up a daily backup for your serve
 1. Choose that you want to backup the **whole** external data SSD/HDD
 1. Select the **daily backup drive** as backup target
 1. Choose to use the recommended backup directory
-1. Enter a difficult **encryption key** for your backup and store it at a safe place
+1. Enter a difficult **encryption key** for your backup and store it at a safe place<br/>
 (Difficult encryption key means at least 20 characters long, containing small and tall letters, digits and special characters)
 1. Choose to run the backup at the recommended time at `4.00 am`
 1. Now everything will get set up

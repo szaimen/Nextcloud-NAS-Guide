@@ -9,7 +9,7 @@ In order to automate as much things as possible, you should enable automatic upd
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `Automatic updates`
 1. Choose to enable automatic updates
-1. Choose to reboot your server after every update as recommended
+1. Choose to reboot your server after every update as recommended<br/>
 (the reboot will happen right after every time the script runs, also if no Nextcloud update was installed because it not only updates Nextcloud but everything like Ubuntu packets, etc.)
 
 **The update will be executed on saturdays at 18:00h.**

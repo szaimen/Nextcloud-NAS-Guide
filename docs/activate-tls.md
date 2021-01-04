@@ -18,6 +18,6 @@ You will now activate TLS finally, if all points above are successfully set up. 
 
 #### Advices what to do now: 
 - You should first visit `yourdomain.com/settings/user` with your admin user and fill in the mail-address that shall receive all admin mails into the `Email` input field.
-- Next, you should visit `yourdomain.com/settings/admin` and enable Nextcloud to send mails by filling in the mail-account settings that you've used [here](./smtp-mail)
+- Next, you should visit `yourdomain.com/settings/admin` and enable Nextcloud to send mails by filling in the mail-account settings that you've used [here](./smtp-mail)<br/>
 (Here is the official documentation on this: [click here](https://docs.nextcloud.com/server/20/admin_manual/configuration_server/email_configuration.html))
 - Afterwards, it is recommended to activate 2-factor autentification for all Nextcloud accounts to further secure them. Here is a guide how to do that: [klick here](https://docs.nextcloud.com/server/latest/admin_manual/configuration_user/two_factor-auth.html)
