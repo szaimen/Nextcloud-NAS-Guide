@@ -4,9 +4,10 @@ title: How to configure DDclient?
 sidebar_label: Configure DDclient
 ---
 
-After you've got your domain from a supported provider and activated DDNS for your domain, you should now configure DDclient.
-
-DDclient is an easy way to update your domain regularly with your new public ip-address and is the recommended way to set up Dynamic DNS for your server. Please inspect the documents of your DDNS-provider what exactly you need to enter here.
+After you've got your domain from a supported provider and activated DDNS for your domain, you should now configure DDclient. DDclient is an easy way to update your domain regularly with your new public ip-address and is the recommended way to set up Dynamic DNS for your server. 
+:::info Caution!
+Please inspect the documents of your DDNS-provider what exactly you need to enter here. For Strato, the example below should work.
+:::
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Server Configuration` -> `DDclient Configuration`
 1. Choose to install/reinstall DDclient

@@ -33,4 +33,6 @@ Additionally, please make sure, that `Capslock` isn't activated.)
 1. Now type in your **username** (e.g. `ncadmin`) and **pasword**
 1. If everything is correct, you will now see an overview of Ubuntu also containing the IPv4-address of your server.
 
+:::note
 **You will need the ip-address in the next step!**
+:::

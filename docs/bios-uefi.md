@@ -6,7 +6,9 @@ sidebar_label: BIOS/UEFI
 
 You will need to configure your BIOS/UEFI in order to harden security and to make things work. 
 
+:::info
 The following guide is especially written for Intel Visual Bios which is present on Intel NUC devices. If you use a different device as your server it is possible, that some things are different for you. Since BIOS/UEFI can be visually very different, this guide is only plain text.
+:::
 1. **Connect** the power-cable, HDMI-display, USB-mouse and -keyboard to your server
 1. **Power on** your server and **open the BIOS/UEFI** by pressing `[F2]`
 1. **Load the BIOS/UEFI defaults** by pressing `[F9]` and `[ENTER]` to confirm

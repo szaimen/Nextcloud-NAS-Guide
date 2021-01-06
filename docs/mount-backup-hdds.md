@@ -22,6 +22,10 @@ Now that the drives are prepared, you will mount the drives to your sever:
 1. You should see the message now, that the backup drive is ready.
 
 **Now repeat this same procedure with the second drive! Start at point 4!**<br/>
-(The already mounted backup HDD and the with Veracrypt encrypted data SSD/HDD must stay connected to the server!)
+:::caution
+The already mounted backup HDD and the with Veracrypt encrypted data SSD/HDD must stay connected to the server!)
+:::
 
+:::note
 If you are done, just choose `Exit` to exit this script.
+:::

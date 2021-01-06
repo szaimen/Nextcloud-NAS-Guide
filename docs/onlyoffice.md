@@ -19,4 +19,6 @@ OnlyOffice Documentserver is a Nextcloud integration that features real-time CO-
 
 Now, you should be able to create, open and edit Office files in Nextcloud in the Browser using OnlyOffice!
 
+:::info
 You should open `https://yourdomain.com/settings/admin/onlyoffice` with your Nextcloud admin account to adjust some OnlyOffice settings. E.g. it is recommended to enable the option to `Keep intermediate versions when editing` but also you can choose to make OnlyOffice the default for many file extensions and more.
+:::

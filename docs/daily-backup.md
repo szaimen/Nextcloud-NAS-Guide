@@ -21,4 +21,6 @@ Now that everything is prepared, you should set up a daily backup for your serve
 1. You should now receive the daily backup config file via mail. Please **save/archive** it
 1. Finally, you will see the message that the backup script was successfully created
 
+:::note
 It is located here: `/var/scripts/daily-borg-backup.sh` and will get executed at your chosen backup time, most likely `4.00 am`. You will get **notified** by mail if something fails and also if the backup was successful. The script which will create the daily backup is based on a program called `borgbackup` which is used to make daily incremental, compressed and deduplicated backup archives from your root partition and external data SSD/HDD.
+:::

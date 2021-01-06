@@ -14,4 +14,6 @@ In order to improve security, you should disable booting from USB devices.
 1. Now **confirm your settings** by pressing `[F10]` and `[ENTER]`
 1. Your server should reboot and boot automatically.
 
-#### Now, you can disconnect the mouse, the keyboard and the display from your server since they are not needed anymore.
+:::info
+Now, you can disconnect the mouse, the keyboard and the display from your server since they are not needed anymore.
+:::

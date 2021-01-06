@@ -24,6 +24,7 @@ PiVPN is an easy way to create a VPN server that lets you access your home netwo
 1. Wait until it reports that PiVPN was set up correctly and read through the information
 1. **Confirm** that you want to reboot now
 
+:::note
 It can happen that your server won't startup automatically at this point, if you had to create an UEFI password during the installation. If this happens, do the following steps:
 1. On the server startup, you should see the `MOK-management-console`
 1. Select `Enroll MOK`
@@ -32,6 +33,7 @@ It can happen that your server won't startup automatically at this point, if you
 1. reboot
 
 Now your server should automatically boot again.
+:::
 
 #### What to do now?
 - As suggested, to add a new VPN-profile, you should run `sudo pivpn -a` over CLI and follow the instructions. 

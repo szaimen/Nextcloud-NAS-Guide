@@ -6,7 +6,10 @@ sidebar_label: Create subdomain and edit CNAME entry
 
 In order to install OnlyOffice Documentserver or Talk High-performance backend, you need to create a subdomain and point with a CNAME-entry to your Nextcloud Domain.
 
+:::note
 How to do this highly depends on your service provider.
+:::
+
 Here is the documentation for some pre-chosen providers:
 
 ### Strato

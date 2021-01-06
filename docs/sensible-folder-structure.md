@@ -30,9 +30,13 @@ Create a folder on the drive that contains all your files. Inside this folder, t
             - Archive
     - Some other folder
 
-(The exact foldernames and order can be different)
+:::note
+The exact foldernames and order can be different
+:::
 
+:::tip
 **BTW**: you can also spread your files over more than one external data SSD/HDD using the same system. Of course every `User folder` and `data exchange folder` will need to be completely on one disk but you could manually add some different user folders or data exchange folders on a second drive. (this might also be useful if you run out of space on your external data SSD/HDD someday in the future)
+:::
 
 **Now copy all private files to the external data SSD/HDD or at least create the folder structure.**
 

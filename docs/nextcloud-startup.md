@@ -25,5 +25,7 @@ You will need to run this to the end to be done with the Nextcloud setup.
 
 Now the Nextcloud configuration should be done. Next, you will configure recommended options.
 
-**Please note: Since the server fingerprint was changed during this script, you will need to reset the server fingerprint the next time you connect to your server via SSH.**
+:::info Please Note!
+**Since the server fingerprint was changed during this script, you will need to reset the server fingerprint the next time you connect to your server via SSH.**
 To do that, just type in your Console/Terminal on your client PC: `ssh-keygen -R ip-address` so e.g. `ssh-keygen -R 192.168.178.144`
+:::

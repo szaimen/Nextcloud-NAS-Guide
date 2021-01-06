@@ -22,6 +22,9 @@ You will now reformat them to NTFS. You can skip this step, if they are already 
 1. Now the drive should be successfully formatted
 
 **Now repeat the same procedure for the second backup drive. Start at point 5.**
-(The with Veracrypt encrypted data SSD/HDD must stay connected to the server!)
-
+:::caution
+The with Veracrypt encrypted data SSD/HDD must stay connected to the server!
+:::
+:::note
 If you are done, just choose `Exit` to exit this script.
+:::

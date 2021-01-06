@@ -11,4 +11,6 @@ Currently (10. Nov. 2020) supported are:
 - [Duck DNS](https://duckdns.org)
 - [Strato](https://strato.de) (recommended for german users)
 
+:::note info
 Click on one of them to get your domain!
+:::

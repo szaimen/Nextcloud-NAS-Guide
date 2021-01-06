@@ -17,4 +17,7 @@ The big advantage using this method is, that the Nextcloud and SMB-user will hav
 1. A Nextcloud user should be successfully created now
 
 **Now repeat that procedure until all users from your list are created**
-(If you are done, please don't close the script! You will need it again in the next step!)
+
+:::info
+If you are done, please don't close the script! You will need it again in the next step!
+:::

@@ -27,4 +27,6 @@ In order to prepare the external data SSD/HDD for your server, you should first 
 
 **Now, the drive should be ready.**
 
+:::tip
 **BTW**: You could run this script a second time now to format, encrypt and mount a second drive, if you want to use more than one external data SSD/HDD. (The two backup HDDs will get configured below.)
+:::

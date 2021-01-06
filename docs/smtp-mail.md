@@ -6,9 +6,13 @@ sidebar_label: SMTP Mail
 
 In order to get notified by mail for backups, disk errors and such, you should configure your server to send mails.
 
+:::info
 **Before you can start, please get a mail account that your server will use to send mails.**
+:::
 
+:::note
 For german users is recommended: [mail.de](https://signup.mail.de/de/) and [posteo.org](https://posteo.de/registrierung)
+:::
 
 **Please inspect your mail providers documents how to connect over SMTP before continuing!**
 1. Run `sudo bash /var/scripts/menu.sh` over CLI

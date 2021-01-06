@@ -6,7 +6,9 @@ sidebar_label: TPM2 unlocking
 
 In order to automatically unlock the encrypted root partition, you need to setup TPM2 unlocking during boot.
 
+:::note
 The abbreviation `CLI` will be used from now on in this guide (as synonym for controlling your server over SSH) and stands for `Command Line Interface`.
+:::
 
 1. Connect from a PC in the same network to your server over SSH (if not already done)
 1. Copy and paste the following command over `CLI`:<br/>
@@ -20,4 +22,6 @@ The abbreviation `CLI` will be used from now on in this guide (as synonym for co
 
 Now it should unlock the root partition during boot automatically (so that you don't have to enter the LUKS passphrase). If not, something has failed.
 
-**Please note: it is not recommended to proceed with this guide, if it doesn't unlock the root partition automatically at this point!**
+:::caution Please note! 
+**It is not recommended to proceed with this guide, if it doesn't unlock the root partition automatically at this point!**
+:::
