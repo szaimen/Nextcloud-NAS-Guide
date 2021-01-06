@@ -6,10 +6,10 @@ sidebar_label: Pi-hole
 
 The Pi-hole is a DNS sinkhole that blocks ads, tracker and other unwanted content without having to install any client side software.
 
-#### Preparation
+### Preparation
 1. Create a Backup by running `sudo bash /var/scripts/daily-borg-backup.sh` (better to be prepared, since we use the scripts provided by the Pi-hole project and something could go wrong. You never now!)
 
-#### Installation
+### Installation
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `Pi-hole`
 1. Choose to install Pi-hole
@@ -26,6 +26,6 @@ The Pi-hole is a DNS sinkhole that blocks ads, tracker and other unwanted conten
 
 Pi-hole should be successfully installed by now.
 
-#### What to do now?
+### What to do now?
 - First you should visit `https://internal-IPv4-address:8094/admin` e.g. `https://192.168.178.144:8094/admin` and login with your admin password.
 - You can now either configure your router to use the Pi-hole as DNS-server which will block DNS requests for all devices in your network ([instructions](https://github.com/RPiList/specials/tree/master/RouterKonfiguration)) or you can configure your devices manually to use the Pi-hole as DNS server in your home network. (E.g. on Android by using Blokada)

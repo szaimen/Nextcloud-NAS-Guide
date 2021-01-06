@@ -65,5 +65,4 @@ Press [ENTER] to reboot
 ---
 
 ### The Nextcloud installation is now done.
-### Please click [here](../docs/nextcloud-startup) to return to the guide.
-### You should continue with the point `How to startup Nextcloud?`
+### Please click [here](../docs/nextcloud-startup) to continue with the guide.

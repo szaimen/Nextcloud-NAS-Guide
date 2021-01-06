@@ -6,11 +6,11 @@ sidebar_label: Restore files
 
 It can happen that you need to restore some files from a backup. This is especially useful if you want to restore some private files. Hint: if your system is broken and something doesn't work correctly, you should follow [How to restore the system from a backup](./restore-system)
 
-#### Preparations
+### Preparations
 1. Install Midnight Commander ([instructions](./mc))
 1. Install Remotedesktop ([instructions](./remotedesktop))
 
-#### Execution
+### Execution
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `Backup Viewer`
 1. Confirm that you want to view the content of your backups

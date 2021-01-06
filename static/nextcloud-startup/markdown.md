@@ -178,5 +178,4 @@ so e.g.<br>
 ---
 
 ### The Nextcloud startup is now done.
-### Please click [here](../docs/security-automation) to return to the guide.
-### You should continue with the point `How to enable geoblocking?`
+### Please click [here](../docs/security-automation) to continue with the guide.

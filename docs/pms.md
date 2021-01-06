@@ -6,10 +6,10 @@ sidebar_label: PLEX Media Server
 
 Plex Media Server is a media server application that runs on your own server and perfectly rounds off the feature set that Nextcloud provides. You can stream and open your own videos, movies, series, music and photos on any device that support Plex apps which are almost all platforms.
 
-#### Preparation
+### Preparation
 1. Port-forward port 32400 TCP to your server ([instructions](./port-forwarding))
 
-#### Installation
+### Installation
 1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
 1. Choose `PLEX Media Server`
 1. Choose to install PLEX Media server
@@ -18,7 +18,7 @@ Plex Media Server is a media server application that runs on your own server and
 1. **Don't** use `UPNP` to open the required port since you've already done this manually
 1. It should now check the required Port and show the last popup how to set up PLEX
 
-#### What to do now?
+### What to do now?
 - Open `http://internal-server-ip-address:32400/web` e.g. `http://192.168.178.144:32400/web` to set up PLEX
 
 :::note notes

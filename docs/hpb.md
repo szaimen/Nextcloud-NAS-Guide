@@ -6,11 +6,11 @@ sidebar_label: High-Performance backend for Nextcloud Talk
 
 In order to be able to make bigger videocalls in Nextcloud Talk and to reduce the load on paticipating clients, you should install the High-Performance backend for Nextcloud Talk.
 
-#### Preparation
+### Preparation
 1. Create a subdomain like `talk.yourdomain.com` and edit the DNS settings for this subdomain to point to your Nextcloud Domain. ([instructions](./subdomain-cname))
 1. Port-forward port 3478 TCP and 3478 UDP to your server ([instructions](./port-forwarding))
 
-#### Installation
+### Installation
 1. Run `sudo bash /var/scripts/menu.sh` over CLI
 1. Choose `Additional Apps` -> `Talk`
 1. Choose to install `Nextcloud Talk`
