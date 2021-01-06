@@ -126,5 +126,4 @@ Here you can see the IPv4-address which you will need in the next step.
 ---
 
 ### The Ubuntu installation is now done.
-### Please click [here](../docs/ssh) to return to the guide.
-### You should continue with the point `How to connect to your server over SSH?`
+### Please click [here](../docs/ssh) to continue with the guide.
