@@ -11,9 +11,12 @@ The abbreviation `CLI` will be used from now on in this guide (as synonym for co
 :::
 
 1. Connect from a PC in the same network to your server over SSH (if not already done)
-1. Copy and paste the following command over `CLI`:<br/>
-`wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/tpm2-unlock.sh && sudo bash tpm2-unlock.sh`<br/>
-(**Hint**: On Windows 10, pasting works by pressing the right mouse-key)
+1. Copy and paste the following command over `CLI`:
+    ```shell
+    wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/tpm2-unlock.sh \
+    && sudo bash tpm2-unlock.sh
+    ```
+    (**Hint**: On Windows 10, pasting works by pressing the right mouse-key)
 1. Enter your **password** again
 1. Choose to install TPM2 Unlock
 1. Wait until it has configured some small things

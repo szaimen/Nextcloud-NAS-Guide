@@ -11,7 +11,10 @@ In order to be able to make bigger videocalls in Nextcloud Talk and to reduce th
 1. Port-forward port 3478 TCP and 3478 UDP to your server ([instructions](./port-forwarding))
 
 ### Installation
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Additional Apps` -> `Talk`
 1. Choose to install `Nextcloud Talk`
 1. Use the standard port 3478 (don't choose to change the port)

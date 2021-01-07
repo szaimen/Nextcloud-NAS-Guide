@@ -8,7 +8,10 @@ After you've got your domain from a supported provider and activated DDNS for yo
 :::info Caution!
 Please inspect the documents of your DDNS-provider what exactly you need to enter here. For Strato, the example below should work.
 :::
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Server Configuration` -> `DDclient Configuration`
 1. Choose to install/reinstall DDclient
 1. Select your **DDNS-provider** (e.g. `Strato`), enter the **Host/Domain** (e.g. `yourdomain.com`), the **Login/Domain** (e.g. `yourdomain.com`) and the **Password or API-key** (e.g. `your-ddns-password`)

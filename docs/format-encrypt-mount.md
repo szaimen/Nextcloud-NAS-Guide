@@ -8,7 +8,10 @@ In order to prepare the external data SSD/HDD for your server, you should first 
 
 **Warning: this will delete any data on this drive!**
 1. Please **don't** connect the external data SSD/HDD to your server, yet!
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/not-supported.sh
+    ```
 1. Choose `Veracrypt`
 1. Select that you want to **install** veracrypt
 1. Select that you want to continue

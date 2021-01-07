@@ -10,7 +10,10 @@ Bitwarden RS is an open Source but unofficial Bitwarden Server Password Manager 
 1. Create a subdomain like `bw.yourdomain.com` and edit the DNS settings for this subdomain to point to your Nextcloud Domain. ([instructions](./subdomain-cname))
 
 ### Installation
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Additional Apps` -> `Bitwarden` -> `Bitwarden-RS`
 1. Choose to install `Bitwarden RS`
 1. Accept the risks and confirm that if you are sure to install `Bitwarden RS`
@@ -26,7 +29,10 @@ Bitwarden RS should be successfully installed by now.
 - You should now visit `https://bw.yourdomain.com/admin` to set up the **SMTP settings** for Bitwarden RS (so that Bitwarden can send mails, too.)
 - When you've successfully configured the SMTP settings, you should visit `https://bw.yourdomain.com/admin/users/overview` to invite a new user via mail-address. And you will be able to create an account using the link that was send to you.
 - After you are done creating all needed accounts, you should disable the admin panel (to make it impossible for an attacker to log into the admin panel):
-    - Run `sudo bash /var/scripts/menu.sh` over CLI
+    - Run over CLI:
+        ```shell
+        sudo bash /var/scripts/menu.sh
+        ```
     - Choose `Additional Apps` -> `Bitwarden` -> `Bitwarden-RS Admin-panel`
     - Choose `Yes (Disable the admin-panel)`
     - Wait until it reports that the admin panel was disabled

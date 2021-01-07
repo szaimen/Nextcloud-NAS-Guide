@@ -6,7 +6,10 @@ sidebar_label: Previewgenerator
 
 In order to speed up preview loading and the general feel of Nextcloud while opening folders with many pictures, you should set up the previewgenerator, which will pre-generate previews to make preview-loading faster.
 
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Additional Apps` -> `PreviewGenerator`
 1. Choose to install/reinstall the Preview Generator
 1. Choose to **not** install imagick

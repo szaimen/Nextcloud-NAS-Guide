@@ -6,7 +6,10 @@ sidebar_label: Automatic updates
 
 In order to automate as much things as possible, you should enable automatic updates.
 
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Server Configuration` -> `Automatic updates`
 1. Choose to enable automatic updates
 1. Choose to reboot your server after every update as recommended<br/>

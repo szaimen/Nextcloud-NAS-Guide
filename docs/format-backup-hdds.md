@@ -10,7 +10,10 @@ You will now reformat them to NTFS. You can skip this step, if they are already 
 1. **Power on** your server by pressing the `power button` (if not already done)
 1. Please **don't** connect the backup HDDs to your server, yet!<br/>
 (The already with Veracrypt encrypted and mounted external data SSD/HDD must stay connected; disconnecting and connecting one backup HDD that you want to format is just so that the system is able to understand which drive you want to format.)
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/not-supported.sh
+    ```
 1. Choose `NTFS Format`
 1. Select to `Format a drive`
 1. Press `OK` to start searching for new drives

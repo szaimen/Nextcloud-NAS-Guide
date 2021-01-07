@@ -10,7 +10,10 @@ OnlyOffice Documentserver is a Nextcloud integration that features real-time CO-
 1. Create a subdomain like `office.yourdomain.com` and edit the DNS settings for this subdomain to point to your Nextcloud Domain. ([instructions](./subdomain-cname))
 
 ### Installation
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Additional Apps` -> `Documentserver` -> `OnlyOffice (Docker)`
 1. Choose to install `OnlyOffice (Docker)`
 1. Type in the **subdomain** that you've created and that points to your Nextcloud domain like `office.yourdomain.com` and confirm it

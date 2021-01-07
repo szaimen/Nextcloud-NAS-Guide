@@ -9,7 +9,10 @@ Since disks can fail, you should get notified as soon as possible if a disk erro
 :::info Please note!
 This is no alternative to a backup solution!
 :::
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Server Configuration` -> `Disk Monitoring`
 1. Choose to install/reinstall **S.M.A.R.T Monitoring**
 1. Choose **Directly** to get informed instantly if a disk error was found

@@ -6,7 +6,10 @@ sidebar_label: Activate TLS
 
 You will now activate TLS finally, if all points above are successfully set up. TLS is the protocol that encrypts all traffic to and from your Nextcloud.
 
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Server Configuration` -> `Activate TLS`
 1. Choose to install TLS
 1. Confirm that you have set up all necessary requirements

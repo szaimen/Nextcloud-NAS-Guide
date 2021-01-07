@@ -10,7 +10,10 @@ Plex Media Server is a media server application that runs on your own server and
 1. Port-forward port 32400 TCP to your server ([instructions](./port-forwarding))
 
 ### Installation
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/not-supported.sh
+    ```
 1. Choose `PLEX Media Server`
 1. Choose to install PLEX Media server
 1. Wait until everything is installed and it reports that Plex was successfully installed

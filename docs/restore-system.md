@@ -6,7 +6,10 @@ sidebar_label: Restore system
 
 It could happen that something (e.g. Nextcloud) fails and you need to restore the system to an earlier state. It will automatically restore the whole root partition from the backup that you choose but will leave the external drives untouched. Hint: if you only want to restore some private files manually, you should follow [How to restore files from backup?](./restore-files)
 
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/not-supported.sh
+    ```
 1. Choose `System Restore`
 1. **Confirm** that you want to restore your system to a previous state
 1. If both backup drives are connected, **select the backup drive** that you want to view backups from (most likely the daily backup drive)

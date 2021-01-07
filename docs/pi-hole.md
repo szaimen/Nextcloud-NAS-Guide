@@ -7,10 +7,17 @@ sidebar_label: Pi-hole
 The Pi-hole is a DNS sinkhole that blocks ads, tracker and other unwanted content without having to install any client side software.
 
 ### Preparation
-1. Create a Backup by running `sudo bash /var/scripts/daily-borg-backup.sh` (better to be prepared, since we use the scripts provided by the Pi-hole project and something could go wrong. You never now!)
+1. Create a Backup by running 
+    ```shell
+    sudo bash /var/scripts/daily-borg-backup.sh
+    ``` 
+    (better to be prepared, since we use the scripts provided by the Pi-hole project and something could go wrong. You never now!)
 
 ### Installation
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/not-supported.sh
+    ```
 1. Choose `Pi-hole`
 1. Choose to install Pi-hole
 1. **Select** that you have created a Backup and wait a bit

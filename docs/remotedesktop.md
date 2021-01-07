@@ -7,7 +7,10 @@ sidebar_label: Remotedesktop
 Remotedesktop allows you to connect to a graphical UI hosted on your server.<br/>
 It allows to use graphical tools directly on your server like viewing files from the backup and also restoring them by copy and paste and more.
 
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/not-supported.sh
+    ```
 1. Choose `Remotedesktop`
 1. Choose to install Remotedesktop
 1. Choose to install the `Gnome Desktop`

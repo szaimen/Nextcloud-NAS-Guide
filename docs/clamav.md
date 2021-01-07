@@ -6,7 +6,10 @@ sidebar_label: ClamAV
 
 In order to protect your files from malware, you should set up ClamAV which will detect malware and scan your files weekly for malware. You will get notified if something was found.
 
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `ClamAV`
 1. Choose to install/reinstall ClamAV
 1. Wait until it is installed and the service was started

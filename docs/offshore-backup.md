@@ -6,7 +6,10 @@ sidebar_label: Off-Shore Backup
 
 Now that also the daily backup is prepared, you should set up an off-shore backup for your server.
 
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/not-supported.sh
+    ```
 1. Choose `Off-Shore Backup Wizard`
 1. Confirm that you want to **create** an off-shore backup script
 1. Confirm that you will leave the backup drive connected

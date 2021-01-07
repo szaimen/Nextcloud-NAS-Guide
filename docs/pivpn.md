@@ -9,10 +9,17 @@ PiVPN is an easy way to create a VPN server that lets you access your home netwo
 ### Preparation
 1. Install Pi-hole (else, you will not be able to use Pi-hole as DNS-server when connected over VPN) ([instructions](./pi-hole))
 1. Port-forward port 51820 UDP to your server ([instructions](./port-forwarding))
-1. Create a Backup by running `sudo bash /var/scripts/daily-borg-backup.sh` (better to be prepared, since we use the scripts provided by the PiVPN project and something could go wrong. You never now!)
+1. Create a Backup by running 
+    ```shell
+    sudo bash /var/scripts/daily-borg-backup.sh
+    ``` 
+    (better to be prepared, since we use the scripts provided by the PiVPN project and something could go wrong. You never now!)
 
 ### Installation
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/not-supported.sh
+    ```
 1. Choose `PiVPN`
 1. Choose to install PiVPN
 1. **Selected** that you have created a Backup
@@ -36,6 +43,13 @@ Now your server should automatically boot again.
 :::
 
 ### What to do now?
-- As suggested, to add a new VPN-profile, you should run `sudo pivpn -a` over CLI and follow the instructions. 
-- After you've added all needed profiles, you can show them by running `sudo pivpn -qr` and follow the instructions. You should finally see a **QR code**, that you can scan with the **Wireguard mobile app** that you can download in the `Play Store` on Android and `App Store` on iOS
+- As suggested, to add a new VPN-profile, you should run the following over CLI and follow the instructions:
+    ```shell
+    sudo pivpn -a
+    ```
+- After you've added all needed profiles, you can show them by running the following over CLI and follow the instructions:
+    ```shell
+    sudo pivpn -qr
+    ```
+    You should finally see a **QR code**, that you can scan with the **Wireguard mobile app** that you can download in the `Play Store` on Android and `App Store` on iOS
 - After scanning the QR-code, the VPN-profile should be added to the Wireguard app and you should be able to connect to your home network from anywhere.

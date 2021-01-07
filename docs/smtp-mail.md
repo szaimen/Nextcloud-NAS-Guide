@@ -15,7 +15,10 @@ For german users is recommended: [mail.de](https://signup.mail.de/de/) and [post
 :::
 
 **Please inspect your mail providers documents how to connect over SMTP before continuing!**
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Server Configuration` -> `SMTP Mail`
 1. Choose to install/reinstall SMTP Mail
 1. Enter the **SMTP URL** (e.g. `smtp.mail.de`)

@@ -8,7 +8,10 @@ Now that the drives are prepared, you will mount the drives to your sever:
 
 1. Please **don't** connect the backup HDDs to your server, yet or **disconnect** the backup HDDs from your server!
 (The already with Veracrypt encrypted and mounted external data SSD/HDD must stay connected; disconnecting and connecting one backup HDD that you want to mount is just so that the system is able to understand which drive you want to mount.)
-1. Run `sudo bash /var/scripts/not-supported.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/not-supported.sh
+    ```
 1. Choose `NTFS Mount`
 1. Select to `Mount a drive`
 1. Press `OK` to start searching for new NTFS drives

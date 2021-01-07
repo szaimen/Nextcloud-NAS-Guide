@@ -6,7 +6,10 @@ sidebar_label: User Flows
 
 User flows are a feature which was introduces with Nextcloud 18. They can lead to performance issues if one user chooses to create many of them so they should get disabled, especially if you have no usecase for them.
 
-1. Run `sudo bash /var/scripts/menu.sh` over CLI
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
 1. Choose `Nextcloud Configuration` -> `Disable user flows`
 1. Choose to disable `user flows`
 
