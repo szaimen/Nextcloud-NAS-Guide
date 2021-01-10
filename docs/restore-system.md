@@ -6,6 +6,13 @@ sidebar_label: Restore system
 
 It could happen that something (e.g. Nextcloud) fails and you need to restore the system to an earlier state. It will automatically restore the whole root partition from the backup that you choose but will leave the external drives untouched. Hint: if you only want to restore some private files manually, you should follow [How to restore files from backup?](./restore-files)
 
+### Preparation
+1. Create a Backup by running
+    ```shell
+    sudo bash /var/scripts/daily-borg-backup.sh
+    ``` 
+
+### Execution
 1. Run over CLI:
     ```shell
     sudo bash /var/scripts/not-supported.sh
