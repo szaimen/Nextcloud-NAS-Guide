@@ -19,6 +19,7 @@ It could happen that something (e.g. Nextcloud) fails and you need to restore th
     ```
 1. Choose `System Restore`
 1. **Confirm** that you want to restore your system to a previous state
+1. **Confirm** that you've created a backup by selecting `Yes` and pressing `[ENTER]`
 1. If both backup drives are connected, **select the backup drive** that you want to view backups from (most likely the daily backup drive)
 1. Select a **backup archive** that you want to restore to (you will see the date and time when it was made)
 1. Read through and **confirm** the next two popups
