@@ -17,6 +17,8 @@ Please read carefully through this list of considerations you should know of!
 - You will use an Open Source program called `Veracrypt` for encrypting and formatting the external data SSD/HDD which has the advantage that this tool is compatible with almost any OS but the program needs to get installed before you can decrypt the drive and access the data. Also, the program on your server needs to get installed from a 3rd party repository in order to be always up-to-date but this could theoretically set your server under risk.
 - You will set up **TPM2 unlocking** which will automatically unlock your encrypted root partition during boot. This is a big convenience factor but would allow an attacker theoretically to break the encryption of this partition (only with much effort), if he/she steals the whole server. Encrypting the root partition makes sense nonetheless, since an attacker cannot simply take out the internal drive, connect it to another PC and read out all the data in cleartext.
 - You will create an off-shore backup drive that needs to get connected to your server every **90 days** (this is configurable) in order to make a new backup. After creating one off-shore backup, the drive should get disconnected from your server and stored at a safe place outside your home. So you will need a place where to store it during this time and connect it manually every 90 days (or as configured).
+- You need a capable internet router to make this solution work! Provider routers most likely won't work. Recommended are Fritz!Box's by AVM
+- This solution is meant to run 24/7. Manually shutting the server down/rebooting or disconnecting, etc. can cause problems.
 
 :::caution
 
