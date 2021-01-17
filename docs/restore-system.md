@@ -7,7 +7,8 @@ sidebar_label: Restore system
 It could happen that something (e.g. Nextcloud) fails and you need to restore the system to an earlier state. It will automatically restore the whole root partition from the backup that you choose but will leave the external drives untouched. Hint: if you only want to restore some private files manually, you should follow [How to restore files from backup?](./restore-files)
 
 ### Preparation
-1. Create a Backup ([instructions](./manual-backup))
+1. Create a Backup ([instructions](./manual-backup)) <br/>
+(You save your current system partition this way and will be able to restore your system to this point after restoring it to a different restore point.)
 
 ### Execution
 1. Run over CLI:
