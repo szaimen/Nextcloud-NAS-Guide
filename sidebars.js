@@ -11,7 +11,7 @@ module.exports = {
     "SMB-server": ['smb-server', 'run-smb-server', 'create-users', 'create-shares', 'readonly-root'],
     "Customize Nextcloud": ['customize-nextcloud', 'previewgenerator', 'cookielifetime', 'share-folder', 'workspaces', 'user-flows'],
     "Activate Let's Encrypt": ['activate-lets-encrypt', 'ddns', 'ddns-providers', 'activate-ddns', 'configure-ddclient', 'port-forwarding', 'activate-tls', 'congratulations'],
-    "Optional": ['optional', 'onlyoffice', 'hpb', 'bitwarden-rs', 'pi-hole', 'pivpn', 'pms', 'remotedesktop', 'mc'], 
-    "FAQ": ['faq', 'restore-files', 'restore-system', 'subdomain-cname', 'digitize', 'mount-hdd'],
+    "Optional": ['optional', 'onlyoffice', 'hpb', 'bitwarden-rs', 'pi-hole', 'pivpn', 'pms', 'remotedesktop', 'digitize', 'mc'], 
+    "FAQ": ['faq', 'restore-files', 'restore-system', 'subdomain-cname', 'mount-hdd'],
   },
 };
