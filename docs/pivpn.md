@@ -9,11 +9,8 @@ PiVPN is an easy way to create a VPN server that lets you access your home netwo
 ### Preparation
 1. Install Pi-hole (else, you will not be able to use Pi-hole as DNS-server when connected over VPN) ([instructions](./pi-hole))
 1. Port-forward port 51820 UDP to your server ([instructions](./port-forwarding))
-1. Create a Backup by running 
-    ```shell
-    sudo bash /var/scripts/daily-borg-backup.sh
-    ``` 
-    (better to be prepared, since we use the scripts provided by the PiVPN project and something could go wrong. You never now!)
+1. Create a Backup ([instructions](./manual-backup))
+(better to be prepared, since we use the scripts provided by the PiVPN project and something could go wrong. You never now!)
 
 ### Installation
 1. Run over CLI:
