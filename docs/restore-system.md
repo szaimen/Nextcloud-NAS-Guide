@@ -20,7 +20,9 @@ It could happen that something (e.g. Nextcloud) fails and you need to restore th
 1. **Confirm** that you've created a backup by selecting `Yes` and pressing `[ENTER]`
 1. If both backup drives are connected, **select the backup drive** that you want to view backups from (most likely the daily backup drive)
 1. Select a **backup archive** that you want to restore to (you will see the date and time when it was made)
-1. Read through and **confirm** the next two popups
+1. Read through and **confirm** the next popup
+1. Confirm that you want to run the `extracting check`
+1. Read through and **confirm** the next popup
 1. **Wait** until you see the next Menu! (**This is crutial!**)
 1. Now you should see a Menu that states that the dry-run was successful. You can now show all files/folders that will get changed/deleted. After you are done, just select `Continue` and press `[ENTER]` to continue.
 1. Now you will see a popup with stats from the dry-run. This is an overview about the operation.
