@@ -16,7 +16,7 @@ The Preparations are only needed if not already done:
 
 ### Execution
 1. Insert a Blu-ray/DVD into the Blu-ray-burner and connect it with the adapter to your server
-1. Open a **RDP client** on your client PC in the same network as your server and connect to your server using the IP-address of your server and type the credentials of your ncadmin account into the login-mask
+1. Connect to your server via RDP ([instructions](./rdp-connect))
 1. Open `MakeMKV`
 1. The program should automatically detect the Blu-ray/DVD that you've inserted
 1. **Analyze** the drive
@@ -44,7 +44,7 @@ The Preparations are only needed if not already done:
 
 ### Execution
 1. Insert a CD into the DVD-burner/Blu-ray-burner and connect it to your server
-1. Open a **RDP client** on your client PC in the same network as your server and connect to your server using the IP-address of your server and type the credentials of your ncadmin account into the login-mask
+1. Connect to your server via RDP ([instructions](./rdp-connect))
 1. Open `Sound Juicer`
 1. The program should automatically detect the CD that you've inserted
 1. As **output format** you should select `FLAC` which is the best format for digitalizing CDs losless

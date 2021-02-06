@@ -4,7 +4,7 @@ title: How to connect to your SMB-server?
 sidebar_label: Connect via SMB
 ---
 
-If you've followed this guide and have set up a SMB-users and -shares, you will be able to connect to your server using SMB. In the following is described how to do this in detail.
+If you've followed this guide and have set up a SMB-users and -shares, you will be able to connect to your server using SMB. Here is how to do this in detail.
 
 :::note
 It is important that you've created at least one SMB-user and at least one SMB-share. Otherwise you won't be able to connect to your server via SMB!

@@ -20,7 +20,7 @@ It can happen that you need to restore some files from a backup. This is especia
 1. If both backup drives are connected, **select the backup drive** that you want to view backups from (most likely the daily backup drive)
 1. Read through the rules that are necessary to know about and **confirm** them
 1. Now, you should see Midnight Commander and all available backup archives. **Just leave Midnight Commander as it is!**
-1. Open a **RDP client** on your client PC in the same network as your server and connect to your server using the IP-address of your server and type the credentials of your ncadmin account into the login-mask
+1. Connect to your server via RDP ([instructions](./rdp-connect))
 1. When you are connected, open a `terminal` in the Remotedesktop session 
 1. **Copy and paste** or type into the terminal: 
     ```shell
