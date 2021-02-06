@@ -38,4 +38,7 @@ Here is how to work off this list technically:
 Please note that you can always change the settings for your mounts in Nextcloud by opening `https://yourdomain-or-ipaddress/settings/admin/externalstorages` with your Nextcloud admin account afterwards.
 :::
 
-**Your users should also be able to access their files and folders using SMB over the local network (as shown during point 8).**
+:::tip
+Your users should now be able to access their files and folders using SMB over the local network.<br/>
+Here are instructions how to do this in detail: [click here](./smb-connect)
+:::
