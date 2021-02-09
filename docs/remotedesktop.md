@@ -18,3 +18,10 @@ It allows to use graphical tools directly on your server like viewing files from
 1. Now, you should see a menu with available recommended programs. Just press `[ENTER]` to **install all** of them.
 1. Wait until everything is installed (you need to confirm that you want to install `MakeMKV` and `OnlyOffice` manually)
 1. At last, you should get asked if you want to **reboot** your server and press `[ENTER]` to do so.
+
+:::tip
+If you want to have the three buttons oon the top right in your applications like in Windows, run the following command once: (you don't need `sudo` here)
+```shell
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+```
+:::
