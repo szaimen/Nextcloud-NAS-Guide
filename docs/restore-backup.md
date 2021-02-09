@@ -85,10 +85,10 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 :::caution
 Attention! Please use the **same domain** that you've used before for Bitwarden RS (if you've had Bitwarden installed on your old server!)
 :::
-- Reinstall Pi-hole ([instructions](./pi-hole))
-- Reinstall PiVPN ([instructions](./pivpn))
 - Reinstall Plex Media Server ([instructions](./pms))
 :::note
 When reinstalling Plex, all drives that Plex shall have access to need to be mounted to the server! (Otherwise there could appear some problems.) You can make sure that this is the case by connecting all drives to your server and rebooting your sever before reinstalling Plex!
 :::
 - Reinstall Remotedesktop ([instructions](./remotedesktop))
+- Reinstall Pi-hole ([instructions](./pi-hole))
+- Reinstall PiVPN ([instructions](./pivpn))
