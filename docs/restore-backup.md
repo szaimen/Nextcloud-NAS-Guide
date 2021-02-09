@@ -1,6 +1,6 @@
 ---
 id: restore-backup
-title: How to restore a Backup on a different server?
+title: How to restore a Backup on a different server or upgrade Ubuntu?
 sidebar_label: Restore Backup
 ---
 
@@ -14,6 +14,9 @@ Here is what you need to do in those cases:
 
 ## Preparations (if you want to upgrade Ubuntu)
 1. Create a backup of your server ([instructions](./manual-backup))
+:::caution
+Only create the Backup if the whole server still works as expected. If something doesn't work, restore a system backup first (by following [those instructions](./restore-system)), before creating a new backup! (The latest backup must be in working condition!)
+:::
 1. Only if the backup (from step 1) was created successfully (otherwise skip this 2nd step!), get your `Off-Shore Backup HDD`, connect it to your server and create a new off-shore backup by running:
     ```shell
     sudo sed -i 's|^DAYS_SINCE_LAST_BACKUP.*|DAYS_SINCE_LAST_BACKUP=1000|' /var/scripts/off-shore-rsync-backup.sh \
