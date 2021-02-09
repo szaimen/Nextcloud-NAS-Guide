@@ -178,4 +178,4 @@ so e.g.<br>
 ---
 
 ### The Nextcloud startup is now done.
-### Please click [here](../docs/security-automation) to continue with the guide.
+### Please click [here](../docs/usb-boot) to continue with the guide.
