@@ -47,6 +47,7 @@ Only create the Backup if the whole server still works as expected. If something
     wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/restore-backup.sh \
     && sudo bash restore-backup.sh
     ```
+1. Enter your password
 1. **Confirm** that you want to restore your server from backup
 1. Press `OK` to start searching for new backup drives
 1. Now **connect** one of your backup drives (most likely the daily backup HDD) to your server (you have 1 minute)
