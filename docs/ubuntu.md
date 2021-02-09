@@ -12,7 +12,6 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. Connect the **USB-stick** to your server and **power the server on**. The server should then automatically boot from the USB-stick
 1. **Since it is necessary that you configure certain things correctly, we have prepared a slideshow which makes it easier for you to configure Ubuntu correctly. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/ubuntu) to start the slideshow. Otherwise, just continue with the steps below**
 1. Select the correct **language** for the installer
-1. Choose to **Continue without updating** the installer
 1. Select the correct **Keyboard layout**. This is has great importance!
 1. Just use the defaults in **network connections**
 1. Don't configure any **Proxy address**
@@ -29,7 +28,6 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 1. During the boot process, type in your **LUKS passphrase** and press `[Enter]` to confirm.<br/>
 (If it doesn't accept your **LUKS passphrase** and you are sure that you enterd it correctly, most likely you experienced an Ubuntu bug. In this case, try to enter your password as if you had an `QWERTY` keyboard. Here is one example [click here](https://en.wikipedia.org/wiki/QWERTY#/media/File:KB_United_States.svg)<br/>
 Additionally, please make sure, that `Capslock` isn't activated.)
-1. Wait until you see **Reached target Cloud-init target.** and press `[ENTER]` to return to the login screen
 1. Now type in your **username** (e.g. `ncadmin`) and **pasword**
 1. If everything is correct, you will now see an overview of Ubuntu also containing the IPv4-address of your server.
 

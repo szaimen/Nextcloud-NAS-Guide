@@ -17,3 +17,7 @@ In order to improve security, you should disable booting from USB devices.
 :::info
 Now, you can disconnect the mouse, the keyboard and the display from your server since they are not needed anymore.
 :::
+
+:::note
+This is the end of the Basic Setup section!
+:::

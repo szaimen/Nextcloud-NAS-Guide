@@ -13,3 +13,10 @@ One example is: `ssh ncadmin@192.168.178.144`<br/>
 (If it times out although your server is running, the IPv4-address might be wrong. Then please look at step 1 how to find out the IPv4-address)
 1. If you connect the first time to your server, you will be asked to confirm the server fingerprint which you should do by typing in `yes` and pressing `[ENTER]`.
 1. Now type in your Ubuntu user **password**
+
+:::tip
+If you get a fingerprint warning (because the SSH-fingerprint of your server changed), you can reset the fingerprint by typing in your Console/Terminal on your client PC:<br/>
+`ssh-keygen -R ip-address`<br/>
+so e.g.<br/>
+`ssh-keygen -R 192.168.178.144`
+:::

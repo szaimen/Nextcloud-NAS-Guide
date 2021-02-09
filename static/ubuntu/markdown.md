@@ -21,11 +21,6 @@ Confirm by pressing [ENTER]
 
 ---
 
-.center[![installer_update](./installer_update.png)]
-Press [ENTER] to continue without updating
-
----
-
 .center[![keyboard](./keyboard.png)]
 Choose the correct keyboard layout with the [ARROW] and [ENTER] keys.<br>
 Confirm by selecting "Done" and pressing [ENTER]
@@ -108,11 +103,6 @@ During the boot process, type in your [LUKS passphrase](#luks) and press [ENTER]
 
 If it doesn't accept your [LUKS passphrase](#luks) and you are sure that you enterd it correctly, most likely you experienced an Ubuntu bug. In this case, try to enter your password as if you had an `QWERTY` keyboard. Here is one example [click here](https://en.wikipedia.org/wiki/QWERTY#/media/File:KB_United_States.svg).
 
----
-
-.center[![cloud-init-target](./cloud-init-target.png)]
-Wait until you see "Reached target Cloud-init target-"<br>
-Press [ENTER] to return to the login screen.
 ---
 
 .center[![login](./login.png)]
