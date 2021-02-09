@@ -1,7 +1,7 @@
 ---
 id: restore-backup
 title: How to restore a Backup on a different server or upgrade Ubuntu?
-sidebar_label: Restore Backup
+sidebar_label: Restore Backup/Upgrade Ubuntu
 ---
 
 Theoretically it could happen that your system drive fails or that you need to update the Ubuntu version.
