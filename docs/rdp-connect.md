@@ -25,3 +25,7 @@ After you've configured the Remotedesktop Client the first time, you most likely
 9. Now press `[ENTER]` or click on `OK` to save your credentials
 10. You will see now a popup with a **certificate warning**: Tick the option that it doesn't show the warning to you in the future. And select `Yes` that you want to connect to this PC.
 11. Now you should finally see the internal RDP session of your server!
+
+:::note
+When enabling the option to store the password of your Ubuntu user ncadmin on your Client PC, you should make sure that your Client PC has an encrypted system drive (e.g. by enabling Bitlocker) and that the user account on your Client PC has a strong password!
+:::
