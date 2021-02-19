@@ -33,20 +33,20 @@ module.exports = {
     footer: {
       style: 'dark',
       links: [
-        /*{
-          title: 'Docs',
+        {
+          title: 'Legal',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: 'Impressum',
+              to: 'docs/impressum',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
+              label: 'Privacy Policy',
+              to: 'docs/privacy',
             },
           ],
         },
-        {
+        /*{
           title: 'Community',
           items: [
             {
