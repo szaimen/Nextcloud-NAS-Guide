@@ -1,6 +1,6 @@
 module.exports = {
   docs: {
-    "How to use this guide?": ["instructions"], 
+    "Nextcloud-NAS-Guide": ["introduction","instructions"],
     "Before you start": ['before-start', 'considerations', 'minimal-requirements', 'hardware-recommendations', 'preparations', 'time-indication'],
     "Basic setup": ['basic-setup', 'bios-uefi', 'ubuntu', 'ssh', 'tpm2', 'install-nextcloud', 'nextcloud-startup', 'usb-boot'],
     "Security and Automation": ['security-automation', 'geoblock', 'smart', 'fail2ban', 'clamav', 'automatic-updates'],
