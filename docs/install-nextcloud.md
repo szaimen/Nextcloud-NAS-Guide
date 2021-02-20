@@ -9,7 +9,7 @@ In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, 
 1. Connect from a PC in the same network to your server over SSH
 1. Copy and paste the following command over CLI:
     ```shell
-    sudo lvcreate --size 5G --snapshot --name "NcVM-installation" /dev/ubuntu-vg/ubuntu-lv \
+    sudo lvcreate --size 5G --name "NcVM-installation" ubuntu-vg \
     && sudo lvcreate --size 30G --name "NcVM-reserved" ubuntu-vg \
     && wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh \
     && sudo bash nextcloud_install_production.sh --not-latest
