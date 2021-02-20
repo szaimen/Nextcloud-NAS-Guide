@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://szaimen.github.io/news</id>
+    <title>Nextcloud-NAS-Guide Blog</title>
+    <updated>2021-02-20T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://szaimen.github.io/news"/>
+    <subtitle>Nextcloud-NAS-Guide Blog</subtitle>
+    <icon>https://szaimen.github.io/img/favicon.webp</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome to the News blog!]]></title>
+        <id>Welcome to the News blog!</id>
+        <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/02/20/news-section"/>
+        <updated>2021-02-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A new way to communicate new features in the Nextcloud-NAS-Guide!]]></summary>
+    </entry>
+</feed>
