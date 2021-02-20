@@ -9,7 +9,7 @@ description: A new way to communicate new features in the Nextcloud-NAS-Guide!
 image: /news/undraw_share_link_qtxe.svg
 hide_table_of_contents: false
 ---
-Since Nextcloud-NAS-Guide has grown quite big, there was a demand to improve the communication about new topics that get covered by this guide.
+Since the `Nextcloud-NAS-Guide` has grown quite big, there was a demand to improve the communication about new topics that get covered by this guide.
 
 We will use this new blog-tool to communicate any new topics.
 
