@@ -22,7 +22,8 @@ module.exports = {
           label: 'Guide',
           position: 'left',
         },
-        //{to: 'blog', label: 'Blog', position: 'left'},
+        /*{to: 'blog', label: 'Blog', position: 'left'},*/
+        {to: 'news', label: 'News', position: 'left'},
         {
           href: 'https://github.com/szaimen/Nextcloud-NAS-Guide/',
           label: 'GitHub',
@@ -115,6 +116,26 @@ module.exports = {
         // language: ["en", "zh"],
         // ```
         // When applying `zh` in language, please install `nodejieba` in your project.
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'news',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'news',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './news',
+        blogTitle: 'News',
+        blogDescription: "What's new in Nextcloud-Nas-Guide?",
       },
     ],
   ],
