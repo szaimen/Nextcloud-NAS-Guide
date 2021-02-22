@@ -13,7 +13,7 @@ Since the `Nextcloud-NAS-Guide` has grown quite big, there was a demand to impro
 
 We will use this new blog-tool to communicate any new topics.
 
-![Docusaurus v1 vs v2 npm trends](/news/undraw_share_link_qtxe.svg)
+![Keep in contact!](/news/undraw_share_link_qtxe.svg)
 
 <!--The following comment will skip the article in the News overview.-->
 <!--truncate-->
