@@ -24,7 +24,7 @@ sudo bash /var/scripts/update.sh
     sudo bash /var/scripts/menu.sh
     ```
 1. Choose `Additional Apps` -> `Notify Push` 
-1. Choose to install `Notify Push for Nextcloud`
+1. Choose to install `Notify Push`
 1. Wait until everything is installed and configured and it reports that it was successfully installed
 
 Now you will be able to use Push Notifications inside your Nextcloud!
