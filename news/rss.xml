@@ -4,9 +4,16 @@
         <title>Nextcloud-NAS-Guide Blog</title>
         <link>https://szaimen.github.io/news</link>
         <description>Nextcloud-NAS-Guide Blog</description>
-        <lastBuildDate>Sat, 20 Feb 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 22 Feb 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Push Notifications for Nextcloud]]></title>
+            <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/02/22/push-notifications</link>
+            <guid>Push Notifications for Nextcloud</guid>
+            <pubDate>Mon, 22 Feb 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[High Performance Backend for Nextcloud files]]></description>
+        </item>
         <item>
             <title><![CDATA[Welcome to the News blog!]]></title>
             <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/02/20/news-section</link>
