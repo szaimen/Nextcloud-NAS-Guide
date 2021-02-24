@@ -17,6 +17,9 @@ If at least Nextcloud 21.0.1 is out and you've checked that all your apps have u
 ```shell
 sudo bash /var/scripts/update.sh
 ```
+:::caution
+Never forget to create a backup before updating, though! ([instructions](./manual-backup))
+:::
 
 ### Installation
 1. Run over CLI:
