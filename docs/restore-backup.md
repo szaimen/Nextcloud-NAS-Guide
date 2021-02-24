@@ -82,6 +82,8 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 - Reinstall OnlyOffice for Nextcloud ([instructions](./onlyoffice))
 - Reinstall High-Performance backend for Nextcloud Talk ([instructions](./hpb))
 - Reinstall Push Notifications for Nextcloud ([instructions](./notify_push))
+- Reinstall Whiteboard for Nextcloud ([instructions](./whiteboard))
+- Reinstall Extract for Nextcloud ([instructions](./extract))
 - Reinstall Bitwarden RS ([instructions](./bitwarden-rs))
 :::caution
 Attention! Please use the **same domain** that you've used before for Bitwarden RS (if you've had Bitwarden installed on your old server!)

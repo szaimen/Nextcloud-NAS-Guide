@@ -11,7 +11,7 @@ Here is how to install it.
 ### Preparations
 Update to Nextcloud 21 if not already done.<br/>
 :::note
-It is not recommended to update to Nextcloud 21 until at least Nextcloud 21.0.1 is out.
+It is not recommended to update to Nextcloud 21 until at least Nextcloud 21.0.1 is out. You can check the latest releases here: ([click here](https://github.com/nextcloud/server/releases))
 :::
 If at least Nextcloud 21.0.1 is out and you've checked that all your apps have updates available for the new major Nextcloud version, you can update by running over CLI:
 ```shell
