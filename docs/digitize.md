@@ -9,7 +9,7 @@ If you want to digitize Blu-rays and DVDs, you should follow those instructions.
 
 ### Preparations
 The Preparations are only needed if not already done:
-1. Buy an internal Blu-ray-burner [like those](https://geizhals.eu/?cat=dvdram&xf=5011_1%7E9514_Blu-Ray-Brenner) and a Sata to USB adapter [like those](https://geizhals.eu/?cat=hdadko&xf=11184_SATA%7E11189_USB%7E11250_Netzteil%7E13271_USB+3.0%7E15397_USB-A)
+1. Buy an internal Blu-ray-burner [like those](https://geizhals.eu/?cat=dvdram&xf=1038_LG~5011_1~9514_Blu-Ray-Brenner&sort=p&hloc=at&hloc=de&hloc=pl&hloc=uk&hloc=eu&v=e) and a Sata to USB adapter [like this one](https://geizhals.eu/424211512)
 1. Buy an additional HDD that will only be used for Movies/TV-Shows. Recommended are big, cheap external drives [like those](https://geizhals.eu/?cat=hdx&xf=339_3.5%22~8330_USB-B+3~943_1&asuch=&bpmin=&bpmax=&v=e&dist=&sort=r&bl1_id=30) (**Please make sure** yourself that the drive enclosure allows the included HDD to spin down after a few minutes. Otherwise will your power draw rise by a lot since the HDD is always powered on.)
 1. Mount the HDD to your server ([instructions](./mount-hdd))
 1. Install Remotedesktop ([instructions](./remotedesktop))
