@@ -27,7 +27,10 @@ Here is how to work off this list technically:
 1. Now select if the share shall be **writeable**, which you should most likely answer with `Yes`
 1. After restarting Samba, the SMB-share should be successfully created!
 1. Select that you **want to mount** the same directory to Nextcloud as local storage (you are making the path that you've chosen in the beginning accessible in Nextcloud this way)
-1. You can now change the name of your directory for the usage in Nextcloud. Recommended is to just use the already chosen name.
+1. :::note user-folders
+In the case of a `user folder`, you will now be asked if you want to make the selected directory the **root folder in Nextcloud** for the selected user, which you should in most cases **confirm** by pressing `[ENTER]`.<br/><br/>
+(This will only be shown to you in the case of a `user folder`, not for `Data exchange folders` and also not if you've made the directory **read only**. Only select `[NO]` here if you've already made another directory the root folder for the selected user before.)
+:::
 1. Now everything should get set up automatically
 1. Enabling Inotify is **not** recommended and normally not necessary
 
