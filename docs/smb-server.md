@@ -10,4 +10,3 @@ This section should take around **20min** if you just create a few users and sha
 1. Run the smb-server script
 1. Create SMB-users and Nextcloud users
 1. Create SMB-shares and mount the locations to Nextcloud
-1. Make the root directory read only for all Nextcloud users
