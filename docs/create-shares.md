@@ -35,7 +35,8 @@ In the case of a `user folder`, you will now be asked if you want to make the se
 1. Enabling Inotify is **not** recommended and normally not necessary
 
 **Now repeat that method for the whole list that you've made, starting at point 2.**
-(If you are done, please don't close the script! You will need it again in the next step!)
+
+After you've done with all shares, you can exit the SMB-server script by selecting `Return` -> `Exit`
 
 :::note
 Please note that you can always change the settings for your mounts in Nextcloud by opening `https://yourdomain-or-ipaddress/settings/admin/externalstorages` with your Nextcloud admin account afterwards.
