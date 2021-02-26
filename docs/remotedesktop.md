@@ -20,8 +20,10 @@ It allows to use graphical tools directly on your server like viewing files from
 1. At last, you should get asked if you want to **reboot** your server and press `[ENTER]` to do so.
 
 :::tip
-If you want to have the three buttons oon the top right in your applications like in Windows, run the following command once: (you don't need `sudo` here)
-```shell
-gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
-```
+Here is how to connect you your server via RDP: [instructions](./rdp-connect)
+:::
+
+:::note
+Currently is audio output via RDP not supported!<br/>
+Because of that VLC will constantly show errors when you open a movie via RDP. You can disable those by opening the VLC perferences (press `[CTRL] + [P]` in VLC), click on the Audio tab and **disable** the option `Enable Audio`. After restarting VLC, the issue should be gone.
 :::
