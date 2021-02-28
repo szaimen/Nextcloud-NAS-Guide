@@ -21,13 +21,21 @@ For german users is recommended: [mail.de](https://signup.mail.de/de/) and [post
     ```
 1. Choose `Server Configuration` -> `SMTP Mail`
 1. Choose to install/reinstall SMTP Mail
-1. Enter the **SMTP URL** (e.g. `smtp.mail.de`)
-1. Choose the **encryption protocol** (e.g. `SSL`)
-1. Choose that you want to use the **default port** (the default port should be correct most of the time)
-1. Most mail servers need credentials, so answer that your mail server **needs credentials**
+1. :::note either mail.de setup
+    Select `mail.de` as your mail provider if you've created an account there and want to use it for sending mails.
+    :::
+1. :::note or complete Manual setup
+    1. Select `Manual` if you want to use a mail-address from a different mail provider.
+    1. Enter the **SMTP URL** (e.g. `smtp.mail.de`)
+    1. Choose the **encryption protocol** (e.g. `SSL`)
+    1. Choose that you want to use the **default port** (the default port should be correct most of the time)
+    1. Most mail servers need credentials, so answer that your mail server **needs credentials**
+    :::
 1. Enter your **SMTP username** (the **mail account** that will be used to send mails e.g. `server@mail.de`)
 1. Enter the **password** for your mail account
 1. Enter the **recipient** mail-address that will receive all mails that are sent by the server (e.g. your main mail-address)
 1. Confirm your settings
-
-If all settings were entered correctly, you should receive a testmail which proves that it was setup correctly.
+1. It should report now that a testmail was sent successfully.
+1. Confirm that you want to use the same mail server settings in your Nextcloud
+1. Select the admin user that shall get the recipient's mail-address
+1. It should report now that everything was set up correctly!
