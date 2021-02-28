@@ -15,6 +15,9 @@ The big advantage using this method is, that the Nextcloud and SMB-user will hav
 1. The user should be successful created now
 1. Choose to **create** a Nextcloud user with the **same credentials**
 1. A Nextcloud user should be successfully created now
+1. **Confirm** that you want to add a mail address to this user
+1. Type in a valid mail-address for this user (will be used for resetting the password, activity mails, etc.)
+1. It should report now that the mail-address for this user was set correctly!
 
 **Now repeat that procedure until all users from your list are created**
 
