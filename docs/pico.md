@@ -21,7 +21,7 @@ This guide allows you to access your Pico CMS sites on a different Domain than y
     ```
 1. Choose `Additional Apps` -> `Pico CMS`
 1. Choose to install/reinstall Pico CMS
-1. Most likely you will now see a popup that Nextcloud's default `Text` app is enabled which has incompatibility issues with Pico CMS. **Confirm** that you want to disable it.
+1. Most likely you will now see a popup that Nextcloud's default `Text` app is enabled which has incompatibility issues with Pico CMS. **Confirm** that you want to disable it. If you have the `Issue Template` or the `Terms of Service` app installed, you will also be asked to disable them which you should **confirm** as well.
 1. Wait until it reports that the base configuration of Pico CMS was successful
 1. **Choose** that you want to make your sites available on a different Domain
 1. Now enter the domain that you've created and pointed to your Nextcloud domain during the preparation section of this guide
