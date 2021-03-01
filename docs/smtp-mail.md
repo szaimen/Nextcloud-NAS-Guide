@@ -24,7 +24,7 @@ For german users is recommended: [mail.de](https://signup.mail.de/de/) and [post
 1. :::note either mail.de setup
     Select `mail.de` as your mail provider if you've created an account there and want to use it for sending mails.
     :::
-1. :::note or complete Manual setup
+    :::note or complete Manual setup
     1. Select `Manual` if you want to use a mail-address from a different mail provider.
     1. Enter the **SMTP URL** (e.g. `smtp.mail.de`)
     1. Choose the **encryption protocol** (e.g. `SSL`)
