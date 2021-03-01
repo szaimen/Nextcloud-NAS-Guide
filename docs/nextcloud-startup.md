@@ -16,7 +16,7 @@ You will need to run this to the end to be done with the Nextcloud setup.
 1. Now read carefully through all information that will be presented to you (those are just a few popups until you see the next Menu)
 1. The next Menu will be the **Server Configuration Menu**. Here just **deselect all options**, since you will configure all recommended options later
 1. The next Menu will be the **Nextcloud Configuration Menu**. Since no option is necessary for now, here just press `[Enter]` to continue the setup and skip the Menu.
-1. The last Menu will be the **Additional Apps Menu**. Here also **deselect all options**, since you will configure all recommended options later
+1. The last Menu will be the **Additional Apps Menu**. Here also **deselect all options**, since you will configure all recommended options later (you might need to scroll down to deselect all)
 1. Now **change the password** of your CLI Ubuntu user ncadmin. It should be a difficult password and store it at a safe place.<br/>
 (Difficult password means at least 16 characters long, containing small and tall letters, digits and special characters)
 1. Next **change the username and password** of the **Nextcloud admin user** and store it at a safe place, too. This password should be difficult, too.
