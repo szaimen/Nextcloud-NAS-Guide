@@ -71,7 +71,8 @@ Press [ENTER] to continue
 ---
 
 .center[![server-configuration-menu](./server-configuration-menu.png)]
-Deselect everything and press [ENTER] to continue
+Deselect everything and press [ENTER] to continue<br>
+(you might need to scroll down to deselect all)
 
 ---
 
