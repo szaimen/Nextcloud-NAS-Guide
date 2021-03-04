@@ -10,7 +10,7 @@ image: /news/undraw_Add_user_re_5oib.svg
 hide_table_of_contents: false
 ---
 
-After the initial setup is done, there might be the the demand to create new users that were initially not considered. Since it isn't very clear currently how to do that, we've decided to create this FAQ guide.
+After the initial setup is done, there might be the demand to create new users that were initially not considered. Since it isn't very clear currently how to do that, we've decided to create this FAQ guide.
 
 You can check it out [here](/docs/create-new-users)
 

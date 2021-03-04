@@ -4,7 +4,7 @@ title: How to create new users after the initial setup?
 sidebar_label: Create new users after initial setup
 ---
 
-After the initial setup is done, there might be the the demand to create new users that were initially not considered. Since it isn't very clear currently how to do that, we've decided to create this FAQ guide.
+After the initial setup is done, there might be the demand to create new users that were initially not considered. Since it isn't very clear currently how to do that, we've decided to create this FAQ guide.
 
 1. First, read about the sensible folder structure ([click here](./sensible-folder-structure)). You will need to create a new user folder for this user which you should do by following those guidelines. It also covers that you should copy their private files to this user folder. (Obviously, you don't need to copy all other files from other users to this drive again). If you want to copy their files onto this drive on another PC, here is how to do it ([click here](./access-veracrypt))
 1. Now run the SMB-server script which you will use to create the user and more ([instructions](./run-smb-server))
