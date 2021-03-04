@@ -4,9 +4,16 @@
         <title>Nextcloud-NAS-Guide Blog</title>
         <link>https://szaimen.github.io/news</link>
         <description>Nextcloud-NAS-Guide Blog</description>
-        <lastBuildDate>Mon, 01 Mar 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Mar 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Update to Nextcloud major versions]]></title>
+            <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/04/nextcloud-update-major</link>
+            <guid>Update to Nextcloud major versions</guid>
+            <pubDate>Thu, 04 Mar 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[A new FAQ guide]]></description>
+        </item>
         <item>
             <title><![CDATA[Pico CMS for Nextcloud]]></title>
             <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/01/pico-cms</link>

@@ -2,11 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://szaimen.github.io/news</id>
     <title>Nextcloud-NAS-Guide Blog</title>
-    <updated>2021-03-01T00:00:00.000Z</updated>
+    <updated>2021-03-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://szaimen.github.io/news"/>
     <subtitle>Nextcloud-NAS-Guide Blog</subtitle>
     <icon>https://szaimen.github.io/img/favicon.webp</icon>
+    <entry>
+        <title type="html"><![CDATA[Update to Nextcloud major versions]]></title>
+        <id>Update to Nextcloud major versions</id>
+        <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/04/nextcloud-update-major"/>
+        <updated>2021-03-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A new FAQ guide]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Pico CMS for Nextcloud]]></title>
         <id>Pico CMS for Nextcloud</id>

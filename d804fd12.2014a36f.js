@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[93],{162:function(e){e.exports=JSON.parse('{"permalink":"/Nextcloud-NAS-Guide/news","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"previousPage":null,"nextPage":null,"blogDescription":"What\'s new in Nextcloud-Nas-Guide?","blogTitle":"News"}')}}]);
