@@ -1,10 +1,12 @@
 ---
 id: update-manually
-title: How to update your server manually?
-sidebar_label: Update manually
+title: How to update your Nextcloud manually to a minor version?
+sidebar_label: Update manually Nextcloud minor
 ---
 
 Before you are able to create the backup scripts, you will need to run the update script one time.
+Here we cover how to update your Nextcloud to a minor version manually.
+Updating your server to a Major Nextcloud version will be covered by this guide: [click here](./major-update)
 
 1. Run over CLI:
     ```shell

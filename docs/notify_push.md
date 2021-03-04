@@ -9,17 +9,7 @@ Push Noticiations for Nextcloud attempts to solve the issue where Nextcloud clie
 Here is how to install it.
 
 ### Preparations
-Update to Nextcloud 21 if not already done.<br/>
-:::note
-It is not recommended to update to Nextcloud 21 until at least Nextcloud 21.0.1 is out. You can check the latest releases here: ([click here](https://github.com/nextcloud/server/releases))
-:::
-If at least Nextcloud 21.0.1 is out and you've checked that all your apps have updates available for the new major Nextcloud version, you can update by running over CLI:
-```shell
-sudo bash /var/scripts/update.sh
-```
-:::caution
-Never forget to create a backup before updating, though! ([instructions](./manual-backup))
-:::
+1. If you are on Nextcloud 20, update to Nextcloud 21 if not already done by following these instructions: [click here](./major-update)
 
 ### Installation
 1. Run over CLI:

@@ -12,6 +12,6 @@ module.exports = {
     "Customize Nextcloud": ['customize-nextcloud', 'previewgenerator', 'cookielifetime', 'share-folder', 'workspaces', 'user-flows'],
     "Activate Let's Encrypt": ['activate-lets-encrypt', 'ddns', 'ddns-providers', 'activate-ddns', 'configure-ddclient', 'port-forwarding', 'activate-tls', 'congratulations'],
     "Optional": ['optional', 'onlyoffice', 'hpb', 'notify_push', 'whiteboard', 'pico', 'extract', 'bitwarden-rs', 'pi-hole', 'pivpn', 'pms', 'remotedesktop', 'digitize', 'mc'], 
-    "FAQ": ['faq', 'manual-backup', 'restore-files', 'restore-system', 'subdomain-cname', 'mount-hdd', 'smb-connect', 'rdp-connect', 'restore-backup'],
+    "FAQ": ['faq', 'manual-backup', 'major-update', 'restore-files', 'restore-system', 'subdomain-cname', 'mount-hdd', 'smb-connect', 'rdp-connect', 'restore-backup'],
   },
 };
