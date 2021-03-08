@@ -20,16 +20,6 @@ Press [ENTER] to continue
 
 ---
 
-.center[![repository-show](./repository-show.png)]
-Press [ENTER] to continue
-
----
-
-.center[![repository-choose](./repository-choose.png)]
-Select "No" and press [ENTER] to confirm
-
----
-
 .center[![free-space](./free-space.png)]
 Select "Yes" and press [ENTER] to confirm
 
