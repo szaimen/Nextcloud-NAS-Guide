@@ -17,7 +17,6 @@ In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, 
     ```
 1. Enter your **password** again
 1. **We have prepared a slideshow for you that you can use. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/nextcloud-installation) to start the slideshow. Otherwise, just continue with the steps below**
-1.  Choose that you **don't** want to use `http://archive.ubuntu.com` as **repository** for your server since the best one was already set during the Ubuntu installation
 1. Select that you **want** to make all **free space** available to your **root partition**
 1. Choose **1 Disk (Only use one disk /mnt/ncdata - NO ZFS!** since 2 Disks is currently not supported by the backup scripts since it complicates things by a lot and doesn't support disk encryption. Additionally you would need one dedicated disk only for that directory.
 1. Wait until everything is installed
