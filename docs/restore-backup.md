@@ -54,7 +54,8 @@ Only create the Backup if the whole server still works as expected. If something
 1. Choose the **NTFS partition** that shall get mounted
 1. **Select** one found valid backup repository
 1. Enter the **passphrase** that was used to encrypt the backup
-1. **Confirm** that you want to check if the backup extracting works (only skip it if it takes too long: you can cancel it by pressing `[CTRL] + [C]`)
+1. **Confirm** that you want to check if the backup extracting works<br/>
+(If this step takes too long, you can cancel it by pressing `[CTRL] + [C]`. Then start from step 5 again and skip the `extracting check`.)
 1. **Confirm** that you want to restore the backup
 1. Now wait until you see the next popup! (This can take a while.)
 1. It should now report that the restore was completed and you should connect all drives now. So please **connect all external drives** now that were connected to your old server!
