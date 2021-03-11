@@ -4,9 +4,16 @@
         <title>Nextcloud-NAS-Guide Blog</title>
         <link>https://szaimen.github.io/news</link>
         <description>Nextcloud-NAS-Guide Blog</description>
-        <lastBuildDate>Thu, 04 Mar 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 Mar 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Enable Firewall and Harden SSH]]></title>
+            <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/11/firewall-and-harden-ssh</link>
+            <guid>Enable Firewall and Harden SSH</guid>
+            <pubDate>Thu, 11 Mar 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[New available options]]></description>
+        </item>
         <item>
             <title><![CDATA[Create new users after initial setup]]></title>
             <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/04/create-new-users-after-initial-setup</link>
