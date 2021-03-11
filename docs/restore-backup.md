@@ -13,24 +13,30 @@ Here is what you need to do in those cases:
 1. Put the new drive into your server
 
 ## Preparations (if you want to upgrade Ubuntu)
+1. Update to the latest major Nextcloud release by following the instructions here: [click here](./major-update)
+:::caution
+Please read carefully through all info there, especially the `Things to check before updating` section before updating. (E.g. it is not recommended to update to any new major Nextcloud release before the first point release: all info there is valid here, too.)
+:::
 1. Create a backup of your server ([instructions](./manual-backup))
 :::caution
 Only create the Backup if the whole server still works as expected. If something doesn't work, restore a system backup first (by following [those instructions](./restore-system)), before creating a new backup! (The latest backup must be in working condition!)
 :::
-1. Only if the backup (from step 1) was created successfully (otherwise skip this 2nd step!), get your `Off-Shore Backup HDD`, connect it to your server and create a new off-shore backup by running:
+1. Only if the backup (from step 2) was created successfully (otherwise skip this 3rd step!), get your `Off-Shore Backup HDD`, connect it to your server and create a new off-shore backup by running:
     ```shell
     sudo sed -i 's|^DAYS_SINCE_LAST_BACKUP.*|DAYS_SINCE_LAST_BACKUP=1000|' /var/scripts/off-shore-rsync-backup.sh \
     && sudo bash /var/scripts/off-shore-rsync-backup.sh
     ```
     :::caution
-    You should really only create a new off-shore backup if the backup from step 1 was created successfully!
+    You should really only create a new off-shore backup if the backup from step 2 was created successfully!
     :::
-1. Use your chance and find out if you still have the passphrase of your backup stored at a safe place by comparing it with the output of:
+1. Use your **last chance** and find out if you still have the passphrase of your backup stored at a safe place by comparing it with the output of:
     ```shell
     sudo grep "ENCRYPTION_KEY" /var/scripts/daily-borg-backup.sh
     ```
-    If you don't have it stored, just **note it down** another time. This is crutial!<br/>
+    :::caution
+    If you don't have it stored, just **note it down** another time. **This is crutial!**<br/>
     (because this is the last chance to retrieve the password from your server)
+    :::
 
 ## Execution
 1. **Shut down** your server by pressing the power button
