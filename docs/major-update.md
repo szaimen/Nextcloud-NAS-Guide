@@ -49,3 +49,25 @@ Now you should have successfully updated to a new major Nextcloud version!
 :::info
 If the update has failed for you, you can easily restore your system from the backup that you've just created by following these steps: [click here](./restore-system)
 :::
+
+:::tip updates between multiple major versions are unsupported
+If the update to the major release won't get executed and you see a popup that states that **updates between multiple major versions are unsupported**, you can work around this by updating to the next major version by executing:
+```shell
+# Delete current update.sh script (because the latest one is needed)
+sudo rm /var/scripts/update.sh
+
+# Download latest update.sh script
+sudo wget https://raw.githubusercontent.com/nextcloud/vm/master/static/update.sh -P /var/scripts
+
+# Adjust access rights
+sudo chown root:root /var/scripts/update.sh
+sudo chmod 700 /var/scripts/update.sh
+
+# Readd automatic restart
+sudo sed -i "s|exit|/sbin/shutdown -r +1|g" /var/scripts/update.sh
+echo "exit" | sudo tee -a /var/scripts/update.sh >/dev/null
+
+# Update to the next Major version
+sudo bash /var/scripts/update.sh nextmajor
+```
+:::
