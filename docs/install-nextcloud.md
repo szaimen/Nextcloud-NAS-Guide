@@ -4,7 +4,7 @@ title: How to install Nextcloud?
 sidebar_label: Install Nextcloud
 ---
 
-In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, since it is the most user-friendly way to setup Nextcloud as far as we know and has many features built-in.
+In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, since it is the most user-friendly way to set up Nextcloud as far as we know and has many features built-in.
 
 1. Connect from a PC in the same network to your server over SSH
 1. Copy and paste the following command over CLI:

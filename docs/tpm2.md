@@ -4,7 +4,7 @@ title: How to set up automatic TPM2 unlocking and secure your GRUB (bootloader)?
 sidebar_label: TPM2 unlocking & Secure GRUB
 ---
 
-In order to automatically unlock the encrypted root partition, you need to setup TPM2 unlocking during boot. Additionally, you will secure your GRUB (bootloader) with a password.
+In order to automatically unlock the encrypted root partition, you need to set up TPM2 unlocking during boot. Additionally, you will secure your GRUB (bootloader) with a password.
 
 :::note
 The abbreviation `CLI` will be used from now on in this guide (as synonym for controlling your server over SSH) and stands for `Command Line Interface`.

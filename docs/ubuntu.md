@@ -20,7 +20,7 @@ You need an OS for you server and we've chosen the latest Ubuntu LTS release for
 (Difficult passphrase means at least 16 characters long, containing small and tall letters, digits and special characters)<br/>
 (**Please note**: The installer doesn't check if the passwords are equal so please make sure yourself. Alsoy you should only use a password with characters that are the same on a `QWERTY` keyboard layout because of a bug in Ubuntu. Here is a link to one: [click here](https://en.wikipedia.org/wiki/QWERTY#/media/File:KB_United_States.svg))
 1. Confirm your **Storage configuration**
-1. Setup your **Profile**: recommended as **name** and **username** is `ncadmin`. Recommended as **Your server's name** is `nextcloud`. Also type in a **password**. This can be simple because you will change it later on, again, but remember it! Please note: The installer doesn't check if the passwords are equal so please make sure yourself!
+1. Set up your **Profile**: recommended as **name** and **username** is `ncadmin`. Recommended as **Your server's name** is `nextcloud`. Also type in a **password**. This can be simple because you will change it later on, again, but remember it! Please note: The installer doesn't check if the passwords are equal so please make sure yourself!
 1. Choose to **Install OpenSSH server**
 1. Do **not** install any of **Featured Server Snaps**
 1. Now wait until Ubuntu is installed and you see the button to **Reboot**. Press it to reboot.
