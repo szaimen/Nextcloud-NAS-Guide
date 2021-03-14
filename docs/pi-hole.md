@@ -18,7 +18,7 @@ The Pi-hole is a DNS sinkhole that blocks ads, tracker and other unwanted conten
 1. Choose `Pi-hole`
 1. Choose to install Pi-hole
 1. **Select** that you have created a Backup and wait a bit
-1. Click through the next popups until you have to choose the `Upstream DNS provider`. **Choose anyone** that you prefer.
+1. Click through the next popups until you have to choose the `Upstream DNS provider`. **Choose anyone** that you prefer. (It is unimportant which one you choose because you will install a local dns server later which is better than any option here.)
 1. Confirm the `Blacklists`
 1. Confirm the IP-`Protocols` (IPv4 and IPv6 are automatically selected if available; if only IPv4 is available, this popup might not be shown to you)
 1. Choose if you want to `log queries`
