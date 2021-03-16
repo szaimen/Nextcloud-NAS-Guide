@@ -32,3 +32,6 @@ The already mounted backup HDD and the with Veracrypt encrypted data SSD/HDD mus
 :::note
 If you are done, just choose `Exit` to exit this script.
 :::
+:::info
+After you've exited the script, you should reinstall Disk Monitoring to make sure that all drives support Smart Monitoring and are healthy. ([instructions](./smart))
+:::

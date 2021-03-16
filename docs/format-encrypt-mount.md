@@ -33,3 +33,6 @@ In order to prepare the external data SSD/HDD for your server, you should first 
 :::tip
 **BTW**: You could run this script a second time now to format, encrypt and mount a second drive, if you want to use more than one external data SSD/HDD. (The two backup HDDs will get configured below.)
 :::
+:::info
+After you've exited the script, you should reinstall Disk Monitoring to make sure that all drives support Smart Monitoring and are healthy. ([instructions](./smart))
+:::

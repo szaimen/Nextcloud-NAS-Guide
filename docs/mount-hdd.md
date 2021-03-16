@@ -36,7 +36,9 @@ Now, the drive should be accessible by PLEX!
 :::caution
 This drive is only accessible by PLEX and not in Nextcloud/SMB. It is not encrypted and doesn't get backed up. So please make sure to `not` store any private/personal data on this HDD! It is really only meant to store Movies/TV-Shows!
 :::
-
+:::info
+After you've exited the script, you should reinstall Disk Monitoring to make sure that all drives support Smart Monitoring and are healthy. ([instructions](./smart))
+:::
 :::note
 At least you should get informed if some S.M.A.R.T issues get reported by disk-monitoring that you've set up earlier ([here](./smart)), so that if you are lucky, you can copy the files in time to a new drive before it fails. But this is no Backup and no real data protection! In my opinion this is okay, though since the data that you should store on this HDD like Movies/TV-Shows is not precious because you can always digitize those again from the DVDs/Blu-rays so **don't sell and don't give away** those! If you are unlucky and the drive fails before you've successfully copied all the data to a new drive, not encrypting the drive makes it much easier to recover some data if you should decide to pay for data-recovery. Better would most likely be in this case just redigitizing the Movies/TV-Shows from their DVD/Blu-ray.
 :::
