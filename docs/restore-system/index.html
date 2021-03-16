@@ -9,18 +9,18 @@
 <link rel="alternate" type="application/rss+xml" href="/Nextcloud-NAS-Guide/news/rss.xml" title="Nextcloud-NAS-Guide Blog RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/Nextcloud-NAS-Guide/news/atom.xml" title="Nextcloud-NAS-Guide Blog Atom Feed"><title data-react-helmet="true">How to restore the system from backup? | Nextcloud-NAS-Guide</title><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" name="docusaurus_locale" content="en"><meta data-react-helmet="true" name="docusaurus_version" content="current"><meta data-react-helmet="true" name="docusaurus_tag" content="docs-default-current"><meta data-react-helmet="true" property="og:title" content="How to restore the system from backup? | Nextcloud-NAS-Guide"><meta data-react-helmet="true" name="description" content="It could happen that something (e.g. Nextcloud) fails and you need to restore the system to an earlier state. It will automatically restore the whole root partition from the backup that you choose but will leave the external drives untouched. Hint: if you only want to restore some private files manually, you should follow How to restore files from backup?"><meta data-react-helmet="true" property="og:description" content="It could happen that something (e.g. Nextcloud) fails and you need to restore the system to an earlier state. It will automatically restore the whole root partition from the backup that you choose but will leave the external drives untouched. Hint: if you only want to restore some private files manually, you should follow How to restore files from backup?"><meta data-react-helmet="true" property="og:url" content="https://szaimen.github.io/Nextcloud-NAS-Guide/docs/restore-system"><link data-react-helmet="true" rel="shortcut icon" href="/Nextcloud-NAS-Guide/img/favicon.webp"><link data-react-helmet="true" rel="canonical" href="https://szaimen.github.io/Nextcloud-NAS-Guide/docs/restore-system"><link rel="stylesheet" href="/Nextcloud-NAS-Guide/styles.0df84956.css">
 <link rel="preload" href="/Nextcloud-NAS-Guide/styles.49a5c466.js" as="script">
-<link rel="preload" href="/Nextcloud-NAS-Guide/runtime~main.97d1379a.js" as="script">
+<link rel="preload" href="/Nextcloud-NAS-Guide/runtime~main.0ad53aca.js" as="script">
 <link rel="preload" href="/Nextcloud-NAS-Guide/main.ae47ac58.js" as="script">
 <link rel="preload" href="/Nextcloud-NAS-Guide/1.20bc5592.js" as="script">
 <link rel="preload" href="/Nextcloud-NAS-Guide/2.1ab72852.js" as="script">
-<link rel="preload" href="/Nextcloud-NAS-Guide/01a85c17.7eb938d9.js" as="script">
-<link rel="preload" href="/Nextcloud-NAS-Guide/1a4e3797.46cfd6ac.js" as="script">
-<link rel="preload" href="/Nextcloud-NAS-Guide/1be78505.aa8110d6.js" as="script">
-<link rel="preload" href="/Nextcloud-NAS-Guide/6875c492.29ce9720.js" as="script">
-<link rel="preload" href="/Nextcloud-NAS-Guide/a6aa9e1f.a5c0622a.js" as="script">
-<link rel="preload" href="/Nextcloud-NAS-Guide/c4f5d8e4.9c351e0e.js" as="script">
-<link rel="preload" href="/Nextcloud-NAS-Guide/ccc49370.99d65376.js" as="script">
-<link rel="preload" href="/Nextcloud-NAS-Guide/123.3d544c2c.js" as="script">
+<link rel="preload" href="/Nextcloud-NAS-Guide/01a85c17.43621d38.js" as="script">
+<link rel="preload" href="/Nextcloud-NAS-Guide/1a4e3797.a5d5ae9f.js" as="script">
+<link rel="preload" href="/Nextcloud-NAS-Guide/1be78505.6ce7db89.js" as="script">
+<link rel="preload" href="/Nextcloud-NAS-Guide/6875c492.f626fc9f.js" as="script">
+<link rel="preload" href="/Nextcloud-NAS-Guide/a6aa9e1f.f9698364.js" as="script">
+<link rel="preload" href="/Nextcloud-NAS-Guide/c4f5d8e4.3b802432.js" as="script">
+<link rel="preload" href="/Nextcloud-NAS-Guide/ccc49370.17257951.js" as="script">
+<link rel="preload" href="/Nextcloud-NAS-Guide/123.8a55f278.js" as="script">
 <link rel="preload" href="/Nextcloud-NAS-Guide/122.b0cad544.js" as="script">
 <link rel="preload" href="/Nextcloud-NAS-Guide/935f2afb.6fbd5dcf.js" as="script">
 <link rel="preload" href="/Nextcloud-NAS-Guide/17896441.26977656.js" as="script">
@@ -32,18 +32,18 @@
 (You save your current system partition this way and will be able to restore your system to this point after restoring it to a different restore point.)</li></ol><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_prK2" id="execution"></a>Execution<a class="hash-link" href="#execution" title="Direct link to heading">#</a></h3><ol><li>Run over CLI:<div class="mdxCodeBlock_1zKU"><div class="codeBlockContent_actS"><div tabindex="0" class="prism-code language-shell codeBlock_tuNs thin-scrollbar"><div class="codeBlockLines_3uvA" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token function" style="color:rgb(130, 170, 255)">sudo</span><span class="token plain"> </span><span class="token function" style="color:rgb(130, 170, 255)">bash</span><span class="token plain"> /var/scripts/not-supported.sh</span></div></div></div><button type="button" aria-label="Copy code to clipboard" class="copyButton_2GIj">Copy</button></div></div></li><li>Choose <code>System Restore</code></li><li><strong>Confirm</strong> that you want to restore your system to a previous state</li><li><strong>Confirm</strong> that you&#x27;ve created a backup by selecting <code>Yes</code> and pressing <code>[ENTER]</code></li><li>If both backup drives are connected, <strong>select the backup drive</strong> that you want to view backups from (most likely the daily backup drive)</li><li>Select a <strong>backup archive</strong> that you want to restore to (you will see the date and time when it was made)</li><li>Read through and <strong>confirm</strong> the next popup</li><li>Confirm that you want to run the <code>extracting check</code><br>
 (If this step takes too long, you can cancel it by pressing <code>[CTRL] + [C]</code>. Then start from step 1 again and skip the <code>extracting check</code>.)</li><li>Read through and <strong>confirm</strong> the next popup</li><li><strong>Wait</strong> until you see the next Menu!</li><li>Now you should see a Menu that states that the dry-run was successful. You can now show all files/folders that will get changed/deleted. After you are done, just select <code>Continue</code> and press <code>[ENTER]</code> to continue.</li><li>Now you will see a popup with stats from the dry-run. This is an overview about the operation.</li><li>You will be asked next if you really want to restore your system to this state. Now select <code>Yes</code> and press <code>[ENTER]</code> if you are sure. (This is the last chance to cancel the operation!)</li><li>Wait until it has restored the system and you see a popup that the restore process was successful.</li><li>Finally, press <code>[ENTER]</code> to <strong>reboot</strong> your server.</li></ol></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/szaimen/Nextcloud-NAS-Guide/edit/main/docs/restore-system.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" role="img" viewBox="0 0 40 40" class="iconEdit_2LL7"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/Nextcloud-NAS-Guide/docs/restore-files"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« How to restore files from backup?</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/Nextcloud-NAS-Guide/docs/subdomain-cname"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">How to create a subdomain and point with CNAME to your Nextcloud Domain? »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_2xL- thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#preparation" class="table-of-contents__link">Preparation</a></li><li><a href="#execution" class="table-of-contents__link">Execution</a></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Legal</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/Nextcloud-NAS-Guide/docs/impressum">Impressum</a></li><li class="footer__item"><a class="footer__link-item" href="/Nextcloud-NAS-Guide/docs/privacy">Privacy Policy</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2021 <a href="https://github.com/szaimen">szaimen</a> - Built with Docusaurus.</div></div></div></footer></div>
 <script src="/Nextcloud-NAS-Guide/styles.49a5c466.js"></script>
-<script src="/Nextcloud-NAS-Guide/runtime~main.97d1379a.js"></script>
+<script src="/Nextcloud-NAS-Guide/runtime~main.0ad53aca.js"></script>
 <script src="/Nextcloud-NAS-Guide/main.ae47ac58.js"></script>
 <script src="/Nextcloud-NAS-Guide/1.20bc5592.js"></script>
 <script src="/Nextcloud-NAS-Guide/2.1ab72852.js"></script>
-<script src="/Nextcloud-NAS-Guide/01a85c17.7eb938d9.js"></script>
-<script src="/Nextcloud-NAS-Guide/1a4e3797.46cfd6ac.js"></script>
-<script src="/Nextcloud-NAS-Guide/1be78505.aa8110d6.js"></script>
-<script src="/Nextcloud-NAS-Guide/6875c492.29ce9720.js"></script>
-<script src="/Nextcloud-NAS-Guide/a6aa9e1f.a5c0622a.js"></script>
-<script src="/Nextcloud-NAS-Guide/c4f5d8e4.9c351e0e.js"></script>
-<script src="/Nextcloud-NAS-Guide/ccc49370.99d65376.js"></script>
-<script src="/Nextcloud-NAS-Guide/123.3d544c2c.js"></script>
+<script src="/Nextcloud-NAS-Guide/01a85c17.43621d38.js"></script>
+<script src="/Nextcloud-NAS-Guide/1a4e3797.a5d5ae9f.js"></script>
+<script src="/Nextcloud-NAS-Guide/1be78505.6ce7db89.js"></script>
+<script src="/Nextcloud-NAS-Guide/6875c492.f626fc9f.js"></script>
+<script src="/Nextcloud-NAS-Guide/a6aa9e1f.f9698364.js"></script>
+<script src="/Nextcloud-NAS-Guide/c4f5d8e4.3b802432.js"></script>
+<script src="/Nextcloud-NAS-Guide/ccc49370.17257951.js"></script>
+<script src="/Nextcloud-NAS-Guide/123.8a55f278.js"></script>
 <script src="/Nextcloud-NAS-Guide/122.b0cad544.js"></script>
 <script src="/Nextcloud-NAS-Guide/935f2afb.6fbd5dcf.js"></script>
 <script src="/Nextcloud-NAS-Guide/17896441.26977656.js"></script>
