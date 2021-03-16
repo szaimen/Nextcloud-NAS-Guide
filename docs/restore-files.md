@@ -24,11 +24,15 @@ It can happen that you need to restore some files from a backup. This is especia
 1. When you are connected, open a `terminal` in the Remotedesktop session 
 1. **Copy and paste** or type into the terminal: 
     ```shell
-    xhost +si:localuser:root \
-    && sudo nautilus /tmp/borg
+    xhost +si:localuser:root
+    sudo nautilus /tmp/borg
     ```
 1. Now, you should see the file explorer with all available backup archives
 1. You are now free to navigate through them, **open files and restore** them from the backup to the original directory
-1. After you are done, **close** the file explorer
+1. After you are done, **close** the file explorer and the terminal in the RDP-session and exit the Remotedesktop session
 1. The last step is to **close Midnight Commander** by pressing `[F10]`
+:::caution
+It is crucial that you close Midnight Commander by pressing `[F10]`!<br/>
+(E.g. don't exit the SSH session by pressing the X button or use any other way to terminate it!)
+:::
 1. It should now report, that the backup and drive was successfully unmounted.
