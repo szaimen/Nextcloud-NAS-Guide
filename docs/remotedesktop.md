@@ -23,7 +23,10 @@ It allows to use graphical tools directly on your server like viewing files from
 Here is how to connect you your server via RDP: [instructions](./rdp-connect)
 :::
 
-:::note
+:::note audio output
 Currently is audio output via RDP not supported!<br/>
-Because of that VLC will constantly show errors when you open a movie via RDP. You can disable those by opening the VLC perferences (press `[CTRL] + [P]` in VLC), click on the Audio tab and **disable** the option `Enable Audio`. After restarting VLC, the issue should be gone.
+Because of that VLC will constantly show errors when you open a movie in a Remotedesktop session. You can disable those error messages by opening the VLC preferences (press `[CTRL] + [P]` in VLC), click on the Audio tab and **disable** the option `Enable Audio`. After restarting VLC, the issue should be gone.
+:::
+:::info pdf files
+You can use OnlyOffice in the Remotedesktop session to view PDF files. So just select OnlyOffice to open PDF files if it should mistakenly report that no program is installed to open PDF files!
 :::
