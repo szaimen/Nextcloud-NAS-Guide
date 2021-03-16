@@ -33,6 +33,6 @@ It can happen that you need to restore some files from a backup. This is especia
 1. The last step is to **close Midnight Commander** by pressing `[F10]`
 :::caution
 It is crucial that you close Midnight Commander by pressing `[F10]`!<br/>
-(E.g. don't exit the SSH session by pressing the X button or use any other way to terminate it!)
+(Don't use any other way to terminate it!)
 :::
 1. It should now report, that the backup and drive was successfully unmounted.
