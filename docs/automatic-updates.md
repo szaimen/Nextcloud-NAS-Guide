@@ -17,6 +17,6 @@ In order to automate as much things as possible, you should enable automatic upd
 
 **The update will be executed on saturdays at 18:00h.**
 
-:::info Please note!
-The update script will only update to minor Nextcloud versions. If a new major Nextcloud version gets released, you will need to update your server manually by running the update script.
+:::info Major Nextcloud updates
+The update script will only update to minor Nextcloud versions. If a new major Nextcloud version gets released, you will need to update your server manually. ([instructions](./major-update))
 :::
