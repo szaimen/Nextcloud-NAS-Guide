@@ -33,3 +33,6 @@ Pi-hole should be successfully installed by now.
 ### What to do now?
 - First you should visit `https://internal-IPv4-address:8094/admin` e.g. `https://192.168.178.144:8094/admin` and login with your admin password.
 - You can now either configure your router to use the Pi-hole as DNS-server which will block DNS requests for all devices in your network ([instructions](https://github.com/RPiList/specials/tree/master/RouterKonfiguration)) or you can configure your devices manually to use the Pi-hole as DNS server in your home network. (E.g. on Android by using Blokada)
+:::note
+If you choose to make Pi-hole the DNS server of your home network, you should most likely change the update time when updates get executed ([instructions](change-update-time))
+:::

@@ -4,7 +4,7 @@ author: szaimen
 author_title: Creator of Nextcloud-NAS-Guide
 author_url: https://github.com/szaimen
 author_image_url: https://avatars.githubusercontent.com/u/42591237?s=460&v=4
-tags: [news, optional]
+tags: [news, optional, faq]
 description: Improve Nextcloud Performance
 image: /news/undraw_speed_test_wxl0.svg
 hide_table_of_contents: false
