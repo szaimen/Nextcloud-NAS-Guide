@@ -50,3 +50,7 @@ Now your server should automatically boot again.
     ```
     You should finally see a **QR code**, that you can scan with the **Wireguard mobile app** that you can download in the `Play Store` on Android and `App Store` on iOS
 - After scanning the QR-code, the VPN-profile should be added to the Wireguard app and you should be able to connect to your home network from anywhere.
+
+:::info
+If you've chosen to use Pi-hole as DNS server for the VPN connection during the setup, it is possible that your smartphones Nextcloud app won't be able to connect to your Nextcloud when it is connected via Wireguard to your home network. To fix this, you should create a DNS Record in your Pi-hole that points `yourdomain.com` to the IP-address `10.6.0.1`. Afterwards it should work.
+:::
