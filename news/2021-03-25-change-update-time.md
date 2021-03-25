@@ -4,7 +4,7 @@ author: szaimen
 author_title: Creator of Nextcloud-NAS-Guide
 author_url: https://github.com/szaimen
 author_image_url: https://avatars.githubusercontent.com/u/42591237?s=460&v=4
-tags: [news, faq]
+tags: [news, optional]
 description: Change update time
 image: /news/undraw_season_change_f99v.svg
 hide_table_of_contents: false
