@@ -44,7 +44,7 @@ Now your server should automatically boot again.
     ```shell
     sudo pivpn -a
     ```
-- After you've added all needed profiles, you can show them by running the following over CLI and follow the instructions:
+- After you've added all needed profiles (you need one per device, don't reuse profiles on different devices!), you can show them by running the following over CLI and follow the instructions:
     ```shell
     sudo pivpn -qr
     ```
