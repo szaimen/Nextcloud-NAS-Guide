@@ -11,7 +11,7 @@ module.exports = {
     "SMB-server": ['smb-server', 'run-smb-server', 'create-users', 'create-shares'],
     "Customize Nextcloud": ['customize-nextcloud', 'previewgenerator', 'cookielifetime', 'share-folder', 'workspaces', 'user-flows'],
     "Activate Let's Encrypt": ['activate-lets-encrypt', 'ddns', 'ddns-providers', 'activate-ddns', 'configure-ddclient', 'port-forwarding', 'activate-tls', 'congratulations'],
-    "Optional": ['optional', 'firewall', 'harden-ssh', 'onlyoffice', 'hpb', 'notify_push', 'whiteboard', 'pico', 'extract', 'bitwarden-rs', 'pi-hole', 'pivpn', 'change-update-time', 'pms', 'remotedesktop', 'digitize', 'mc'], 
+    "Optional": ['optional', 'firewall', 'harden-ssh', 'onlyoffice', 'hpb', 'notify_push', 'whiteboard', 'pico', 'extract', 'bitwarden-rs', 'pi-hole', 'pivpn', 'change-update-time', 'pms', 'remotedesktop', 'digitize', 'mc', 'more-apps'], 
     "FAQ": ['faq', 'improve-performance', 'manual-backup', 'major-update', 'create-new-users', 'restore-files', 'restore-system', 'subdomain-cname', 'mount-hdd', 'smb-connect', 'rdp-connect', 'lynis', 'restore-backup'],
   },
 };
