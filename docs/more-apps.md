@@ -1,6 +1,6 @@
 ---
 id: more-apps
-title: Wich other apps are available?
+title: Which other apps are available?
 sidebar_label: More apps
 ---
 
