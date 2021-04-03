@@ -54,3 +54,14 @@ Now your server should automatically boot again.
 :::info
 If you've chosen to use Pi-hole as DNS server for the VPN connection during the setup, it is possible that your smartphones Nextcloud app won't be able to connect to your Nextcloud when it is connected via Wireguard to your home network. To fix this, you should create a DNS Record in your Pi-hole that points `yourdomain.com` to the IP-address `10.6.0.1`. Afterwards it should work.
 :::
+:::tip Notebooks
+You can also use those profiles on your Notebook to get access to your home network via VPN.<br/>
+The simplest way to do this is the following:
+1. Create a new VPN profile for your Notebook and show its QR code (as instruced above)
+1. Scan the QR code of this profile with your smartphones Wireguard app
+1. Export all Tunnels from your smartphones Wireguard app settings
+1. Copy the zip file to a location where your Notebook has access to<br/>
+(Best is to use SMB for this. It should be a directory that doesn't get synchronized via the Nextcloud Desktop client and that is not shared with another user.) 
+1. Import the correct tunnel into the Wireguard Desktop app from there. 
+1. It is recommended to delete the zip file from your phone and any place where you have copied it now since the profile files are very dangerous if an attacker gets them. So make sure the profiles only exist in the Wireguard apps afterwards. (And don't forget the trash bins!)
+:::
