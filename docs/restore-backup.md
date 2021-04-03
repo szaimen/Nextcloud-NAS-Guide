@@ -18,9 +18,6 @@ Here is what you need to do in those cases:
 Please read carefully through all info there, especially the `Things to check before updating` section before updating. (E.g. it is not recommended to update to any new major Nextcloud release before the first point release: all info there is valid here, too.)
 :::
 1. Create a backup of your server ([instructions](./manual-backup))
-:::caution
-Only create the Backup if the whole server still works as expected. If something doesn't work, restore a system backup first (by following [those instructions](./restore-system)), before creating a new backup! (The latest backup must be in working condition!)
-:::
 1. Only if the backup (from step 2) was created successfully (otherwise skip this 3rd step!), get your `Off-Shore Backup HDD`, connect it to your server and create a new off-shore backup by running:
     ```shell
     sudo sed -i 's|^DAYS_SINCE_LAST_BACKUP.*|DAYS_SINCE_LAST_BACKUP=1000|' /var/scripts/off-shore-rsync-backup.sh \
@@ -60,6 +57,7 @@ Only create the Backup if the whole server still works as expected. If something
 1. Choose the **NTFS partition** that shall get mounted
 1. **Select** one found valid backup repository
 1. Enter the **passphrase** that was used to encrypt the backup
+1. **Select** the `backup archive` that shall get restored (most likely the newest one if your system was in a working state when the backup was created)
 1. **Confirm** that you want to check if the backup extracting works<br/>
 (If this step takes too long, you can cancel it by pressing `[CTRL] + [C]`. Then start from step 5 again and skip the `extracting check`.)
 1. **Confirm** that you want to restore the backup
@@ -94,6 +92,7 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 - Reinstall Whiteboard for Nextcloud ([instructions](./whiteboard))
 - Reinstall Pico CMS for Nextcloud ([instructions](./pico))
 - Reinstall Extract for Nextcloud ([instructions](./extract))
+- Reinstall Previewgenerator ([instructions](./previewgenerator))
 - Reinstall Bitwarden RS ([instructions](./bitwarden-rs))
 :::caution
 Attention! Please use the **same domain** that you've used before for Bitwarden RS (if you've had Bitwarden installed on your old server!)
@@ -107,3 +106,7 @@ When reinstalling Plex, all drives that Plex shall have access to need to be mou
 :::
 - Reinstall Remotedesktop ([instructions](./remotedesktop))
 - Reinstall other apps that you might have had installed before ([overview](./more-apps)) 
+
+:::info daily backup
+Please note that the next scheduled daily backup will take a long time because the local borgbackup cache has to be rebuilt. So don't be surprised if this is the case since it is completely normal!
+:::

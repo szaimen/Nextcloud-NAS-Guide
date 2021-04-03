@@ -13,7 +13,7 @@ In order to protect your files from malware, you should set up ClamAV which will
 1. Choose `Additional Apps` -> `ClamAV`
 1. Choose to install/reinstall ClamAV
 1. Wait until it is installed and the service was started
-1. Choose to set up a **weekly full scan** of all your files (the scan will run on sundays starting at 10:00 and for 12h max)
+1. Choose to set up a **weekly full scan** of all your files (the scan will run on sundays starting at 10:00)
 1. Choose what shall get done with found files. **Only log** is recommended.
 
 You've successfully made your server a bit more secure!
