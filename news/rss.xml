@@ -4,9 +4,16 @@
         <title>Nextcloud-NAS-Guide Blog</title>
         <link>https://szaimen.github.io/news</link>
         <description>Nextcloud-NAS-Guide Blog</description>
-        <lastBuildDate>Thu, 25 Mar 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 03 Apr 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Home access only]]></title>
+            <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/04/03/home-access-only</link>
+            <guid>Home access only</guid>
+            <pubDate>Sat, 03 Apr 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[How to only allow access to your server from inside your home network?]]></description>
+        </item>
         <item>
             <title><![CDATA[Change update time]]></title>
             <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/25/change-update-time</link>

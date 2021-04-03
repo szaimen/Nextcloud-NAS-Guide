@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[62],{132:function(o){o.exports=JSON.parse('{"allTagsPath":"/Nextcloud-NAS-Guide/news/tags","slug":"optional","name":"optional","count":2,"permalink":"/Nextcloud-NAS-Guide/news/tags/optional"}')}}]);
