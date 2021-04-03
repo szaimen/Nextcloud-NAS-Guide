@@ -100,6 +100,7 @@ Attention! Please use the **same domain** that you've used before for Bitwarden 
 - Reinstall Pi-hole ([instructions](./pi-hole))
 - Reinstall PiVPN ([instructions](./pivpn))
 - Redo the change of the update time ([instructions](./change-update-time))
+- Redo the change to only allow access to your server from inside your home network ([instructions](./home-access-only))
 - Reinstall Plex Media Server ([instructions](./pms))
 :::note
 When reinstalling Plex, all drives that Plex shall have access to need to be mounted to the server! (Otherwise there could appear some problems.) You can make sure that this is the case by connecting all drives to your server and rebooting your sever before reinstalling Plex!
