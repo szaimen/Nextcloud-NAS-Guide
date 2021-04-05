@@ -7,7 +7,6 @@ sidebar_label: Restore files
 It can happen that you need to restore some files from a backup. This is especially useful if you want to restore some private files. Hint: if your system is broken and something doesn't work correctly, you should follow [How to restore the system from a backup](./restore-system)
 
 ### Preparations
-1. Install Midnight Commander ([instructions](./mc))
 1. Install Remotedesktop ([instructions](./remotedesktop))
 
 ### Execution

@@ -15,6 +15,7 @@ Currently (29.03.2021) are additionally available:
 - BPYTOP, a real-time server monitor via CLI
 - FullTextSearch for Nextcloud (not recommended because it breaks regularly with new NC updates and needs many ressources)
 - LDAP for Nextcloud (doesn't have any usecase for the Nextcloud-NAS)
+- Midnight Commander (a CLI File Manager. Not needed for the Nextcloud-NAS)
 - Webmin, a server Web-GUI like Cpanel
 - Face Recognition which scans your photos for faces and shows them in Nextcloud (not recommended because it isn't optimized for the external storage app)
 - SMB mount which allows to easily mount SMB shares from other SMB-servers in your network to your server and mount them to Nextcloud (not needed for the Nextcloud-NAS since it is the SMB-server itself)
