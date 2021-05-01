@@ -2,8 +2,8 @@ name: Check Links
 
 on:
   push:
-    branches:    
-    - '**'
+  schedule:
+  - cron:  '0 12 * * *'
 
 jobs:
   check_links:
