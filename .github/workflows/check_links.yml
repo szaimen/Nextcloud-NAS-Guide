@@ -1,0 +1,17 @@
+name: Check Links
+
+on:
+  push:
+  schedule:
+  - cron:  '0 6 * * *'
+
+jobs:
+  check_links:
+    name: Check Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Check Links
+        run: |
+          bash ./check_links.sh
