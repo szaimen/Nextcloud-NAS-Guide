@@ -16,7 +16,7 @@ jobs:
         run: |
           export LINKS="$(grep -r 'https://' ./docs | grep -oP 'https://.*' | sed 's| .*||;s|).*||;s|`.*||' | grep -v yourdomain)"
           echo "Found $LINKS"
-          echo -e "#####################################################'
+          echo '#####################################################'
           mapfile -t LINKS <<< "$LINKS"
           for link in "${LINKS[@]}"
           do
