@@ -3,7 +3,7 @@ LINKS="$(grep -r 'http://\|https://' ./docs | grep -oP 'http.*' | sed 's| .*||;s
 mapfile -t LINKS <<< "$LINKS"
 for link in "${LINKS[@]}"
 do
-    if echo "$link" | grep -q "yourdomain\|geizhals.eu\|192.168.178.144\|internal.*address"; then
+    if echo "$link" | grep -q "yourdomain\|geizhals.eu\|192.168.178.144\|internal.*address\|packages.cisofy.com"; then
         echo "Not testing $link"
         continue
     fi
