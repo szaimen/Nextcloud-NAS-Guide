@@ -20,7 +20,7 @@ jobs:
           mapfile -t LINKS <<< "$LINKS"
           for link in "${LINKS[@]}"
           do
-            if echo "$link" | grep -q "yourdomain" || echo "$link" | grep -q "geizhals.eu"
+            if echo "$link" | grep -q "yourdomain\|geizhals.eu\|192.168.178.144\|internal.*address"
             then
                 echo "Not testing $link"
                 continue
