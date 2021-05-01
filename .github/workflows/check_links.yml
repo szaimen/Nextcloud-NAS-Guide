@@ -14,15 +14,15 @@ jobs:
         uses: actions/checkout@v2
       - name: Check Links
         run: |
-          export LINKS="$(grep -r 'https://' ./docs | grep -oP 'https://.*' | sed 's| .*||;s|).*||;s|`.*||')"
+          export LINKS="$(grep -r 'https://' ./docs | grep -oP 'https://.*' | sed 's| .*||;s|).*||;s|`.*||' | grep -v yourdomain)"
           mapfile -t LINKS <<< "$LINKS"
           for link in "${LINKS[@]}"
-            do
-              if [ "$(curl -sLI "$link" -o /dev/null -w "%{http_code}\n")" != 200 ]; then
-                  echo "$link is invalid."
-                  export INVALID=1
-              fi
-            done
+          do
+            if [ "$(curl -sLI "$link" -o /dev/null -w "%{http_code}\n")" != 200 ]; then
+                echo "$link is invalid."
+                export INVALID=1
+            fi
+          done
           if [ -n "$INVALID" ]; then
             exit 1
           fi
