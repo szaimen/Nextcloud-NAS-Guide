@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v2
       - name: Check Links
         run: |
-          grep -r 'https://' ./docs | grep -oP 'https://.*' | sed 's| .*||;s|).*||;s|`.*||'
+          grep -r 'https://' ./docs | grep -oP 'https://.*' | sed 's| .*||;s|).*||;s|`.*||' | xargs curl -s
