@@ -16,13 +16,13 @@ jobs:
         run: |
           export LINKS="$(grep -r 'https://' ./docs | grep -oP 'https://.*' | sed 's| .*||;s|).*||;s|`.*||')"
           mapfile -t LINKS <<< "$LINKS"
-          for link in "${LINKS[@]}"; \
-            do; \
-            if [ "$(curl -sLI "$link" -o /dev/null -w "%{http_code}\n")" != 200 ]; then; \
-                echo "$link is invalid."; \
-                export INVALID=1; \
-            fi; \
+          for link in "${LINKS[@]}"
+            do
+              if [ "$(curl -sLI "$link" -o /dev/null -w "%{http_code}\n")" != 200 ]; then
+                  echo "$link is invalid."
+                  export INVALID=1
+              fi
             done
-          if [ -n "$INVALID" ]; then; \
-            exit 1; \
+          if [ -n "$INVALID" ]; then
+            exit 1
           fi
