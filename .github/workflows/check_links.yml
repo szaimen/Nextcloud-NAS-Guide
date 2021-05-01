@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v2
       - name: Check Links
         run: |
-          bash ./check_links.sh
+          bash -x ./check_links.sh
