@@ -22,6 +22,7 @@ jobs:
                 echo "$link is invalid."
                 export INVALID=1
             fi
+            sleep 1
           done
           if [ -n "$INVALID" ]; then
             exit 1
