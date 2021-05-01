@@ -1,8 +1,6 @@
 #!/bin/bash
 LINKS="$(grep -r 'http://\|https://' ./docs)"
 LINKS="$(echo "$LINKS" | grep -oP 'http.*' | sed 's| .*||;s|).*||;s|`.*||')"
-echo "Found $LINKS"
-echo '#####################################################'
 mapfile -t LINKS <<< "$LINKS"
 for link in "${LINKS[@]}"
 do
