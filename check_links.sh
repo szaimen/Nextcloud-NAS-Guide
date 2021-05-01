@@ -1,5 +1,6 @@
 #!/bin/bash
-LINKS="$(grep -r 'http://\|https://' ./docs | grep -oP 'http.*' | sed 's| .*||;s|).*||;s|`.*||')"
+LINKS="$(grep -r 'http://\|https://' ./docs)"
+LINKS="$(echo "$LINKS" | grep -oP 'http.*' | sed 's| .*||;s|).*||;s|`.*||')"
 echo "Found $LINKS"
 echo '#####################################################'
 mapfile -t LINKS <<< "$LINKS"
