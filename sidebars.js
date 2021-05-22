@@ -8,7 +8,7 @@ module.exports = {
         {"External data SSD/HDD": ['data-ssd', 'format-encrypt-mount', 'access-veracrypt', 'sensible-folder-structure']},
         {"External backup HDD's": ['backup-hdds', 'format-backup-hdds', 'mount-backup-hdds']},
               'update-manually', 'daily-backup', 'offshore-backup'],
-    "SMB-server": ['smb-server', 'run-smb-server', 'create-users', 'create-shares'],
+    "SMB-server": ['smb-server', 'run-smb-server', 'create-users', 'create-shares', 'recycle-bin-cleanup'],
     "Customize Nextcloud": ['customize-nextcloud', 'previewgenerator', 'cookielifetime', 'share-folder', 'workspaces', 'user-flows'],
     "Activate Let's Encrypt": ['activate-lets-encrypt', 'ddns', 'ddns-providers', 'activate-ddns', 'configure-ddclient', 'port-forwarding', 'activate-tls', 'congratulations'],
     "Optional": ['optional', 'firewall', 'harden-ssh', 'onlyoffice', 'hpb', 'notify_push', 'whiteboard', 'pico', 'extract', 'bitwarden-rs', 'pi-hole', 'pivpn', 'change-update-time', 'home-access-only', 'pms', 'remotedesktop', 'digitize', 'more-apps'], 
