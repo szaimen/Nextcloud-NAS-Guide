@@ -2089,7 +2089,7 @@
     webpack "^5.28.0"
     webpack-merge "^5.7.3"
 
-"@docusaurus/utils-validation@2.0.0-beta.0", "@docusaurus/utils-validation@^2.0.0-alpha.73":
+"@docusaurus/utils-validation@2.0.0-beta.0", "@docusaurus/utils-validation@^2.0.0-beta.0":
   version "2.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/utils-validation/-/utils-validation-2.0.0-beta.0.tgz#3e6491c269a397fed29717a1cb69109df9483461"
   integrity sha512-ELl/FVJ6xBz35TisZ1NmJhjbiVXDeU++K531PEFPCPmwnQPh7S6hZXdPnR71/Kc3BmuN9X2ZkwGOqNKVfys2Bg==
@@ -2099,7 +2099,7 @@
     joi "^17.4.0"
     tslib "^2.1.0"
 
-"@docusaurus/utils@2.0.0-beta.0", "@docusaurus/utils@^2.0.0-alpha.73":
+"@docusaurus/utils@2.0.0-beta.0", "@docusaurus/utils@^2.0.0-beta.0":
   version "2.0.0-beta.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/utils/-/utils-2.0.0-beta.0.tgz#6f2690fd6fcd942f0d690db1dffb96742762deb3"
   integrity sha512-bvrT1EQu0maavr0Hb/lke9jmpzgVL/9tn5VQtbyahf472eJFY0bQDExllDrHK+l784SUvucqX0iaQeg0q6ySUw==
@@ -2122,13 +2122,13 @@
     cssesc "^3.0.0"
     immediate "^3.2.3"
 
-"@easyops-cn/docusaurus-search-local@0.17.0":
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/@easyops-cn/docusaurus-search-local/-/docusaurus-search-local-0.17.0.tgz#e9db1b822d1013c60789d66cb3502356ec5cb11b"
-  integrity sha512-4Z8q6C7bNV9/VkEPXS5Qe8o8HOoLuJkts7CyYEKF3JwkzpeCVcFpGhiBaYy72u6+CD49Cle28zlRdBQw2jrEyA==
+"@easyops-cn/docusaurus-search-local@0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@easyops-cn/docusaurus-search-local/-/docusaurus-search-local-0.18.1.tgz#f28838d9f175d977c1095ffd5245a4c8bcbe0055"
+  integrity sha512-QVvqmOtzhi+YjBSmTQlXkNkT3Y2+AuxKvNRZtinC9BUJAMcQgLkLAun8o11H9wA567nggqda11d7i5/mKFNOag==
   dependencies:
-    "@docusaurus/utils" "^2.0.0-alpha.73"
-    "@docusaurus/utils-validation" "^2.0.0-alpha.73"
+    "@docusaurus/utils" "^2.0.0-beta.0"
+    "@docusaurus/utils-validation" "^2.0.0-beta.0"
     "@easyops-cn/autocomplete.js" "^0.38.1"
     cheerio "^1.0.0-rc.3"
     clsx "^1.1.1"
