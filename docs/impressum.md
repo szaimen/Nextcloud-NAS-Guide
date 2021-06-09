@@ -9,13 +9,13 @@ custom_edit_url: null
 
 ### Angaben gemäß § 5 TMG
 Simon Lindner<br/>
-Turmstr. 66<br/>
-10551 Berlin<br/>
+Lübecker Str. 1<br/>
+10559 Berlin<br/>
 Deutschland
 
 ### Kontakt
-Telefon: +49 (0) 177 300 9432<br/>
-E-Mail: szaimen[at]e.mail.de
+Telefon: +49 (0) 156 7861 4025<br/>
+E-Mail: szaimen [at] e.mail.de
 
 ### Haftung für Inhalte
 Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
