@@ -19,6 +19,7 @@ Please read carefully through this list of considerations you should know of!
 - You will create an off-shore backup drive that needs to get connected to your server every **90 days** (this is configurable) in order to make a new backup. After creating one off-shore backup, the drive should get disconnected from your server and stored at a safe place outside your home. So you will need a place where to store it during this time and connect it manually every 90 days (or as configured).
 - You need a capable internet router to make this solution work! Cheap provider routers won't work in most cases. Recommended are Fritz!Box's by AVM
 - This solution is meant to run 24/7. Manually shutting the server down/rebooting or disconnecting, etc. can cause problems.
+- It is highly recommended to use a password manager to store all passwords/credentials since you will create a lot of them by following this guide. Recommended Open Source solutions are Keepass ([Win/macOS/Linux](https://github.com/keepassxreboot/keepassxc/releases)) ([Android](https://github.com/PhilippC/keepass2android/releases)) and [Bitwarden](https://bitwarden.com/pricing/).
 
 :::caution
 
