@@ -12,6 +12,6 @@ Since you most likely don't want to log into Nextcloud on your devices again eve
     sudo bash /var/scripts/menu.sh
     ```
 1. Choose `Nextcloud Configuration` -> `CookieLifetime`
-1. Select `2419200s 4 Weeks` (4 weeks are recommended and should be enough)
+1. Select `259200s 3 days` (3 days are recommended and should be enough)
 
 Now your users should no longer get logged out in browsers after half an hour.
