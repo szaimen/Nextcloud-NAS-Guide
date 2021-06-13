@@ -58,8 +58,8 @@ Please read carefully through all info there, especially the `Things to check be
 1. **Select** one found valid backup repository
 1. Enter the **passphrase** that was used to encrypt the backup
 1. **Select** the `backup archive` that shall get restored (most likely the newest one if your system was in a working state when the backup was created)
-1. **Confirm** that you want to check if the backup extracting works<br/>
-(If this step takes too long, you can cancel it by pressing `[CTRL] + [C]`. Then start from step 5 again and skip the `extracting check`.)
+1. **Choose** if you want to check if the backup extracting works (this is up to you)<br/>
+(If you choose yes and it takes too long, you can cancel it by pressing `[CTRL] + [C]`. Then start from step 5 again and simply skip it.)
 1. **Confirm** that you want to restore the backup
 1. Now wait until you see the next popup! (This can take a while.)
 1. It should now report that the restore was completed and you should connect all drives now. So please **connect all external drives** now that were connected to your old server!
