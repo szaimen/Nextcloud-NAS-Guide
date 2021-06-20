@@ -46,9 +46,23 @@ If at least the first point release is out and you've checked that all apps have
 
 Now you should have successfully updated to a new major Nextcloud version!
 
-:::info
+:::tip Mimetype database update
+After a successful update, you should consider updating Nextclouds mimetype database. This is not done automatically and should be done after every successful major Nextcloud update to propagate all changed mimetypes into Nextcloud. Here is how to do this:
+1. Run over CLI:
+    ```shell
+    sudo bash /var/scripts/menu.sh
+    ```
+1. Choose `Nextcloud Configuration` -> `Update mimetype list`
+1. Choose `Yes` to update the mimetype database.
+:::
+
+---
+
+:::info failed updates
 If the update has failed for you, you can easily restore your system from the backup that you've just created by following these steps: [click here](./restore-system)
 :::
+
+---
 
 :::tip updates between multiple major versions are unsupported
 If the update to the major release won't get executed and you see a popup that states that **updates between multiple major versions are unsupported**, you can work around this by updating to the next major version by executing:
