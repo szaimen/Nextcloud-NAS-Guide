@@ -1,7 +1,7 @@
 ---
 id: manual-backup
 title: How to create a backup manually?
-sidebar_label: Manual Backup
+sidebar_label: Create Backup manually
 ---
 
 Sometimes you will need to create a backup manually. Here is how to do it.
