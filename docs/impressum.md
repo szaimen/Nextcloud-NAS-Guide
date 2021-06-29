@@ -9,8 +9,8 @@ custom_edit_url: null
 
 ### Angaben gemäß § 5 TMG
 Simon Lindner<br/>
-Lübecker Str. 1<br/>
-10559 Berlin<br/>
+Turmstr. 66<br/>
+10551 Berlin<br/>
 Deutschland
 
 ### Kontakt
