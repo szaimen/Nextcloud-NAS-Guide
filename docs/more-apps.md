@@ -9,7 +9,7 @@ If you run `sudo bash /var/scripts/menu.sh` over CLI and choose `Additional Apps
 Currently (29.03.2021) are additionally available:
 
 - Other documentservers apart from the recommended OnlyOffice Documentserver like e.g. Collabora Documentserver
-- The official Bitwarden password manager server (but because of a limitation regarding backup-restore and needed hardware ressources not recommended. Please use Bitwarden RS instead!)
+- The official Bitwarden password manager server (because of a limitation regarding backup-restore and needed hardware ressources not recommended. Please use Vaultwarden instead!)
 - Adminer, a Graphical User Interface for Nextcloud's Postgresql database.
 - Netdata, a real-time server monitor in a Web GUI
 - BPYTOP, a real-time server monitor via CLI

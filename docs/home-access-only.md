@@ -44,7 +44,7 @@ Don't reinstall Geoblocking after applying this change because it will reset the
 :::
 
 ## What to do now?
-If you've set up any service that needs its own domain, like e.g. OnlyOffice, High-Performance backend for Nextcloud Talk, Pico CMS or Bitwarden RS, you need to add all of those as `Local DNS Records` to your Pi-hole configuration. Otherwise you will not be able to use those services.
+If you've set up any service that needs its own domain, like e.g. OnlyOffice, High-Performance backend for Nextcloud Talk, Pico CMS or Vaultwarden, you need to add all of those as `Local DNS Records` to your Pi-hole configuration. Otherwise you will not be able to use those services.
 A custom entry may look like this: `Domain: talk.yourdomain.com, IP Address: 192.168.178.144`. You will need to add one entry for every domain and enter as IP-address the internal IP-address of your server for all of them.
 
 ### OnlyOffice

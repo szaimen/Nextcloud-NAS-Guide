@@ -93,9 +93,9 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 - Reinstall Pico CMS for Nextcloud ([instructions](./pico))
 - Reinstall Extract for Nextcloud ([instructions](./extract))
 - Reinstall Previewgenerator ([instructions](./previewgenerator))
-- Reinstall Bitwarden RS ([instructions](./bitwarden-rs))
+- Reinstall Vaultwarden (formerly known as Bitwarden RS) ([instructions](./vaultwarden))
 :::caution
-Attention! Please use the **same domain** that you've used before for Bitwarden RS (if you've had Bitwarden installed on your old server!)
+Attention! Please use the **same domain** that you've used before for Bitwarden RS or Vaultwarden (if you've had Bitwarden RS or Vaultwarden installed on your old server!)
 :::
 - Reinstall Pi-hole ([instructions](./pi-hole))
 - Reinstall PiVPN ([instructions](./pivpn))
