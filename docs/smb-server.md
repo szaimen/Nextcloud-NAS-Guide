@@ -1,6 +1,6 @@
 ---
 id: smb-server
-title: SMB-server
+title: SMB-server and user accounts
 sidebar_label: Overview
 ---
 
