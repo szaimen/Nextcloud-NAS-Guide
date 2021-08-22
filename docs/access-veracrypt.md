@@ -1,7 +1,7 @@
 ---
 id: access-veracrypt
 title: How to access the encrypted external data SSD/HDD on any PC?
-sidebar_label: PC access
+sidebar_label: Veracrypt drives - PC access
 ---
 
 Next, you should open the encrypted external data SSD/HDD on a different PC to be able to copy files or create the sensible folder structure.
