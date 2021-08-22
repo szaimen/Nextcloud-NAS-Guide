@@ -19,7 +19,7 @@ The Apple filesystem (APFS) and ZFS are not covered by this guide.
 :::
 
 ## Preparation
-If the Laptop/PC runs Linux, you can stip this step. On Windows an macOS you need to create an USB-stick with Linux and boot from it first:
+If the Laptop/PC runs Linux, you can stip this section. On Windows an macOS you need to create an USB-stick with Linux and boot from it first:
 :::caution Bitlocker
 If Bitlocker is enabled on your Windows Laptop/PC, you should disable Bitlocker temporarily as otherwise you could get asked for a recovery key for this drive after the booting for the Linux USB-stick
 :::

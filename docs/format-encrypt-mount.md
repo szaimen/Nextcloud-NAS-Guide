@@ -12,7 +12,7 @@ In order to prepare the external data SSD/HDD for your server, you should first 
     ```shell
     sudo bash /var/scripts/not-supported.sh
     ```
-1. Choose `NTFS Veracrypt`
+1. Choose `BTRFS Veracrypt`
 1. Select that you want to **install** veracrypt
 1. Select that you want to continue
 1. Wait until it is installed

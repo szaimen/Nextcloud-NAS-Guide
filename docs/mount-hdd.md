@@ -5,7 +5,7 @@ sidebar_label: Mount HDD for Movies/TV-Shows
 ---
 
 ### Preparations
-1. Format the HDD to NTFS ([instructions](./format-backup-hdds)) (you can skip the formatting if the drive is already NTFS formatted.)
+1. Format the HDD to BTRFS ([instructions](./format-backup-hdds)) (you can skip the formatting if the drive is already BTRFS formatted.)
 :::caution
 During formatting, use as `drive label` something like `Movies_TV-shows` or something else that fits. Also just do the procedure `one time` and not twice since you only want to format one drive!
 :::
@@ -17,13 +17,13 @@ During formatting, use as `drive label` something like `Movies_TV-shows` or some
     ```shell
     sudo bash /var/scripts/not-supported.sh
     ```
-1. Choose `NTFS Mount`
+1. Choose `BTRFS Mount`
 1. Select to `Mount a drive`
-1. Press `OK` to start searching for new NTFS drives
+1. Press `OK` to start searching for new BTRFS drives
 1. Now **connect** the HDD to your server (you have 1 minute)
 1. You should get the message that the drive was found
 1. Wait until the drive has spin up
-1. Choose the **NTFS partition** that shall get mounted
+1. Choose the **BTRFS partition** that shall get mounted
 1. Type in the mountpath that you would like to use. Recommended is something like `/mnt/Movies_TV-shows`.
 1. You should get the message that the mount was successful.
 1. When asked if this is a backup drive, confirm `No` by pressing `[ENTER]`!

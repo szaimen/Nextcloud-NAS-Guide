@@ -12,7 +12,7 @@ If you have mounted the external data SSD/HDD in `/mnt/data` as recommended, is 
 Your data folder should be now found in `/mnt/data/your data folder`. One of your user folders and data exchange folders might be `/mnt/data/your data folder/user1 folder` and `/mnt/data/your data folder/Data exchange folder` now. You should then **share** the `/mnt/data/your data folder/user1 folder` with `user1` and the `/mnt/data/your data folder/Data exchange folder` with all users that shall get access to this folder. As you now see, best case is, if the user folders on your external data SSD/HDD match exactly the user count of newly created users.
 
 :::tip
-**BTW**: you can at this point still shutdown your server, disconnect the external data SSD/HDD, connect it to your PC, open it with `Veracrypt` and change the folder structure there. Afterwards you can connect the drive to your server again and power it back on.
+**BTW**: you can at this point still shutdown your server, disconnect the external data SSD/HDD, connect it to your PC, open it with `Veracrypt` and change the folder structure there. (see [this link](./access-veracrypt) for further instructions). Afterwards you can connect the drive to your server again and power it back on.
 :::
 
 **Based on the example above, you should now create a list how do you want to share your data with your users.**

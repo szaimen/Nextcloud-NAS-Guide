@@ -54,7 +54,7 @@ Please read carefully through all info there, especially the `Things to check be
 1. **Confirm** that you want to restore your server from backup
 1. Press `OK` to start searching for new backup drives
 1. Now **connect** one of your backup drives (most likely the daily backup HDD) to your server (you have 1 minute)
-1. Choose the **NTFS partition** that shall get mounted
+1. Choose the **BTRFS/NTFS partition** that shall get mounted
 1. **Select** one found valid backup repository
 1. Enter the **passphrase** that was used to encrypt the backup
 1. **Select** the `backup archive` that shall get restored (most likely the newest one if your system was in a working state when the backup was created)
