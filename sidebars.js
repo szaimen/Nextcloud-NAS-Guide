@@ -11,7 +11,12 @@ module.exports = {
     "SMB-server and user accounts": ['smb-server', 'run-smb-server', 'create-users', 'create-shares', 'recycle-bin-cleanup'],
     "Customize Nextcloud": ['customize-nextcloud', 'previewgenerator', 'cookielifetime', 'share-folder', 'workspaces', 'user-flows'],
     "Activate Let's Encrypt": ['activate-lets-encrypt', 'ddns', 'ddns-providers', 'activate-ddns', 'configure-ddclient', 'port-forwarding', 'activate-tls', 'congratulations'],
-    "Optional": ['firewall', 'harden-ssh', 'share-link-audit', 'onlyoffice', 'hpb', 'notify_push', 'whiteboard', 'pico', 'extract', 'vaultwarden', 'pi-hole', 'pivpn', 'change-update-time', 'home-access-only', 'pms', 'remotedesktop', 'digitize', 'more-apps'], 
-    "FAQ": ['improve-performance', 'reduce-power-consumption', 'manual-backup', 'major-update', 'create-new-users', 'restore-files', 'restore-system', 'subdomain-cname', 'mount-hdd', 'smb-connect', 'rdp-connect', 'lynis', 'restore-backup', 'access-backup'],
+    "Optional": [ {"Server Addons": ['firewall', 'harden-ssh', 'vaultwarden', 'pi-hole', 'pivpn', 'pms', 'remotedesktop']}, 
+          {"Nextcloud Addons": ['share-link-audit', 'onlyoffice', 'hpb', 'notify_push', 'whiteboard', 'pico', 'extract', 'more-apps']}, 
+          {"Miscellaneous": ['digitize', 'change-update-time', 'home-access-only']}
+      ], 
+    "FAQ": [ {"Backup and Restore": ['manual-backup', 'restore-files', 'restore-system', 'restore-backup', 'access-backup']}, 
+          {"Miscellaneous": ['improve-performance', 'reduce-power-consumption', 'major-update', 'create-new-users', 'subdomain-cname', 'mount-hdd', 'smb-connect', 'rdp-connect', 'lynis']}
+       ]
   },
 };
