@@ -16,4 +16,4 @@ You will need the following things:
 - Two additional external HDD's that will function as backup drives with at least the same size like the external data SSD/HDD, respectively (because one will be used for daily backups and one for off-shore backups)
 - One USB-stick with at least 8GB (for installing Ubuntu)
 - For the initial setup you will also need a HDMI-display (e.g. monitor/tv/beamer), USB-mouse and -keyboard. If you don't have one: you don't need to buy those. Borrowing or renting those should be enough. (You really only need them for the initial setup, because you will access your server over SSH afterwards.)
-- For accessing the files on the external data SSD/HDD directly, you will need a Laptop/PC with Windows or Linux a later point: [click here](./access-veracrypt)
+- For accessing the files on the external data SSD/HDD directly, you will also need a Laptop/PC with Windows or Linux a later point: [click here](./access-veracrypt)
