@@ -13,13 +13,10 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/04/03/home-access-only"/>
         <updated>2021-04-03T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[How to only allow access to your server from inside your home network?]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Improve Nextcloud Performance]]></title>
-        <id>Improve Nextcloud Performance</id>
-        <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/25/improve-performance"/>
-        <updated>2021-03-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Improve Nextcloud Performance]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Change update time]]></title>
@@ -27,6 +24,21 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/25/change-update-time"/>
         <updated>2021-03-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Change update time]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Improve Nextcloud Performance]]></title>
+        <id>Improve Nextcloud Performance</id>
+        <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/25/improve-performance"/>
+        <updated>2021-03-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Improve Nextcloud Performance]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Enable Firewall and Harden SSH]]></title>
@@ -34,6 +46,10 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/11/firewall-and-harden-ssh"/>
         <updated>2021-03-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[New available options]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Create new users after initial setup]]></title>
@@ -41,6 +57,10 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/04/create-new-users-after-initial-setup"/>
         <updated>2021-03-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A new FAQ guide]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Update to Nextcloud major versions]]></title>
@@ -48,6 +68,10 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/04/nextcloud-update-major"/>
         <updated>2021-03-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A new FAQ guide]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Pico CMS for Nextcloud]]></title>
@@ -55,6 +79,10 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/01/pico-cms"/>
         <updated>2021-03-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A leightweight CMS integration in Nextcloud.]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Whiteboard and Extract for Nextcloud]]></title>
@@ -62,6 +90,10 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/02/24/whiteboard-and-extract"/>
         <updated>2021-02-24T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[New Apps for Nextcloud]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Push Notifications for Nextcloud]]></title>
@@ -69,6 +101,10 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/02/22/push-notifications"/>
         <updated>2021-02-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[High Performance Backend for Nextcloud files]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Welcome to the News blog!]]></title>
@@ -76,5 +112,9 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/02/20/news-section"/>
         <updated>2021-02-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A new way to communicate new features in the Nextcloud-NAS-Guide!]]></summary>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
     </entry>
 </feed>

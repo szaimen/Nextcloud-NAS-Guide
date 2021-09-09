@@ -1,1 +1,0 @@
-(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9466],{2687:function(e){"use strict";e.exports=JSON.parse('{"allTagsPath":"/Nextcloud-NAS-Guide/news/tags","slug":"performance","name":"performance","count":1,"permalink":"/Nextcloud-NAS-Guide/news/tags/performance"}')}}]);
