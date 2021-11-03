@@ -13,6 +13,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/04/03/home-access-only"/>
         <updated>2021-04-03T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[How to only allow access to your server from inside your home network?]]></summary>
+        <content type="html"><![CDATA[<p>In order to make your server as secure as possible, you might consider blocking all access from outside your home network. To be able to connect to your server yourself from outside your home network afterwards, you&#x27;ll need to establish a VPN connection to your home network first before you can access your server. We&#x27;ve implemented the whole process in a way that automatic certificate renewal via <code>Let&#x27;s Encrypt</code> will still work after blocking the access to your server which is usually a limitation of this process but not by following this guide. Additionally, <code>scan.nexcloud.com</code> will still be able to scan your Nextcloud regarding security problems as well as <code>observatory.mozilla.org</code>. </p><p>You can find the instructions how to only allow access to your server from inside your home network here: <a href="/docs/home-access-only">click here</a></p><p><img src="/news/undraw_vault_9cmw.svg" alt="Vault"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
@@ -24,6 +25,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/25/change-update-time"/>
         <updated>2021-03-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Change update time]]></summary>
+        <content type="html"><![CDATA[<p>If you&#x27;ve followed this guide, you will have configured automatic updates. Those get executed every saturday at 18:00 and will cause a reboot of your server afterwards. This is especially problematic if you&#x27;ve configured Pi-hole as your local DNS server for your home network since any DNS request will not work for as long as the server reboots and the Pi-hole isn&#x27;t reachable. Also, if you&#x27;ve installed Pi-hole it will try to update itself every saturday at 19:30 which causes the same effect if an update is available.</p><p>To fix this, you can change the time when the updates get executed. Here is how to do this (<a href="/docs/change-update-time">instructions</a>)</p><p><img src="/news/undraw_season_change_f99v.svg" alt="Time"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
@@ -35,6 +37,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/25/improve-performance"/>
         <updated>2021-03-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Improve Nextcloud Performance]]></summary>
+        <content type="html"><![CDATA[<p>After a recent switch to new server hardware, I&#x27;ve discovered that Nextcloud wasn&#x27;t performing better than before although the hardware and software configuration got better by a lot which pointed to a bottleneck somewhere else. Because of my findings, I&#x27;ve decided to create a new FAQ guide how to improve the performance of your Nextcloud installation. You can find it <a href="/docs/improve-performance">here</a></p><p><img src="/news/undraw_speed_test_wxl0.svg" alt="Performance"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
@@ -46,6 +49,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/11/firewall-and-harden-ssh"/>
         <updated>2021-03-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[New available options]]></summary>
+        <content type="html"><![CDATA[<p>There are two new options available that make your server even more secure.</p><p>You can find the instructions how and why you should enable the Firewall on your server here: <a href="/docs/firewall">click here</a></p><p>The instructions how and why you should harden your SSH configuration are here: <a href="/docs/harden-ssh">click here</a></p><p><img src="/news/undraw_secure_server_s9u8.svg" alt="Secure server"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
@@ -57,6 +61,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/04/create-new-users-after-initial-setup"/>
         <updated>2021-03-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A new FAQ guide]]></summary>
+        <content type="html"><![CDATA[<p>After the initial setup is done, there might be the demand to create new users that were initially not considered. Since it isn&#x27;t very clear currently how to do that, we&#x27;ve decided to create this FAQ guide.</p><p>You can check it out <a href="/docs/create-new-users">here</a></p><p><img src="/news/undraw_Add_user_re_5oib.svg" alt="Create new user"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
@@ -68,6 +73,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/04/nextcloud-update-major"/>
         <updated>2021-03-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A new FAQ guide]]></summary>
+        <content type="html"><![CDATA[<p>We&#x27;ve just created a new FAQ guide that explains how you should update your Nextcloud if a new major version was found.</p><p>You can check it out <a href="/docs/major-update">here</a></p><p><img src="/news/undraw_os_upgrade_nj2m.svg" alt="Nextcloud update"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
@@ -79,6 +85,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/03/01/pico-cms"/>
         <updated>2021-03-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A leightweight CMS integration in Nextcloud.]]></summary>
+        <content type="html"><![CDATA[<p>Pico CMS for Nextcloud combines the power of Pico and Nextcloud to create simple, secure, shareable and amazingly powerful websites with just a few clicks. Pico is a stupidly simple, blazing fast, flat file CMS - making the web easy! You can find more infos about this app here: <a href="https://github.com/nextcloud/cms_pico#about">click here</a></p><p>Here is how to install it on your Nextcloud-NAS (<a href="/docs/pico">instructions</a>)</p><p><img src="/news/undraw_cms_re_asu0.svg" alt="CMS"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
@@ -90,6 +97,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/02/24/whiteboard-and-extract"/>
         <updated>2021-02-24T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[New Apps for Nextcloud]]></summary>
+        <content type="html"><![CDATA[<p>With Nextcloud 21 there was a new Whiteboard app introduced that makes it possible to collaboratively work on a whiteboard. It integrates Spacedeck whiteboard server and lets Nextcloud users create .whiteboard files which can then be opened in the Files app and in Talk. Those files can be shared to other users or via public links. Everyone having access with write permissions to such a file can edit it collaboratively. Here is how to install it on your Nextcloud-NAS: (<a href="/docs/whiteboard">click here</a>)</p><p>The Extract app is already much longer available for Nextcloud but now as easy as possible to install on your Nextcloud-NAS. (<a href="/docs/extract">instructions</a>)</p><p><img src="/news/undraw_miro_qvwm.svg" alt="Whiteboard app"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
@@ -101,6 +109,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/02/22/push-notifications"/>
         <updated>2021-02-22T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[High Performance Backend for Nextcloud files]]></summary>
+        <content type="html"><![CDATA[<p>In the new Nextcloud 21 release was today a new <code>High Performance Backend for Nextcloud files</code> introduced. It attempts to solve the issue where Nextcloud clients have to periodically check the server if any files have been changed, new activities were created, or a notification was created/processed/dismissed, which increases the load on the server. By providing a way for the server to send update notifications to the clients, the need for the clients to make these checks can be greatly reduced, which reduces the load on the server and delivers notifications to the clients in some cases faster.</p><p>You can find the instructions how to install it on your Nextcloud-NAS here: (<a href="/docs/notify_push">click here</a>)</p><p><img src="/news/undraw_server_push_vtms.svg" alt="Push Notifications"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
@@ -112,6 +121,7 @@
         <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/02/20/news-section"/>
         <updated>2021-02-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A new way to communicate new features in the Nextcloud-NAS-Guide!]]></summary>
+        <content type="html"><![CDATA[<p>Since the <code>Nextcloud-NAS-Guide</code> has grown quite big, there was a demand to improve the communication about new topics that get covered by this guide.</p><p>We will use this new blog-tool to communicate any new topics.</p><p><img src="/news/undraw_share_link_qtxe.svg" alt="Keep in contact!"/></p>]]></content>
         <author>
             <name>szaimen</name>
             <uri>https://github.com/szaimen</uri>
