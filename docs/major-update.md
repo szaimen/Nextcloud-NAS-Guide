@@ -11,15 +11,24 @@ As already stated during the configuration of automatic updates, you need to upd
     :::note
     You can check the latest releases here: ([click here](https://github.com/nextcloud/server/releases))
     :::
-1. Check that all apps that you need are compatible with the new major version.
-    :::note Instructions
-    1. Open `https://yourdomain.com/settings/admin/overview` with the admin account.
-    1. Scroll down and change the `Update Channel` from **Stable** to **Beta** (Don't worry, this won't change any important setting on your installation)
-    1. Reload the page
-    1. You should see now that a new Nextcloud major version was found e.g. `21.0.1` (if you are on Nextcloud 20)
-    1. It should also show to you if all installed apps have updates available for the new version or if some apps still miss updates for the new version.
-    1. If all apps have updates available for the new version, you are ready to upgrade!
-    1. Now you are free to switch the `Update Channel` from **Beta** back to **Stable** (But as I've stated before: this setting won't change anything important on your installation)
+1. Check that all apps that you need are compatible with the new major version:<br/>
+    Open `https://yourdomain.com/settings/admin/overview` with the admin account.
+
+    :::note Major version doesn't get shown
+    - If the update to the major version doesn't get shown to you, do the following:
+        1. Scroll down and change the `Update Channel` from **Stable** to **Beta** (Don't worry, this won't change any important setting on your installation)
+        1. Reload the page
+        1. You should see now that a new Nextcloud major version was found e.g. `21.0.1` (if you are on Nextcloud 20)
+        1. It should also show to you if all installed apps have updates available for the new version or if some apps still miss updates for the new version.
+        1. If all apps that you depend on have updates available for the new version, you are ready to upgrade!
+        1. Now you are free to switch the `Update Channel` from **Beta** back to **Stable** (But as I've stated before: this setting won't change anything important on your installation)
+    :::
+
+    :::note Major version gets shown
+    - If the update to the major version gets shown to you, do the following:
+        1. You should see now that a new Nextcloud major version was found e.g. `21.0.7` (if you are on Nextcloud 20)
+        1. It should also show to you if all installed apps have updates available for the new version or if some apps still miss updates for the new version.
+        1. If all apps that you depend on have updates available for the new version, you are ready to upgrade!
     :::
 
 ---
@@ -32,7 +41,8 @@ If at least the first point release is out and you've checked that all apps have
 
 ### Preparation
 1. Create a Backup before updating ([instructions](./manual-backup))<br/>
-(Although the update is already tested, it could fail, you never know! So better to create a current backup!)
+(Although the update is already tested, it could fail, you never know! So better to create a current backup!)<br/>
+(The update script itself will create a backup on its own but better to be double-safe.)
 
 ### Execution
 1. Run over CLI:
