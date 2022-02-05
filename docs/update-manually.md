@@ -10,9 +10,7 @@ Updating your server to a Major Nextcloud version will be covered by this guide:
 
 1. Run over CLI:
     ```shell
-    sudo bash /var/scripts/menu.sh
+    sudo bash /var/scripts/update.sh minor
     ```
-1. Choose `Update Nextcloud minor` Attention! **Don't** choose `Nextcloud Update major`!
-1. Choose `No` if you are asked if you want to fetch the latest `update.sh` script.
 1. Wait until the update has run
 1. Run `sudo shutdown -c` over CLI to cancel the shutdown, since it is not necessary now

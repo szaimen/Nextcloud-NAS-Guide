@@ -47,10 +47,8 @@ If at least the first point release is out and you've checked that all apps have
 ### Execution
 1. Run over CLI:
     ```shell
-    sudo bash /var/scripts/menu.sh
+    sudo bash /var/scripts/update.sh
     ```
-1. Choose `Update Nextcloud major`
-1. Choose `No` if you are asked if you want to fetch the latest `update.sh` script.
 1. Wait until the update has run and it reports that the update was successful.
 1. Wait until the server automatically reboots
 
