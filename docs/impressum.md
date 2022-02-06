@@ -28,10 +28,10 @@ Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir
 Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
 
 ### Urheberrecht
-Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen der MIT-Lizenz - einsehbar auf der [Github-Seite](https://github.com/szaimen/Nextcloud-NAS-Guide/) des Projekts.
+Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen der AGPL-Lizenz - einsehbar auf der [Github-Seite](https://github.com/szaimen/Nextcloud-NAS-Guide/) des Projekts.
 
 Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
 
 ---
 
-Zuletzt aktualisiert am 19.02.2021
+Zuletzt aktualisiert am 06.02.2022
