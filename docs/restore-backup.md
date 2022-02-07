@@ -13,6 +13,7 @@ Here is what you need to do in those cases:
 1. Put the new drive into your server
 
 ## Preparations (if you want to upgrade Ubuntu)
+0. If Pi-hole is set up as your local DNS-server, disable it in your router as you will not be able to use the internet at all when your server is powered off.
 1. Update to the latest major Nextcloud release by following the instructions here: [click here](./major-update)
 :::caution
 Please read carefully through all info there, especially the `Things to check before updating` section before updating. (E.g. it is not recommended to update to any new major Nextcloud release before the first point release: all info there is valid here, too.)
