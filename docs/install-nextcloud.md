@@ -13,7 +13,7 @@ In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, 
     sudo lvcreate --size 5G --name "NcVM-installation" ubuntu-vg \
     && sudo lvcreate --size 30G --name "NcVM-reserved" ubuntu-vg \
     && wget https://raw.githubusercontent.com/nextcloud/vm/master/nextcloud_install_production.sh \
-    && sudo bash nextcloud_install_production.sh --not-latest
+    && sudo bash nextcloud_install_production.sh
     ```
 1. Enter your **password** again
 1. **We have prepared a slideshow for you that you can use. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/nextcloud-installation) to start the slideshow. Otherwise, just continue with the steps below**
