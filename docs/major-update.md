@@ -9,7 +9,7 @@ As already stated during the configuration of automatic updates, you need to upd
 ### Things to check before updating
 1. Never update to the first Nextcloud release like e.g. `21.0.0`! Although the Nextcloud GmbH states that all releases are stable, you should always wait at least for the first point release, e.g. `21.0.1` before upgrading to a major version!
     :::note
-    You can check the latest releases here: ([click here](https://github.com/nextcloud/server/releases))
+    You can check the latest releases here: ([click here](https://github.com/nextcloud/server/tags))
     :::
 1. Check that all apps that you need are compatible with the new major version:<br/>
     Open `https://yourdomain.com/settings/admin/overview` with the admin account.
