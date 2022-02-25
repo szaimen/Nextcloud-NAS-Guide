@@ -12,11 +12,11 @@ hide_table_of_contents: false
 
 In the recent past, we've created three new articles that you might be interested in.
 
-The first one is an addition to Nextcloud that allows you to edit/comment PDF files. See [this article](../docs/pdfannotate)
+The first one is an addition to Nextcloud that allows you to edit/comment PDF files. See [this article](/docs/pdfannotate)
 
-Second is a FAQ article about how to use MusicBrainz Picard to edit the metadata of your Audio/Music files. You can find it here: [click here](../docs/picard)
+Second is a FAQ article about how to use MusicBrainz Picard to edit the metadata of your Audio/Music files. You can find it here: [click here](/docs/picard)
 
-The last is an article about a script that allows you to shrink your database if it got too big which may happen over time if you are using the external storage app that is part of the Nextcloud-Nas-Guide. See [this article](../docs/database-shrinking)
+The last is an article about a script that allows you to shrink your database if it got too big which may happen over time if you are using the external storage app that is part of the Nextcloud-Nas-Guide. See [this article](/docs/database-shrinking)
 
 ![3 new articles](/news/undraw_newsletter_re_wrob.svg)
 
