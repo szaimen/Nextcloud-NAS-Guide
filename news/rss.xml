@@ -4,9 +4,20 @@
         <title>Nextcloud-NAS-Guide Blog</title>
         <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news</link>
         <description>Nextcloud-NAS-Guide Blog</description>
-        <lastBuildDate>Sat, 03 Apr 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 25 Feb 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Three new articles]]></title>
+            <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2022/02/25/three-new-articles</link>
+            <guid>/2022/02/25/three-new-articles</guid>
+            <pubDate>Fri, 25 Feb 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Three new articles that got recentely added.]]></description>
+            <content:encoded><![CDATA[<p>In the recent past, we've created three new articles that you might be interested in.</p><p>The first one is an addition to Nextcloud that allows you to edit/comment PDF files. See <a href="/Nextcloud-NAS-Guide/docs/pdfannotate">this article</a></p><p>Second is a FAQ article about how to use MusicBrainz Picard to edit the metadata of your Audio/Music files. You can find it here: <a href="/Nextcloud-NAS-Guide/docs/picard">click here</a></p><p>The last is an article about a script that allows you to shrink your database if it got too big which may happen over time if you are using the external storage app that is part of the Nextcloud-Nas-Guide. See <a href="/Nextcloud-NAS-Guide/docs/database-shrinking">this article</a></p><p><img alt="3 new articles" src="/Nextcloud-NAS-Guide/assets/images/undraw_newsletter_re_wrob-d90638c8da2e6499f8ceffaa6eb2eeca.svg" width="761" height="494"></p>]]></content:encoded>
+            <category>news</category>
+            <category>optional</category>
+            <category>faq</category>
+        </item>
         <item>
             <title><![CDATA[Home access only]]></title>
             <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2021/04/03/home-access-only</link>

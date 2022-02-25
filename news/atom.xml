@@ -2,11 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://szaimen.github.io/Nextcloud-NAS-Guide/news</id>
     <title>Nextcloud-NAS-Guide Blog</title>
-    <updated>2021-04-03T00:00:00.000Z</updated>
+    <updated>2022-02-25T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://szaimen.github.io/Nextcloud-NAS-Guide/news"/>
     <subtitle>Nextcloud-NAS-Guide Blog</subtitle>
     <icon>https://szaimen.github.io/Nextcloud-NAS-Guide/img/favicon.webp</icon>
+    <entry>
+        <title type="html"><![CDATA[Three new articles]]></title>
+        <id>/2022/02/25/three-new-articles</id>
+        <link href="https://szaimen.github.io/Nextcloud-NAS-Guide/news/2022/02/25/three-new-articles"/>
+        <updated>2022-02-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Three new articles that got recentely added.]]></summary>
+        <content type="html"><![CDATA[<p>In the recent past, we've created three new articles that you might be interested in.</p><p>The first one is an addition to Nextcloud that allows you to edit/comment PDF files. See <a href="/Nextcloud-NAS-Guide/docs/pdfannotate">this article</a></p><p>Second is a FAQ article about how to use MusicBrainz Picard to edit the metadata of your Audio/Music files. You can find it here: <a href="/Nextcloud-NAS-Guide/docs/picard">click here</a></p><p>The last is an article about a script that allows you to shrink your database if it got too big which may happen over time if you are using the external storage app that is part of the Nextcloud-Nas-Guide. See <a href="/Nextcloud-NAS-Guide/docs/database-shrinking">this article</a></p><p><img alt="3 new articles" src="/Nextcloud-NAS-Guide/assets/images/undraw_newsletter_re_wrob-d90638c8da2e6499f8ceffaa6eb2eeca.svg" width="761" height="494"></p>]]></content>
+        <author>
+            <name>szaimen</name>
+            <uri>https://github.com/szaimen</uri>
+        </author>
+        <category label="news" term="news"/>
+        <category label="optional" term="optional"/>
+        <category label="faq" term="faq"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Home access only]]></title>
         <id>/2021/04/03/home-access-only</id>
