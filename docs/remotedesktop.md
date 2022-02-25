@@ -30,3 +30,6 @@ Because of that VLC will constantly show errors when you open a movie in a Remot
 :::info pdf files
 You can use OnlyOffice in the Remotedesktop session to view PDF files. So just select OnlyOffice to open PDF files if it should mistakenly report that no program is installed to open PDF files!
 :::
+:::info edit metadata of audio/music files
+Here is a good guide how you can use MusicBranz Picard to edit the metadata of your Audio/Music files: [click here](./picard)
+:::

@@ -13,11 +13,11 @@ module.exports = {
     "Customize Nextcloud": ['customize-nextcloud', 'previewgenerator', 'cookielifetime', 'share-folder', 'workspaces', 'user-flows'],
     "Activate Let's Encrypt": ['activate-lets-encrypt', 'ddns', 'ddns-providers', 'activate-ddns', 'configure-ddclient', 'port-forwarding', 'activate-tls', 'congratulations'],
     "Optional": [ {"Server Addons": ['firewall', 'harden-ssh', 'vaultwarden', 'pi-hole', 'pivpn', 'pms', 'remotedesktop']}, 
-          {"Nextcloud Addons": ['share-link-audit', 'onlyoffice', 'hpb', 'notify_push', 'whiteboard', 'pico', 'extract', 'more-apps']}, 
+          {"Nextcloud Addons": ['share-link-audit', 'onlyoffice', 'hpb', 'notify_push', 'pdfannotate', 'whiteboard', 'pico', 'extract', 'more-apps']}, 
           {"Miscellaneous": ['digitize', 'change-update-time', 'home-access-only']}
       ], 
     "FAQ": [ {"Backup and Restore": ['manual-backup', 'restore-files', 'restore-system', 'restore-backup', 'access-backup']}, 
-          {"Miscellaneous": ['improve-performance', 'reduce-power-consumption', 'major-update', 'create-new-users', 'subdomain-cname', 'mount-hdd', 'smb-connect', 'rdp-connect', 'lynis']}
+          {"Miscellaneous": ['improve-performance', 'reduce-power-consumption', 'major-update', 'create-new-users', 'database-shrinking', 'subdomain-cname', 'mount-hdd', 'smb-connect', 'rdp-connect', 'picard', 'lynis']}
        ]
   },
 };
