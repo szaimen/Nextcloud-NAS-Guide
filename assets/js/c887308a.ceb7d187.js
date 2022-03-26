@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[7062],{7658:function(e){e.exports=JSON.parse('{"permalink":"/Nextcloud-NAS-Guide/news/tags/apps","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"What\'s new in Nextcloud-Nas-Guide?","blogTitle":"News"}')}}]);
