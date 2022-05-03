@@ -6,7 +6,7 @@ sidebar_label: Ubuntu Server
 
 You need an OS for you server and we've chosen the latest Ubuntu Server LTS release for you. Here is how it should get installed and configured.
 
-1. **Download** the latest Ubuntu Server 20.04.2 LTS image by clicking [here](https://releases.ubuntu.com/focal/ubuntu-20.04.4-live-server-amd64.iso) (this might take 30min because of slow download servers)
+1. **Download** the latest Ubuntu Server 22.04 LTS image by clicking [here](https://releases.ubuntu.com/jammy/ubuntu-22.04-live-server-amd64.iso) (this might take 30min because of slow download servers)
 1. Use the already downloaded image to create a bootable USB-stick by following [this guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows) (the guide is for Windows, but guides for macOS and Ubuntu are referenced there)
 1. Connect a **LAN-cable** to your server
 1. Connect the **USB-stick** to your server and **power the server on**. The server should then automatically boot from the USB-stick. If it doesn't, press `[F10]` which should open the Boot menu on Intel NUCs. (And type in the password again).
