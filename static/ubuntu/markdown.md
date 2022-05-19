@@ -27,6 +27,11 @@ Confirm by selecting "Done" and pressing [ENTER]
 
 ---
 
+.center[![type](./installation_type.png)]
+Confirm the default "Ubuntu Server" by selecting "Done" and pressing [ENTER]
+
+---
+
 .center[![network](./network.png)]
 Press [ENTER] to use the default settings
 

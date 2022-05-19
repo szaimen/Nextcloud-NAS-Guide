@@ -13,6 +13,7 @@ You need an OS for you server and we've chosen the latest Ubuntu Server LTS rele
 1. **Since it is necessary that you configure certain things correctly, we have prepared a slideshow which makes it easier for you to configure Ubuntu correctly. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/ubuntu) to start the slideshow. Otherwise, just continue with the steps below**
 1. Select the correct **language** for the installer
 1. Select the correct **Keyboard layout**. This is has great importance!
+1. Confirm the default **Ubuntu Server** installation type (and not minimized)
 1. Just use the defaults in **network connections**
 1. Don't configure any **Proxy address**
 1. Use the default **Mirror address**
