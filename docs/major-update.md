@@ -70,6 +70,8 @@ After a successful update, you should consider updating Nextclouds mimetype data
 If the update has failed for you, you can easily restore your system from the backup that you've just created by following these steps: [click here](./restore-system)
 :::
 
+<!--
+
 ---
 
 :::tip updates between multiple major versions are unsupported
@@ -85,3 +87,5 @@ sudo bash update.sh nextmajor
 rm update.sh
 ```
 :::
+
+-->
