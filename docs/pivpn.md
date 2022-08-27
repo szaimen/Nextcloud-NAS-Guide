@@ -11,6 +11,7 @@ PiVPN is an easy way to create a VPN server that lets you access your home netwo
 1. Port-forward port 51820 UDP to your server ([instructions](./port-forwarding))
 1. Create a Backup ([instructions](./manual-backup))
 (better to be prepared, since we use the scripts provided by the PiVPN project and something could go wrong. You never now!)
+1. Be at the place were your server is located and connect a display and keyboard because you may need to enroll a so called `MOK` the next time your server starts so automatic startup will not be possible
 
 ### Installation
 1. Run over CLI:
@@ -21,6 +22,9 @@ PiVPN is an easy way to create a VPN server that lets you access your home netwo
 1. Choose to install PiVPN
 1. **Selected** that you have created a Backup
 1. **Don't** use `UPNP` to open the required port since you've already done this manually
+1. Choose `Yes` if you get asked if you want to continue even if the script is not possibel to check automatically if the port is open
+1. Wait until a few things are installed
+1. If you get asked for IPv6 leak, select `Yes` to route everything through the VPN even if the server is not configured for IPv6
 1. Wait until a few things are installed
 1. Select the **interface** for PiVPN (should be called `eno1` or something like that)
 1. Wait until a few more things are installed (and create an UEFI password, if you are asked to do so)
