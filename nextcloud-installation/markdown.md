@@ -42,6 +42,12 @@ and wait until everything is installed
 
 ---
 
+.center[![change-user](./change-user.png)]
+Select "No" and press [ENTER] to confirm<br>
+and wait until everything is installed
+
+---
+
 .center[![apps](./apps.png)]
 Select whatever you would like to install.<br>
 Recommended are those who are selected here.<br>
