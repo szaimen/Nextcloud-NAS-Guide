@@ -18,6 +18,9 @@ Here is what you need to do in those cases:
 :::caution
 Please read carefully through all info there, especially the `Things to check before updating` section before updating. (E.g. it is not recommended to update to any new major Nextcloud release before the first point release: all info there is valid here, too.)
 :::
+:::warning
+At least Nextcloud 24 is required to proceed below, so make sure that you upgrade at least to this version!
+:::
 1. Create a backup of your server ([instructions](./manual-backup))
 1. Only if the backup (from step 2) was created successfully (otherwise skip this 3rd step!), get your `Off-Shore Backup HDD`, connect it to your server and create a new off-shore backup by running:
     ```shell
