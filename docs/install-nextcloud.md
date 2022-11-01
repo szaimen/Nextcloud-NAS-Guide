@@ -22,6 +22,8 @@ In order to set up Nextcloud, you should use the scripts from the Nextcloud-VM, 
 1. Wait until everything is installed
 1. Choose **Local (DNS on gateway)**, because then you can choose the DNS server in your router in one place for all your devices
 1. Wait until everything is installed
+1. Choose `No` if you get asked if you want to change the standard GUI user 'ncadmin' to something else
+1. Wait until everything is installed
 1. Deselect any apps that you don't want to install. (It is recommended to **deselect IssueTemplate, Mail & Group-Folders**. If you wonder: you will be able to install all those apps manually directly over the Nextcloud GUI if you should ever need them in the future.)
 1. Click `OK` to **reboot** your server
 
