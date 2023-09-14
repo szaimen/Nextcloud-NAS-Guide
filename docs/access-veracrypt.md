@@ -22,6 +22,6 @@ Next, you should open the encrypted external data SSD/HDD on a different PC to b
     1. After the reboot, the driver should work correctly.
     :::
 1. Open `Veracrypt`, select the drive, type in the **password** and wait until it is mounted to your system<br/>
-(Here is a guide how to do that in detail: [click here](https://tdicomputing.dartmouth.edu/veracrypt-mounting-encrypted-volumes-containers/#windows))
+(Here is a guide how to do that in detail: [click here](https://web.archive.org/web/20210624051048/https://tdicomputing.dartmouth.edu/veracrypt-mounting-encrypted-volumes-containers/#windows))
 
 Now you should be able to access the encrypted drive.
