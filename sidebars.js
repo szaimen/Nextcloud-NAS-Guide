@@ -12,7 +12,7 @@ module.exports = {
     "SMB-server and user accounts": ['smb-server', 'run-smb-server', 'create-users', 'create-shares', 'recycle-bin-cleanup'],
     "Customize Nextcloud": ['customize-nextcloud', 'previewgenerator', 'cookielifetime', 'share-folder', 'workspaces', 'user-flows'],
     "Activate Let's Encrypt": ['activate-lets-encrypt', 'ddns', 'ddns-providers', 'activate-ddns', 'configure-ddclient', 'port-forwarding', 'activate-tls', 'congratulations'],
-    "Optional": [ {"Server Addons": ['firewall', 'harden-ssh', 'vaultwarden', 'pi-hole', 'pivpn', 'pms', 'remotedesktop']}, 
+    "Optional": [ {"Server Addons": ['firewall', 'vaultwarden', 'pi-hole', 'pivpn', 'pms', 'remotedesktop']}, 
           {"Nextcloud Addons": ['share-link-audit', 'onlyoffice', 'hpb', 'notify_push', 'pdfannotate', 'whiteboard', 'pico', 'extract', 'more-apps']}, 
           {"Miscellaneous": ['digitize', 'change-update-time', 'home-access-only']}
       ], 

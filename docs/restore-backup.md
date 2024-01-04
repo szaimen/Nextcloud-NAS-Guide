@@ -21,6 +21,7 @@ Please read carefully through all info there, especially the `Things to check be
 :::warning
 At least Nextcloud 24 is required to proceed below, so make sure that you upgrade at least to this version!
 :::
+1. Disable port-forwarding in your router for all ports in order to make sure that no changes are made in the meantime
 1. Create a backup of your server ([instructions](./manual-backup))
 1. Only if the backup (from step 2) was created successfully (otherwise skip this 3rd step!), get your `Off-Shore Backup HDD`, connect it to your server and create a new off-shore backup by running:
     ```shell
@@ -40,7 +41,8 @@ At least Nextcloud 24 is required to proceed below, so make sure that you upgrad
     :::
 
 ## Execution
-1. **Shut down** your server by pressing the power button
+1. If not already done, disable port-forwarding in your router for all ports in order to make sure that no changes are made in the meantime
+1. **Shut down** your server by pressing the power button or running `sudo poweroff` via CLI.   
 1. **Disconnect** all external drives from your server
 1. **Execute** the complete Basic setup section ([this section](./basic-setup))<br/>
     :::note
@@ -89,7 +91,6 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 ### Optional are those
 (You only need to reinstall them **if they were installed before**)
 - Reenable the Firewall on your server ([instructions](./firewall))
-- Reharden the SSH configuration ([instructions](./harden-ssh))
 - Reinstall OnlyOffice for Nextcloud ([instructions](./onlyoffice))
 - Reinstall High-Performance backend for Nextcloud Talk ([instructions](./hpb))
 - Reinstall Push Notifications for Nextcloud ([instructions](./notify_push))
@@ -104,7 +105,6 @@ Attention! Please use the **same domain** that you've used before for Bitwarden 
 :::
 - Reinstall Pi-hole ([instructions](./pi-hole))
 - Reinstall PiVPN ([instructions](./pivpn))
-- Redo the change of the update time ([instructions](./change-update-time))
 - Redo the change to only allow access to your server from inside your home network ([instructions](./home-access-only))
 - Reinstall Plex Media Server ([instructions](./pms))
 :::note
