@@ -35,7 +35,7 @@ At least Nextcloud 24 is required to proceed below, so make sure that you upgrad
     sudo grep "ENCRYPTION_KEY" /var/scripts/daily-borg-backup.sh
     ```
     :::caution
-    If you don't have it stored, just **note it down** another time. **This is crutial!**<br/>
+    If you don't have it stored, just **note it down** another time. **This is crucial!**<br/>
     (because this is the last chance to retrieve the password from your server)
     :::
 
