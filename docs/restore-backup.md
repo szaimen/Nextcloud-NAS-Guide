@@ -51,7 +51,7 @@ At least Nextcloud 24 is required to proceed below, so make sure that you upgrad
 1. Please **don't** connect the backup HDD to your server, yet or **disconnect** the backup HDD from your server!
 1. Now run the restore-backup script by executing:
     ```shell
-    wget https://raw.githubusercontent.com/nextcloud/vm/master/not-supported/restore-backup.sh \
+    wget https://raw.githubusercontent.com/nextcloud/vm/main/not-supported/restore-backup.sh \
     && sudo bash restore-backup.sh
     ```
 1. Enter your password
