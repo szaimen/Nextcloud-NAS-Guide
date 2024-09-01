@@ -26,7 +26,7 @@ If Bitlocker is enabled on your Windows Laptop/PC, you should disable Bitlocker 
 :::info Microsoft Surface Pro
 If you want to use a Microsoft Surface Pro as Laptop/PC here and only have a wireless keyboard and mouse, you need to connect an USB-hub with at least 5 Ports (for Mouse, Keyboard, backup drive, USB-drive, additional drive, etc.) as the touchscreen and wireless acessory will not work out of the box on Ubuntu
 :::
-1. **Download** the latest Ubuntu Desktop 22.04 LTS image by clicking [here](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-desktop-amd64.iso) (this might take 30min because of slow download servers)
+1. **Download** the latest Ubuntu Desktop 24.04 LTS image by clicking [here](https://releases.ubuntu.com/noble/ubuntu-24.04.1-live-server-amd64.iso) (this might take 30min because of slow download servers)
 1. Use the already downloaded image to create a bootable USB-stick by following [this guide](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows) (the guide is for Windows, but the guide for macOS is referenced there)
 1. Connect the **USB-stick** to your Laptop/PC and select to boot from it
     :::tip On Windows
