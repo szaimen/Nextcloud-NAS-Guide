@@ -1,5 +1,5 @@
 ---
-title: Enable Firewall and Harden SSH
+title: Enable Firewall
 author: szaimen
 author_title: Creator of Nextcloud-NAS-Guide
 author_url: https://github.com/szaimen
@@ -13,8 +13,6 @@ hide_table_of_contents: false
 There are two new options available that make your server even more secure.
 
 You can find the instructions how and why you should enable the Firewall on your server here: [click here](/docs/firewall)
-
-The instructions how and why you should harden your SSH configuration are here: [click here](/docs/harden-ssh)
 
 ![Secure server](/news/undraw_secure_server_s9u8.svg)
 
