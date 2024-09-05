@@ -95,7 +95,6 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 - Reinstall Whiteboard for Nextcloud ([instructions](./whiteboard))
 - Reinstall Pico CMS for Nextcloud ([instructions](./pico))
 - Reinstall Extract for Nextcloud ([instructions](./extract))
-- Reinstall Previewgenerator ([instructions](./previewgenerator))
 - Reinstall PDF annotations ([instructions](./pdfannotate))
 - Reinstall Vaultwarden (formerly known as Bitwarden RS) ([instructions](./vaultwarden))
 :::caution
