@@ -40,6 +40,7 @@ At least Nextcloud 24 is required to proceed below, so make sure that you upgrad
     :::
 
 ## Execution
+1. If not already done, disable port-forwarding in your router for all ports in order to make sure that no changes are made in the meantime
 1. **Shut down** your server by pressing the power button
 1. **Disconnect** all external drives from your server
 1. **Execute** the complete Basic setup section ([this section](./basic-setup))<br/>
