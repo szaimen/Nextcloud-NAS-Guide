@@ -11,9 +11,11 @@ You need an OS for you server and we've chosen the latest Ubuntu Server LTS rele
 1. Connect a **LAN-cable** to your server
 1. Connect the **USB-stick** to your server and **power the server on**. The server should then automatically boot from the USB-stick. If it doesn't, press `[F10]` which should open the Boot menu on Intel NUCs. (And type in the password again).
 1. **Since it is necessary that you configure certain things correctly, we have prepared a slideshow which makes it easier for you to configure Ubuntu correctly. Please click [here](https://szaimen.github.io/Nextcloud-NAS-Guide/ubuntu) to start the slideshow. Otherwise, just continue with the steps below**
+1. Confirm the default **Try or install Ubuntu Server**
 1. Select the correct **language** for the installer
 1. Select the correct **Keyboard layout**. This is has great importance!
 1. Confirm the default **Ubuntu Server** installation type (and not minimized)
+1. When asked for **Ubuntu Pro**, choose `Skip for now`.
 1. Just use the defaults in **network connections**
 1. Don't configure any **Proxy address**
 1. Use the default **Mirror address**
