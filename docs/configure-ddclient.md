@@ -3,6 +3,9 @@ id: configure-ddclient
 title: How to configure DDclient?
 sidebar_label: Configure DDclient
 ---
+:::note
+Unfortunately, the script currently does not work. See https://github.com/nextcloud/vm/issues/2754. Until the script is fixed, it is recommended to set up ddclient in your router. See https://www.strato.de/faq/hosting/so-einfach-richten-sie-dyndns-fuer-ihre-domains-ein/#wie-richte-ich-dyndns-in-meiner-avm-fritzbox-ein for example.
+:::
 
 After you've got your domain from a supported provider and activated DDNS for your domain, you should now configure DDclient. DDclient is an easy way to update your domain regularly with your new public ip-address and is the recommended way to set up Dynamic DNS for your server. 
 :::info Caution!
