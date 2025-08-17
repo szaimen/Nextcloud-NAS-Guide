@@ -15,6 +15,11 @@ class: center, middle
 
 ---
 
+.center[![option-selection](./option-selection.png)]
+Confirm the default "Try or install Ubuntu Server" by pressing [ENTER]
+
+---
+
 .center[![language](./language.png)]
 Select the correct language with the [ARROW] keys.<br>
 Confirm by pressing [ENTER]
@@ -29,6 +34,10 @@ Confirm by selecting "Done" and pressing [ENTER]
 
 .center[![type](./installation_type.png)]
 Confirm the default "Ubuntu Server" by selecting "Done" and pressing [ENTER]
+
+---
+
+When asked for Ubuntu Pro, select "Skip for now" and press [ENTER].
 
 ---
 
