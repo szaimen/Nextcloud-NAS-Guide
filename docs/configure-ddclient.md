@@ -3,7 +3,7 @@ id: configure-ddclient
 title: How to configure DDclient?
 sidebar_label: Configure DDclient
 ---
-:::note
+:::warning
 Unfortunately, the script currently does not work. See https://github.com/nextcloud/vm/issues/2754. Until the script is fixed, it is recommended to set up ddclient in your router. See https://www.strato.de/faq/hosting/so-einfach-richten-sie-dyndns-fuer-ihre-domains-ein/#wie-richte-ich-dyndns-in-meiner-avm-fritzbox-ein for example.
 :::
 
