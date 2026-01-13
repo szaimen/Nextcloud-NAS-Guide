@@ -7,3 +7,8 @@ updates:
     time: "17:30"
     timezone: Europe/Berlin
   open-pull-requests-limit: 10
+  ignore:
+    - dependency-name: "@docusaurus/core"
+      update-types: ["version-update:semver-major"]
+    - dependency-name: "@docusaurus/preset-classic"
+      update-types: ["version-update:semver-major"]
