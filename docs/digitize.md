@@ -19,7 +19,7 @@ The Preparations are only needed if not already done:
 1. Connect to your server via RDP ([instructions](./rdp-connect))
 1. Open `MakeMKV`
     :::tip MakeMKV license key
-    If MakeMKV should ask you for a license key, you can simply use the key that is published here: [click here](https://www.makemkv.com/forum/viewtopic.php?t=1053) (at least while MakeMKV is in beta)
+    If MakeMKV should ask you for a license key, you can simply use the key that is published here: [click here](https://forum.makemkv.com/forum/viewtopic.php?t=1053) (at least while MakeMKV is in beta)
     :::
 1. The program should automatically detect the Blu-ray/DVD that you've inserted
 1. **Analyze** the drive
