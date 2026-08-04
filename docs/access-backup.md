@@ -63,13 +63,13 @@ You are free to open this article in Firefox on Ubuntu which will enable you to 
 1. Based on the example above and if you've chosen to use the recommended directory for the Backup (during the Backup wizard), you will be able to use the following command now to mount the backup on the system:
     ```shell
     sudo mkdir -p /tmp/borg \
-    && sudo borg mount "/media/ubuntu/Daily Backup/borgbackup/NcVM" /tmp/borg 
+    && sudo borg mount -o allow_other "/media/ubuntu/Daily Backup/borgbackup/NcVM" /tmp/borg 
     ```
     (Of course if your path is different, you will need to modify the command. If that still doesn't work for you, you will need to find out and change the path to your Backup directory manually.)
 1. You will be asked by `Borg` for the `Passphrase` now that you've initially used to encrypt the backup and type it in. (Don't wonder: if you've entered it correctly, you will get no respoose by the terminal)
 1. When that worked, you will be able to access your files in the file manager by running:
     ```shell
-    xhost +si:localuser:root && sudo nautilus /tmp/borg
+    nautilus /tmp/borg
     ```
 1. Now, you should see the backup archives in the file manager.
     :::tip copy onto other drive
