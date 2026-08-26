@@ -27,14 +27,14 @@ During formatting, use as `drive label` something like `Movies_TV-shows` or some
 1. Type in the mountpath that you would like to use. Recommended is something like `/mnt/Movies_TV-shows`.
 1. You should get the message that the mount was successful.
 1. When asked if this is a backup drive, confirm `No` by pressing `[ENTER]`!
-1. You should see the message now, that PLEX Media Server was found. Press `[ENTER]` to continue
-1. Wait until everything is done and you see the popup that **PLEX was adjusted!**
+1. You should see the message now, that PLEX Media Server and/or Jellyfin was found. Press `[ENTER]` to continue
+1. Wait until everything is done and you see the popup that **PLEX was adjusted!** and/or **Jellyfin was adjusted!**
 1. Now back to the Menu, just choose `Exit` to exit this script.
 
-Now, the drive should be accessible by PLEX!
+Now, the drive should be accessible by PLEX/Jellyfin!
 
 :::caution
-This drive is only accessible by PLEX and not in Nextcloud/SMB. It is not encrypted and doesn't get backed up. So please make sure to `not` store any private/personal data on this HDD! It is really only meant to store Movies/TV-Shows!
+This drive is only accessible by PLEX/Jellyfin and not in Nextcloud/SMB. It is not encrypted and doesn't get backed up. So please make sure to `not` store any private/personal data on this HDD! It is really only meant to store Movies/TV-Shows!
 :::
 :::info
 After you've exited the script, you should reinstall Disk Monitoring to make sure that all drives support Smart Monitoring and are healthy. ([instructions](./smart))

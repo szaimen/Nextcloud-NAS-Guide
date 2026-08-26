@@ -26,7 +26,9 @@ The Preparations are only needed if not already done:
 1. **Select all tracks** that you want to digitize
 1. As **output directory**, make sure that you select a directory on your just mounted additional HDD. It should be somewhere in a subdirectory of `/mnt` (Please make sure not to select your with Veracrypt encrypted external data SSD/HDD since your free space on this drive will become full very fast and you don't want to backup movies and tv-shows.)
 1. **Start** the digitizing if everything is correct
-1. **Rename** the digitized file(s) based on PLEX's naming scheme for [movies](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/) or [tv-shows](https://support.plex.tv/articles/naming-and-organizing-your-tv-show-files/)
+1. **Rename** the digitized file(s) based on the naming scheme of your media server, so that it can identify them correctly:
+    - PLEX: [movies](https://support.plex.tv/articles/naming-and-organizing-your-movie-media-files/) or [tv-shows](https://support.plex.tv/articles/naming-and-organizing-your-tv-show-files/)
+    - Jellyfin: [movies](https://jellyfin.org/docs/general/server/media/movies) or [tv-shows](https://jellyfin.org/docs/general/server/media/shows)
 
 Now, your Blu-ray/DVD should be digitized.
 

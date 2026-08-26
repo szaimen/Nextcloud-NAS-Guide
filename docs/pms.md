@@ -6,6 +6,10 @@ sidebar_label: PLEX Media Server
 
 Plex Media Server is a media server application that runs on your own server and perfectly rounds off the feature set that Nextcloud provides. You can stream and open your own videos, movies, series, music and photos on any device that support Plex apps which are almost all platforms.
 
+:::tip Jellyfin is recommended instead
+[Jellyfin](./jellyfin) is a media server, too, and does basically the same as PLEX, but is completely free and open source. It doesn't require any account, subscription or connection to a cloud service and hardware transcoding is included instead of being locked behind a paid `PLEX Pass`. Therefore, we recommend to install [Jellyfin](./jellyfin) instead of PLEX Media Server.
+:::
+
 ### Preparation
 1. Port-forward port 32400 TCP to your server ([instructions](./port-forwarding))
 

@@ -106,8 +106,12 @@ Attention! Please use the **same domain** that you've used before for Bitwarden 
 - Redo the change of the update time ([instructions](./change-update-time))
 - Redo the change to only allow access to your server from inside your home network ([instructions](./home-access-only))
 - Reinstall Plex Media Server ([instructions](./pms))
+- Reinstall Jellyfin ([instructions](./jellyfin))
+:::caution
+Attention! Please use the **same subdomain** that you've used before for Jellyfin (if you've had Jellyfin installed on your old server!)
+:::
 :::note
-When reinstalling Plex, all drives that Plex shall have access to need to be mounted to the server! (Otherwise there could appear some problems.) You can make sure that this is the case by connecting all drives to your server and rebooting your sever before reinstalling Plex!
+When reinstalling Plex/Jellyfin, all drives that Plex/Jellyfin shall have access to need to be mounted to the server! (Otherwise there could appear some problems.) You can make sure that this is the case by connecting all drives to your server and rebooting your sever before reinstalling Plex/Jellyfin!
 :::
 - Reinstall Remotedesktop ([instructions](./remotedesktop))
 - Reinstall other apps that you might have had installed before ([overview](./more-apps)) 
