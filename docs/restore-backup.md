@@ -91,7 +91,7 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 (You only need to reinstall them **if they were installed before**)
 - Reenable the Firewall on your server ([instructions](./firewall))
 - Reinstall OnlyOffice for Nextcloud ([instructions](./onlyoffice))
-- Reinstall High-Performance backend for Nextcloud Talk ([instructions](./hpb))
+- Reinstall High-Performance backend for Nextcloud Talk incl. Talk Recording ([instructions](./hpb))
 - Reinstall Push Notifications for Nextcloud ([instructions](./notify_push))
 - Reinstall Imaginary ([instructions](./imaginary))
 - Reinstall Whiteboard for Nextcloud ([instructions](./whiteboard))
