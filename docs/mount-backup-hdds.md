@@ -35,3 +35,6 @@ If you are done, just choose `Exit` to exit this script.
 :::info
 After you've exited the script, you should reinstall Disk Monitoring to make sure that all drives support Smart Monitoring and are healthy. ([instructions](./smart))
 :::
+:::tip
+If you want to disconnect or replace one of those drives at a later point, please have a look here: [instructions](./unmount-drive)
+:::

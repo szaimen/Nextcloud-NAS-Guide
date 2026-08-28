@@ -17,7 +17,7 @@ module.exports = {
           {"Miscellaneous": ['digitize', 'change-update-time', 'home-access-only']}
       ], 
     "FAQ": [ {"Backup and Restore": ['manual-backup', 'restore-files', 'restore-system', 'restore-backup', 'access-backup']}, 
-          {"Miscellaneous": ['improve-performance', 'reduce-power-consumption', 'major-update', 'create-new-users', 'database-shrinking', 'subdomain-cname', 'mount-hdd', 'smb-connect', 'rdp-connect', 'picard', 'lynis']}
+          {"Miscellaneous": ['improve-performance', 'reduce-power-consumption', 'major-update', 'create-new-users', 'database-shrinking', 'subdomain-cname', 'mount-hdd', 'unmount-drive', 'smb-connect', 'rdp-connect', 'picard', 'lynis']}
        ]
   },
 };
