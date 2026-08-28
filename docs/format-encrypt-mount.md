@@ -36,3 +36,6 @@ In order to prepare the external data SSD/HDD for your server, you should first 
 :::info
 After you've exited the script, you should reinstall Disk Monitoring to make sure that all drives support Smart Monitoring and are healthy. ([instructions](./smart))
 :::
+:::tip
+If you want to disconnect or replace this drive at a later point, please have a look here: [instructions](./unmount-drive)
+:::
