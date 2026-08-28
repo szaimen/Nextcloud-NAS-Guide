@@ -93,6 +93,7 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 - Reinstall OnlyOffice for Nextcloud ([instructions](./onlyoffice))
 - Reinstall High-Performance backend for Nextcloud Talk ([instructions](./hpb))
 - Reinstall Push Notifications for Nextcloud ([instructions](./notify_push))
+- Reinstall Imaginary ([instructions](./imaginary))
 - Reinstall Whiteboard for Nextcloud ([instructions](./whiteboard))
 - Reinstall Pico CMS for Nextcloud ([instructions](./pico))
 - Reinstall Extract for Nextcloud ([instructions](./extract))

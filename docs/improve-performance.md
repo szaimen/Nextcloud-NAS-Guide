@@ -23,3 +23,6 @@ Recommended is currently (24.03.2021) the [FRITZ!Repeater 2400](https://geizhals
 After testing some network changes, I found out that the router actually seems to be the bottleneck in my home network. My theory is that the so called `NAT` which means `Network Address Translation` is the bottleneck here. It resolves requests from the public IP-address to the local IP-address of my server. By using a local DNS server, I was able to bridge `NAT` and improve the performance a by a lot. Requests to my Nextcloud in my home network are now nearly as fast as my network is capable of.
 
 To profit from the same changes, you simply install the Pi-hole on your server ([instructions](./pi-hole)) and make it the DNS server of your whole home network (as adviced [here](./pi-hole#what-to-do-now))
+
+## Speed up previews
+Apart from the network, the loading of previews (thumbnails) of your images can be a bottleneck as well, especially in folders with many photos. You can speed this up a lot by installing Imaginary ([instructions](./imaginary))

@@ -13,7 +13,7 @@ module.exports = {
     "Customize Nextcloud": ['customize-nextcloud', 'cookielifetime', 'share-folder', 'workspaces', 'user-flows'],
     "Activate Let's Encrypt": ['activate-lets-encrypt', 'ddns', 'ddns-providers', 'activate-ddns', 'configure-ddclient', 'port-forwarding', 'activate-tls', 'congratulations'],
     "Optional": [ {"Server Addons": ['firewall', 'vaultwarden', 'pi-hole', 'pivpn', 'pms', 'jellyfin', 'remotedesktop']}, 
-          {"Nextcloud Addons": ['share-link-audit', 'onlyoffice', 'hpb', 'notify_push', 'pdfannotate', 'whiteboard', 'pico', 'extract', 'more-apps']}, 
+          {"Nextcloud Addons": ['share-link-audit', 'onlyoffice', 'hpb', 'notify_push', 'imaginary', 'pdfannotate', 'whiteboard', 'pico', 'extract', 'more-apps']}, 
           {"Miscellaneous": ['digitize', 'change-update-time', 'home-access-only']}
       ], 
     "FAQ": [ {"Backup and Restore": ['manual-backup', 'restore-files', 'restore-system', 'restore-backup', 'access-backup']}, 
