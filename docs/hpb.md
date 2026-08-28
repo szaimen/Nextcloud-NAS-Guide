@@ -1,7 +1,7 @@
 ---
 id: hpb
-title: How to install the High-Performance backend for Nextcloud Talk?
-sidebar_label: High-Performance backend for Nextcloud Talk
+title: How to install the High-Performance backend for Nextcloud Talk and Talk Recording?
+sidebar_label: High-Performance backend & Talk Recording
 ---
 
 In order to be able to make bigger videocalls in Nextcloud Talk and to reduce the load on paticipating clients, you should install the High-Performance backend for Nextcloud Talk.
