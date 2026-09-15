@@ -37,7 +37,6 @@ Please note that this removes all your current PiVPN profiles. You will have to 
 1. Choose to install `WireGuard`
 1. Read the warning about opening a VPN entry point and **confirm** that this server is running in a trusted home network
 1. Read the notification about the ports that need to be opened
-1. **Don't** use `UPNP` to open port 51820 UDP (since you've already done this manually)
 1. Choose `Yes` when it tells you that it is not possible to check automatically if the port is open
 1. Wait until everything is installed
 1. **Note down** the `admin` password that gets shown to you! It is only applied during the initial setup of the container and cannot be shown to you again later on
