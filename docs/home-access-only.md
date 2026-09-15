@@ -47,6 +47,10 @@ Don't reinstall Geoblocking after applying this change because it will reset the
 If you've set up any service that needs its own domain, like e.g. OnlyOffice, High-Performance backend for Nextcloud Talk, Pico CMS or Vaultwarden, you need to add all of those as `Local DNS Records` to your Pi-hole configuration. Otherwise you will not be able to use those services.
 A custom entry may look like this: `Domain: talk.yourdomain.com, IP Address: 192.168.178.144`. You will need to add one entry for every domain and enter as IP-address the internal IP-address of your server for all of them.
 
+:::info
+Since you have split-brain DNS set up now, you can additionally restrict all admin actions of your Nextcloud to your home network ([instructions](./restrict-admin-to-ip)).
+:::
+
 ### OnlyOffice
 If you've installed OnlyOffice Documentserver for your Nextcloud, you might still not be able to open Office files in your Nextcloud after applying above mentioned changes. This is because the docker service where the Documentserver is running on, is usually not using the local DNS server. To make this work you'll need to:
 1. Open the docker daemon config file by running:
