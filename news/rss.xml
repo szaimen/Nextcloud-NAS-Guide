@@ -4,10 +4,20 @@
         <title>Nextcloud-NAS-Guide Blog</title>
         <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news</link>
         <description>Nextcloud-NAS-Guide Blog</description>
-        <lastBuildDate>Fri, 28 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 15 Sep 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[External Apps with AppAPI]]></title>
+            <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2026/09/15/appapi</link>
+            <guid>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2026/09/15/appapi</guid>
+            <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[AppAPI is a new option that lets you run External Apps like the local AI apps on your server.]]></description>
+            <content:encoded><![CDATA[<p><code>AppAPI</code> is a new option in the Nextcloud Configuration menu that prepares your server for <strong>External Apps</strong>.</p><p>Some of the most interesting things that Nextcloud can do today don't ship as ordinary apps anymore. Speech-to-text, the Assistant with a local language model, translations, context chat - they all run in their own containers next to Nextcloud instead of inside it. To install any of them from the app store, Nextcloud first needs someone who is allowed to start those containers, and that is exactly what the new script sets up for you.</p><p>The script walks you through it. When it asks for a deployment method, choose <code>HaRP</code> - the current one that Nextcloud recommends. Everything else - installing Docker, detecting your GPU, configuring Apache, registering the daemon - happens on its own, and the script offers to run a full deploy test at the end so you know it actually works before you install your first app.</p><p>A word of caution: the AI apps in particular are hungry. Each one wants its own container, several GB of RAM and a lot of CPU time. On a home server without a GPU they will run, but don't expect miracles. And if you don't plan to use External Apps at all, simply don't select AppAPI - it gets disabled automatically then.</p><p>You can find the instructions how to configure AppAPI on your server here: <a href="/Nextcloud-NAS-Guide/docs/appapi">click here</a></p><p><img loading="lazy" alt="Container ship" src="/Nextcloud-NAS-Guide/assets/images/undraw_container-ship_t6yx-9b82f69d3285b7869624ef1c15faeb51.svg" width="1062" height="595" class="img_ev3q"></p>]]></content:encoded>
+            <category>news</category>
+            <category>optional</category>
+        </item>
         <item>
             <title><![CDATA[Disconnect or replace a drive]]></title>
             <link>https://szaimen.github.io/Nextcloud-NAS-Guide/news/2026/08/28/disconnect-or-replace-a-drive</link>
