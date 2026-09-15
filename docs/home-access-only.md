@@ -10,10 +10,10 @@ In order to make your server as secure as possible, you might consider blocking 
     :::info
     To make this solution work, you will need to make the Pi-hole to the DNS server of your home network as instructed [here](./pi-hole#what-to-do-now)
     :::
-1. Install PiVPN ([instructions](./pivpn))
+1. Install WireGuard ([instructions](./wireguard))
     :::info
-    - While installing PiVPN, it is crutial that you've opted for setting Pi-hole as DNS-server for PiVPN! (step 9)
-    - All devices that shall get access to your server from outside your home network need a VPN profile. It is advices how to create and import one [here and below](./pivpn#what-to-do-now)
+    - All devices that shall get access to your server from outside your home network need a VPN profile. It is advised how to create and import one [here](./wireguard#what-to-do-now)
+    - After creating the profiles, make sure that your clients use the Pi-hole as DNS server while they are connected to the VPN. You can configure this in the web interface of WireGuard
     :::
 
 ## Execution
