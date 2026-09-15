@@ -103,7 +103,7 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 Attention! Please use the **same domain** that you've used before for Bitwarden RS or Vaultwarden (if you've had Bitwarden RS or Vaultwarden installed on your old server!)
 :::
 - Reinstall Pi-hole ([instructions](./pi-hole))
-- Reinstall PiVPN ([instructions](./pivpn))
+- Reinstall WireGuard ([instructions](./wireguard))
 - Redo the change of the update time ([instructions](./change-update-time))
 - Redo the change to only allow access to your server from inside your home network ([instructions](./home-access-only))
 - Reinstall Plex Media Server ([instructions](./pms))
