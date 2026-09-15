@@ -95,6 +95,7 @@ If the Nextcloud web interface works as expected, you will need to reinstall all
 - Reinstall Push Notifications for Nextcloud ([instructions](./notify_push))
 - Reinstall Imaginary ([instructions](./imaginary))
 - Reinstall Whiteboard for Nextcloud ([instructions](./whiteboard))
+- Reconfigure AppAPI and reinstall your External Apps ([instructions](./appapi))
 - Reinstall Pico CMS for Nextcloud ([instructions](./pico))
 - Reinstall Extract for Nextcloud ([instructions](./extract))
 - Reinstall PDF annotations ([instructions](./pdfannotate))
