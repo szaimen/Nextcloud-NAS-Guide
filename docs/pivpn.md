@@ -21,7 +21,6 @@ PiVPN is an easy way to create a VPN server that lets you access your home netwo
 1. Choose `PiVPN`
 1. Choose to install PiVPN
 1. **Selected** that you have created a Backup
-1. **Don't** use `UPNP` to open the required port since you've already done this manually
 1. Choose `Yes` if you get asked if you want to continue even if the script is not possibel to check automatically if the port is open
 1. Wait until a few things are installed
 1. If you get asked for IPv6 leak, select `Yes` to route everything through the VPN even if the server is not configured for IPv6
