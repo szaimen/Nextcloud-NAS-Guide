@@ -22,7 +22,7 @@ Plex Media Server is a media server application that runs on your own server and
 1. Choose to install PLEX Media server
 1. Wait until everything is installed and it reports that Plex was successfully installed
 1. **Confirm** that you want to access `PLEX` from outside your home
-1. **Don't** use `UPNP` to open the required port since you've already done this manually
+1. **Confirm** the notification that port 32400 TCP needs to be open in your router (you've already done this manually)
 1. It should now check the required Port and show the last popup how to set up PLEX
 
 ### What to do now?

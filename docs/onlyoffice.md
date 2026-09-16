@@ -17,7 +17,6 @@ OnlyOffice Documentserver is a Nextcloud integration that features real-time CO-
 1. Choose `Additional Apps` -> `Documentserver` -> `OnlyOffice (Docker)`
 1. Choose to install `OnlyOffice (Docker)`
 1. Type in the **subdomain** that you've created and that points to your Nextcloud domain like `office.yourdomain.com` and confirm it
-1. **Don't** use `UPNP` to open the required ports (since you've already done this for your Nextcloud)
 1. Wait until everything is installed and it reports a successful installation
 
 Now, you should be able to create, open and edit Office files in Nextcloud in the Browser using OnlyOffice!

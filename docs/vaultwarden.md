@@ -18,7 +18,6 @@ Vaultwarden, formerly known as Bitwarden RS, is an open Source but unofficial Bi
 1. Choose to install `Vaultwarden`
 1. Accept the risks and confirm that if you are sure to install `Vaultwarden`
 1. Type in the **subdomain** that you've created and that points to your Nextcloud domain like `bw.yourdomain.com` and confirm it
-1. **Don't** use `UPNP` to open the required ports (since you've already done this for your Nextcloud)
 1. Wait until everything is installed
 1. **Note down** the password for the admin panel that gets shown to you
 1. Confirm that you have the admin password now.
