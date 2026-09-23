@@ -25,7 +25,6 @@ This guide allows you to access your Pico CMS sites on a different Domain than y
 1. Wait until it reports that the base configuration of Pico CMS was successful
 1. **Choose** that you want to make your sites available on a different Domain
 1. Now enter the domain that you've created and pointed to your Nextcloud domain during the preparation section of this guide
-1. **Don't use** UPNP to open the ports for you
 1. You should now get asked if you want to make a specific site available when opening the chosen domain. I'd recommend to **confirm** that since otherwise accessing the domain directly will redirect to your Nextcloud domain which will kind of defend the purpose of using another domain for the Pico CMS sites. 
 1. Now enter the sites Identifier e.g. `blog` or `mysite`
 1. Now wait until everything is installed and it reports that Pico CMS was successfully installed

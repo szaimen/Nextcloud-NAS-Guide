@@ -23,7 +23,6 @@ Jellyfin and PLEX Media Server can be installed side by side, but you should dec
 1. Choose to install `Jellyfin`
 1. It now reports whether **hardware transcoding** is available on your server. It is not recommended to continue if it is not available.
 1. Type in the **subdomain** that you've created and that points to your Nextcloud domain like `media.yourdomain.com` and confirm it
-1. **Don't** use `UPNP` to open the required ports (since you've already done this for your Nextcloud)
 1. Confirm the notification about `fail2ban` that will be set up for the Jellyfin login
 1. Wait until everything is installed and it reports that Jellyfin was successfully installed. Please read the final notification carefully, since it also reminds you of the manual `Known proxies` step that is needed to make `fail2ban` work (see below)
 

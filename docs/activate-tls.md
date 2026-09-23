@@ -14,7 +14,7 @@ You will now activate TLS finally, if all points above are successfully set up. 
 1. Choose to install TLS
 1. Confirm that you have set up all necessary requirements
 1. Enter your **Domain** (e.g. `yourdomain.com`)
-1. Since you've opened Port 80 and 443 manually, you should skip `UPnP` (automatic port forwarding)
+1. **Confirm** that you have opened Port 80 and 443 in your router
 1. Wait until everything is set up and enter your mail-address during this step (Your mail-address is needed for contacting you, if a certificate expires)
 
 **Now you should be able to access your Nextcloud on any device by opening `yourdomain.com`!**
