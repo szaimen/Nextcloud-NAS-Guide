@@ -36,9 +36,9 @@ Pi-hole should be successfully installed by now.
 
 ### What to do now?
 - First you should visit `https://internal-IPv4-address:8094/admin` e.g. `https://192.168.178.144:8094/admin` and login with your password.
-    :::note
-    The certificate is self-signed since the admin interface is only reachable in your local network, which means that your browser will show a warning that you need to accept.
-    :::
+:::note
+The certificate is self-signed since the admin interface is only reachable in your local network, which means that your browser will show a warning that you need to accept.
+:::
 - You can now either configure your router to use the Pi-hole as DNS-server which will block DNS requests for all devices in your network ([instructions](https://github.com/RPiList/specials/tree/master/RouterKonfiguration)) or you can configure your devices manually to use the Pi-hole as DNS server in your home network.
 - Additionally, you can configure the docker daemon on your server to use the Pi-hole as well by editing `/etc/docker/daemon.json` and adding `"dns" : [ "192.168.178.144", "9.9.9.9" ]` (use the internal IPv4-address of your own server here). This makes containers like OnlyOffice resolve your local DNS records, too ([more details](./home-access-only#onlyoffice)).
 :::note

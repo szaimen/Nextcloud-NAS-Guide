@@ -47,9 +47,9 @@ WireGuard should be successfully installed by now.
 
 ### What to do now?
 - Open the web interface inside your local network on `https://internal-IPv4-address:51822` e.g. `https://192.168.178.144:51822` and log in with the username `admin` and the password that was shown to you
-    :::note
-    The certificate is self-signed since the web interface is only reachable in your local network, which means that your browser will show a warning that you need to accept.
-    :::
+:::note
+The certificate is self-signed since the web interface is only reachable in your local network, which means that your browser will show a warning that you need to accept.
+:::
 - Create a **new client for each of your devices** (you need one per device, don't reuse profiles on different devices!)
 - On a smartphone, scan the QR code of the client with the **WireGuard app** that you can download in the `Play Store` on Android and the `App Store` on iOS
 - On a computer, download the configuration file of the client and import it into the **WireGuard Desktop app**
