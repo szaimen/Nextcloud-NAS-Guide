@@ -3,7 +3,7 @@ module.exports = {
     "Nextcloud-NAS-Guide": ["introduction","instructions"],
     "Before you start": ['before-start', 'considerations', 'minimal-requirements', 'hardware-recommendations', 'preparations', 'time-indication'],
     "Basic setup": ['basic-setup', 'bios-uefi', 'ubuntu', 'ssh', 'tpm2', 'install-nextcloud', 'nextcloud-startup', 'usb-boot'],
-    "Security and Automation": ['security-automation', 'geoblock', 'smart', 'fail2ban', 'clamav', 'automatic-updates'],
+    "Security and Automation": ['security-automation', 'geoblock', 'restrict-admin-to-ip', 'smart', 'fail2ban', 'clamav', 'automatic-updates'],
     "External drives": ['external-drives', 'not-supported', 
           {"External data SSD/HDD": ['data-ssd', 'format-encrypt-mount', 'access-veracrypt', 'sensible-folder-structure']},
           {"External backup HDD's": ['backup-hdds', 'format-backup-hdds', 'mount-backup-hdds']},
