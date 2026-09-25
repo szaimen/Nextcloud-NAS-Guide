@@ -67,7 +67,7 @@ If you don't want to restrict the admin login anymore, you can remove it again:
     nextcloud_occ config:system:delete allowed_admin_ranges
     exit
     ```
-- If you connect to your home network over VPN with PiVPN ([instructions](./pivpn)), you also get a local IP-address and can therefore use the admin settings while you are on the road
+- If you connect to your home network over VPN with PiVPN ([instructions](./pivpn/)), you also get a local IP-address and can therefore use the admin settings while you are on the road
 - This restriction only affects **admin** actions. All your users, including yourself, can still use your Nextcloud normally from everywhere.
 - You can check the current setting as root user with:
     ```shell
