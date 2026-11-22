@@ -66,8 +66,9 @@ Only remove the block that belongs to the drive that you want to disconnect! If 
 :::info
 If the drive that you want to disconnect is your **only** Veracrypt drive, you can instead simply disable the whole service:
 ```shell
-sudo systemctl disable --now veracrypt-automount
+sudo systemctl disable veracrypt-automount
 ```
+(Please don't add `--now` here: stopping the service could interfere with the drive that is still mounted. Disabling it is enough, since it only runs during boot.)
 :::
 
 ### 2. Remove the drive-connection monitoring
@@ -118,15 +119,33 @@ Please delete **all three lines** of the drive that you want to disconnect. If y
 The three lines belong together (they are connected by the `\` at the end of the first two lines). If you only remove or comment out the first line, the two remaining lines will produce an error on every reboot.
 :::
 
-Afterwards remove the mountpath of the drive from the snapshot script:
+Afterwards remove the block of the drive from the snapshot script:
 ```shell
 sudo nano /var/scripts/create-hourly-btrfs-snapshots.sh
 ```
+
+Every drive has one block in this file that starts with a comment line containing its mountpath and ends with `done`, like this:
+```shell
+# /mnt/data
+btrfs subvolume snapshot -r "/mnt/data/" "/mnt/data/.snapshots/@$CURRENT_DATE"
+while [ "$(find "/mnt/data/.snapshots/" -maxdepth 1 -mindepth 1 -type d -name '@*_*' | wc -l)" -gt "$MAX_SNAPSHOTS" ]
+do
+    DELETE="$(find "/mnt/data/.snapshots/" -maxdepth 1 -mindepth 1 -type d -name '@*_*' | sort | head -1)"
+    btrfs subvolume delete "$DELETE"
+done
+```
+Please delete the **whole block** of your drive - from the line `# /mnt/...` down to and including `done`. Please **don't** delete the lines at the top of the file (`#!/bin/bash`, the `chown`/`chmod` lines and the variables).
 
 And then from the scrub script:
 ```shell
 sudo nano /var/scripts/scrub-btrfs-weekly.sh
 ```
+Here the block of a drive also starts with the line `# /mnt/...` and ends with `fi` (it contains two `notify_admin_gui` calls and an `if ! btrfs scrub start ... then ... else ... fi`). Please delete the **whole block** - from `# /mnt/...` down to and including `fi`.
+
+:::caution
+If you only delete the lines that contain the mountpath, the remaining `while`/`do`/`done` respectively `if`/`else`/`fi` lines break the script, and the snapshots and scrubs of your **other** drives would fail as well.
+:::
+
 If the drive that you disconnect was the **only** drive that is mentioned in those two scripts, you can instead delete their cronjobs with `sudo crontab -u root -e` (the lines that contain `create-hourly-btrfs-snapshots.sh` and `scrub-btrfs-weekly.sh`).
 
 ### 4. Remove the drive from Nextcloud, Samba and PLEX/Jellyfin
@@ -148,6 +167,10 @@ sudo veracrypt -t -d /mnt/data
 sudo reboot
 ```
 (Please adjust `/mnt/data` to the mountpath of your drive.)
+
+:::note
+If the first command fails because the volume is still in use (e.g. by Nextcloud, Samba or the PLEX/Jellyfin container), you can simply skip it and only reboot. The reboot unmounts the drive cleanly, and thanks to the steps above it doesn't get mounted again.
+:::
 
 After the reboot, Nextcloud should be up and running normally and **not** in maintenance mode. Now you can physically disconnect the drive.
 
@@ -185,7 +208,7 @@ Please double check that you delete the correct line! If you remove the wrong on
 :::tip
 If you prefer to do it with one command, please first check **which** line would get deleted:
 ```shell
-grep 'UUID-OF-YOUR-DRIVE' /etc/fstab
+sudo grep 'UUID-OF-YOUR-DRIVE' /etc/fstab
 ```
 Only if this shows exactly the one line of your drive, you can delete it:
 ```shell
@@ -213,15 +236,33 @@ Please delete **both lines** of the drive that you want to disconnect. If you wa
 The two lines belong together (they are connected by the `\` at the end of the first line). If you only remove or comment out the first line, the remaining line will produce an error on every reboot.
 :::
 
-Afterwards remove the mountpath of the drive from the snapshot script:
+Afterwards remove the block of the drive from the snapshot script:
 ```shell
 sudo nano /var/scripts/create-daily-btrfs-snapshots.sh
 ```
+
+Every drive has one block in this file that starts with a comment line containing its mountpath and ends with `done`, like this:
+```shell
+# /mnt/Movies_TV-shows
+btrfs subvolume snapshot -r "/mnt/Movies_TV-shows/" "/mnt/Movies_TV-shows/.snapshots/@$CURRENT_DATE"
+while [ "$(find "/mnt/Movies_TV-shows/.snapshots/" -maxdepth 1 -mindepth 1 -type d -name '@*_*' | wc -l)" -gt "$MAX_SNAPSHOTS" ]
+do
+    DELETE="$(find "/mnt/Movies_TV-shows/.snapshots/" -maxdepth 1 -mindepth 1 -type d -name '@*_*' | sort | head -1)"
+    btrfs subvolume delete "$DELETE"
+done
+```
+Please delete the **whole block** of your drive - from the line `# /mnt/...` down to and including `done`. Please **don't** delete the lines at the top of the file (`#!/bin/bash`, the `chown`/`chmod` lines and the variables).
 
 And then from the scrub script:
 ```shell
 sudo nano /var/scripts/scrub-btrfs-monthly.sh
 ```
+Here the block of a drive also starts with the line `# /mnt/...` and ends with `fi` (it contains two `notify_admin_gui` calls and an `if ! btrfs scrub start ... then ... else ... fi`). Please delete the **whole block** - from `# /mnt/...` down to and including `fi`.
+
+:::caution
+If you only delete the lines that contain the mountpath, the remaining `while`/`do`/`done` respectively `if`/`else`/`fi` lines break the script, and the snapshots and scrubs of your **other** drives would fail as well.
+:::
+
 If the drive that you disconnect was the **only** drive that is mentioned in those two scripts, you can instead delete their cronjobs with `sudo crontab -u root -e` (the lines that contain `create-daily-btrfs-snapshots.sh` and `scrub-btrfs-monthly.sh`).
 
 ### 3. Remove the drive from PLEX/Jellyfin
@@ -338,6 +379,8 @@ If you simply want to get rid of the drive, do the following:
     sudo grep "BACKUP_MOUNTPOINT" /var/scripts/daily-borg-backup.sh /var/scripts/off-shore-rsync-backup.sh
     ```
     (Depending on what you have set up, one of the two files might not exist.)
+
+    In the off-shore backup script, `BACKUP_MOUNTPOINT` is the off-shore drive and `BACKUP_SOURCE_MOUNTPOINT` is your daily backup drive, from which the off-shore backup copies. So if you disconnect your **daily** backup drive, the off-shore backup will fail as well.
 1. If one of the two backups used the drive that you want to disconnect, please **disable its cronjob**, so that it doesn't run into an error every day:
     ```shell
     sudo crontab -u root -e
@@ -403,6 +446,12 @@ Registering it as backup drive also **locks down its permissions**, so that only
 
 ### 4. Copy all data from the old drive to the new drive
 
+The copy can take many hours, and the backup must not run in the meantime: it would write to the old drive while it gets copied and unmount it when it is done. So please first **disable the backup cronjobs** temporarily:
+```shell
+sudo crontab -u root -e
+```
+Put a `#` in front of the lines that contain `daily-borg-backup.sh` and `off-shore-rsync-backup.sh`. You enable them again in step 6.
+
 Both backup drives are not mounted automatically, so you have to mount them manually first:
 
 ```shell
@@ -410,17 +459,24 @@ sudo mount /mnt/OLD-MOUNTPATH
 sudo mount /mnt/new-backup
 ```
 
-Now copy everything over with `rsync`:
+Now copy everything over with `rsync`.
 
+**For a BTRFS backup drive:**
 ```shell
-sudo rsync -aAXHv --info=progress2 --exclude '.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-backup/
+sudo rsync -aAXHv --info=progress2 --exclude '/.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-backup/
 ```
+
+**For a NTFS backup drive:**
+```shell
+sudo rsync -rtv --info=progress2 /mnt/OLD-MOUNTPATH/ /mnt/new-backup/
+```
+(NTFS doesn't support Linux permissions, ownership and ACLs, so `rsync` would only run into errors when it tries to copy them. The ownership of a NTFS backup drive comes from its mount options anyway.)
 
 :::caution
 Please don't forget the **trailing slashes** at the end of both paths! Without them `rsync` would create a subdirectory inside the target instead of copying the content itself, and your backup would not be found afterwards.
 :::
 :::caution
-Please **always** keep the `--exclude '.snapshots/'` in the command! If your backup drive has a `.snapshots` directory with BTRFS snapshots, `rsync` cannot copy them as snapshots - it would copy **every single one of them as a full copy** of your data, so the new drive would need many times the space and the copy would most likely fail because the drive runs full. The new drive creates its own snapshots from now on.
+Please **always** keep the `--exclude '/.snapshots/'` in the command! If your backup drive has a `.snapshots` directory with BTRFS snapshots, `rsync` cannot copy them as snapshots - it would copy **every single one of them as a full copy** of your data, so the new drive would need many times the space and the copy would most likely fail because the drive runs full. The new drive creates its own snapshots from now on.
 :::
 :::info
 This can take **many hours** depending on the size of your backup. It is a good idea to run this inside a `screen` or `tmux` session so that the copy doesn't get interrupted if your SSH connection drops:
@@ -431,17 +487,24 @@ screen -S copy
 (You can detach with `[CTRL] + [A]` followed by `[D]` and come back later with `sudo screen -r copy`.)
 :::
 
-Afterwards please compare the two drives to make sure that everything was copied:
+Afterwards please compare the two drives to make sure that everything was copied.
 
+**For a BTRFS backup drive:**
 ```shell
 sudo du -sh --exclude '.snapshots' /mnt/OLD-MOUNTPATH /mnt/new-backup
-sudo rsync -aAXH --dry-run -i --exclude '.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-backup/
+sudo rsync -aAXH --dry-run -i --exclude '/.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-backup/
+```
+
+**For a NTFS backup drive:**
+```shell
+sudo du -sh /mnt/OLD-MOUNTPATH /mnt/new-backup
+sudo rsync -rt --dry-run -i /mnt/OLD-MOUNTPATH/ /mnt/new-backup/
 ```
 
 The second command is a dry run (that is what `--dry-run` does) and doesn't change anything. It should not report any file that still needs to be transferred.
 
 :::note
-The `--exclude` is needed in both commands as well, otherwise the sizes wouldn't match and the dry run would report all the snapshots as missing.
+For a BTRFS backup drive the `--exclude` is needed in both commands as well, otherwise the sizes wouldn't match and the dry run would report all the snapshots as missing.
 :::
 
 ### 5. Give the new drive the mountpath of the old drive
@@ -490,7 +553,12 @@ Please **don't** run `BTRFS Mount`/`NTFS Mount` again for this. The script would
 
 Now run your daily backup manually to make sure that everything works ([instructions](./manual-backup)).
 
-If the backup runs through successfully, the replacement is done. You can now safely erase the old drive and use it for something else.
+If the backup runs through successfully, please **enable the backup cronjobs again** that you have disabled in step 4, by removing the `#` in front of them:
+```shell
+sudo crontab -u root -e
+```
+
+Now the replacement is done. You can now safely erase the old drive and use it for something else.
 
 :::info
 If the backup fails, please have a look at the log with `sudo cat /var/log/nextcloud/borgbackup.log`. In most cases the mountpath of the new drive doesn't match the old one. You can check which mountpath your backup script expects with:
@@ -499,7 +567,7 @@ sudo grep "BACKUP_MOUNTPOINT\|BACKUP_TARGET_DIRECTORY" /var/scripts/daily-borg-b
 ```
 :::
 :::note
-Running the `Daily Backup Wizard` again is **not** needed if you have reused the old mountpath. But it also doesn't hurt: if you choose the new drive and the same backup directory, it will detect the existing backup repository.
+Please **don't** run the `Daily Backup Wizard` again - it is not needed if you have reused the old mountpath. The wizard cannot take over an existing backup repository: it refuses a backup directory that already contains data and would create a **new, empty** repository in a different directory instead, so your backup history would not be continued.
 :::
 
 :::tip
@@ -524,10 +592,13 @@ Reusing the old mountpath is the important part. Your server refers to your driv
 * the **PLEX/Jellyfin** libraries and container volumes
 * the snapshot, scrub and permission scripts in `/var/scripts/`
 
-If the new drive gets the same mountpath, all of that keeps working and you don't have to touch any of it.
+If the new drive gets the same mountpath, all of that keeps working and you don't have to touch any of it. That is why the new drive simply **takes over the `fstab` line of the old drive** at the end - you only exchange the `UUID` in it.
 
 :::caution
 Don't erase the old drive until you have verified that everything works with the new drive!
+:::
+:::caution
+Please use the **same filesystem** for the new drive as the old one has (BTRFS for a BTRFS drive, NTFS for a NTFS drive). The new drive takes over the `fstab` line of the old one, and that line contains the filesystem and its mount options.
 :::
 :::info
 The nicest way to do this is with **both drives connected at the same time**, so please make sure that you have a free port.
@@ -535,7 +606,7 @@ The nicest way to do this is with **both drives connected at the same time**, so
 
 ### 1. Note down the details of the old drive
 
-Please note down the **mountpath** of the drive that you want to replace and its filesystem:
+Please note down the **mountpath** of the drive that you want to replace, its `UUID` and its filesystem:
 
 ```shell
 lsblk -o NAME,LABEL,SIZE,FSTYPE,UUID,MOUNTPOINT
@@ -555,7 +626,7 @@ Connect the new drive to your server and prepare it the same way that you have p
 In both cases, please answer `Yes` when you get asked if this is a backup drive, even though it isn't one.
 
 :::info
-Answering `Yes` here is on purpose: it makes the script stop right after it has written the `fstab` entry. If you answered `No` instead, the drive would get **PLEX/Jellyfin volumes** for the temporary mountpath - and a BTRFS drive would additionally get entries in the permission script and in the snapshot and scrub scripts. All of those would point to `/mnt/new-drive` and would need to get cleaned up again in step 4. The drive gets all of its proper settings in step 5, when it is mounted to the mountpath of the old drive.
+Answering `Yes` here is on purpose: it makes the script stop right after it has written the `fstab` entry. If you answered `No` instead, the drive would get **PLEX/Jellyfin volumes** for the temporary mountpath - and a BTRFS drive would additionally get entries in the permission script and in the snapshot and scrub scripts. All of those would point to `/mnt/new-drive` and would need to get cleaned up again. The drive gets its proper settings in step 4, when it takes over the `fstab` line of the old drive.
 :::
 :::note
 A drive that is registered as backup drive is set to `noauto` in `/etc/fstab` and gets unmounted right away, so you have to mount it manually before you can copy anything to it:
@@ -564,30 +635,33 @@ sudo mount /mnt/new-drive
 ```
 :::
 :::caution
-Registering the drive as backup drive also **locks down its permissions**: a BTRFS drive gets set to `root:root` with the permissions `600`, a NTFS drive gets mounted with `uid=root,gid=root,umask=177`. That is why every command in the next step has to be run with `sudo` - only `root` can write to the drive in this state.
+Registering the drive as backup drive also **locks down its permissions**: a BTRFS drive gets set to `root:root` with the permissions `600`, a NTFS drive gets mounted with `uid=root,gid=root,umask=177`. That is why every command in the next steps has to be run with `sudo` - only `root` can write to the drive in this state.
 
-For a **BTRFS** drive, please open it up again right after mounting it, so that the copy behaves like a normal directory:
-```shell
-sudo chmod 755 /mnt/new-drive
-```
-(For a NTFS drive this isn't possible, since the permissions come from the mount options. Running the copy with `sudo` is enough there.)
-
-Don't worry about those permissions - in step 5 the drive gets its proper ownership anyway: the mount script sets the whole drive to `plex:plex` with the permissions `770`.
+Don't worry about those permissions: for a BTRFS drive, `rsync` copies the ownership and permissions of your files from the old drive in the next step. For a NTFS drive the ownership comes from the mount options, and the drive gets the options of the old drive in step 4.
 :::
 
 ### 3. Copy all data over with rsync
 
-Now copy everything from the old drive to the new one:
+Now copy everything from the old drive to the new one.
 
+**For a BTRFS drive:**
 ```shell
-sudo rsync -aAXHv --info=progress2 --exclude '.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
+sudo rsync -aAXHv --info=progress2 --exclude '/.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
 ```
 
+**For a NTFS drive:**
+```shell
+sudo rsync -rtv --info=progress2 /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
+```
+
+:::note
+NTFS doesn't support Linux permissions, ownership and ACLs, so `rsync` would only run into errors when it tries to copy them. That is why the NTFS command only copies the files and their timestamps (`-rt`). The ownership comes from the mount options anyway.
+:::
 :::caution
 Please don't forget the **trailing slashes** at the end of both paths! Without them `rsync` would create a subdirectory inside the target instead of copying the content itself.
 :::
 :::caution
-Please **always** keep the `--exclude '.snapshots/'` in the command! The `.snapshots` directory contains the BTRFS snapshots of your drive. They are read-only copies of your data that only take up little space on the drive itself, but `rsync` cannot copy them as snapshots - it would copy **every single one of them as a full copy** of your data. So a drive with 10 snapshots would need more than 10 times the space and the copy would most likely fail because the new drive runs full.
+For a BTRFS drive, please **always** keep the `--exclude '/.snapshots/'` in the command! The `.snapshots` directory contains the BTRFS snapshots of your drive. They are read-only copies of your data that only take up little space on the drive itself, but `rsync` cannot copy them as snapshots - it would copy **every single one of them as a full copy** of your data. So a drive with 10 snapshots would need more than 10 times the space and the copy would most likely fail because the new drive runs full.
 :::
 :::note
 You don't lose anything by excluding them: the new drive creates its own snapshots from now on, and the snapshots of the old drive were only copies of the data that you are copying over anyway.
@@ -600,78 +674,86 @@ screen -S copy
 ```
 (You can detach with `[CTRL] + [A]` followed by `[D]` and come back later with `sudo screen -r copy`.)
 :::
-:::caution
-If you copy from a BTRFS drive to a **NTFS** drive or the other way round, the permissions and ownership cannot be transferred one to one. In that case please use the exact same filesystem for the new drive as the old one had. Mixing them is not recommended.
-:::
 
-Afterwards please verify that everything was copied:
+Afterwards please verify that everything was copied.
 
+**For a BTRFS drive:**
 ```shell
 sudo du -sh --exclude '.snapshots' /mnt/OLD-MOUNTPATH /mnt/new-drive
-sudo rsync -aAXH --dry-run -i --exclude '.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
+sudo rsync -aAXH --dry-run -i --exclude '/.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
+```
+
+**For a NTFS drive:**
+```shell
+sudo du -sh /mnt/OLD-MOUNTPATH /mnt/new-drive
+sudo rsync -rt --dry-run -i /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
 ```
 
 The second command is a dry run (that is what `--dry-run` does) and doesn't change anything. It should not report any file that still needs to be transferred.
 
 :::note
-The `--exclude` is needed in both commands as well, otherwise the sizes wouldn't match and the dry run would report all the snapshots as missing.
+For a BTRFS drive the `--exclude` is needed in both commands as well, otherwise the sizes wouldn't match and the dry run would report all the snapshots as missing.
 :::
 
-### 4. Remove the old drive from your server
+### 4. Let the new drive take over the fstab line of the old drive
 
-Both drives now have to be removed from your server's configuration - the old one because it is going away, and the new one because it currently sits on the **temporary** mountpath and needs to be mounted to the old mountpath instead.
+**For a BTRFS drive**, please first create the snapshot directory on the new drive, since the snapshot script of the old mountpath expects it:
+```shell
+sudo mkdir -p /mnt/new-drive/.snapshots
+```
 
-Please do it in this order and **don't reboot in between**:
+Now unmount both drives:
+```shell
+sudo umount /mnt/new-drive
+sudo umount /mnt/OLD-MOUNTPATH
+```
 
-1. Remove the **old** drive from the configuration by following the section above that fits its drive type ([BTRFS](#btrfs-drive) or [NTFS](#ntfs-drive)). Please do **everything except the last step** of that section - so no `umount` and no reboot yet, since both drives get unmounted together below.
-    :::caution
-    Both drives are of the same type at this point, so please make sure that you really use the `UUID` of the **old** drive there! You can tell them apart by their mountpath:
-    ```shell
-    lsblk -o NAME,LABEL,SIZE,UUID,MOUNTPOINT
-    ```
-    The old drive is the one that is mounted to your old mountpath, the new one is mounted to `/mnt/new-drive`.
-    :::
-1. Remove the **new** drive from the configuration, so that its temporary mountpath `/mnt/new-drive` is free again. Please open the file and delete the line that contains `/mnt/new-drive`:
-    ```shell
-    sudo nano /etc/fstab
-    ```
-    :::note
-    That is all for the new drive, since you have registered it as backup drive in step 2 - it has no other entries anywhere.
-    :::
-1. Now please **check the result**, since the next step is not easily reversible:
-    ```shell
-    sudo cat /etc/fstab
-    ```
-    Neither your old mountpath nor `/mnt/new-drive` should show up in there anymore. The step above removes the line of the new drive, the linked section removes the line of the old drive - please check that **both** are really gone. If one of them is still there, the mount in step 5 would fail because the mountpath is still taken.
-1. Unmount both drives and shut your server down:
-    ```shell
-    sudo umount /mnt/new-drive
-    sudo umount /mnt/OLD-MOUNTPATH
-    sudo poweroff
-    ```
-1. Now physically **disconnect the old drive**, so that you cannot mix up the two drives in the next step, and power your server back on.
-
-### 5. Mount the new drive to the old mountpath
-
-Mount the new drive again with the same script that you have used in step 2 (`BTRFS Mount` respectively `NTFS Mount`), but this time:
-* type in the **mountpath of the old drive** instead of the temporary one
-* answer `No` when you are asked if this is a backup drive (this time it is the real mount, so the drive should get its regular settings)
-
-:::caution
-The mountpath has to be **exactly** the one that the old drive had, otherwise your PLEX/Jellyfin libraries will not find your data anymore.
-:::
-:::info
-Answering `No` now is what creates the permission script entry, the snapshot and scrub entries and the PLEX/Jellyfin volumes again - this time for the correct mountpath.
+:::note
+If unmounting the old drive fails with `target is busy`, it is most likely still used by PLEX/Jellyfin or by a `screen` session. In that case you can skip the `umount` of the old drive - the `poweroff` below unmounts it cleanly as well.
 :::
 
-### 6. Check that everything works
+Find the `UUID` of the **new** drive (it is the one with the label and size of your new drive):
+```shell
+lsblk -o NAME,LABEL,SIZE,FSTYPE,UUID
+```
 
-1. Have a look at your data in the new mountpath: `ls -l /mnt/OLD-MOUNTPATH`
+Then open `/etc/fstab`:
+```shell
+sudo nano /etc/fstab
+```
+
+1. **Delete** the line that contains `/mnt/new-drive`.
+1. In the line that contains the **mountpath of your old drive**, replace the `UUID` of the old drive with the `UUID` of the **new** drive. Please leave the rest of the line untouched.
+1. Save with `[CTRL] + [O]`, `[ENTER]` and close nano with `[CTRL] + [X]`.
+
+Now please **check the result** before you continue:
+```shell
+sudo grep 'OLD-MOUNTPATH' /etc/fstab
+sudo grep 'new-drive' /etc/fstab
+```
+
+The first command should show exactly **one** line, with the `UUID` of the **new** drive and **without** `noauto` (for a BTRFS drive it contains `defaults,nofail`, for a NTFS drive `uid=plex,gid=plex,umask=007,nofail`). The second command shouldn't show anything.
+
+If that looks right, shut your server down:
+```shell
+sudo poweroff
+```
+
+Then physically **disconnect the old drive** and power your server back on. The new drive now gets mounted to the old mountpath during boot - before PLEX/Jellyfin start, so they find your data right away.
+
+:::note
+Please **don't** run `BTRFS Mount`/`NTFS Mount` again for this. Its entries for the old mountpath (permission script, snapshot and scrub scripts, PLEX/Jellyfin volumes) are all still in place and stay correct, since the mountpath didn't change. For a BTRFS drive, the permission script additionally corrects the ownership of the drive on every boot.
+:::
+
+### 5. Check that everything works
+
+1. Check that the new drive is mounted to the old mountpath: `lsblk -o NAME,LABEL,SIZE,MOUNTPOINT`
+1. Have a look at your data in the mountpath: `ls -l /mnt/OLD-MOUNTPATH`
 1. If it was a Movies/TV-Shows drive, have a look at your **PLEX/Jellyfin** libraries. Your movies and shows should show up like before.
 1. Please also reinstall **Disk Monitoring**, so that the new drive gets monitored ([instructions](./smart)).
 
 :::note
-If PLEX/Jellyfin doesn't show your media although the data is on the drive, please trigger a rescan of the library in the PLEX/Jellyfin web interface.
+If PLEX/Jellyfin doesn't show your media although the data is on the drive, please restart the container (`sudo docker restart plex` respectively `sudo docker restart jellyfin`) and trigger a rescan of the library in the PLEX/Jellyfin web interface.
 :::
 
 ## How to replace the encrypted data SSD/HDD with a new one? {#replace-veracrypt}
@@ -686,7 +768,7 @@ Reusing the old mountpath is especially important for this drive, because your s
 * the **PLEX/Jellyfin** libraries and container volumes, if you have used this drive with them
 * the snapshot, scrub and permission scripts in `/var/scripts/`
 
-If the new drive gets the same mountpath, all of that keeps working and you don't need to recreate your shares or re-add your users' folders.
+If the new drive gets the same mountpath, all of that keeps working and you don't need to recreate your shares or re-add your users' folders. That is why the new drive simply **takes over the automount entry of the old drive** at the end - you only exchange the `PARTUUID` (and the password, if you use a new one) in it.
 
 :::caution
 The `BTRFS Veracrypt` and `NTFS Veracrypt` scripts always **format and encrypt** the drive first - there is no option to only mount an already encrypted drive. So please **don't** run them again after you have copied your data over, otherwise your data is gone!
@@ -695,12 +777,21 @@ The `BTRFS Veracrypt` and `NTFS Veracrypt` scripts always **format and encrypt**
 Don't erase the old drive until you have verified that everything works with the new drive!
 :::
 :::info
-The nicest way to do this is with **both drives connected at the same time**, so please make sure that you have a free port. If your server has no free port left, you can also copy the data over on your PC instead: you can open both drives with `Veracrypt` on your PC ([instructions](./access-veracrypt)) and copy the files there. In that case you can skip step 3 below.
+The nicest way to do this is with **both drives connected at the same time**, so please make sure that you have a free port.
+
+If your server has no free port left, you can also copy the data over on your PC instead ([instructions](./access-veracrypt) how to open the drives there). In that case please do the steps in this order:
+1. Steps 1 and 2 as described below
+1. From step 3 only the maintenance mode and the stopping of Samba at the beginning - **not** the `rsync` copy
+1. Steps 4 and 5 - but in step 5, power your server back on only **after** the copy
+1. After the poweroff in step 5, connect both drives to your PC, open them with `Veracrypt` and copy all files from the old drive to the new one (without the `.snapshots` folder)
+1. Connect **only the new drive** to your server, power it on and continue with step 6
+
+The ownership of the files that you copy on your PC doesn't matter: for a `BTRFS Veracrypt` drive the permission script corrects it during the boot, for a `NTFS Veracrypt` drive it comes from the mount options.
 :::
 
 ### 1. Note down the details of the old drive
 
-Please note down the **mountpath** of the drive that you want to replace (usually `/mnt/data`):
+Please note down the **mountpath** of the drive that you want to replace (usually `/mnt/data`) and its `PARTUUID`:
 
 ```shell
 lsblk -o NAME,LABEL,SIZE,FSTYPE,PARTUUID,MOUNTPOINT
@@ -708,7 +799,7 @@ lsblk -o NAME,LABEL,SIZE,FSTYPE,PARTUUID,MOUNTPOINT
 
 ### 2. Format, encrypt and mount the new drive
 
-Connect the new drive to your server and set it up with `BTRFS Veracrypt` respectively `NTFS Veracrypt` from the Not-supported Menu ([instructions](./format-encrypt-mount)), but use a **temporary mountpath** like `/mnt/new-drive`.
+Connect the new drive to your server and set it up with `BTRFS Veracrypt` respectively `NTFS Veracrypt` from the Not-supported Menu ([instructions](./format-encrypt-mount)), but use a **temporary mountpath** like `/mnt/new-drive`. Please use the **same one** of the two scripts that you have used for the old drive.
 
 :::caution
 During formatting, please make sure that you select the **new** drive and not the old one! You can tell them apart by their size. **All data on the formatted drive will be lost.**
@@ -717,17 +808,75 @@ During formatting, please make sure that you select the **new** drive and not th
 Please use the **same password** as for the old drive, then you have one less thing to change later on. Of course you can also use a new one - in that case please store it at a safe place.
 :::
 
+**For a `BTRFS Veracrypt` drive**, the script has now also created entries for `/mnt/new-drive` in the permission, snapshot and scrub scripts. Please remove them **right away**, otherwise snapshots of the new drive get created while you copy your data over:
+
+1. Open the snapshot script and delete the **whole block** of `/mnt/new-drive` - from the line `# /mnt/new-drive` down to and including the line `done`:
+    ```shell
+    sudo nano /var/scripts/create-hourly-btrfs-snapshots.sh
+    ```
+    The block looks like this:
+    ```shell
+    # /mnt/new-drive
+    btrfs subvolume snapshot -r "/mnt/new-drive/" "/mnt/new-drive/.snapshots/@$CURRENT_DATE"
+    while [ "$(find "/mnt/new-drive/.snapshots/" -maxdepth 1 -mindepth 1 -type d -name '@*_*' | wc -l)" -gt "$MAX_SNAPSHOTS" ]
+    do
+        DELETE="$(find "/mnt/new-drive/.snapshots/" -maxdepth 1 -mindepth 1 -type d -name '@*_*' | sort | head -1)"
+        btrfs subvolume delete "$DELETE"
+    done
+    ```
+1. Open the scrub script and delete the **whole block** of `/mnt/new-drive` - from the line `# /mnt/new-drive` down to and including the line `fi`:
+    ```shell
+    sudo nano /var/scripts/scrub-btrfs-weekly.sh
+    ```
+1. Open the permission script and delete the **three lines** of the `find` command that contains `/mnt/new-drive`:
+    ```shell
+    sudo nano /var/scripts/adjust-startup-permissions.sh
+    ```
+1. If a snapshot of the new drive got created in the meantime, delete it again:
+    ```shell
+    sudo ls /mnt/new-drive/.snapshots
+    ```
+    If this shows any snapshot (named like `@20260101_120000`), delete them with:
+    ```shell
+    sudo bash -c 'btrfs subvolume delete /mnt/new-drive/.snapshots/@*'
+    ```
+    (The `bash -c` is needed so that the `*` gets expanded with root permissions.)
+    Please **keep** the (now empty) `.snapshots` directory itself - the snapshot script of your old mountpath needs it on the new drive.
+
+:::note
+Please **don't** touch the blocks of your **old** mountpath in those three files! The new drive gets exactly that mountpath, so they stay correct. For a `NTFS Veracrypt` drive there is nothing to remove here, since such a drive has no permission, snapshot and scrub entries.
+:::
+
 ### 3. Copy all data over with rsync
 
+Your users must not change any files on the old drive during the copy, otherwise those changes would be missing on the new drive. So please first put Nextcloud into maintenance mode and stop Samba:
 ```shell
-sudo rsync -aAXHv --info=progress2 --exclude '.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
+sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --on
+sudo systemctl stop smbd
 ```
 
+:::note
+Both get turned back on automatically during the boot in step 5: the automount script disables the maintenance mode on every boot (as long as the drive gets mounted successfully), and Samba gets started again. If you have used this drive with PLEX/Jellyfin, that doesn't matter here, since they only read from it.
+:::
+
+**For a `BTRFS Veracrypt` drive:**
+```shell
+sudo rsync -aAXHv --info=progress2 --exclude '/.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
+```
+
+**For a `NTFS Veracrypt` drive:**
+```shell
+sudo rsync -rtv --info=progress2 /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
+```
+
+:::note
+NTFS doesn't support Linux permissions, ownership and ACLs, so `rsync` would only run into errors when it tries to copy them. That is why the NTFS command only copies the files and their timestamps (`-rt`). The ownership comes from the mount options (`uid=www-data,gid=www-data,umask=007`) anyway.
+:::
 :::caution
 Please don't forget the **trailing slashes** at the end of both paths! Without them `rsync` would create a subdirectory inside the target instead of copying the content itself.
 :::
 :::caution
-Please **always** keep the `--exclude '.snapshots/'` in the command! The `.snapshots` directory contains the BTRFS snapshots of your drive. They are read-only copies of your data that only take up little space on the drive itself, but `rsync` cannot copy them as snapshots - it would copy **every single one of them as a full copy** of your data. So a drive with 10 snapshots would need more than 10 times the space and the copy would most likely fail because the new drive runs full.
+For a BTRFS drive, please **always** keep the `--exclude '/.snapshots/'` in the command! The `.snapshots` directory contains the BTRFS snapshots of your drive. They are read-only copies of your data that only take up little space on the drive itself, but `rsync` cannot copy them as snapshots - it would copy **every single one of them as a full copy** of your data. So a drive with 10 snapshots would need more than 10 times the space and the copy would most likely fail because the new drive runs full.
 :::
 :::info
 This can take **many hours** depending on how much data you have. It is a good idea to run this inside a `screen` session so that the copy doesn't get interrupted if your SSH connection drops:
@@ -737,112 +886,55 @@ screen -S copy
 ```
 (You can detach with `[CTRL] + [A]` followed by `[D]` and come back later with `sudo screen -r copy`.)
 :::
+:::note
+Since `rsync -a` copies the ownership and permissions as well, the files on a `BTRFS Veracrypt` drive keep `www-data:www-data` with `770`. So there is no need to run `chown`/`chmod` over the new drive afterwards - and the permission script of your server corrects them on every boot anyway.
+:::
 
-Afterwards please verify that everything was copied:
+Afterwards please verify that everything was copied.
 
+**For a `BTRFS Veracrypt` drive:**
 ```shell
 sudo du -sh --exclude '.snapshots' /mnt/OLD-MOUNTPATH /mnt/new-drive
-sudo rsync -aAXH --dry-run -i --exclude '.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
+sudo rsync -aAXH --dry-run -i --exclude '/.snapshots/' /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
+```
+
+**For a `NTFS Veracrypt` drive:**
+```shell
+sudo du -sh /mnt/OLD-MOUNTPATH /mnt/new-drive
+sudo rsync -rt --dry-run -i /mnt/OLD-MOUNTPATH/ /mnt/new-drive/
 ```
 
 The second command is a dry run (that is what `--dry-run` does) and doesn't change anything. It should not report any file that still needs to be transferred.
 
-### 4. Remove both drives from the automount configuration
+### 4. Let the new drive take over the automount entry of the old drive
 
-Now both drives have to be removed from the automount configuration - the old one because it is going away, and the new one because it currently sits on the temporary mountpath.
-
-Since you will need the block of the **old** drive as template in step 7, please first save a copy of the whole automount script:
+First please save a copy of the whole automount script, so that you can go back if something goes wrong:
 
 ```shell
 sudo cp /var/scripts/veracrypt-automount.sh /root/veracrypt-automount.sh.bak
 ```
 
 :::caution
-This file contains the **passwords of your Veracrypt drives in cleartext**. That is why the copy belongs in `/root/`, which only the root user can read - please **don't** copy those lines into a text editor on your PC or into a chat. The original script is protected the same way (`chmod 700`, owned by root). In step 7 you will delete the copy again.
+This file contains the **passwords of your Veracrypt drives in cleartext**. That is why the copy belongs in `/root/`, which only the root user can read - please **don't** copy those lines into a text editor on your PC or into a chat. The original script is protected the same way (`chmod 700`, owned by root). In step 6 you will delete the copy again.
 :::
+
+Find the `PARTUUID` of the **new** drive (it is the one that is mounted to `/mnt/new-drive`):
+```shell
+lsblk -o NAME,LABEL,SIZE,PARTUUID,MOUNTPOINT
+```
 
 Now open the automount script:
 ```shell
 sudo nano /var/scripts/veracrypt-automount.sh
 ```
 
-There are now **two** blocks in this file that you have to delete. Each one starts with `if !` and ends with `fi`, and you can tell them apart by the mountpath at the end of the second line:
+There are now **two** blocks in this file that matter. Each one starts with `if !` and ends with `fi`, and you can tell them apart by the mountpath at the end of the second line (respectively the third line for a `NTFS Veracrypt` drive):
 
-1. The block of the **old** drive (with your old mountpath)
-1. The block of the **new** drive (with `/mnt/new-drive`)
+1. **Delete** the whole block of the **new** drive (the one with `/mnt/new-drive`), from `if !` down to and including `fi`.
+1. In the block of the **old** drive (the one with your old mountpath), replace the `PARTUUID` of the old drive with the `PARTUUID` of the **new** drive. If you have used a new password for the new drive, please also replace the password between the `'` in the first line. Please leave the rest of the block untouched.
+1. Save with `[CTRL] + [O]`, `[ENTER]` and close nano with `[CTRL] + [X]`.
 
-:::caution
-Please **don't** delete the lines above the first block (the `#!/bin/bash`, the `chown`/`chmod` lines and the line that resets the maintenance mode). Those are needed and are not part of any drive's block.
-:::
-
-Then remove the drive-connection monitoring of both drives:
-```shell
-sudo crontab -u root -e
-```
-Delete the two `@reboot /var/scripts/is-drive-connected.sh '...'` lines of the old and the new drive.
-
-:::tip
-Please **leave the permission, snapshot and scrub entries alone** - the ones in `/var/scripts/adjust-startup-permissions.sh`, `/var/scripts/create-hourly-btrfs-snapshots.sh` and `/var/scripts/scrub-btrfs-weekly.sh` that contain your **old** mountpath. Since the new drive gets exactly that mountpath, those entries stay correct and there is nothing to do.
-
-Only the entries that contain `/mnt/new-drive` need to get removed from those three files, if the script has created any.
-:::
-
-### 5. Unmount both drives and disconnect the old one
-
-First unmount both drives:
-
-```shell
-sudo veracrypt -t -d /mnt/new-drive
-sudo veracrypt -t -d /mnt/OLD-MOUNTPATH
-```
-
-:::caution
-Please check that both commands really succeeded before you continue:
-```shell
-sudo veracrypt -t -l
-```
-This should report that no volume is mounted. If one of them is still listed, some program is most likely still using it - e.g. a `screen` session in which your copy is still running, or a shell whose current directory is on the drive. Please close it and try again. Powering off with a volume still mounted can damage the filesystem.
-:::
-
-Then shut your server down:
-
-```shell
-sudo poweroff
-```
-
-Now physically **disconnect the old drive**, so that you cannot mix up the two drives in the next steps, and power your server back on.
-
-### 6. Mount the new drive to the old mountpath
-
-```shell
-sudo mkdir -p /mnt/OLD-MOUNTPATH
-sudo veracrypt -t -k "" --pim=0 --protect-hidden=no --fs-options=defaults \
-"/dev/disk/by-partuuid/PARTUUID-OF-YOUR-NEW-DRIVE" /mnt/OLD-MOUNTPATH
-```
-
-You will get asked for the password of the new drive.
-
-:::note
-For a **NTFS Veracrypt** drive, please use these mount options instead:
-```shell
-sudo veracrypt -t -k "" --pim=0 --protect-hidden=no \
---fs-options=windows_names,uid=www-data,gid=www-data,umask=007 \
-"/dev/disk/by-partuuid/PARTUUID-OF-YOUR-NEW-DRIVE" /mnt/OLD-MOUNTPATH
-```
-:::
-:::tip
-You can find the `PARTUUID` of your new drive with `lsblk -o NAME,LABEL,SIZE,PARTUUID`.
-:::
-
-### 7. Add the new drive to the automount script
-
-Open the automount script:
-```shell
-sudo nano /var/scripts/veracrypt-automount.sh
-```
-
-The block of the **old** drive should already be gone (you removed it in step 4). Now add a block for the new drive at the end of the file - it is the same block that the script would have created, with the **password and the PARTUUID of the new drive** and the **mountpath of the old drive**:
-
+Afterwards the block of your drive should look like this (for a `BTRFS Veracrypt` drive):
 ```shell
 if ! echo 'PASSWORD-OF-YOUR-NEW-DRIVE' | veracrypt -t -k "" --pim=0 --protect-hidden=no --fs-options=defaults \
 "/dev/disk/by-partuuid/PARTUUID-OF-YOUR-NEW-DRIVE" /mnt/OLD-MOUNTPATH
@@ -856,62 +948,78 @@ You can disable it after the drive is successfully mounted again!"
 fi
 ```
 
-:::tip
-The easiest and least error-prone way is to use the block of the **old** drive as template and only exchange the password and the `PARTUUID` in it. The mountpath stays the same, since you reuse it. If you have used the same password for the new drive, you only need to change the `PARTUUID`. You can look at the old block in the copy that you have made in step 4:
+:::note
+For a **NTFS Veracrypt** drive, the first two lines look like this instead (and the mail text is slightly different):
 ```shell
-sudo cat /root/veracrypt-automount.sh.bak
+if ! echo 'PASSWORD-OF-YOUR-NEW-DRIVE' | veracrypt -t -k "" --pim=0 --protect-hidden=no \
+--fs-options=windows_names,uid=www-data,gid=www-data,umask=007 \
+"/dev/disk/by-partuuid/PARTUUID-OF-YOUR-NEW-DRIVE" /mnt/OLD-MOUNTPATH
 ```
+Please keep these mount options! With `--fs-options=defaults` a NTFS drive would be owned by `root` and Nextcloud couldn't access it anymore. Since you only exchange the `PARTUUID` in the existing block, they stay as they are.
 :::
-
 :::caution
-Please **keep** the copy for now - you delete it at the end of step 9, after the reboot has worked. If something goes wrong, it is the easiest way to get the old block back.
+Please **don't** delete the lines above the first block (the `#!/bin/bash`, the `chown`/`chmod` lines and the line that resets the maintenance mode). Those are needed and are not part of any drive's block.
 :::
 
-### 8. Add the drive-connection monitoring again
-
+Then adjust the drive-connection monitoring:
 ```shell
 sudo crontab -u root -e
 ```
-Add a line for the new drive:
+There are two `@reboot /var/scripts/is-drive-connected.sh '...'` lines for the old and the new drive:
+
+1. **Delete** the line that contains the `PARTUUID` of the **new** drive.
+1. In the line that contains the `PARTUUID` of the **old** drive, replace it with the `PARTUUID` of the **new** drive.
+
+Afterwards there should be exactly one line for your drive:
 ```
 @reboot /var/scripts/is-drive-connected.sh 'PARTUUID-OF-YOUR-NEW-DRIVE' >/dev/null
 ```
 
-### 9. Prepare the drive and reboot
+### 5. Unmount both drives and disconnect the old one
 
-**For a `BTRFS Veracrypt` drive**, please fix the permissions on the new drive first and create the snapshot directory afterwards:
+First unmount both drives:
+
 ```shell
-sudo chown -R www-data:www-data /mnt/OLD-MOUNTPATH
-sudo chmod -R 770 /mnt/OLD-MOUNTPATH
-sudo mkdir -p /mnt/OLD-MOUNTPATH/.snapshots
+sudo veracrypt -t -d /mnt/new-drive
+sudo veracrypt -t -d /mnt/OLD-MOUNTPATH
 ```
 
-:::info
-**For a `NTFS Veracrypt` drive** please skip those three commands and go straight to the reboot below. Such a drive has no snapshots, and its ownership comes from the mount options in the automount block (`uid=www-data,gid=www-data,umask=007`), not from `chown`.
-:::
-
-:::caution
-Please keep this order and don't run the two recursive commands afterwards again! BTRFS snapshots are **read-only**, so as soon as there are snapshots in `.snapshots`, a `chown -R`/`chmod -R` over the whole drive would run into errors. That is also why the permission script of your server skips that directory. Since you have excluded `.snapshots` from the copy in step 3, the new drive has none yet at this point.
-:::
-
-Then reboot your server:
+Please check whether both commands succeeded:
 ```shell
-sudo reboot
+sudo veracrypt -t -l
+```
+This should report that no volume is mounted. If one of them is still listed, some program is most likely still using it - e.g. a `screen` session in which your copy is still running, a shell whose current directory is on the drive, or the **PLEX/Jellyfin** container if you have used this drive with them. You can close the `screen` session or the shell and try again. If the old drive is still in use by Nextcloud, Samba or PLEX/Jellyfin, that is fine as well: the `poweroff` below stops those services and unmounts the drive cleanly.
+
+Then shut your server down:
+
+```shell
+sudo poweroff
 ```
 
-After the reboot, the new drive should get mounted automatically to the old mountpath and Nextcloud should **not** be in maintenance mode.
+Now physically **disconnect the old drive** and power your server back on. During the boot, the automount script now mounts the **new** drive to the old mountpath - before Nextcloud, Samba and PLEX/Jellyfin start, so they find your data right away.
+
+### 6. Check the mount
+
+Check that the new drive is mounted to the old mountpath and that Nextcloud is **not** in maintenance mode:
+```shell
+sudo veracrypt -t -l
+sudo -u www-data php /var/www/nextcloud/occ maintenance:mode
+```
 
 :::note
-If Nextcloud is in maintenance mode after the reboot, the automount of the new drive failed. Most likely there is a typo in the block that you have added in step 7. You can disable the maintenance mode with `sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --off` and check the block again. The old block is still in your copy: `sudo cat /root/veracrypt-automount.sh.bak`
+If Nextcloud is in maintenance mode after the boot, the automount of the new drive failed. Most likely there is a typo in the block that you have changed in step 4. Please check the block again (`sudo nano /var/scripts/veracrypt-automount.sh`) and compare it with your copy (`sudo cat /root/veracrypt-automount.sh.bak`). After fixing it, reboot your server and disable the maintenance mode if it is still enabled:
+```shell
+sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --off
+```
 :::
 
-**Only when the reboot has worked** and the drive is mounted again, please delete the copy of the automount script, since it contains your passwords in cleartext:
+**Only when the drive got mounted successfully**, please delete the copy of the automount script, since it contains your passwords in cleartext:
 
 ```shell
 sudo rm /root/veracrypt-automount.sh.bak
 ```
 
-### 10. Check that everything works
+### 7. Check that everything works
 
 1. Have a look at your **files in Nextcloud** - your folders should show up like before.
 1. Have a look at your **SMB-shares** from a PC ([instructions](./smb-connect)).
@@ -966,20 +1074,32 @@ Please note down the **mountpath** (the second column of the second line) - you 
 
 ### 2. Copy the data over
 
+First of all, your users must not change any files on the old drive anymore, otherwise those changes would be missing on the new drive. So please put Nextcloud into maintenance mode and stop Samba (if you have used the drive with them):
+```shell
+sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --on
+sudo systemctl stop smbd
+```
+Samba gets started again automatically during the next boot. The maintenance mode you disable again in step 6.
+
 **If you do it on a Windows PC:** please follow step 3 below to remove the old drive from your server first, then connect both drives to your Windows PC, unlock them and copy all data from the old drive to the new one. Afterwards continue with step 4.
 
 **If you do it on your server**, please copy the data to a temporary location first. Please make sure that the target has enough free space (you can check with `df -h`):
 
 ```shell
 sudo mkdir -p /mnt/bitlocker-temp
-sudo rsync -aAXHv --info=progress2 /mnt/OLD-MOUNTPATH/ /mnt/bitlocker-temp/
+sudo rsync -rtv --info=progress2 /mnt/OLD-MOUNTPATH/ /mnt/bitlocker-temp/
 ```
 
 :::caution
 Please don't forget the **trailing slashes** at the end of both paths!
 :::
+:::note
+A Bitlocker drive is NTFS formatted, and NTFS doesn't support Linux permissions, ownership and ACLs. That is why the command only copies the files and their timestamps (`-rt`) - the ownership of the drive comes from its mount options (`uid=www-data,gid=www-data,umask=007`) anyway.
+:::
 :::caution
-`/mnt/bitlocker-temp` is a directory on your **system drive**, so it has to have enough free space for all your data. If your system drive is too small, please use a directory on one of your other drives instead, e.g. `/mnt/data/bitlocker-temp`.
+`/mnt/bitlocker-temp` is a directory on your **system drive**, so it has to have enough free space for all your data. If your system drive is too small, please use a directory on one of your other drives instead, e.g. on your Movies/TV-Shows drive: `/mnt/Movies_TV-shows/bitlocker-temp`.
+
+Please **avoid** your encrypted data SSD/HDD (`/mnt/data`) for this: it gets snapshotted automatically, so the space of the temporary copy wouldn't be freed until those snapshots have rotated out (which takes days), and the folder would show up for your users in Nextcloud.
 
 If you use a different directory, please use **that** directory in all the following commands as well - in step 5 you copy the data back from it and delete it again.
 :::
@@ -1011,7 +1131,17 @@ sudo poweroff
 
 ### 4. Mount the new drive to the old mountpath
 
-Power your server back on, connect the **new** Bitlocker drive and mount it with `Bitlocker Mount` from the Not-supported Menu. Please type in the **mountpath of the old drive** when you are asked for the mountpath.
+Power your server back on and first check that Nextcloud is still in maintenance mode:
+```shell
+sudo -u www-data php /var/www/nextcloud/occ maintenance:mode
+```
+If it reports that the maintenance mode is disabled, please enable it again until the end of this procedure, since the mountpath of the drive is empty right now:
+```shell
+sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --on
+```
+(If you have an encrypted data SSD/HDD, its automount script disables the maintenance mode on every boot - that is why it can be disabled now.)
+
+Then connect the **new** Bitlocker drive and mount it with `Bitlocker Mount` from the Not-supported Menu. Please type in the **mountpath of the old drive** when you are asked for the mountpath.
 
 :::caution
 The mountpath has to be **exactly** the one that the old drive had, otherwise your Nextcloud storages, your SMB-shares and your PLEX/Jellyfin libraries will not find your data anymore.
@@ -1025,14 +1155,14 @@ The `Bitlocker Mount` script does **not** format anything - a Bitlocker drive ge
 If you have copied the data to a temporary location in step 2, please copy it to the new drive now:
 
 ```shell
-sudo rsync -aAXHv --info=progress2 /mnt/bitlocker-temp/ /mnt/OLD-MOUNTPATH/
+sudo rsync -rtv --info=progress2 /mnt/bitlocker-temp/ /mnt/OLD-MOUNTPATH/
 ```
 
 Afterwards please verify that everything was copied and then remove the temporary copy:
 
 ```shell
 sudo du -sh /mnt/bitlocker-temp /mnt/OLD-MOUNTPATH
-sudo rsync -aAXH --dry-run -i /mnt/bitlocker-temp/ /mnt/OLD-MOUNTPATH/
+sudo rsync -rt --dry-run -i /mnt/bitlocker-temp/ /mnt/OLD-MOUNTPATH/
 ```
 
 The second command is a dry run (that is what `--dry-run` does) and doesn't change anything. It should not report any file that still needs to be transferred. Only if everything looks good:
@@ -1048,6 +1178,10 @@ Please only delete the temporary copy after you have verified that all data is o
 ### 6. Check that everything works
 
 1. Have a look at your data in the new mountpath: `ls -l /mnt/OLD-MOUNTPATH`
+1. Disable the maintenance mode again that you have enabled in step 2:
+    ```shell
+    sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --off
+    ```
 1. If the drive was mounted as external storage in Nextcloud, have a look at your **files in Nextcloud**.
 1. If you have created SMB-shares on this drive, have a look at them from a PC ([instructions](./smb-connect)).
 1. If you have used this drive with **PLEX/Jellyfin**, have a look at your libraries there.
